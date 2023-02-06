@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #424242;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  margin-top: -10px; /* adjust as needed */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+
+main {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+main h2 {
+  margin: 0 0 20px;
+}
+
+#start-button {
+  background-color: #424242;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #424242;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+
+/* Shelter */
+
+.shelter-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #e0e0e0;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.shelter-header {
+  text-align: center;
+}
+
+.shelter-eggs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.egg-box {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.egg-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Team */
+
+.team-container {
+  height: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-box {
+    background-color: white;
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.team-box p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.pokemon-sprite {
+    width: 100%;
+    height: 120px;
+}
+
+.pokemon-info {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-name {
+    width: 50%;
+    text-align: center;
+}
+
+.pokemon-level {
+    width: 50%;
+    transform: translateX(50%)
+}
+
+.stats-title {
+	margin-top: 40px;
+}
+
+.team-stats {
+  margin-top: 40px;
+  margin-left: 5%;
+  height: 80vh;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.hatching-button, .evolving-button {
+  margin-right: 10px;
+}
+
+
+/* Shop */
+
+.shop-container {
+    display: flex;
+}
+
+.shop-inventory, .shop-selling {
+    flex-basis: 50%;
+    margin: 20px 0;
+}
+
+.shop-inventory {
+  margin-right: 20px;
+}
+
+.shop-selling {
+	margin-left: 20px;
+}
+
+.shop-container table th.item {
+  height: 64px;
+  width: 64px;
+}
+
+.shop-container table th.description {
+  height: 64px;
+  width: auto;
+}
+
+.shop-container table th.price {
+  height: 64px;
+  width: 100px;
+}
+
+.shop-container table th.actions {
+  height: 64px;
+  width: 64px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+/* PC */
+
+.pc-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pc-team-box {
+    background-color: white;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pc-storage-box {
+    background-color: white;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	display: inline-block;
+    vertical-align: top;
+}
+
+/* Interaction */
+
+.interaction-box {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.interaction-box img {
+max-width: 96px;
+max-height: 96px;
+}
