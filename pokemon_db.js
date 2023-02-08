@@ -11,11 +11,6 @@ const pokemonDatabase = [
 	  		"value": 16,
 	  		"evolves_to": "Ivysaur"
 	  	},
-		{
-	  		"method": ["level"],
-	  		"value": 16,
-	  		"evolves_to": "Charmander"
-	  	},
 	  ],
       "gender_rate": 87.5,
       "experience_group": 10000,
@@ -51,6 +46,13 @@ const pokemonDatabase = [
 	  "gen": 1,
       "type": ["Grass", "Poison"],
       "egg_steps": 5120,
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega-Venusaur"
+	  	},
+	  ],
       "gender_rate": 87.5,
       "experience_group": 10000,
       "sprite": "sprites/pokemon/venusaur.png",
@@ -59,11 +61,31 @@ const pokemonDatabase = [
 	  "evolution_stage": "second_stage",
     },
 	{
-      "id": 4,
-      "name": "Charmander",
+      "id": 3.1,
+      "name": "Mega-Venusaur",
 	  "gen": 1,
       "type": ["Grass", "Poison"],
       "egg_steps": 5120,
+      "gender_rate": 87.5,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/mega-venusaur.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/mega-venusaur.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
+      "id": 4,
+      "name": "Charmander",
+	  "gen": 1,
+      "type": ["Fire"],
+      "egg_steps": 5120,
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Fire Stone",
+	  		"evolves_to": "Charmeleon"
+	  	},
+	  ],
       "gender_rate": 87.5,
       "experience_group": 10000,
       "sprite": "sprites/pokemon/charmander.png",
@@ -71,6 +93,19 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/charmander.png",
 	  "rarity": "rare",
 	  "evolution_stage": "base",
+    },
+	{
+      "id": 5,
+      "name": "Charmeleon",
+	  "gen": 1,
+      "type": ["Fire"],
+      "egg_steps": 5120,
+      "gender_rate": 87.5,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/charmeleon.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/charmeleon.png",
+	  "rarity": "rare",
+	  "evolution_stage": "first_stage",
     },
   /*{
       "id": 1,

@@ -130,7 +130,7 @@ for (let i = 0; i < team.length; i++) {
 function checkEvolutionConditions(pokemon, inventory) {
   let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
 
-  if (pokemonData.evolutions && pokemonData.evolutions.length) {
+  if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
     const evolvingButtons = document.querySelectorAll('.evolving-button');
     for (let evolution of pokemonData.evolutions) {
       // Check if the evolution method is level
@@ -200,6 +200,7 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
         team[index].sprite = pokemon.isShiny ? `sprites/pokemon/shiny/${team[index].species.toLowerCase()}.png` : `sprites/pokemon/${team[index].species.toLowerCase()}.png`
         // Decrement the amount of the item used for evolution
         item.amount--;
+	    localStorage.setItem("inventory", JSON.stringify(inventory));
         break;
       }
     }

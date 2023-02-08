@@ -25,3 +25,11 @@ balance = JSON.parse(localStorage.getItem("balance"));
 }
   document.getElementById("currency-amount").innerHTML = balance.pokeDollar.toLocaleString() || 0;
 });
+
+if (localStorage.getItem("balance")) {
+  balance = JSON.parse(localStorage.getItem("balance"));
+}
+
+if (localStorage.getItem("inventory")) {
+  inventory = JSON.parse(localStorage.getItem("inventory"));
+}

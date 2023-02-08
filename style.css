@@ -143,6 +143,12 @@ footer {
     border-radius: 5px;
 }
 
+.team-box img {
+    max-height: 96px;
+	max-height: 96px;
+}
+
+
 .team-box p {
   text-align: center;
   font-size: 16px;
@@ -197,6 +203,11 @@ footer {
     display: flex;
 }
 
+.currency {
+    font-size: 20px;
+}
+
+
 .shop-inventory, .shop-selling {
     flex-basis: 50%;
     margin: 20px 0;
@@ -212,7 +223,7 @@ footer {
 
 .shop-container table th.item {
   height: 64px;
-  width: 64px;
+  width: 75px;
 }
 
 .shop-container table th.description {
