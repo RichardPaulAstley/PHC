@@ -11,6 +11,11 @@ const teamBoxes = document.querySelectorAll('.team-box');
 teamBoxes.forEach((teamBox, index) => {
     // Get the current team member
     const currentTeamMember = team[index];
+	
+	if (currentTeamMember == null) {
+  return;
+}
+
 	console.log(currentTeamMember);
 
     // Update the pokemon-sprite element
