@@ -1,9 +1,3 @@
-let team = []
-
-if (localStorage.getItem("team")) {
-    team = JSON.parse(localStorage.getItem("team"));
-}
-
 console.log(team);
 
 const teamBoxes = document.querySelectorAll('.team-box');
@@ -105,7 +99,7 @@ window.onload = function() {
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
     egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
-    egg.name = pokemon.name;
+    /* egg.name = pokemon.name; */
 	let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
 	if (egg.isShiny) {

@@ -1,3 +1,15 @@
+let team = []
+
+if (localStorage.getItem("team")) {
+    team = JSON.parse(localStorage.getItem("team"));
+}
+
+let storage = []
+
+if (localStorage.getItem("storage")) {
+    team = JSON.parse(localStorage.getItem("storage"));
+}
+
 let eggData = {
     clicks: 0,
     hatches: 0,

@@ -1,5 +1,13 @@
 const itemDatabase = [
 	{
+	  "name": "PC Extension",
+	  "sprite": "sprites/items/pcextension.png",
+	  "type": "Upgrade",
+	  "description": "Gives access to another box (+30 Pokemon Storage)",
+	  "max_amount": 40, 
+	  "price": 20000
+	},
+	{
 	  "name": "Mega Stone",
 	  "sprite": "sprites/items/megastone.png",
 	  "type": "Evolution",
@@ -47,13 +55,14 @@ const itemDatabase = [
 	  "type": "Evolution",
 	  "description": "An item that looks like something used in the past in order to connect trainers together...",
 	  "price": 3500
-	},
+	}
 /*	{
 	  "name": "",
 	  "sprite": "sprites/items/",
 	  "type": "Summonable, Activable, Evolution, Upgrade, Other",
 	  "effect": "",
 	  "description": "",
-	  "price": 
+	  "max_amount": 
+	  "price":
 	} */
 ]

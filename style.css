@@ -279,6 +279,25 @@ th {
     vertical-align: top;
 }
 
+.pc-storage-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pc-storage-spot {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.pc-team-box img {
+	max-width: 96px;
+	max-height: 96px;
+}
+
 .pc-storage-box {
     background-color: white;
     width: 96px;

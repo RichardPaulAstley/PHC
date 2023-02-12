@@ -5,9 +5,23 @@ function addBuyEvent(itemActionButton, item) {
       return alert("Invalid input.");
     }
 
+    if (amount > item.max_amount) {
+      return alert(`You can't buy more than ${item.max_amount} ${item.name}s.`);
+    }
+
     let totalPrice = amount * item.price;
     if (totalPrice > balance.pokeDollar) {
       return alert("Not enough funds.");
+    }
+
+    let inventoryItem = inventory.find(i => i.name === item.name);
+    let maxInventoryAmount = item.max_amount;
+    if (inventoryItem) {
+      maxInventoryAmount -= inventoryItem.amount;
+    }
+
+    if (amount > maxInventoryAmount) {
+      return alert(`You already own the max amount of this item.`);
     }
 
     if (!confirm(`Would you like to buy ${amount} ${item.name} for ${totalPrice} Pokédollars?`)) {
@@ -15,7 +29,6 @@ function addBuyEvent(itemActionButton, item) {
     }
 
     balance.pokeDollar -= totalPrice;
-    let inventoryItem = inventory.find(i => i.name === item.name);
     if (inventoryItem) {
       inventoryItem.amount += amount;
     } else {
@@ -144,6 +157,7 @@ useCell.appendChild(useButton);
 }
 row.appendChild(useCell);
 
+if (itemData.type !== "Upgrade") {
 let sellButton = document.createElement('button');
 sellButton.textContent = 'Sell';
 sellButton.style.width = '40px';
@@ -154,6 +168,7 @@ addSellButton(item, itemData, sellButton);
 let sellCell = document.createElement('td');
 sellCell.appendChild(sellButton);
 row.appendChild(sellCell);
+}
 
 sellingItems.appendChild(row);
 }
