@@ -115,53 +115,53 @@ window.onload = function() {
 /* Evolution */ 
 
 for (let i = 0; i < team.length; i++) {
-  const pokemon = team[i];
-  let evolvingButton = document.createElement('button');
-  evolvingButton.classList.add('evolving-button');
-  evolvingButton.style.display = 'none';
-  evolvingButton.setAttribute('data-index', i + 1);
-  evolvingButton.innerHTML = 'Evolve';
-  document.body.appendChild(evolvingButton);
+const pokemon = team[i];
+let evolvingButton = document.createElement('button');
+evolvingButton.classList.add('evolving-button');
+evolvingButton.style.display = 'none';
+evolvingButton.setAttribute('data-index', i + 1);
+evolvingButton.innerHTML = 'Evolve';
+document.body.appendChild(evolvingButton);
 
-  checkEvolutionConditions(pokemon, inventory);
+checkEvolutionConditions(pokemon, i, inventory);
 }
 
-function checkEvolutionConditions(pokemon, inventory) {
-  let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
+function checkEvolutionConditions(pokemon, index, inventory) {
+let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
 
-  if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
-    const evolvingButtons = document.querySelectorAll('.evolving-button');
-    for (let evolution of pokemonData.evolutions) {
-      // Check if the evolution method is level
-      if (evolution.method[0] === 'level') {
-        // Check if the level of the pokemon is equal to or greater than the value required for evolution
-        if (pokemon.level >= evolution.value) {
-          for (let j = 0; j < evolvingButtons.length; j++) {
-            if (evolvingButtons[j].getAttribute('data-index') === pokemon.id.toString()) {
-              // Show the evolving button
-              evolvingButtons[j].style.display = 'block';
-              break;
-            }
-          }
-        }
-      }
-      // Check if the evolution method is item
-      if (evolution.method[0] === 'item') {
-        // Find the item in the inventory
-        let item = inventory.find(i => i.name === evolution.value);
-        // Check if the item exists and its amount is greater than 0
-        if (item && item.amount > 0) {
-          for (let j = 0; j < evolvingButtons.length; j++) {
-            if (evolvingButtons[j].getAttribute('data-index') === pokemon.id.toString()) {
-              // Show the evolving button
-              evolvingButtons[j].style.display = 'block';
-              break;
-            }
-          }
-        }
-      }
-    }
-  }
+if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
+const evolvingButtons = document.querySelectorAll('.evolving-button');
+for (let evolution of pokemonData.evolutions) {
+// Check if the evolution method is level
+if (evolution.method[0] === 'level') {
+// Check if the level of the pokemon is equal to or greater than the value required for evolution
+if (pokemon.level >= evolution.value) {
+for (let j = 0; j < evolvingButtons.length; j++) {
+if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
+// Show the evolving button
+evolvingButtons[j].style.display = 'block';
+break;
+}
+}
+}
+}
+// Check if the evolution method is item
+if (evolution.method[0] === 'item') {
+// Find the item in the inventory
+let item = inventory.find(i => i.name === evolution.value);
+// Check if the item exists and its amount is greater than 0
+if (item && item.amount > 0) {
+for (let j = 0; j < evolvingButtons.length; j++) {
+if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
+// Show the evolving button
+evolvingButtons[j].style.display = 'block';
+break;
+}
+}
+}
+}
+}
+}
 }
 
 const evolvingButton = document.querySelectorAll('.evolving-button');

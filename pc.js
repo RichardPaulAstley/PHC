@@ -38,32 +38,26 @@ const pokemonBoxes = document.querySelectorAll(".pc-team-box");
   pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
   if (event.shiftKey || (event.type === "touchstart" && event.type === "touchend")) {
-  if (event.ctrlKey && event.shiftKey) {
-	const confirmRelease = window.confirm(`Are you sure you want to release all non-egg Pokemon from your team?`);
-	if (confirmRelease) {
-	  team = team.filter((pokemon) => pokemon.isEgg);
-	  team.forEach((pokemon, i) => {
-	  pokemon.id = i + 1;
-	});
-	renderTeam();
-	localStorage.setItem("team", JSON.stringify(team));
-	location.reload();
-}
+	if (event.ctrlKey && event.shiftKey) {
+	const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
+	  if (confirmRelease) {
+	  team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
+	  renderTeam();
+	  localStorage.setItem("team", JSON.stringify(team));
+	  location.reload();
+	  }
 	} else {
 	  if (team[index].isEgg) {
 	  window.alert("You can't release eggs");
 	  return;
 }
-  const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
+	const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
 	if (confirmRelease) {
-	team.splice(index, 1);
-	team.forEach((pokemon, i) => {
-	pokemon.id = i + 1;
-});
-	renderTeam();
-	localStorage.setItem("team", JSON.stringify(team));
-	location.reload();
-	 }
+	  team.splice(index, 1);
+	  renderTeam();
+	  localStorage.setItem("team", JSON.stringify(team));
+	  location.reload();
+	  }
 	}
   }
 });
@@ -129,52 +123,39 @@ newSlot.appendChild(newSprite);
 /* Moving */
 
 function selectPokemon(selectedBoxId, selectedPokemon) {
-  if (selectedPokemon) {
-    const selectedElement = document.querySelector('.selected');
-    if (selectedElement) {
-      const selectedId = selectedElement.id;
-      const currentPokemon = localStorage.getItem(selectedId);
+  let selectedElement = document.querySelector('.selected');
+  if (!selectedElement) {
+    document.querySelector(`${selectedBoxId}`).classList.add('selected');
+  } else {
+    const selectedId = selectedElement.id;
+    const currentPokemon = localStorage.getItem(selectedId);
+    if (!currentPokemon) {
+      localStorage.setItem(selectedId, selectedPokemon);
+      if (selectedId.startsWith('team')) {
+        document.querySelector(`${selectedId}`).innerHTML = selectedPokemon;
+      } else {
+        document.querySelector(`${selectedId}`).style.backgroundImage = `url(${selectedPokemon})`;
+      }
+    } else {
       localStorage.setItem(selectedId, selectedPokemon);
       localStorage.setItem(selectedBoxId, currentPokemon);
-
       if (selectedId.startsWith('team')) {
-        document.querySelector(`#${selectedId}`).innerHTML = selectedPokemon;
+        document.querySelector(`${selectedId}`).innerHTML = selectedPokemon;
         if (selectedBoxId.startsWith('team')) {
-          document.querySelector(`#${selectedBoxId}`).innerHTML = currentPokemon;
+          document.querySelector(`${selectedBoxId}`).innerHTML = currentPokemon;
         } else {
-          const selectedBox = document.querySelector(`#${selectedBoxId}`);
-          if (selectedBox) {
-            selectedBox.style.backgroundImage = `url(${currentPokemon})`;
-            selectedBox.classList.add('selected');
-          }
+          document.querySelector(`${selectedBoxId}`).style.backgroundImage = `url(${currentPokemon})`;
         }
       } else {
-        document.querySelector(`#${selectedId}`).style.backgroundImage = `url(${selectedPokemon})`;
+        document.querySelector(`${selectedId}`).style.backgroundImage = `url(${selectedPokemon})`;
         if (selectedBoxId.startsWith('team')) {
-          document.querySelector(`#${selectedBoxId}`).innerHTML = currentPokemon;
+          document.querySelector(`${selectedBoxId}`).innerHTML = currentPokemon;
         } else {
-          const selectedBox = document.querySelector(`#${selectedBoxId}`);
-          if (selectedBox) {
-            selectedBox.style.backgroundImage = `url(${currentPokemon})`;
-            selectedBox.classList.add('selected');
-          }
+          document.querySelector(`${selectedBoxId}`).style.backgroundImage = `url(${currentPokemon})`;
         }
       }
-      selectedElement.classList.remove('selected');
-    } else {
-      const selectedBox = document.querySelector(`#${selectedBoxId}`);
-      if (selectedBox) {
-        selectedBox.classList.add('selected');
-      }
     }
-  } else {
-    const selectedElement = document.querySelector('.selected');
-    if (selectedElement) {
-      selectedElement.classList.remove('selected');
-    }
-    const selectedBox = document.querySelector(`#${selectedBoxId}`);
-    if (selectedBox) {
-      selectedBox.classList.add('selected');
-    }
+    selectedElement.classList.remove('selected');
+    document.querySelector(`${selectedBoxId}`).classList.add('selected');
   }
 }
