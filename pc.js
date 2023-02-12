@@ -102,7 +102,7 @@ for (let i = 0; i < totalSlots; i++) {
 
   const newSlot = document.createElement("div");
   newSlot.classList.add("pc-storage-box");
-  newSlot.id = `slot-${i}`;
+  newSlot.id = `slot-${i + 1}`;
 
  const newSprite = document.createElement("img");
 newSprite.src = "sprites/none.png";
@@ -126,114 +126,55 @@ newSlot.appendChild(newSprite);
 }
 
 
+/* Moving */
 
-// Function to add a Pokemon to storage
-function addPokemonToStorage(pokemon) {
-  // Find the first empty slot in storage
-  let emptySlot = null;
-  for (let i = 0; i < storage.length; i++) {
-    if (!storage[i]) {
-      emptySlot = i;
-      break;
-    }
-  }
-
-  // If all slots are filled, add a new slot to the end of the array
-  if (emptySlot === null) {
-    emptySlot = storage.length;
-    storage.push(null);
-  }
-
-  // Add the Pokemon to the empty slot
-  storage[emptySlot] = pokemon;
-
-  // Update the corresponding slot in the UI to show the Pokemon sprite
-  const sprite = document.querySelector(`#slot-${emptySlot} .pc-storage-sprite`);
-  sprite.src = `sprites/${pokemon.sprite}`;
-
-  // Give the Pokemon an id
-  pokemon.id = `pokemon-${emptySlot}`;
-}
-
-let selectedPokemon = null;
-
-// Function to select a Pokemon
-function selectPokemon(id) {
-  // If a Pokemon is already selected, move it to the clicked slot
+function selectPokemon(selectedBoxId, selectedPokemon) {
   if (selectedPokemon) {
-    movePokemon(selectedPokemon.id, id);
-    selectedPokemon = null;
-    return;
-  }
+    const selectedElement = document.querySelector('.selected');
+    if (selectedElement) {
+      const selectedId = selectedElement.id;
+      const currentPokemon = localStorage.getItem(selectedId);
+      localStorage.setItem(selectedId, selectedPokemon);
+      localStorage.setItem(selectedBoxId, currentPokemon);
 
-  // Find the selected Pokemon in the team or storage
-  let selectedPokemonData = null;
-  for (let i = 0; i < team.length; i++) {
-    if (team[i].id === id) {
-      selectedPokemonData = team[i];
-      break;
-    }
-  }
-
-  // If the Pokemon is not in the team, look in storage
-  if (!selectedPokemonData) {
-    for (let i = 0; i < storage.length; i++) {
-      if (storage[i].id === id) {
-        selectedPokemonData = storage[i];
-        break;
+      if (selectedId.startsWith('team')) {
+        document.querySelector(`#${selectedId}`).innerHTML = selectedPokemon;
+        if (selectedBoxId.startsWith('team')) {
+          document.querySelector(`#${selectedBoxId}`).innerHTML = currentPokemon;
+        } else {
+          const selectedBox = document.querySelector(`#${selectedBoxId}`);
+          if (selectedBox) {
+            selectedBox.style.backgroundImage = `url(${currentPokemon})`;
+            selectedBox.classList.add('selected');
+          }
+        }
+      } else {
+        document.querySelector(`#${selectedId}`).style.backgroundImage = `url(${selectedPokemon})`;
+        if (selectedBoxId.startsWith('team')) {
+          document.querySelector(`#${selectedBoxId}`).innerHTML = currentPokemon;
+        } else {
+          const selectedBox = document.querySelector(`#${selectedBoxId}`);
+          if (selectedBox) {
+            selectedBox.style.backgroundImage = `url(${currentPokemon})`;
+            selectedBox.classList.add('selected');
+          }
+        }
+      }
+      selectedElement.classList.remove('selected');
+    } else {
+      const selectedBox = document.querySelector(`#${selectedBoxId}`);
+      if (selectedBox) {
+        selectedBox.classList.add('selected');
       }
     }
-  }
-
-  // If a Pokemon was found, set it as the selected Pokemon
-  if (selectedPokemonData) {
-    selectedPokemon = selectedPokemonData;
-  }
-}
-
-// Function to move a Pokemon from one slot to another
-function movePokemon(oldId, newId) {
-  // Find the Pokemon in the team or storage
-  let movingPokemon = null;
-  for (let i = 0; i < team.length; i++) {
-    if (team[i].id === oldId) {
-      movingPokemon = team[i];
-      break;
-    }
-  }
-
-  // If the Pokemon is not in the team, look in storage
-  if (!movingPokemon) {
-    for (let i = 0; i < storage.length; i++) {
-      if (storage[i].id === oldId) {
-        movingPokemon = storage[i];
-        break;
-      }
-    }
-  }
-
-  // If the Pokemon was not found, stop
-  if (!movingPokemon) {
-    return;
-  }
-
-  // Remove the Pokemon from its current location
-  let removeIndex = -1;
-  if (team.indexOf(movingPokemon) >= 0) {
-    removeIndex = team.indexOf(movingPokemon);
-    team.splice(removeIndex, 1);
-  } else if (storage.indexOf(movingPokemon) >= 0) {
-    removeIndex = storage.indexOf(movingPokemon);
-    storage.splice(removeIndex, 1);
-  }
-
-  // Add the Pokemon to its new location
-  if (newId < team.length) {
-    team.splice(newId, 0, movingPokemon);
   } else {
-    storage.push(movingPokemon);
+    const selectedElement = document.querySelector('.selected');
+    if (selectedElement) {
+      selectedElement.classList.remove('selected');
+    }
+    const selectedBox = document.querySelector(`#${selectedBoxId}`);
+    if (selectedBox) {
+      selectedBox.classList.add('selected');
+    }
   }
-
-  // Update the display to reflect the change
-  updateDisplay();
 }
