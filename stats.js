@@ -4,12 +4,6 @@ if (localStorage.getItem("team")) {
     team = JSON.parse(localStorage.getItem("team"));
 }
 
-let storage = []
-
-if (localStorage.getItem("storage")) {
-    team = JSON.parse(localStorage.getItem("storage"));
-}
-
 let eggData = {
     clicks: 0,
     hatches: 0,
@@ -44,4 +38,19 @@ if (localStorage.getItem("balance")) {
 
 if (localStorage.getItem("inventory")) {
   inventory = JSON.parse(localStorage.getItem("inventory"));
+}
+
+let storageExtensions = 0;
+inventory.forEach((item) => {
+  if (item.name === "PC Extension") {
+    storageExtensions += item.amount;
+  }
+});
+
+const totalStorage = 300 + (storageExtensions * 30);
+
+let storage = new Array(totalStorage).fill(undefined);
+
+if (localStorage.getItem("storage")) {
+    team = JSON.parse(localStorage.getItem("storage"));
 }
