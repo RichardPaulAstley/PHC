@@ -121,3 +121,27 @@ newSlot.appendChild(newSprite);
 
 
 /* Moving */
+
+const SELECTED_POKEMON = {
+  isTeam: false,
+  selectedIndex: null,
+}
+
+function swapPokemon(selectedIndex, selectedList) {
+  if (SELECTED_POKEMON.index == null) {
+    SELECTED_POKEMON.index = index;
+  } else {
+    const previouslySelectedList = SELECTED_POKEMON.isTeam ? team : list;
+    const previouslySelectedIndex = SELECTED_POKEMON.index;
+    const temp = selectedList[selectedIndex];
+    selectedList[selectedIndex] = previouslySelectedList[previouslySelectedIndex];
+    previouslySelectedList[previouslySelectedIndex] = temp;
+    renderTeam();
+    renderBox();
+  }
+}
+
+// Elsewhere in the file
+swapPokemon(index, team)
+// or
+swapPokemon(index, box)
