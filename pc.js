@@ -103,18 +103,6 @@ newSprite.src = "sprites/none.png";
 newSprite.alt = "Pokemon sprite";
 newSprite.classList.add("pc-storage-sprite");
 
-// Add click event to the sprite
-newSprite.addEventListener("click", function () {
-  selectPokemon(`slot-${i}`);
-});
-
-newSlot.appendChild(newSprite);
-  
-  newSprite.addEventListener("click", function() {
-  selectPokemon(this.parentElement.id);
-});
-
-
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
 }
