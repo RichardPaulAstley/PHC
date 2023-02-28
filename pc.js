@@ -7,6 +7,29 @@ for (let i = 0; i < team.length; i++) {
   pcTeamSprite.src = pokemon.sprite;
 }
 
+function renderTeam() {
+  // Get the container for the team
+  const teamContainer = document.querySelector('.pc-team-container');
+  // Clear the current content of the container
+  teamContainer.innerHTML = '';
+  // Loop through each pokemon in the team
+  for (let i = 0; i < team.length; i++) {
+    // Create a new div for each pokemon
+    const teamBox = document.createElement('div');
+    teamBox.classList.add('pc-team-box');
+    // Create an image element for the pokemon sprite
+    const sprite = document.createElement('img');
+    sprite.src = team[i].sprite;
+    sprite.classList.add('pc-team-sprite');
+    sprite.alt = `Pokemon Sprite for ${team[i].species}`;
+    // Add the sprite to the team box
+    teamBox.appendChild(sprite);
+    // Add the team box to the container
+    teamContainer.appendChild(teamBox);
+  }
+}
+
+
 const pokemonBoxes = document.querySelectorAll(".pc-team-box");
   pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
