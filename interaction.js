@@ -47,9 +47,9 @@ img.addEventListener("click", () => {
 
   team = team.map((member) => {
     if (member.isEgg) {
-      member.eggSteps += getRandomValue(3000, 5400);
+      member.eggSteps += getRandomValue(30, 54);
     } else {
-      member.experience += getRandomValue(16000, 22000);
+      member.experience += getRandomValue(160, 220);
 
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
       if (pokemonData) {

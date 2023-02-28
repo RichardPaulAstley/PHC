@@ -315,6 +315,10 @@ th {
 	max-height: 96px;
 }
 
+.selected {
+  background-color: lightblue;
+}
+
 /* Interaction */
 
 .interaction-box {

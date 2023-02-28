@@ -120,17 +120,43 @@ function handleSlotClick(event) {
   if (!selectedSlot) {
     // If no slot is currently selected, select the clicked slot
     selectedSlot = clickedSlot;
-    selectedSlot.classList.add("selected");
+    selectedSlot.classList.add("selected"); // add the "selected" class
   } else if (selectedSlot === clickedSlot) {
     // If the clicked slot is the same as the selected slot, unselect it
-    selectedSlot.classList.remove("selected");
+    selectedSlot.classList.remove("selected"); // remove the "selected" class
     selectedSlot = null;
   } else {
     // Otherwise, swap the contents of the two slots
     swapSlots(selectedSlot, clickedSlot);
-    selectedSlot.classList.remove("selected");
+    selectedSlot.classList.remove("selected"); // remove the "selected" class from the previously selected slot
     selectedSlot = null;
   }
+}
+
+
+function removeNulls(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+function reorderTeamArray() {
+  for (let i = 0; i < team.length; i++) {
+    if (!team[i]) {
+      for (let j = i + 1; j < team.length; j++) {
+        if (team[j]) {
+          team[i] = team[j];
+          team[j] = null;
+          break;
+        }
+      }
+    }
+  }
+  team = removeNulls(team);
 }
 
 function swapSlots(slot1, slot2) {
@@ -140,29 +166,26 @@ function swapSlots(slot1, slot2) {
   slot1.innerHTML = slot2Content;
   slot2.innerHTML = slot1Content;
 
-  // Get the IDs of the slots being swapped
-  const slot1Id = parseInt(slot1.id.split("-")[1]);
-  const slot2Id = parseInt(slot2.id.split("-")[1]);
+  // Get the index of the slots in their respective arrays
+  const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
+  const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
 
-  // Check if the slots being swapped are in the team or storage
-  let slot1Array, slot2Array;
-  if (slot1.closest(".pc-team-container")) {
-    slot1Array = team;
+  // Swap the Pokémon in the team array
+  if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+    [team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
+  } else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
+    [team[slot1Index], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], team[slot1Index]];
+  } else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+    [team[slot2Index], storage[slot1Index - pcTeamBoxes.length]] = [storage[slot1Index - pcTeamBoxes.length], team[slot2Index]];
   } else {
-    slot1Array = storage;
-  }
-  if (slot2.closest(".pc-team-container")) {
-    slot2Array = team;
-  } else {
-    slot2Array = storage;
+    [storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
   }
 
-  // Swap the contents of the arrays
-  const temp = slot1Array[slot1Id];
-  slot1Array[slot1Id] = slot2Array[slot2Id];
-  slot2Array[slot2Id] = temp;
+  // Remove any null values from the team array
+  team = team.filter(pokemon => pokemon !== null);
 
   // Save the updated arrays
+  reorderTeamArray();
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
 }
