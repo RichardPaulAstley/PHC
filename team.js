@@ -104,13 +104,15 @@ window.onload = function() {
     eggData.hatches = (eggData.hatches || 0) + 1;
 	if (egg.isShiny) {
     eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
-	alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
+	setTimeout(() => {
+    window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");}, 100);
   }
     localStorage.setItem("eggData", JSON.stringify(eggData));
     updateUI(index);
     saveTeam();
 }
 };
+
 
 /* Evolution */ 
 

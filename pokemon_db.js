@@ -52,6 +52,11 @@ const pokemonDatabase = [
 	  		"value": "Mega Stone",
 	  		"evolves_to": "Mega-Venusaur"
 	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Max Soup",
+	  		"evolves_to": "Gigantamax-Venusaur-Venusaur"
+	  	},
 	  ],
       "gender_rate": 87.5,
       "experience_group": 10000,
