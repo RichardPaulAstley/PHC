@@ -55,7 +55,14 @@ const itemDatabase = [
 	  "type": "Evolution",
 	  "description": "An item that looks like something used in the past in order to connect trainers together...",
 	  "price": 3500
-	}
+	},
+	{
+	  "name": "Big Malasada",
+	  "sprite": "sprites/items/bigmalsada.png",
+	  "type": "Evolution",
+	  "description": "The Alola region's local specialty—fried bread. Some Pokémon could eat these all the day.",
+	  "price": 3500
+	},
 /*	{
 	  "name": "",
 	  "sprite": "sprites/items/",
