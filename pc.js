@@ -7,33 +7,6 @@ for (let i = 0; i < team.length; i++) {
   pcTeamSprite.src = pokemon.sprite;
 }
 
-function renderTeam() {
-  // Get the container for the team
-  const teamContainer = document.querySelector('.pc-team-container');
-
-  // Clear the current content of the container
-  teamContainer.innerHTML = '';
-
-  // Loop through each pokemon in the team
-  for (let i = 0; i < team.length; i++) {
-    // Create a new div for each pokemon
-    const teamBox = document.createElement('div');
-    teamBox.classList.add('pc-team-box');
-
-    // Create an image element for the pokemon sprite
-    const sprite = document.createElement('img');
-    sprite.src = team[i].sprite;
-    sprite.classList.add('pc-team-sprite');
-    sprite.alt = `Pokemon Sprite for ${team[i].species}`;
-
-    // Add the sprite to the team box
-    teamBox.appendChild(sprite);
-
-    // Add the team box to the container
-    teamContainer.appendChild(teamBox);
-  }
-}
-
 const pokemonBoxes = document.querySelectorAll(".pc-team-box");
   pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
@@ -107,5 +80,24 @@ newSprite.classList.add("pc-storage-sprite");
   lastBox.appendChild(newSlot);
 }
 
+function renderTeam(arr, container) {
+  var container = document.getElementById(container);
+  container.innerHTML = "";
+  for (var i = 0; i < arr.length; i++) {
+    var pokeball = document.createElement("div");
+    pokeball.className = "pokeball";
+    pokeball.style.backgroundImage = "url(" + getPokeballSprite(arr[i].ball) + ")";
+    var img = document.createElement("img");
+    img.src = arr[i].sprite;
+    img.addEventListener("click", function() {
+      swapPokeballs(this, arr, container);
+    });
+    pokeball.appendChild(img);
+    container.appendChild(pokeball);
+  }
+}
+
+renderTeam(team, "pc-team-box");
+renderTeam(storage, "pc-storage-box");
 
 /* Moving */
