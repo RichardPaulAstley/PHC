@@ -306,8 +306,13 @@ th {
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
-	display: inline-block;
+    display: inline-block;
     vertical-align: top;
+}
+
+.pc-storage-box img {
+	max-width: 96px;
+	max-height: 96px;
 }
 
 /* Interaction */

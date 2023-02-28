@@ -98,3 +98,71 @@ for (let i = 0; i < storage.length; i++) {
 }
 
 /* Moving */
+
+let selectedSlot = null;
+
+// Add click event listeners to each slot
+pcTeamBoxes.forEach((slot) => {
+  slot.addEventListener("click", handleSlotClick);
+});
+
+pcStorageBoxes.forEach((slot) => {
+  slot.addEventListener("click", handleSlotClick);
+});
+
+function handleSlotClick(event) {
+  const clickedSlot = event.target.closest(".pc-team-box, .pc-storage-box");
+
+  if (!clickedSlot) {
+    return;
+  }
+
+  if (!selectedSlot) {
+    // If no slot is currently selected, select the clicked slot
+    selectedSlot = clickedSlot;
+    selectedSlot.classList.add("selected");
+  } else if (selectedSlot === clickedSlot) {
+    // If the clicked slot is the same as the selected slot, unselect it
+    selectedSlot.classList.remove("selected");
+    selectedSlot = null;
+  } else {
+    // Otherwise, swap the contents of the two slots
+    swapSlots(selectedSlot, clickedSlot);
+    selectedSlot.classList.remove("selected");
+    selectedSlot = null;
+  }
+}
+
+function swapSlots(slot1, slot2) {
+  const slot1Content = slot1.innerHTML;
+  const slot2Content = slot2.innerHTML;
+
+  slot1.innerHTML = slot2Content;
+  slot2.innerHTML = slot1Content;
+
+  // Get the IDs of the slots being swapped
+  const slot1Id = parseInt(slot1.id.split("-")[1]);
+  const slot2Id = parseInt(slot2.id.split("-")[1]);
+
+  // Check if the slots being swapped are in the team or storage
+  let slot1Array, slot2Array;
+  if (slot1.closest(".pc-team-container")) {
+    slot1Array = team;
+  } else {
+    slot1Array = storage;
+  }
+  if (slot2.closest(".pc-team-container")) {
+    slot2Array = team;
+  } else {
+    slot2Array = storage;
+  }
+
+  // Swap the contents of the arrays
+  const temp = slot1Array[slot1Id];
+  slot1Array[slot1Id] = slot2Array[slot2Id];
+  slot2Array[slot2Id] = temp;
+
+  // Save the updated arrays
+  localStorage.setItem('team', JSON.stringify(team));
+  localStorage.setItem('storage', JSON.stringify(storage));
+}
