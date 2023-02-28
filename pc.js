@@ -80,6 +80,17 @@ newSprite.classList.add("pc-storage-sprite");
   lastBox.appendChild(newSlot);
 }
 
+const pcStorageBoxes = document.querySelectorAll(".pc-storage-box");
 
+for (let i = 0; i < storage.length; i++) {
+  const pokemon = storage[i];
+  const pcStorageBox = pcStorageBoxes[i];
+  const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
+  if (pokemon) {
+    pcStorageSprite.src = pokemon.sprite;
+  } else {
+    pcStorageSprite.src = "none.png";
+  }
+}
 
 /* Moving */
