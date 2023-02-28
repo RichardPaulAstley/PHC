@@ -80,24 +80,6 @@ newSprite.classList.add("pc-storage-sprite");
   lastBox.appendChild(newSlot);
 }
 
-function renderTeam(arr, container) {
-  var container = document.getElementById(container);
-  container.innerHTML = "";
-  for (var i = 0; i < arr.length; i++) {
-    var pokeball = document.createElement("div");
-    pokeball.className = "pokeball";
-    pokeball.style.backgroundImage = "url(" + getPokeballSprite(arr[i].ball) + ")";
-    var img = document.createElement("img");
-    img.src = arr[i].sprite;
-    img.addEventListener("click", function() {
-      swapPokeballs(this, arr, container);
-    });
-    pokeball.appendChild(img);
-    container.appendChild(pokeball);
-  }
-}
 
-renderTeam(team, "pc-team-box");
-renderTeam(storage, "pc-storage-box");
 
 /* Moving */
