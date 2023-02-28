@@ -51,8 +51,9 @@ inventory.forEach((item) => {
 const totalBoxes = 10 + numExtensions;
 const boxCapacity = 30;
 const totalSlots = totalBoxes * boxCapacity;
-
+let slotNum = 0;
 let nwBox = 0;
+
 for (let i = 0; i < totalSlots; i++) {
   if (i % boxCapacity === 0) {
     nwBox++;
@@ -69,12 +70,15 @@ for (let i = 0; i < totalSlots; i++) {
 
   const newSlot = document.createElement("div");
   newSlot.classList.add("pc-storage-box");
-  newSlot.id = `slot-${i + 1}`;
+  newSlot.id = `slot-${slotNum}`;
+  slotNum++;
+
 
  const newSprite = document.createElement("img");
 newSprite.src = "sprites/none.png";
 newSprite.alt = "Pokemon sprite";
 newSprite.classList.add("pc-storage-sprite");
+newSlot.appendChild(newSprite);
 
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
@@ -84,12 +88,12 @@ const pcStorageBoxes = document.querySelectorAll(".pc-storage-box");
 
 for (let i = 0; i < storage.length; i++) {
   const pokemon = storage[i];
-  const pcStorageBox = pcStorageBoxes[i];
-  const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
   if (pokemon) {
-    pcStorageSprite.src = pokemon.sprite;
-  } else {
-    pcStorageSprite.src = "none.png";
+    const pcStorageBox = pcStorageBoxes[i];
+    const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
+    if (pcStorageSprite) {
+      pcStorageSprite.src = pokemon.sprite;
+    }
   }
 }
 

@@ -52,5 +52,5 @@ const totalStorage = 300 + (storageExtensions * 30);
 let storage = new Array(totalStorage).fill(undefined);
 
 if (localStorage.getItem("storage")) {
-    pokeStorage = JSON.parse(localStorage.getItem("storage"));
+    storage = JSON.parse(localStorage.getItem("storage"));
 }
