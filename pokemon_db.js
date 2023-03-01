@@ -146,13 +146,6 @@ const pokemonDatabase = [
       "type": ["Fire", "Flying"],
       "egg_steps": 5120,
 	  "egg_group": ["Monster", "Dragon"],
-	  "evolutions": [
-	  	{
-	  		"method": ["level"],
-	  		"value": "36",
-	  		"evolves_to": "Charizard"
-	  	},
-	  ],
       "gender_rate": 87.5,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/charizard.png",
