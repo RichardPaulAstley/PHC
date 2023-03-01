@@ -95,7 +95,7 @@ window.onload = function() {
     egg.isEgg = false;
     egg.eggSteps = 0;
 	egg.level = 1;
-    egg.isShiny = Math.random() < 1/128;
+    egg.isShiny = Math.random() < 1/256;
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
     egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
