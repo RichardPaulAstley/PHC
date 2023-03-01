@@ -43,6 +43,13 @@ const itemDatabase = [
 	  "price": 3000
 	},
 	{
+	  "name": "Sun Stone",
+	  "sprite": "sprites/items/sunstone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It burns as red as the evening sun.",
+	  "price": 3000
+	},
+	{
 	  "name": "Soothe Bell",
 	  "sprite": "sprites/items/soothebell.png",
 	  "type": "Evolution",

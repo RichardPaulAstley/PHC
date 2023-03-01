@@ -30,6 +30,7 @@ eggBoxes.forEach(eggBox => {
             console.log(team);
 			localStorage.setItem("team", JSON.stringify(team));
 			eggBox.claimed = true;
+			eggBox.innerHTML = "";
         }else {
             alert("Team is full!");
         }
