@@ -105,7 +105,7 @@ window.onload = function() {
 	if (egg.isShiny) {
     eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
 	setTimeout(() => {
-    window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");}, 100);
+    window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");}, 500);
   }
     localStorage.setItem("eggData", JSON.stringify(eggData));
     updateUI(index);
