@@ -64,6 +64,20 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+	  "name": "Evolution TM",
+	  "sprite": "sprites/items/evolutiontm.png",
+	  "type": "Evolution",
+	  "description": "It looks like a regular-blank TM. But some Pokemon seems to reacting to this item.",
+	  "price": 3500
+	},
+	{
+	  "name": "King\'s Rock",
+	  "sprite": "sprites/items/kingsrock.png",
+	  "type": "Evolution",
+	  "description": "An item to be held by a Pokémon. It may cause the target to flinch whenever the holder successfully inflicts damage on them with an attack.",
+	  "price": 3500
+	},
+	{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalsada.png",
 	  "type": "Evolution",

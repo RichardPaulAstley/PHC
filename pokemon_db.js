@@ -385,9 +385,9 @@ const pokemonDatabase = [
 	  "id": 19,
       "name": "Rattata",
       "gen": 1,
-      "type": ["Ground"],
+      "type": ["Normal"],
       "egg_steps": 3840,
-	  "egg_group": ["Normal"],
+	  "egg_group": ["Ground"],
 	  "evolutions": [
 		{
 			"method": ["level"],
@@ -407,9 +407,9 @@ const pokemonDatabase = [
 	  "id": 20,
       "name": "Raticate",
       "gen": 1,
-      "type": ["Ground"],
+      "type": ["Normal"],
       "egg_steps": 3840,
-	  "egg_group": ["Normal"],
+	  "egg_group": ["Ground"],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/raticate.png",
@@ -459,7 +459,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground", "Dragon"],
+	  "egg_group": ["Field", "Dragon"],
 	  "evolutions": [
 		{
 			"method": ["level"],
@@ -481,7 +481,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground", "Dragon"],
+	  "egg_group": ["Field", "Dragon"],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/arbok.png",
@@ -530,7 +530,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Ground"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground"],
+	  "egg_group": ["Field"],
 	  "evolutions": [
 		{
 			"method": ["level"],
@@ -552,7 +552,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Ground"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground"],
+	  "egg_group": ["Field"],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/sandslash.png",
@@ -566,7 +566,7 @@ const pokemonDatabase = [
 	  "gen" : 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
 	  "evolutions": [
 	  	{
 	  		"method": ["level"],
@@ -588,7 +588,7 @@ const pokemonDatabase = [
 	  "gen" : 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
       "evolutions": [
 	  	{
 	  		"method": ["item"],
@@ -609,7 +609,7 @@ const pokemonDatabase = [
 	  "gen": 1,
       "type": ["Poison", "Ground"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
       "gender_rate": 0,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/nidoqueen.png",
@@ -623,7 +623,7 @@ const pokemonDatabase = [
 	  "gen" : 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
 	  "evolutions": [
 	  	{
 	  		"method": ["level"],
@@ -645,7 +645,7 @@ const pokemonDatabase = [
 	  "gen" : 1,
       "type": ["Poison"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
       "evolutions": [
 	  	{
 	  		"method": ["item"],
@@ -666,7 +666,7 @@ const pokemonDatabase = [
 	  "gen": 1,
       "type": ["Poison", "Ground"],
       "egg_steps": 5120,
-	  "egg_group": ["Monster", "Ground"],
+	  "egg_group": ["Monster", "Field"],
       "gender_rate": 100,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/nidoking.png",
@@ -715,7 +715,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Fire"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground"],
+	  "egg_group": ["Field"],
 	  "evolutions": [
 		{
 			"method": ["item"],
@@ -737,7 +737,7 @@ const pokemonDatabase = [
       "gen": 1,
       "type": ["Fire"],
       "egg_steps": 5120,
-	  "egg_group": ["Ground"],
+	  "egg_group": ["Field"],
 	  "gender_rate": 25,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/ninetales.png",
@@ -921,6 +921,369 @@ const pokemonDatabase = [
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
 	},
+	{
+	  "id": 48,
+      "name": "Venonat",
+      "gen": 1,
+      "type": ["Bug", "Poison"],
+      "egg_steps": 5120,
+	  "egg_group": ["Bug"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 31,
+			"evolves_to": "Venomoth"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/venonat.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/venonat.png",
+	  "egg_sprite": "sprites/egg/venonat.png",
+	  "rarity": "common",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 49,
+      "name": "Venomoth",
+      "gen": 1,
+      "type": ["Bug", "Poison"],
+      "egg_steps": 5120,
+	  "egg_group": ["Bug"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/venomoth.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/venomoth.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 50,
+      "name": "Diglett",
+      "gen": 1,
+      "type": ["Ground"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 26,
+			"evolves_to": "Dugtrio"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/diglett.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/diglett.png",
+	  "egg_sprite": "sprites/egg/diglett.png",
+	  "rarity": "common",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 51,
+      "name": "Dugtrio",
+      "gen": 1,
+      "type": ["Ground"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/dugtrio.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/dugtrio.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 52,
+      "name": "Meowth",
+      "gen": 1,
+      "type": ["Normal"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 28,
+			"evolves_to": "Persian"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/meowth.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/meowth.png",
+	  "egg_sprite": "sprites/egg/meowth.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 53,
+      "name": "Dugtrio",
+      "gen": 1,
+      "type": ["Normal"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/persian.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/persian.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 54,
+      "name": "Psyduck",
+      "gen": 1,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1", "Field"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 33,
+			"evolves_to": "Golduck"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/psyduck.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/psyduck.png",
+	  "egg_sprite": "sprites/egg/psyduck.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 55,
+      "name": "Golduck",
+      "gen": 1,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1", "Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/golduck.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/golduck.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+      "id": 56,
+      "name": "Mankey",
+	  "gen" : 1,
+      "type": ["Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+	  	{
+	  		"method": ["level"],
+	  		"value": 28,
+	  		"evolves_to": "Primeape"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/mankey.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/mankey.png",
+	  "egg_sprite": "sprites/egg/mankey.png",
+	  "rarity": "common",
+	  "evolution_stage": "base",
+    },
+    {
+      "id": 57,
+      "name": "Primeape",
+	  "gen" : 1,
+      "type": ["Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+      "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Evolution TM",
+	  		"evolves_to": "Annihilape"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/primeape.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/primeape.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+	{
+	  "id": 58,
+      "name": "Growlithe",
+      "gen": 1,
+      "type": ["Fire"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Fire Stone",
+			"evolves_to": "Arcanine"
+		}
+	  ],
+	  "gender_rate": 75,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/growlithe.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/growlithe.png",
+	  "egg_sprite": "sprites/egg/growlithe.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 59,
+      "name": "Golduck",
+      "gen": 1,
+      "type": ["Fire"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 75,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/arcanine.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/arcanine.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+      "id": 60,
+      "name": "Poliwag",
+	  "gen" : 1,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1"],
+	  "evolutions": [
+	  	{
+	  		"method": ["level"],
+	  		"value": 25,
+	  		"evolves_to": "Poliwhirl"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/poliwag.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/poliwag.png",
+	  "egg_sprite": "sprites/egg/poliwag.png",
+	  "rarity": "common",
+	  "evolution_stage": "base",
+    },
+    {
+      "id": 61,
+      "name": "Poliwhirl",
+	  "gen" : 1,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1"],
+      "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Water Stone",
+	  		"evolves_to": "Poliwrath"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "King\'s Rock",
+	  		"evolves_to": "Bellossom"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/poliwhirl.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/poliwhirl.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+    {
+      "id": 62,
+      "name": "Poliwrath",
+	  "gen": 1,
+      "type": ["Water", "Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1"],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/poliwrath.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/poliwrath.png",
+	  "rarity": "common",
+	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 63,
+      "name": "Abra",
+	  "gen" : 1,
+      "type": ["Psychic"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like"],
+	  "evolutions": [
+	  	{
+	  		"method": ["level"],
+	  		"value": 16,
+	  		"evolves_to": "Kadabra"
+	  	},
+	  ],
+      "gender_rate": 75,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/abra.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/abra.png",
+	  "egg_sprite": "sprites/egg/abra.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base",
+    },
+    {
+      "id": 64,
+      "name": "Kadabra",
+	  "gen" : 1,
+      "type": ["Psychic"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like"],
+      "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Link Cable",
+	  		"evolves_to": "Alakazam"
+	  	},
+	  ],
+      "gender_rate": 75,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/kadabra.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/kadabra.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage",
+    },
+    {
+      "id": 65,
+      "name": "Alakazam",
+	  "gen": 1,
+      "type": ["Psychic"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega-Alakazam"
+	  	},
+	  ],
+      "gender_rate": 75,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/alakazam.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/alakazam.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 65.1,
+      "name": "Mega-Alakazam",
+	  "gen": 1,
+      "type": ["Psychic"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like"],
+      "gender_rate": 75,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/mega-alakazam.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/mega-alakazam.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "mega_evolution",
+    },
   /*{
       "id": 1,
       "name": "Eevee",
@@ -1036,7 +1399,7 @@ const pokemonDatabase = [
 	{
       "id": 182,
       "name": "Bellossom",
-	  "gen": 1,
+	  "gen": 2,
       "type": ["Grass"],
       "egg_steps": 5120,
 	  "egg_group": ["Grass"],
@@ -1044,6 +1407,34 @@ const pokemonDatabase = [
       "experience_group": 10599,
       "sprite": "sprites/pokemon/bellossom.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/bellossom.png",
+	  "rarity": "common",
+	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 186,
+      "name": "Politoed",
+	  "gen": 2,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 1"],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/politoed.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/politoed.png",
+	  "rarity": "common",
+	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 979,
+      "name": "Annihilape",
+	  "gen" : 9,
+      "type": ["Fighting", "Ghost"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/annihilape.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/annihilape.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage",
     },
