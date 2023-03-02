@@ -81,7 +81,14 @@ const itemDatabase = [
 	  "name": "Evolution TM",
 	  "sprite": "sprites/items/evolutiontm.png",
 	  "type": "Evolution",
-	  "description": "It looks like a regular-blank TM. But some Pokemon seems to reacting to this item.",
+	  "description": "It looks like a regular-blank TM. But some Pokemon seems to react to this item.",
+	  "price": 3500
+	},
+	{
+	  "name": "Town Map",
+	  "sprite": "sprites/items/townmap.png",
+	  "type": "Evolution",
+	  "description": "It looks like a classic map. But some Pokemon seems to react to this item.",
 	  "price": 3500
 	},
 	{
@@ -90,6 +97,76 @@ const itemDatabase = [
 	  "type": "Evolution",
 	  "description": "An item to be held by a Pokémon. It may cause the target to flinch whenever the holder successfully inflicts damage on them with an attack.",
 	  "price": 3500
+	},
+	{
+	  "name": "Metal Coat",
+	  "sprite": "sprites/items/metalcoat.png",
+	  "type": "Evolution",
+	  "description": "An item to be held by a Pokémon. It's a special metallic coating that boosts the power of the holder's Steel-type moves.",
+	  "price": 3500
+	},
+	{
+	  "name": "Up-Grade",
+	  "sprite": "sprites/items/upgrade.png",
+	  "type": "Evolution",
+	  "description": "A transparent device somehow filled with all sorts of data. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Dragon Scale",
+	  "sprite": "sprites/items/dragonscale.png",
+	  "type": "Evolution",
+	  "description": "A very tough and inflexible scale. Dragon-type Pokémon may be holding this item when caught.",
+	  "price": 3500
+	},
+	{
+	  "name": "Oval Stone",
+	  "sprite": "sprites/items/ovalstone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make a certain species of Pokémon evolve. It is round and smooth.",
+	  "price": 3500
+	},
+	{
+	  "name": "Protector",
+	  "sprite": "sprites/items/protector.png",
+	  "type": "Evolution",
+	  "description": "A protective item of some sort. It is extremely stiff and heavy. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Electirizer",
+	  "sprite": "sprites/items/electirizer.png",
+	  "type": "Evolution",
+	  "description": "A box packed with a tremendous amount of electric energy. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Magmarizer",
+	  "sprite": "sprites/items/magmarizer.png",
+	  "type": "Evolution",
+	  "description": "A box packed with a tremendous amount of magma energy. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Dubious Disc",
+	  "sprite": "sprites/items/dubiousdisc.png",
+	  "type": "Evolution",
+	  "description": "A transparent device overflowing with dubious data. Its producer is unknown.",
+	  "price": 5000
+	},
+	{
+	  "name": "Fairy Ribbon",
+	  "sprite": "sprites/items/fairyribbon.png",
+	  "type": "Evolution",
+	  "description": "An item to be held by a Pokèmon. It is a beautiful pink ribbon that seems to be enjoyed by a specific Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Ice Stone",
+	  "sprite": "sprites/items/icestone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It has a snowflake pattern in it.",
+	  "price": 3000
 	},
 	{
 	  "name": "Big Malasada",

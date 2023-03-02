@@ -47,9 +47,9 @@ img.addEventListener("click", () => {
 
   team = team.map((member) => {
     if (member.isEgg) {
-      member.eggSteps += getRandomValue(24, 39);
+      member.eggSteps += getRandomValue(17, 19);
       if (new Date().getDay() === 5) { // Friday
-        member.eggSteps *= 2;
+        member.eggSteps *= 1.5;
       }
     } else {
       member.experience += getRandomValue(210, 260);
