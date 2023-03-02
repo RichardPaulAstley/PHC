@@ -43,6 +43,13 @@ const itemDatabase = [
 	  "price": 3000
 	},
 	{
+	  "name": "Moon Stone",
+	  "sprite": "sprites/items/moonstone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It is dark like the night sky.",
+	  "price": 3000
+	},
+	{
 	  "name": "Sun Stone",
 	  "sprite": "sprites/items/sunstone.png",
 	  "type": "Evolution",
