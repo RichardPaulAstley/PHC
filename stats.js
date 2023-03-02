@@ -54,3 +54,28 @@ let storage = new Array(totalStorage).fill(undefined);
 if (localStorage.getItem("storage")) {
     storage = JSON.parse(localStorage.getItem("storage"));
 }
+
+function updateSprites() {
+  let pokemonData;
+  let team = JSON.parse(localStorage.getItem("team")) || [];
+  let storage = JSON.parse(localStorage.getItem("storage")) || [];
+
+  team = team.map((member) => {
+    pokemonData = pokemonDatabase.find(data => data.name === member.species);
+    if (pokemonData && pokemonData.sprite !== member.sprite) {
+      member.sprite = pokemonData.sprite;
+    }
+    return member;
+  });
+
+  storage = storage.map((member) => {
+    pokemonData = pokemonDatabase.find(data => data.name === member.species);
+    if (pokemonData && pokemonData.sprite !== member.sprite) {
+      member.sprite = pokemonData.sprite;
+    }
+    return member;
+  });
+
+  localStorage.setItem("team", JSON.stringify(team));
+  localStorage.setItem("storage", JSON.stringify(storage));
+}

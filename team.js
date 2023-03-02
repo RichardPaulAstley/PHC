@@ -184,8 +184,10 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       if (pokemon.level >= evolution.value) {
         // Replace the species of the pokemon with the evolved species
         team[index].species = evolution.evolves_to;
+        // Find the evolved pokemon in the database
+        const evolvedPokemon = pokemonDatabase.find(p => p.name === evolution.evolves_to);
         // Update the sprite URL to the evolved species
-        team[index].sprite = pokemon.isShiny ? `sprites/pokemon/shiny/${team[index].species.toLowerCase()}.png` : `sprites/pokemon/${team[index].species.toLowerCase()}.png`
+        team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
         break;
       }
     }
@@ -197,8 +199,10 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       if (item && item.amount > 0) {
         // Replace the species of the pokemon with the evolved species
         team[index].species = evolution.evolves_to;
+        // Find the evolved pokemon in the database
+        const evolvedPokemon = pokemonDatabase.find(p => p.name === evolution.evolves_to);
         // Update the sprite URL to the evolved species
-        team[index].sprite = pokemon.isShiny ? `sprites/pokemon/shiny/${team[index].species.toLowerCase()}.png` : `sprites/pokemon/${team[index].species.toLowerCase()}.png`
+        team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
         // Decrement the amount of the item used for evolution
         item.amount--;
 	    localStorage.setItem("inventory", JSON.stringify(inventory));

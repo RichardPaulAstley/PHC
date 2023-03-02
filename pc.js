@@ -212,3 +212,70 @@ function swapSlots(slot1, slot2) {
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
 }
+
+
+/* Sprite Update */ 
+
+// Loop through each member of the team
+team = team.map((member) => {
+  // Find the corresponding data for the current member's species
+  const speciesData = pokemonDatabase.find((data) => data.name === member.species);
+
+  // Determine which sprite URL to use based on the member's isEgg and isShiny properties
+  let spriteUrl;
+  if (member.isEgg) {
+    spriteUrl = speciesData.egg_sprite;
+  } else if (member.isShiny) {
+    spriteUrl = speciesData.shiny_sprite;
+  } else {
+    spriteUrl = speciesData.sprite;
+  }
+
+  // Check if the member's sprite URL needs to be updated
+  if (member.sprite !== spriteUrl) {
+    // Replace the old sprite URL with the new one
+    member.sprite = spriteUrl;
+
+    // If the member is currently in the team, update the displayed image as well
+    if (!member.isEgg) {
+      const img = document.querySelector(`img[data-name="${member.species}"]`);
+      if (img) {
+        img.src = member.sprite;
+      }
+    }
+  }
+
+  // Return the updated member object
+  return member;
+});
+
+// Loop through each entry in local storage and update the sprite URL if necessary
+for (const key in localStorage) {
+  if (localStorage.hasOwnProperty(key)) {
+    const value = JSON.parse(localStorage.getItem(key));
+    // If the value is an object and has a 'species' property, it is likely a team member
+    if (typeof value === 'object' && value !== null && value.hasOwnProperty('species')) {
+      // Find the corresponding data for the current member's species
+      const speciesData = pokemonDatabase.find((data) => data.name === value.species);
+
+      // Determine which sprite URL to use based on the member's isEgg and isShiny properties
+      let spriteUrl;
+      if (value.isEgg) {
+        spriteUrl = speciesData.egg_sprite;
+      } else if (value.isShiny) {
+        spriteUrl = speciesData.shiny_sprite;
+      } else {
+        spriteUrl = speciesData.sprite;
+      }
+
+      // Check if the member's sprite URL needs to be updated
+      if (value.sprite !== spriteUrl) {
+        // Replace the old sprite URL with the new one
+        value.sprite = spriteUrl;
+
+        // Save the updated value to local storage
+        localStorage.setItem(key, JSON.stringify(value));
+      }
+    }
+  }
+}
