@@ -79,7 +79,7 @@ const itemDatabase = [
 	},
 	{
 	  "name": "Big Malasada",
-	  "sprite": "sprites/items/bigmalsada.png",
+	  "sprite": "sprites/items/bigmalasada.png",
 	  "type": "Evolution",
 	  "description": "The Alola region's local specialty—fried bread. Some Pokémon could eat these all the day.",
 	  "price": 3500
