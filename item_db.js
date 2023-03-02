@@ -15,6 +15,13 @@ const itemDatabase = [
 	  "price": 50000
 	},
 	{
+	  "name": "Max Mushrooms",
+	  "sprite": "sprites/items/maxmushrooms.png",
+	  "type": "Evolution",
+	  "description": "Mushrooms that have the power of changing Dynamax forms. They boost all stats of a Pokémon during battle.",
+	  "price": 50000
+	},
+	{
 	  "name": "Thunder Stone",
 	  "sprite": "sprites/items/thunderstone.png",
 	  "type": "Evolution",
