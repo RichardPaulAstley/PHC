@@ -30,6 +30,36 @@ function getRandomValue(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function generateToken() {
+  let tokenType = null;
+  for (let i = 0; i < tokenDatabase.length; i++) {
+    const token = tokenDatabase[i];
+    if (Math.random() <= 1 / token.count) {
+      tokenType = token.type;
+      break;
+    }
+  }
+
+  if (!tokenType) {
+    return;
+  }
+
+  const existingToken = tokenInventory.find(token => token.type === tokenType);
+  if (existingToken) {
+    existingToken.amount++;
+  } else {
+    const token = {
+      type: tokenType,
+      amount: 1
+    };
+    tokenInventory.push(token);
+  }
+
+  localStorage.setItem("tokenInventory", JSON.stringify(tokenInventory));
+
+  window.alert(`You got a ${tokenType} token!`);
+}
+
 img.addEventListener("click", () => {
   let eggData = JSON.parse(localStorage.getItem("eggData") || "{}");
   if (!eggData.clicks) {
@@ -37,6 +67,8 @@ img.addEventListener("click", () => {
   }
   eggData.clicks += 1;
   localStorage.setItem("eggData", JSON.stringify(eggData));
+  
+  generateToken();
 
   let balance = JSON.parse(localStorage.getItem("balance") || "{}");
   if (!balance.pokeDollar) {

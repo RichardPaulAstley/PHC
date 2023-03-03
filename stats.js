@@ -16,6 +16,8 @@ let balance = {
 
 let inventory = []
 
+let tokenInventory = []
+
 window.addEventListener("load", function() {
 if (localStorage.getItem("eggData")) {
 eggData = JSON.parse(localStorage.getItem("eggData"));
@@ -32,12 +34,17 @@ balance = JSON.parse(localStorage.getItem("balance"));
   document.getElementById("currency-amount").innerHTML = balance.pokeDollar.toLocaleString() || 0;
 });
 
+
 if (localStorage.getItem("balance")) {
   balance = JSON.parse(localStorage.getItem("balance"));
 }
 
 if (localStorage.getItem("inventory")) {
   inventory = JSON.parse(localStorage.getItem("inventory"));
+}
+
+if (localStorage.getItem("tokenInventory")) {
+  tokenInventory = JSON.parse(localStorage.getItem("tokenInventory"));
 }
 
 let storageExtensions = 0;
