@@ -49,12 +49,12 @@ img.addEventListener("click", () => {
     if (member.isEgg) {
       member.eggSteps += getRandomValue(17, 19);
       if (new Date().getDay() === 5) { // Friday
-        member.eggSteps *= 1.5;
+        member.eggSteps += getRandomValue(11, 13);
       }
     } else {
       member.experience += getRandomValue(210, 260);
       if (new Date().getDay() === 5) { // Friday
-        member.experience *= 2;
+        member.experience += getRandomValue(140, 173);
       }
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
       if (pokemonData) {
