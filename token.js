@@ -57,6 +57,7 @@ function exchangeTokens() {
 
   // add the egg to the team
   team.push(egg);
+  location.reload();
 
   // update the local storage
   localStorage.setItem("tokenInventory", JSON.stringify(tokenInventory));
