@@ -304,8 +304,8 @@ th {
 
 .pc-storage-box {
     background-color: white;
-    width: 96px;
-    height: 96px;
+    max-width: 96px;
+    max-height: 96px;
     margin: 10px;
     text-align: center;
     border: 1px solid #ccc;
