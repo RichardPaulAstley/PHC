@@ -175,13 +175,13 @@ const itemDatabase = [
 	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It has a snowflake pattern in it.",
 	  "price": 3000
 	},
-	{
+	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",
 	  "type": "Evolution",
 	  "description": "The Alola region's local specialty—fried bread. Some Pokémon could eat these all the day.",
 	  "price": 3500
-	},
+	},*/
 /*	{
 	  "name": "",
 	  "sprite": "sprites/items/",
