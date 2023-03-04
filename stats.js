@@ -34,6 +34,19 @@ balance = JSON.parse(localStorage.getItem("balance"));
   document.getElementById("currency-amount").innerHTML = balance.pokeDollar.toLocaleString() || 0;
 });
 
+window.addEventListener("load", function() {
+if (localStorage.getItem("team")) {
+team = JSON.parse(localStorage.getItem("team"));
+}
+  document.getElementById("team-length").innerHTML = team.length.toLocaleString() || 0;
+});
+
+window.addEventListener("load", function() {
+  if (localStorage.getItem("team")) {
+    team = JSON.parse(localStorage.getItem("team"));
+  }
+  updateEggsReadyToHatch();
+});
 
 if (localStorage.getItem("balance")) {
   balance = JSON.parse(localStorage.getItem("balance"));

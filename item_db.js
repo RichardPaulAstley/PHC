@@ -148,6 +148,13 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+	  "name": "Dawn Stone",
+	  "sprite": "sprites/items/dawnstone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It sparkles like a glittering eye.",
+	  "price": 3000
+	},
+	{
 	  "name": "Dubious Disc",
 	  "sprite": "sprites/items/dubiousdisc.png",
 	  "type": "Evolution",

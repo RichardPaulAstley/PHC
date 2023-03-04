@@ -11,6 +11,10 @@ const rarityProbabilities = {
 // select a random Pokemon from your database that is a base stage Pokemon 
 const basePokemon = pokemonDatabase.filter(pokemon => pokemon.evolution_stage === "base")
 
+function updateTeamLength() {
+  document.getElementById("team-length").innerHTML = team.length.toLocaleString() || 0;
+}
+
 eggBoxes.forEach(eggBox => {
     let randomPokemon;
     while(!randomPokemon){
@@ -31,6 +35,7 @@ eggBoxes.forEach(eggBox => {
 			localStorage.setItem("team", JSON.stringify(team));
 			eggBox.claimed = true;
 			eggBox.innerHTML = "";
+			updateTeamLength();
         }else {
             alert("Team is full!");
         }

@@ -56,9 +56,9 @@ const pokemonDatabase = [
 	  		"evolves_to": "Mega-Venusaur"
 	  	},
 		{
-	  		"method": ["item"],
-	  		"value": "Max Mushrooms",
-	  		"evolves_to": "Gigantamax-Venusaur-Venusaur"
+	  		"method": ["gender"],
+	  		"value": "Female",
+	  		"evolves_to": "Gigantamax-Venusaur"
 	  	},
 	  ],
       "gender_rate": 87.5,
@@ -2910,6 +2910,21 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 172.1,
+      "name": "Spiky-eared Pichu",
+      "gen": 2,
+      "type": ["Electric"],
+      "egg_steps": 2560,
+	  "egg_group": ["Undiscovered"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/172.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/172.1.png",
+	  "egg_sprite": "sprites/egg/pichu.png",
+	  "rarity": "event",
+	  "evolution_stage": "event"
+	},
+	{
 	  "id": 173,
       "name": "Cleffa",
       "gen": 2,
@@ -3213,6 +3228,90 @@ const pokemonDatabase = [
 	  "evolution_stage": "second_stage"
 	},
 	{
+	  "id": 280,
+      "name": "Ralts",
+      "gen": 3,
+      "type": ["Psychic", "Fairy"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 20,
+			"evolves_to": "Kirlia"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/280.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/280.png",
+	  "egg_sprite": "sprites/egg/ralts.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 281,
+      "name": "Kirlia",
+      "gen": 3,
+      "type": ["Psychic", "Fairy"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 30,
+			"evolves_to": "Gardevoir"
+		},
+		{
+			"method": ["item", "gender"],
+			"value": "Dawn Stone",
+			"value_2": "Male",
+			"evolves_to": "Gallade"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/281.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/281.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 282,
+      "name": "Gardevoir",
+      "gen": 3,
+      "type": ["Psychic", "Fairy"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega-Gardevoir"
+		},
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/282.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/282.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 282.1,
+      "name": "Mega-Gardevoir",
+      "gen": 3,
+      "type": ["Psychic", "Fairy"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "gender_rate": 50,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/282.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/282.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "mega_evolution"
+	},
+	{
 	  "id": 439,
       "name": "Mime Jr.",
       "gen": 4,
@@ -3404,6 +3503,41 @@ const pokemonDatabase = [
 	  "rarity": "rare",
 	  "evolution_stage": "second_stage",
     },
+	{
+	  "id": 475,
+      "name": "Gallade",
+      "gen": 4,
+      "type": ["Psychic", "Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega-Gallade"
+		},
+	  ],
+	  "gender_rate": 100,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/475.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/475.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 475.1,
+      "name": "Mega-Gallade",
+      "gen": 4,
+      "type": ["Psychic", "Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like", "Amorphous"],
+	  "gender_rate": 100,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/475.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/475.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "mega_evolution"
+	},
 	{
       "id": 700,
       "name": "Sylveon",

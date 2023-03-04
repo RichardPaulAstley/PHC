@@ -38,7 +38,7 @@ if(currentTeamMember && currentTeamMember.isEgg){
     if(currentTeamMember.isEgg){
         for (let i = 0; i < pokemonDatabase.length; i++) {
             if (currentTeamMember.species === pokemonDatabase[i].name) {
-                let eggSteps = currentTeamMember.eggSteps + "/" + pokemonDatabase[i].egg_steps;
+                let eggSteps = currentTeamMember.eggSteps + " / " + pokemonDatabase[i].egg_steps;
                 level.innerText = eggSteps
                 break;
             }
@@ -133,41 +133,54 @@ checkEvolutionConditions(pokemon, i, inventory);
 }
 
 function checkEvolutionConditions(pokemon, index, inventory) {
-let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
+  let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
 
-if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
-const evolvingButtons = document.querySelectorAll('.evolving-button');
-for (let evolution of pokemonData.evolutions) {
-// Check if the evolution method is level
-if (evolution.method[0] === 'level') {
-// Check if the level of the pokemon is equal to or greater than the value required for evolution
-if (pokemon.level >= evolution.value) {
-for (let j = 0; j < evolvingButtons.length; j++) {
-if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
-// Show the evolving button
-evolvingButtons[j].style.display = 'block';
-break;
-}
-}
-}
-}
-// Check if the evolution method is item
-if (evolution.method[0] === 'item') {
-// Find the item in the inventory
-let item = inventory.find(i => i.name === evolution.value);
-// Check if the item exists and its amount is greater than 0
-if (item && item.amount > 0) {
-for (let j = 0; j < evolvingButtons.length; j++) {
-if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
-// Show the evolving button
-evolvingButtons[j].style.display = 'block';
-break;
-}
-}
-}
-}
-}
-}
+  if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
+    const evolvingButtons = document.querySelectorAll('.evolving-button');
+    for (let evolution of pokemonData.evolutions) {
+      let meetsConditions = true;
+      // Check all conditions for evolution
+      for (let i = 0; i < evolution.method.length; i++) {
+        let method = evolution.method[i];
+        let value = evolution[`value_${i + 1}`];
+        // Check if the evolution method is level
+        if (method === 'level') {
+          // Check if the level of the pokemon is equal to or greater than the value required for evolution
+          if (pokemon.level < evolution.value) {
+            meetsConditions = false;
+            break;
+          }
+        }
+        // Check if the evolution method is item
+        if (method === 'item') {
+          // Find the item in the inventory
+          let item = inventory.find(i => i.name === evolution.value);
+          // Check if the item exists and its amount is greater than 0
+          if (!item || item.amount === 0) {
+            meetsConditions = false;
+            break;
+          }
+        }
+        // Check if the evolution method is gender
+        if (method === 'gender') {
+          // Check if the pokemon's gender matches the required value
+          if (pokemon.gender !== evolution.value) {
+            meetsConditions = false;
+            break;
+          }
+        }
+      }
+      // If all conditions are met, show the evolving button
+      if (meetsConditions) {
+        for (let j = 0; j < evolvingButtons.length; j++) {
+          if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
+            evolvingButtons[j].style.display = 'block';
+            break;
+          }
+        }
+      }
+    }
+  }
 }
 
 const evolvingButton = document.querySelectorAll('.evolving-button');
@@ -179,42 +192,114 @@ let index = this.getAttribute('data-index') -1;
 let pokemon = team[index];
 let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
 
+ // Prompt the user to confirm before evolving the pokemon
+    let confirmMessage = `Are you sure you want to evolve ${pokemon.species}?`;
+    if (!confirm(confirmMessage)) {
+      return;
+    }
+
 // Check if the pokemon has evolutions
 if (pokemonData.evolutions && pokemonData.evolutions.length) {
-  for (let evolution of pokemonData.evolutions) {
-    // Check if the evolution method is level
-    if (evolution.method[0] === 'level') {
-      // Check if the level of the pokemon is equal to or greater than the value required for evolution
-      if (pokemon.level >= evolution.value) {
-        // Replace the species of the pokemon with the evolved species
-        team[index].species = evolution.evolves_to;
-        // Find the evolved pokemon in the database
-        const evolvedPokemon = pokemonDatabase.find(p => p.name === evolution.evolves_to);
-        // Update the sprite URL to the evolved species
-        team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
-        break;
+  // Check if there is more than one evolution available
+  if (pokemonData.evolutions.length > 1) {
+    // Create a list of available evolutions
+    let availableEvolutions = [];
+    for (let evolution of pokemonData.evolutions) {
+      // Check if the evolution method is level
+      if (evolution.method[0] === 'level') {
+        // Check if the level of the pokemon is equal to or greater than the value required for evolution
+        if (pokemon.level >= evolution.value) {
+          // Add the evolution to the list of available evolutions
+          availableEvolutions.push(evolution);
+        }
+      }
+      // Check if the evolution method is item
+      if (evolution.method[0] === 'item') {
+        // Find the item in the inventory
+        let item = inventory.find(i => i.name === evolution.value);
+        // Check if the item exists and its amount is greater than 0
+        if (item && item.amount > 0) {
+          // Add the evolution to the list of available evolutions
+          availableEvolutions.push(evolution);
+        }
+      }
+	 // Check if the evolution method is gender
+          if (evolution.method[0] === 'gender') {
+            // Check if the pokemon's gender matches the required gender for evolution
+            if (pokemon.gender === evolution.value) {
+              // Add the evolution to the list of available evolutions
+              availableEvolutions.push(evolution);
+            }
+          }
+    }
+    // If there are no available evolutions, exit the function
+    if (availableEvolutions.length === 0) {
+      return;
+    }
+    // If there is only one available evolution, use it
+    else if (availableEvolutions.length === 1) {
+      const chosenEvolutionData = availableEvolutions[0];
+      // Replace the species of the pokemon with the evolved species
+      team[index].species = chosenEvolutionData.evolves_to;
+      // Find the evolved pokemon in the database
+      const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
+      // Update the sprite URL to the evolved species
+      team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+      // Decrement the amount of the item used for evolution
+      if (chosenEvolutionData.method[0] === 'item') {
+        let item = inventory.find(i => i.name === chosenEvolutionData.value);
+        item.amount--;
+        localStorage.setItem("inventory", JSON.stringify(inventory));
       }
     }
-    // Check if the evolution method is item
-    if (evolution.method[0] === 'item') {
-      // Find the item in the inventory
-      let item = inventory.find(i => i.name === evolution.value);
-      // Check if the item exists and its amount is greater than 0
-      if (item && item.amount > 0) {
+    // If there are multiple available evolutions, prompt the user to choose one
+    else {
+      let promptMessage = "Multiple evolutions available. Choose one:\n";
+      for (let i = 0; i < availableEvolutions.length; i++) {
+        promptMessage += `${i + 1}. ${availableEvolutions[i].evolves_to}\n`;
+      }
+      let chosenIndex = prompt(promptMessage);
+      // Check if the chosen index is valid
+      if (chosenIndex >= 1 && chosenIndex <= availableEvolutions.length) {
+        const chosenEvolutionData = availableEvolutions[chosenIndex - 1];
         // Replace the species of the pokemon with the evolved species
-        team[index].species = evolution.evolves_to;
+        team[index].species = chosenEvolutionData.evolves_to;
         // Find the evolved pokemon in the database
-        const evolvedPokemon = pokemonDatabase.find(p => p.name === evolution.evolves_to);
+        const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
         // Update the sprite URL to the evolved species
         team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
         // Decrement the amount of the item used for evolution
-        item.amount--;
-	    localStorage.setItem("inventory", JSON.stringify(inventory));
-        break;
-      }
-    }
-  }
+		if (chosenEvolutionData.method[0] === 'item') {
+		let item = inventory.find(i => i.name === chosenEvolutionData.value);
+		item.amount--;
+		localStorage.setItem("inventory", JSON.stringify(inventory));
+			}
+			const newPokemonName = team[index].species;
+  const confirmationMessage = `Your Pokémon has evolved into ${pokemon.species}!`;
+  alert(confirmationMessage);
+		}
+	}
 }
+	// If there is only one evolution available, use it
+	else {
+		const chosenEvolutionData = pokemonData.evolutions[0];
+		// Replace the species of the pokemon with the evolved species
+		team[index].species = chosenEvolutionData.evolves_to;
+		// Find the evolved pokemon in the database
+		const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
+		// Update the sprite URL to the evolved species
+		team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+		// Decrement the amount of the item used for evolution
+		if (chosenEvolutionData.method[0] === 'item') {
+			let item = inventory.find(i => i.name === chosenEvolutionData.value);
+			item.amount--;
+			localStorage.setItem("inventory", JSON.stringify(inventory));
+		}
+	}
+}
+	// Save the updated team and inventory to local storage
+	localStorage.setItem("team", JSON.stringify(team));
+	localStorage.setItem("inventory", JSON.stringify(inventory));
 
 	function updateUI(idx) {
     if (!isNaN(idx)) {

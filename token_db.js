@@ -35,18 +35,11 @@ const tokenExchange = [
 	  "amount": 50 
     },
 	{
-      "pokemon": "Hitmonchan",
-	  "sprite": "sprites/egg/tyrogue.png",
+      "pokemon": "Spiky-eared Pichu",
+	  "sprite": "sprites/egg/pichu.png",
 	  "type": "event",
 	  "available": true,
-	  "amount": 1 
-    },
-	{
-      "pokemon": "Umbreon",
-	  "sprite": "sprites/egg/eevee.png",
-	  "type": "event",
-	  "available": true,
-	  "amount": 1 
+	  "amount": 5 
     },
 	{
       "pokemon": "MissingNo.",

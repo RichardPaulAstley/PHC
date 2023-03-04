@@ -6,7 +6,7 @@ function getRandomSprite() {
 
 document.querySelector(".interaction-box img").src = getRandomSprite(); */
 
-const mainContent = document.querySelector(".main-content");
+const mainContent = document.querySelector(".interaction-container");
 const interactionBox = mainContent.querySelector(".interaction-box");
 const img = interactionBox.querySelector("img");
 
@@ -16,6 +16,23 @@ function getRandomPokemonOrEgg() {
   const isEgg = Math.random() < 0.5;
   return isEgg && pokemonOrEgg.egg_sprite ? pokemonOrEgg.egg_sprite : pokemonOrEgg.sprite;
 }
+
+function countReadyToHatchEggs() {
+  let count = 0;
+  for (let i = 0; i < team.length; i++) {
+    if (team[i].isEgg) {
+      const pokemonData = pokemonDatabase.find(pokemon => pokemon.name === team[i].species);
+      if (pokemonData.egg_steps <= team[i].eggSteps) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+function updateEggsReadyToHatch() {
+    document.getElementById("eggs-ready-to-hatch").textContent = countReadyToHatchEggs();
+  }
 
 function updateTeamArray(id, update) {
 for (let i = 0; i < team.length; i++) {
@@ -104,7 +121,7 @@ img.addEventListener("click", () => {
     }
     return member;
   });
-
+  updateEggsReadyToHatch();
   localStorage.setItem("team", JSON.stringify(team));
   img.src = getRandomPokemonOrEgg();
 });
