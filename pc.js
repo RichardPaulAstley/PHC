@@ -29,7 +29,6 @@ function renderTeam() {
   }
 }
 
-
 const pokemonBoxes = document.querySelectorAll(".pc-team-box");
   pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
@@ -58,6 +57,42 @@ const pokemonBoxes = document.querySelectorAll(".pc-team-box");
   }
 });
 });
+
+/* Mobile Release */
+
+pokemonBoxes.forEach((pokemonBox, index) => {
+  let pressTimer;
+  pokemonBox.addEventListener("mouseup", (event) => {
+    clearTimeout(pressTimer);
+  });
+  pokemonBox.addEventListener("touchend", (event) => {
+    clearTimeout(pressTimer);
+  });
+  pokemonBox.addEventListener("mousedown", (event) => {
+    pressTimer = setTimeout(() => {
+      releasePokemon(index);
+    }, 500);
+  });
+  pokemonBox.addEventListener("touchstart", (event) => {
+    pressTimer = setTimeout(() => {
+      releasePokemon(index);
+    }, 500);
+  });
+});
+
+function releasePokemon(index) {
+  if (team[index].isEgg) {
+    window.alert("You can't release eggs");
+    return;
+  }
+  const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
+  if (confirmRelease) {
+    team.splice(index, 1);
+    renderTeam();
+    localStorage.setItem("team", JSON.stringify(team));
+    location.reload();
+  }
+}
 
 /* PC Système */
 
