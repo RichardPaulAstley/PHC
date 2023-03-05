@@ -18,7 +18,7 @@ function exchangeTokens() {
       totalTokens += exchangeInfo.amount;
     }
   }
-  if (totalTokens < exchangeInfo.cost) {
+  if (totalTokens < exchangeInfo.amount) {
     window.alert("Not enough tokens to make the exchange.");
     return;
   }
