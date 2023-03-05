@@ -15,6 +15,10 @@ function exchangeTokens() {
   if (exchangeInfo.type && exchangeInfo.amount) {
     const matchingInventoryToken = tokenInventory.find(invToken => invToken.type === exchangeInfo.type);
     if (matchingInventoryToken && matchingInventoryToken.amount >= exchangeInfo.amount) {
+	  let confirmTokenMessage = `Are you sure you want to use your ${exchangeInfo.type} tokens?`;
+    if (!confirm(confirmTokenMessage)) {
+      return;
+    }
       totalTokens += exchangeInfo.amount;
     }
   }
