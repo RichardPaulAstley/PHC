@@ -76,49 +76,109 @@ window.onload = function() {
   }
 
   function updateUI(idx) {
-    let currentPokemon = team[idx];
-    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.species;
+  let currentPokemon = team[idx];
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.species;
+  if (currentPokemon.species === "Unown") {
+    // Don't update sprite if the current pokemon is an Unown
+    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`).src = currentPokemon.sprite;
+  } else {
     let sprite = currentPokemon.isShiny ? pokemonDatabase.find(p => p.name === currentPokemon.species).shiny_sprite : pokemonDatabase.find(p => p.name === currentPokemon.species).sprite;
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`).src = sprite;
-    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender;
-    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = currentPokemon.level;
-	document.querySelector(`.team-box:nth-child(${idx + 1}) .hatching-button`).style.display = 'none';
   }
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = currentPokemon.level;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .hatching-button`).style.display = 'none';
+}
     
     function saveTeam() {
         localStorage.setItem("team", JSON.stringify(team));
     }
     
-    function hatchEgg(team, index) {
-	if (!team[index]) return;
+  function hatchEgg(team, index) {
+    if (!team[index]) return;
     let egg = team[index];
     egg.isEgg = false;
     egg.eggSteps = 0;
-	egg.level = 1;
+    egg.level = 1;
     egg.isShiny = Math.random() < 1/256;
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
-	  egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
-	  } else {
-	  egg.gender = "-";
-	}
-    egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
+      egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
+    } else {
+      egg.gender = "-";
+    }
+    if (egg.species === "Unown") {
+	  let form = Math.floor(Math.random() * 28) + 1;
+	  let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
+	  egg.sprite = spritePath + `201.${form}.png`;
+    } else {
+      egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
+    }
     /* egg.name = pokemon.name; */
-	let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
+    let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
-	if (egg.isShiny) {
-    eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
-	setTimeout(() => {
-    window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");}, 500);
+      if (egg.isShiny) {
+      eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
+      setTimeout(() => {
+      window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
+    }, 500);
   }
-    localStorage.setItem("eggData", JSON.stringify(eggData));
-    updateUI(index);
-    saveTeam();
+  localStorage.setItem("eggData", JSON.stringify(eggData));
+  updateUI(index);
+  saveTeam();
 }
 };
 
+/* To think - Guaranteed Shiny
 
-/* Evolution */ 
+function hatchEgg(team, index) {
+  if (!team[index]) return;
+  let egg = team[index];
+  egg.isEgg = false;
+  egg.eggSteps = 0;
+  egg.level = 1;
+
+  let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
+  eggData.hatches = (eggData.hatches || 0) + 1;
+
+  // Check if eggData.hatches is a multiple of 100000
+  if (eggData.hatches % 100000 === 0) {
+    egg.isShiny = true;
+  } else {
+    egg.isShiny = Math.random() < 1/256;
+  }
+
+  let pokemon = pokemonDatabase.find(p => p.name === egg.species);
+  if (pokemon.gender_rate !== "-") {
+    egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
+  } else {
+    egg.gender = "-";
+  }
+  if (egg.species === "Unown") {
+    let form = Math.floor(Math.random() * 28) + 1;
+    let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
+    egg.sprite = spritePath + `201.${form}.png`;
+  } else {
+    egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
+  }
+
+  localStorage.setItem("eggData", JSON.stringify(eggData));
+
+  if (egg.isShiny) {
+    eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
+    setTimeout(() => {
+      window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
+    }, 500);
+  }
+
+  updateUI(index);
+  saveTeam();
+}
+
+*/
+
+
+// Evolution 
 
 for (let i = 0; i < team.length; i++) {
 const pokemon = team[i];

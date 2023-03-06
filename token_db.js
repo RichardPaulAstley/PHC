@@ -35,6 +35,13 @@ const tokenExchange = [
 	  "amount": 50 
     },
 	{
+      "pokemon": "Unown",
+	  "sprite": "sprites/egg/unown.png",
+	  "type": "special",
+	  "available": true,
+	  "amount": 15 
+    },
+	{
       "pokemon": "Spiky-eared Pichu",
 	  "sprite": "sprites/egg/pichu.png",
 	  "type": "event",

@@ -22,9 +22,9 @@ window.addEventListener("load", function() {
 if (localStorage.getItem("eggData")) {
 eggData = JSON.parse(localStorage.getItem("eggData"));
 }
-  document.getElementById("eggs-hatched").innerHTML = eggData.hatches || 0;
-  document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches || 0;
-  document.getElementById("clicks-done").innerHTML = eggData.clicks || 0;
+  document.getElementById("eggs-hatched").innerHTML = eggData.hatches.toLocaleString() || 0;
+  document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches.toLocaleString() || 0;
+  document.getElementById("clicks-done").innerHTML = eggData.clicks.toLocaleString() || 0;
 });
 
 window.addEventListener("load", function() {

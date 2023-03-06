@@ -58,21 +58,21 @@ const pokemonBoxes = document.querySelectorAll(".pc-team-box");
 });
 });
 
-/* Mobile Release */
+// Mobile Release
 
 pokemonBoxes.forEach((pokemonBox, index) => {
   let pressTimer;
-  pokemonBox.addEventListener("mouseup", (event) => {
+  /* pokemonBox.addEventListener("mouseup", (event) => {
     clearTimeout(pressTimer);
-  });
+  });*/
   pokemonBox.addEventListener("touchend", (event) => {
     clearTimeout(pressTimer);
   });
-  pokemonBox.addEventListener("mousedown", (event) => {
+  /* pokemonBox.addEventListener("mousedown", (event) => {
     pressTimer = setTimeout(() => {
       releasePokemon(index);
     }, 500);
-  });
+  });*/
   pokemonBox.addEventListener("touchstart", (event) => {
     pressTimer = setTimeout(() => {
       releasePokemon(index);

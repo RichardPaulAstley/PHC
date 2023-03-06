@@ -53,12 +53,12 @@ const pokemonDatabase = [
 	  	{
 	  		"method": ["item"],
 	  		"value": "Mega Stone",
-	  		"evolves_to": "Mega-Venusaur"
+	  		"evolves_to": "Mega Venusaur"
 	  	},
 		{
-	  		"method": ["gender"],
-	  		"value": "Female",
-	  		"evolves_to": "Gigantamax-Venusaur"
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Venusaur"
 	  	},
 	  ],
       "gender_rate": 87.5,
@@ -70,7 +70,7 @@ const pokemonDatabase = [
     },
 	{
       "id": 3.1,
-      "name": "Mega-Venusaur",
+      "name": "Mega Venusaur",
 	  "gen": 1,
       "type": ["Grass", "Poison"],
       "egg_steps": 5120,
@@ -84,7 +84,7 @@ const pokemonDatabase = [
     },
 	{
       "id": 3.2,
-      "name": "Gigantamax-Venusaur",
+      "name": "Gigantamax Venusaur",
 	  "gen": 1,
       "type": ["Grass", "Poison"],
       "egg_steps": 5120,
@@ -146,12 +146,72 @@ const pokemonDatabase = [
       "type": ["Fire", "Flying"],
       "egg_steps": 5120,
 	  "egg_group": ["Monster", "Dragon"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Charizard (X)"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Charizard (Y)"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Charizard"
+	  	},
+	  ],
       "gender_rate": 87.5,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/6.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/6.png",
 	  "rarity": "rare",
 	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 6.1,
+      "name": "Mega Charizard (X)",
+	  "gen": 1,
+      "type": ["Fire", "Dragon"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster", "Dragon"],
+      "gender_rate": 87.5,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/6.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/6.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
+      "id": 6.2,
+      "name": "Mega Charizard (Y)",
+	  "gen": 1,
+      "type": ["Fire", "Flying"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster", "Dragon"],
+      "gender_rate": 87.5,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/6.2.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/6.2.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution",
+    },
+	
+	{
+      "id": 6.3,
+      "name": "Gigantamax Charizard",
+	  "gen": 1,
+      "type": ["Fire", "Flying"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster", "Dragon"],
+      "gender_rate": 87.5,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/6.3.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/6.3.png",
+	  "rarity": "rare",
+	  "evolution_stage": "gigantamax",
     },
 	{
 	  "id": 7,
@@ -203,12 +263,52 @@ const pokemonDatabase = [
 	  "type": ["Water"],
 	  "egg_steps": 5120,
 	  "egg_group": ["Monster", "Water 1"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Blastoise"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Blastoise"
+	  	},
+	  ],
 	  "gender_rate": 87.5,
 	  "experience_group": 10599,
 	  "sprite": "sprites/pokemon/9.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/9.png",
 	  "rarity": "rare",
 	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 9.1,
+	  "name": "Mega Blastoise",
+	  "gen": 1,
+	  "type": ["Water"],
+	  "egg_steps": 5120,
+	  "egg_group": ["Monster", "Water 1"],
+	  "gender_rate": 87.5,
+	  "experience_group": 10599,
+	  "sprite": "sprites/pokemon/9.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/9.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution"
+	},
+	{
+	  "id": 9.2,
+	  "name": "Gigantamax Blastoise",
+	  "gen": 1,
+	  "type": ["Water"],
+	  "egg_steps": 5120,
+	  "egg_group": ["Monster", "Water 1"],
+	  "gender_rate": 87.5,
+	  "experience_group": 10599,
+	  "sprite": "sprites/pokemon/9.2.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/9.2.png",
+	  "rarity": "rare",
+	  "evolution_stage": "gigantamax"
 	},
 	{
 	  "id": 10,
@@ -260,12 +360,33 @@ const pokemonDatabase = [
 	  "type": ["Bug", "Flying"],
 	  "egg_steps": 3840,
 	  "egg_group": ["Bug"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Max Mushrooms",
+			"evolves_to": "Gigantamax Butterfree"
+		}
+	  ],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/12.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/12.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 12.1,
+	  "name": "Gigantamax Butterfree",
+	  "gen": 1,
+	  "type": ["Bug", "Flying"],
+	  "egg_steps": 3840,
+	  "egg_group": ["Bug"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/12.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/12.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "gigantamax"
 	},
 	{
 	  "id": 13,
@@ -317,12 +438,33 @@ const pokemonDatabase = [
 	  "type": ["Bug", "Poison"],
 	  "egg_steps": 3840,
 	  "egg_group": ["Bug"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega Beedrill"
+		}
+	  ],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/15.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/15.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 15.1,
+	  "name": "Mega Beedrill",
+	  "gen": 1,
+	  "type": ["Bug", "Poison"],
+	  "egg_steps": 3840,
+	  "egg_group": ["Bug"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/15.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/15.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "mega_evolution"
 	},
 	{
 	  "id": 16,
@@ -374,12 +516,33 @@ const pokemonDatabase = [
       "type": ["Normal", "Flying"],
       "egg_steps": 3840,
 	  "egg_group": ["Flying"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega Pidgeot"
+		}
+	  ],
 	  "gender_rate": 50,
 	  "experience_group": 10599,
 	  "sprite": "sprites/pokemon/18.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/18.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 18.1,
+      "name": "Mega Pidgeot",
+      "gen": 1,
+      "type": ["Normal", "Flying"],
+      "egg_steps": 3840,
+	  "egg_group": ["Flying"],
+	  "gender_rate": 50,
+	  "experience_group": 10599,
+	  "sprite": "sprites/pokemon/18.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/18.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "mega_evolution"
 	},
 	{
 	  "id": 19,
@@ -404,6 +567,28 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 19.1,
+      "name": "Alolan Rattata",
+      "gen": 1,
+      "type": ["Dark", "Normal"],
+      "egg_steps": 3840,
+	  "egg_group": ["Ground"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 20,
+			"evolves_to": "Alolan Raticate"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/19.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/19.1.png",
+	  "egg_sprite": "sprites/egg/rattata.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base"
+	},
+	{
 	  "id": 20,
       "name": "Raticate",
       "gen": 1,
@@ -414,6 +599,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/20.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/20.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 20.1,
+      "name": "Alolan Raticate",
+      "gen": 1,
+      "type": ["Dark", "Normal"],
+      "egg_steps": 3840,
+	  "egg_group": ["Ground"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/20.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/20.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
 	},
@@ -501,7 +700,17 @@ const pokemonDatabase = [
 			"method": ["item"],
 			"value": "Thunder Stone",
 			"evolves_to": "Raichu"
-		}
+		},
+		{
+			"method": ["item"],
+			"value": "Thunder Stone",
+			"evolves_to": "Alolan Raichu"
+		},
+		{
+			"method": ["item"],
+			"value": "Max Mushrooms",
+			"evolves_to": "Gigantamax Pikachu"
+		},
 	  ],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
@@ -509,6 +718,20 @@ const pokemonDatabase = [
 	  "shiny_sprite": "sprites/pokemon/shiny/25.png",
 	  "rarity": "uncommon",
 	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 25.1,
+      "name": "Gigantamax Pikachu",
+      "gen": 1,
+      "type": ["Electric"],
+      "egg_steps": 2560,
+	  "egg_group": ["Field", "Fairy"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/25.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/25.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "gigantamax"
 	},
 	{
 	  "id": 26,
@@ -521,6 +744,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/26.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/26.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "second_stage"
+	},
+	{
+	  "id": 26.1,
+      "name": "Alolan Raichu",
+      "gen": 1,
+      "type": ["Electric", "Psychic"],
+      "egg_steps": 2560,
+	  "egg_group": ["Field", "Fairy"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/26.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/26.1.png",
 	  "rarity": "uncommon",
 	  "evolution_stage": "second_stage"
 	},
@@ -547,6 +784,28 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 27.1,
+      "name": "Alolan Sandshrew",
+      "gen": 1,
+      "type": ["Ice", "Steel"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": "Ice Stone",
+			"evolves_to": "Alolan Sandslash"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/27.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/27.1.png",
+	  "egg_sprite": "sprites/egg/sandshrew.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base"
+	},
+	{
 	  "id": 28,
       "name": "Sandslash",
       "gen": 1,
@@ -557,6 +816,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/28.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/28.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 28.1,
+      "name": "Alolan Sandslash",
+      "gen": 1,
+      "type": ["Ice", "Steel"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/28.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/28.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
 	},
@@ -732,6 +1005,28 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 37.1,
+      "name": "Alolan Vulpix",
+      "gen": 1,
+      "type": ["Ice"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Ice Stone",
+			"evolves_to": "Alolan Ninetales"
+		}
+	  ],
+	  "gender_rate": 25,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/37.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/37.1.png",
+	  "egg_sprite": "sprites/egg/vulpix.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "base"
+	},
+	{
 	  "id": 38,
       "name": "Ninetales",
       "gen": 1,
@@ -742,6 +1037,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/38.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/38.png",
+	  "rarity": "rare",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 38.1,
+      "name": "Alolan Ninetales",
+      "gen": 1,
+      "type": ["Ice", "Fairy"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 25,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/38.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/38.1.png",
 	  "rarity": "rare",
 	  "evolution_stage": "first_stage"
 	},
@@ -980,6 +1289,28 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 50.1,
+      "name": "Alolan Diglett",
+      "gen": 1,
+      "type": ["Ground", "Steel"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["level"],
+			"value": 26,
+			"evolves_to": "Alolan Dugtrio"
+		}
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/50.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/50.1.png",
+	  "egg_sprite": "sprites/egg/diglett.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base"
+	},
+	{
 	  "id": 51,
       "name": "Dugtrio",
       "gen": 1,
@@ -990,6 +1321,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/51.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/51.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 51.1,
+      "name": "Alolan Dugtrio",
+      "gen": 1,
+      "type": ["Ground", "Steel"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/51.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/51.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
 	},
@@ -1005,6 +1350,11 @@ const pokemonDatabase = [
 			"method": ["level"],
 			"value": 28,
 			"evolves_to": "Persian"
+		},
+		{
+			"method": ["item"],
+			"value": "Max Mushrooms",
+			"evolves_to": "Gigantamax Meowth"
 		}
 	  ],
 	  "gender_rate": 50,
@@ -1016,8 +1366,44 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 52.1,
+      "name": "Alolan Meowth",
+      "gen": 1,
+      "type": ["Dark"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Soothe Bell",
+			"evolves_to": "Alolan Persian"
+		},
+	  ],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/52.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/52.1.png",
+	  "egg_sprite": "sprites/egg/meowth.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 52.3,
+      "name": "Gigantamax Meowth",
+      "gen": 1,
+      "type": ["Normal"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/52.3.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/52.3.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "gigantamax"
+	},
+	{
 	  "id": 53,
-      "name": "Dugtrio",
+      "name": "Persian",
       "gen": 1,
       "type": ["Normal"],
       "egg_steps": 5120,
@@ -1026,6 +1412,20 @@ const pokemonDatabase = [
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/53.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/53.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 53.1,
+      "name": "Alolan Persian",
+      "gen": 1,
+      "type": ["Dark"],
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/53.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/53.1.png",
 	  "rarity": "uncommon",
 	  "evolution_stage": "first_stage"
 	},
@@ -1260,7 +1660,7 @@ const pokemonDatabase = [
 	  	{
 	  		"method": ["item"],
 	  		"value": "Mega Stone",
-	  		"evolves_to": "Mega-Alakazam"
+	  		"evolves_to": "Mega Alakazam"
 	  	},
 	  ],
       "gender_rate": 75,
@@ -1272,7 +1672,7 @@ const pokemonDatabase = [
     },
 	{
       "id": 65.1,
-      "name": "Mega-Alakazam",
+      "name": "Mega Alakazam",
 	  "gen": 1,
       "type": ["Psychic"],
       "egg_steps": 5120,
@@ -1334,12 +1734,33 @@ const pokemonDatabase = [
       "type": ["Fighting"],
       "egg_steps": 5120,
 	  "egg_group": ["Human-Like"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Machamp"
+	  	},
+	  ],
       "gender_rate": 75,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/68.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/68.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 68.1,
+      "name": "Gigantamax Machamp",
+	  "gen": 1,
+      "type": ["Fighting"],
+      "egg_steps": 5120,
+	  "egg_group": ["Human-Like"],
+      "gender_rate": 75,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/68.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/68.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "gigantamax",
     },
 	{
       "id": 69,
@@ -1492,6 +1913,63 @@ const pokemonDatabase = [
 	  "evolution_stage": "second_stage",
     },
 	{
+      "id": 74.1,
+      "name": "Alolan Geodude",
+	  "gen" : 1,
+      "type": ["Rock", "Electric"],
+      "egg_steps": 3840,
+	  "egg_group": ["Mineral"],
+	  "evolutions": [
+	  	{
+	  		"method": ["level"],
+	  		"value": 25,
+	  		"evolves_to": "Alolan Graveler"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/74.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/74.1.png",
+	  "egg_sprite": "sprites/egg/geodude.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base",
+    },
+    {
+      "id": 75.1,
+      "name": "Alolan Graveler",
+	  "gen" : 1,
+      "type": ["Rock", "Electric"],
+      "egg_steps": 3840,
+	  "egg_group": ["Mineral"],
+      "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Link Cable",
+	  		"evolves_to": "Alolan Golem"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/75.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/75.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+    {
+      "id": 76.1,
+      "name": "Alolan Golem",
+	  "gen": 1,
+      "type": ["Rock", "Electric"],
+      "egg_steps": 3840,
+	  "egg_group": ["Mineral"],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/76.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/76.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "second_stage",
+    },
+	{
 	  "id": 77,
       "name": "Ponyta",
       "gen": 1,
@@ -1561,12 +2039,33 @@ const pokemonDatabase = [
       "type": ["Water", "Psychic"],
       "egg_steps": 5120,
 	  "egg_group": ["Monster", "Water 1"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega Slowbro"
+		}
+	  ],
 	  "gender_rate": 50,
 	  "experience_group": 10000,
 	  "sprite": "sprites/pokemon/80.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/80.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 80.1,
+      "name": "Mega Slowbro",
+      "gen": 1,
+      "type": ["Water", "Psychic"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster", "Water 1"],
+	  "gender_rate": 50,
+	  "experience_group": 10000,
+	  "sprite": "sprites/pokemon/80.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/80.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "mega_evolution"
 	},
 	{
       "id": 81,
@@ -1721,6 +2220,28 @@ const pokemonDatabase = [
 	  "evolution_stage": "base",
     },
 	{
+      "id": 88.1,
+      "name": "Alolan Grimer",
+	  "gen" : 1,
+      "type": ["Poison", "Dark"],
+      "egg_steps": 5120,
+	  "egg_group": ["Amorphous"],
+	  "evolutions": [
+	  	{
+	  		"method": ["level"],
+	  		"value": 38,
+	  		"evolves_to": "Alolan Muk"
+	  	},
+	  ],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/88.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/88.1.png",
+	  "egg_sprite": "sprites/egg/grimer.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base",
+    },
+	{
       "id": 89,
       "name": "Muk",
 	  "gen" : 1,
@@ -1731,6 +2252,20 @@ const pokemonDatabase = [
       "experience_group": 10000,
       "sprite": "sprites/pokemon/89.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/89.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+	{
+      "id": 89.1,
+      "name": "Alolan Muk",
+	  "gen" : 1,
+      "type": ["Poison", "Dark"],
+      "egg_steps": 5120,
+	  "egg_group": ["Amorphous"],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/89.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/89.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage",
     },
@@ -1820,12 +2355,52 @@ const pokemonDatabase = [
       "type": ["Ghost", "Poison"],
       "egg_steps": 5120,
 	  "egg_group": ["Amorphous"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Gengar"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Gengar"
+	  	},
+	  ],
       "gender_rate": 50,
       "experience_group": 10599,
       "sprite": "sprites/pokemon/94.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/94.png",
 	  "rarity": "common",
 	  "evolution_stage": "second_stage",
+    },
+	{
+      "id": 94.1,
+      "name": "Mega Gengar",
+	  "gen": 1,
+      "type": ["Ghost", "Poison"],
+      "egg_steps": 5120,
+	  "egg_group": ["Amorphous"],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/94.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/94.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
+      "id": 94.2,
+      "name": "Gigantamax Gengar",
+	  "gen": 1,
+      "type": ["Ghost", "Poison"],
+      "egg_steps": 5120,
+	  "egg_group": ["Amorphous"],
+      "gender_rate": 50,
+      "experience_group": 10599,
+      "sprite": "sprites/pokemon/94.2.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/94.2.png",
+	  "rarity": "common",
+	  "evolution_stage": "gigantamax",
     },
 	{
       "id": 95,
@@ -1914,12 +2489,33 @@ const pokemonDatabase = [
       "type": ["Water"],
       "egg_steps": 5120,
 	  "egg_group": ["Water 3"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Kingler"
+	  	},
+	  ],
       "gender_rate": 50,
       "experience_group": 10000,
       "sprite": "sprites/pokemon/99.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/99.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage",
+    },
+	{
+      "id": 99.1,
+      "name": "Gigantamax Kingler",
+	  "gen" : 1,
+      "type": ["Water"],
+      "egg_steps": 5120,
+	  "egg_group": ["Water 3"],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/99.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/99.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "gigantamax",
     },
 	{
       "id": 100,
@@ -1970,6 +2566,11 @@ const pokemonDatabase = [
 	  		"value": "Leaf Stone",
 	  		"evolves_to": "Exeggutor"
 	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Leaf Stone",
+	  		"evolves_to": "Alolan Exeggutor"
+	  	},
 	  ],
       "gender_rate": 50,
       "experience_group": 12500,
@@ -1994,6 +2595,20 @@ const pokemonDatabase = [
 	  "evolution_stage": "first_stage",
     },
 	{
+      "id": 103.1,
+      "name": "Alolan Exeggutor",
+	  "gen" : 1,
+      "type": ["Grass", "Dragon"],
+      "egg_steps": 5120,
+	  "egg_group": ["Grass"],
+      "gender_rate": 50,
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/103.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/103.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage",
+    },
+	{
       "id": 104,
       "name": "Cubone",
 	  "gen" : 1,
@@ -2005,6 +2620,11 @@ const pokemonDatabase = [
 	  		"method": ["level"],
 	  		"value": 28,
 	  		"evolves_to": "Marowak"
+	  	},
+		{
+	  		"method": ["level"],
+	  		"value": 28,
+	  		"evolves_to": "Alolan Marowak"
 	  	},
 	  ],
       "gender_rate": 50,
@@ -2026,6 +2646,20 @@ const pokemonDatabase = [
       "experience_group": 10000,
       "sprite": "sprites/pokemon/105.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/105.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+	{
+      "id": 105.1,
+      "name": "Alolan Marowak",
+	  "gen" : 1,
+      "type": ["Fire", "Ghost"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster"],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/105.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/105.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage",
     },
@@ -2208,6 +2842,13 @@ const pokemonDatabase = [
       "type": ["Normal"],
       "egg_steps": 5120,
 	  "egg_group": ["Monster"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Kangaskhan"
+	  	},
+	  ],
       "gender_rate": 0,
       "experience_group": 10000,
       "sprite": "sprites/pokemon/115.png",
@@ -2215,6 +2856,20 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/kangaskhan.png",
 	  "rarity": "rare",
 	  "evolution_stage": "base",
+    },
+	{
+      "id": 115.1,
+      "name": "Mega Kangaskhan",
+	  "gen" : 1,
+      "type": ["Normal"],
+      "egg_steps": 5120,
+	  "egg_group": ["Monster"],
+      "gender_rate": 0,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/115.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/115.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution",
     },
 	{
       "id": 116,
@@ -2430,6 +3085,13 @@ const pokemonDatabase = [
       "type": ["Bug"],
       "egg_steps": 6400,
 	  "egg_group": ["Bug"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Mega Stone",
+			"evolves_to": "Mega Pinsir"
+		}
+	  ],
 	  "gender_rate": 50,
 	  "experience_group": 12500,
 	  "sprite": "sprites/pokemon/127.png",
@@ -2437,6 +3099,20 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/pinsir.png",
 	  "rarity": "uncommon",
 	  "evolution_stage": "base"
+	},
+	{
+	  "id": 127.1,
+      "name": "Mega Pinsir",
+      "gen": 1,
+      "type": ["Bug", "Flying"],
+      "egg_steps": 6400,
+	  "egg_group": ["Bug"],
+	  "gender_rate": 50,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/127.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/127.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "mega_evolution"
 	},
 	{
 	  "id": 128,
@@ -2482,6 +3158,13 @@ const pokemonDatabase = [
       "type": ["Water", "Flying"],
       "egg_steps": 1280,
 	  "egg_group": ["Water 2", "Dragon"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Gyarados"
+	  	},
+	  ],
       "gender_rate": 50,
       "experience_group": 12500,
       "sprite": "sprites/pokemon/130.png",
@@ -2490,12 +3173,33 @@ const pokemonDatabase = [
 	  "evolution_stage": "first_stage",
     },
 	{
+      "id": 130.1,
+      "name": "Mega Gyarados",
+	  "gen" : 1,
+      "type": ["Water", "Dark"],
+      "egg_steps": 1280,
+	  "egg_group": ["Water 2", "Dragon"],
+      "gender_rate": 50,
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/130.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/130.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
       "id": 131,
       "name": "Lapras",
 	  "gen" : 1,
       "type": ["Water", "Ice"],
       "egg_steps": 10240,
 	  "egg_group": ["Monster", "Water 1"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Lapras"
+	  	},
+	  ],
       "gender_rate": 50,
       "experience_group": 12500,
       "sprite": "sprites/pokemon/131.png",
@@ -2503,6 +3207,20 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/lapras.png",
 	  "rarity": "rare",
 	  "evolution_stage": "base",
+    },
+	{
+      "id": 131.1,
+      "name": "Gigantamax Lapras",
+	  "gen" : 1,
+      "type": ["Water", "Ice"],
+      "egg_steps": 10240,
+	  "egg_group": ["Monster", "Water 1"],
+      "gender_rate": 50,
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/131.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/131.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "gigantamax",
     },
 	{
       "id": 132,
@@ -2567,6 +3285,11 @@ const pokemonDatabase = [
 		  "value": "Fairy Ribbon",
 		  "evolves_to": "Sylveon"
 		},
+		{
+		  "method": ["item"],
+		  "value": "Max Mushrooms",
+		  "evolves_to": "Gigantamax Eevee"
+		},
 	],
       "gender_rate": "87.5",
       "experience_group": 10000,
@@ -2575,6 +3298,20 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/eevee.png",
 	  "rarity": "rare",
 	  "evolution_stage": "base",
+    },
+	{
+      "id": 133.1,
+      "name": "Gigantamax Eevee",
+	  "gen": 1,
+      "type": ["Normal"],
+      "egg_steps": 8960,
+	  "egg_group": ["Field"],
+      "gender_rate": "87.5",
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/133.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/133.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "gigantamax",
     },
 	{
       "id": 134,
@@ -2719,6 +3456,13 @@ const pokemonDatabase = [
       "type": ["Rock", "Flying"],
       "egg_steps": 7680,
 	  "egg_group": ["Flying"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Aerodactyl"
+	  	},
+	  ],
       "gender_rate": 87.5,
       "experience_group": 12500,
       "sprite": "sprites/pokemon/142.png",
@@ -2728,18 +3472,53 @@ const pokemonDatabase = [
 	  "evolution_stage": "base",
     },
 	{
+      "id": 142.1,
+      "name": "Mega Aerodactyl",
+	  "gen" : 1,
+      "type": ["Rock", "Flying"],
+      "egg_steps": 7680,
+	  "egg_group": ["Flying"],
+      "gender_rate": 87.5,
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/142.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/142.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
 	  "id": 143,
       "name": "Snorlax",
       "gen": 1,
       "type": ["Normal"],
       "egg_steps": 10240,
 	  "egg_group": ["Monster"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Max Mushrooms",
+	  		"evolves_to": "Gigantamax Snorlax"
+	  	},
+	  ],
 	  "gender_rate": 87.5,
 	  "experience_group": 12500,
 	  "sprite": "sprites/pokemon/143.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/143.png",
 	  "rarity": "rare",
 	  "evolution_stage": "first_evolution"
+	},
+	{
+	  "id": 143.1,
+      "name": "Gigantamax Snorlax",
+      "gen": 1,
+      "type": ["Normal"],
+      "egg_steps": 10240,
+	  "egg_group": ["Monster"],
+	  "gender_rate": 87.5,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/143.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/143.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "gigantamax"
 	},
 	{
       "id": 144,
@@ -2850,6 +3629,18 @@ const pokemonDatabase = [
       "type": ["Psychic"],
       "egg_steps": 30720,
 	  "egg_group": ["Undiscovered"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Mewtwo (X)"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Mega Stone",
+	  		"evolves_to": "Mega Mewtwo (Y)"
+	  	},
+	  ],
       "gender_rate": "-",
       "experience_group": 12500,
       "sprite": "sprites/pokemon/150.png",
@@ -2857,6 +3648,34 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/mewtwo.png",
 	  "rarity": "legendary",
 	  "evolution_stage": "legendary",
+    },
+	{
+      "id": 150.1,
+      "name": "Mega Mewtwo (X)",
+	  "gen" : 1,
+      "type": ["Psychic", "Fighting"],
+      "egg_steps": 30720,
+	  "egg_group": ["Undiscovered"],
+      "gender_rate": "-",
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/150.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/150.1.png",
+	  "rarity": "legendary",
+	  "evolution_stage": "mega_evolution",
+    },
+	{
+      "id": 150.2,
+      "name": "Mega Mewtwo (Y)",
+	  "gen" : 1,
+      "type": ["Psychic"],
+      "egg_steps": 30720,
+	  "egg_group": ["Undiscovered"],
+      "gender_rate": "-",
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/150.2.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/150.2.png",
+	  "rarity": "legendary",
+	  "evolution_stage": "mega_evolution",
     },
 	{
       "id": 151,
@@ -3037,6 +3856,20 @@ const pokemonDatabase = [
 	  "shiny_sprite": "sprites/pokemon/shiny/199.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 201,
+      "name": "Unown",
+      "gen": 2,
+      "type": ["Psychic"],
+      "egg_steps": 10240,
+	  "egg_group": ["Undiscovered"],
+	  "gender_rate": "-",
+	  "experience_group": 10240,
+	  "sprite": "sprites/pokemon/201.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/201.png",
+	  "rarity": "special",
+	  "evolution_stage": "special"
 	},
 	{
       "id": 208,
@@ -3287,7 +4120,7 @@ const pokemonDatabase = [
 		{
 			"method": ["item"],
 			"value": "Mega Stone",
-			"evolves_to": "Mega-Gardevoir"
+			"evolves_to": "Mega Gardevoir"
 		},
 	  ],
 	  "gender_rate": 50,
@@ -3299,7 +4132,7 @@ const pokemonDatabase = [
 	},
 	{
 	  "id": 282.1,
-      "name": "Mega-Gardevoir",
+      "name": "Mega Gardevoir",
       "gen": 3,
       "type": ["Psychic", "Fairy"],
       "egg_steps": 5120,
@@ -3514,7 +4347,7 @@ const pokemonDatabase = [
 		{
 			"method": ["item"],
 			"value": "Mega Stone",
-			"evolves_to": "Mega-Gallade"
+			"evolves_to": "Mega Gallade"
 		},
 	  ],
 	  "gender_rate": 100,
@@ -3526,7 +4359,7 @@ const pokemonDatabase = [
 	},
 	{
 	  "id": 475.1,
-      "name": "Mega-Gallade",
+      "name": "Mega Gallade",
       "gen": 4,
       "type": ["Psychic", "Fighting"],
       "egg_steps": 5120,
