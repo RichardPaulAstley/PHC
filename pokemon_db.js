@@ -3866,8 +3866,8 @@ const pokemonDatabase = [
 	  "egg_group": ["Undiscovered"],
 	  "gender_rate": "-",
 	  "experience_group": 10240,
-	  "sprite": "sprites/pokemon/201.1.png",
-	  "shiny_sprite": "sprites/pokemon/shiny/201.1.png",
+	  "sprite": "sprites/pokemon/201.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/201.png",
 	  "rarity": "special",
 	  "evolution_stage": "special"
 	},

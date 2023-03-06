@@ -14,13 +14,8 @@ teamBoxes.forEach((teamBox, index) => {
 
     // Update the pokemon-sprite element
     const sprite = teamBox.querySelector('.pokemon-sprite img');
-if(currentTeamMember && currentTeamMember.isEgg){
-    // Get the egg_sprite value from the pokemon database
-    const eggSprite = pokemonDatabase.find(pokemon => pokemon.name === currentTeamMember.species).egg_sprite;
-    sprite.src = eggSprite;
-}else{
-    sprite.src = currentTeamMember.sprite;
-}
+sprite.src = currentTeamMember.sprite;
+
 
     // Update the pokemon-name element
     const name = teamBox.querySelector('.pokemon-name');

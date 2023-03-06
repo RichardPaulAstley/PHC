@@ -37,16 +37,21 @@ function exchangeTokens() {
   const pokemon = pokemonDatabase.find(p => p.name === exchangeInfo.pokemon);
 
   // generate the egg
-  const egg = {
-    species: pokemon.name,
-    eggSteps: 0,
-    level: 0,
-    experience: 0,
-    gender: "none",
-    isEgg: true,
-    isShiny: false,
-    sprite: pokemon.egg_sprite
-  };
+const egg = {
+  species: pokemon.name,
+  eggSteps: 0,
+  level: 0,
+  experience: 0,
+  gender: "none",
+  isEgg: true,
+  isShiny: false,
+  sprite: pokemon.egg_sprite
+};
+
+if (egg.species === "Unown") {
+  egg.sprite = "sprites/egg/unown.png";
+}
+
 
   // remove the tokens from the inventory
   if (exchangeInfo.type && exchangeInfo.amount) {
