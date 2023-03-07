@@ -217,51 +217,51 @@ function reorderTeamArray() {
 }
 
 function swapSlots(slot1, slot2) {
-  const slot1Content = slot1.innerHTML;
-  const slot2Content = slot2.innerHTML;
+const slot1Content = slot1.innerHTML;
+const slot2Content = slot2.innerHTML;
 
-  slot1.innerHTML = slot2Content;
-  slot2.innerHTML = slot1Content;
+slot1.innerHTML = slot2Content;
+slot2.innerHTML = slot1Content;
 
-  // Get the index of the slots in their respective arrays
-  const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
-  const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
+// Get the index of the slots in their respective arrays
+const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
+const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
 
-  // Swap the Pokémon in the team array and storage array
-  if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
-    // Swap between team slots
-    [team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
-  } else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
-    // Swap from team to storage
-    const storageIndex = slot2Index - pcTeamBoxes.length;
-    if (storage[storageIndex]) {
-      // If the storage slot is not empty, swap with the team slot
-      [team[slot1Index], storage[storageIndex]] = [storage[storageIndex], team[slot1Index]];
-    } else {
-      // If the storage slot is empty, move the team Pokémon to the storage
-      storage[storageIndex] = team[slot1Index];
-      team.splice(slot1Index, 1);
-    }
-  } else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
-    // Swap from storage to team
-    const storageIndex = slot1Index - pcTeamBoxes.length;
-    if (team[slot2Index]) {
-      // If the team slot is not empty, swap with the storage slot
-      [team[slot2Index], storage[storageIndex]] = [storage[storageIndex], team[slot2Index]];
-    } else {
-      // If the team slot is empty, move the storage Pokémon to the team
-      team[slot2Index] = storage[storageIndex];
-      storage.splice(storageIndex, 1);
-    }
-  } else {
-    // Swap between storage slots
-    [storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
-  }
+// Swap the Pokémon in the team array and storage array
+if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+// Swap between team slots
+[team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
+} else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
+// Swap from team to storage
+const storageIndex = slot2Index - pcTeamBoxes.length;
+if (storage[storageIndex]) {
+// If the storage slot is not empty, swap with the team slot
+[team[slot1Index], storage[storageIndex]] = [storage[storageIndex], team[slot1Index]];
+} else {
+// If the storage slot is empty, move the team Pokémon to the storage
+storage[storageIndex] = team[slot1Index];
+team[slot1Index] = null; // Set the team slot to null
+}
+} else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+// Swap from storage to team
+const storageIndex = slot1Index - pcTeamBoxes.length;
+if (team[slot2Index]) {
+// If the team slot is not empty, swap with the storage slot
+[team[slot2Index], storage[storageIndex]] = [storage[storageIndex], team[slot2Index]];
+} else {
+// If the team slot is empty, move the storage Pokémon to the team
+team[slot2Index] = storage[storageIndex];
+storage[storageIndex] = null; // Set the storage slot to null
+}
+} else {
+// Swap between storage slots
+[storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
+}
 
-  // Save the updated arrays
-  reorderTeamArray();
-  localStorage.setItem('team', JSON.stringify(team));
-  localStorage.setItem('storage', JSON.stringify(storage));
+// Save the updated arrays
+reorderTeamArray();
+localStorage.setItem('team', JSON.stringify(team));
+localStorage.setItem('storage', JSON.stringify(storage));
 }
 
 /* Sprite Update */ 
