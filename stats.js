@@ -4,12 +4,22 @@ if (localStorage.getItem("team")) {
     team = JSON.parse(localStorage.getItem("team"));
 }
 
+/* let daycare = {
+	parent0 : null,
+	parent1 : null,
+	eggsAvailable : "",
+}
+
+if (localStorage.getItem("daycare")) {
+    daycare = JSON.parse(localStorage.getItem("daycare"));
+} */
+
 
 let eggData = {
     clicks: 0,
 	idleClicks: 0,
     hatches: 0,
-	shinyHatches : 0
+	shinyHatches : 0,
 }
 
 let balance = {
@@ -24,10 +34,10 @@ window.addEventListener("load", function() {
 if (localStorage.getItem("eggData")) {
 eggData = JSON.parse(localStorage.getItem("eggData"));
 }
-  document.getElementById("eggs-hatched").innerHTML = eggData.hatches.toLocaleString() || 0;
-  document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches.toLocaleString() || 0;
-  document.getElementById("clicks-done").innerHTML = eggData.clicks.toLocaleString() || 0;
-  document.getElementById("idleClicks-done").innerHTML = eggData.idleClicks.toLocaleString() || 0;
+  document.getElementById("eggs-hatched").innerHTML = eggData.hatches || 0;
+  document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches || 0;
+  document.getElementById("clicks-done").innerHTML = eggData.clicks || 0;
+  document.getElementById("idleClicks-done").innerHTML = eggData.idleClicks || 0;
 });
 
 window.addEventListener("load", function() {
