@@ -191,6 +191,16 @@ function handleSlotClick(event) {
   }
 }
 
+function removeNulls(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
 function reorderTeamArray() {
   for (let i = 0; i < team.length; i++) {
     if (!team[i]) {
