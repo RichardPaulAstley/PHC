@@ -191,17 +191,6 @@ function handleSlotClick(event) {
   }
 }
 
-
-function removeNulls(array) {
-  let newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i]) {
-      newArray.push(array[i]);
-    }
-  }
-  return newArray;
-}
-
 function reorderTeamArray() {
   for (let i = 0; i < team.length; i++) {
     if (!team[i]) {
@@ -228,26 +217,42 @@ function swapSlots(slot1, slot2) {
   const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
   const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
 
-  // Swap the Pokémon in the team array
+  // Swap the Pokémon in the team array and storage array
   if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+    // Swap between team slots
     [team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
   } else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
-    [team[slot1Index], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], team[slot1Index]];
+    // Swap from team to storage
+    const storageIndex = slot2Index - pcTeamBoxes.length;
+    if (storage[storageIndex]) {
+      // If the storage slot is not empty, swap with the team slot
+      [team[slot1Index], storage[storageIndex]] = [storage[storageIndex], team[slot1Index]];
+    } else {
+      // If the storage slot is empty, move the team Pokémon to the storage
+      storage[storageIndex] = team[slot1Index];
+      team.splice(slot1Index, 1);
+    }
   } else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
-    [team[slot2Index], storage[slot1Index - pcTeamBoxes.length]] = [storage[slot1Index - pcTeamBoxes.length], team[slot2Index]];
+    // Swap from storage to team
+    const storageIndex = slot1Index - pcTeamBoxes.length;
+    if (team[slot2Index]) {
+      // If the team slot is not empty, swap with the storage slot
+      [team[slot2Index], storage[storageIndex]] = [storage[storageIndex], team[slot2Index]];
+    } else {
+      // If the team slot is empty, move the storage Pokémon to the team
+      team[slot2Index] = storage[storageIndex];
+      storage.splice(storageIndex, 1);
+    }
   } else {
+    // Swap between storage slots
     [storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
   }
-
-  // Remove any null values from the team array
-  team = team.filter(pokemon => pokemon !== null);
 
   // Save the updated arrays
   reorderTeamArray();
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
 }
-
 
 /* Sprite Update */ 
 
