@@ -12,9 +12,16 @@ const img = interactionBox.querySelector("img");
 
 function getRandomPokemonOrEgg() {
   const randomIndex = Math.floor(Math.random() * pokemonDatabase.length);
-  const pokemonOrEgg = pokemonDatabase[randomIndex];
-  const isEgg = Math.random() < 0.5;
-  return isEgg && pokemonOrEgg.egg_sprite ? pokemonOrEgg.egg_sprite : pokemonOrEgg.sprite;
+  const isEgg = Math.random() < 0.8; // 90% chance of egg
+  if (isEgg) {
+    const basePokemon = pokemonDatabase.filter(pokemon => pokemon.evolution_stage === "base");
+    const randomBasePokemon = basePokemon[Math.floor(Math.random() * basePokemon.length)];
+    return randomBasePokemon.egg_sprite;
+  } else {
+    const randomPokemon = pokemonDatabase[randomIndex];
+    const isShiny = Math.random() < 1/256 && randomPokemon.shiny_sprite;
+    return isShiny ? randomPokemon.shiny_sprite : randomPokemon.sprite;
+  }
 }
 
 function countReadyToHatchEggs() {
