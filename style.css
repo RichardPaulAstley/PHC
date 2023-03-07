@@ -328,7 +328,12 @@ th {
 /* Interaction */
 
 .interaction-container {
-	padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%;
+  height: 100%;
 }
 
 .interaction-box {
@@ -351,6 +356,11 @@ max-height: 96px;
 	align-items: center;
 	justify-content: center;
 	font-size: 20px;
+}
+
+#idle-button {
+  margin-top: 20px;
+  padding:1%;
 }
 
 /* Token */
@@ -384,4 +394,39 @@ max-height: 96px;
   font-weight: bold;
 }
 
+// Daycare 
 
+.daycare-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.daycare-team-container, .parents-container, .eggs-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-slot, .parent-slot, .egg-slot {
+    background-color: white;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.team-slot, .parent-sprite, .egg-sprite img {
+	max-width: 96px;
+	max-height: 96px;
+}
+
+.selected {
+  background-color: lightblue;
+}
