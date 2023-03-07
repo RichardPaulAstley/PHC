@@ -792,7 +792,7 @@ const pokemonDatabase = [
 	  "egg_group": ["Field"],
 	  "evolutions": [
 		{
-			"method": ["level"],
+			"method": ["item"],
 			"value": "Ice Stone",
 			"evolves_to": "Alolan Sandslash"
 		}

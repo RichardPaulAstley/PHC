@@ -4,8 +4,10 @@ if (localStorage.getItem("team")) {
     team = JSON.parse(localStorage.getItem("team"));
 }
 
+
 let eggData = {
     clicks: 0,
+	idleClicks: 0,
     hatches: 0,
 	shinyHatches : 0
 }
@@ -25,6 +27,7 @@ eggData = JSON.parse(localStorage.getItem("eggData"));
   document.getElementById("eggs-hatched").innerHTML = eggData.hatches.toLocaleString() || 0;
   document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches.toLocaleString() || 0;
   document.getElementById("clicks-done").innerHTML = eggData.clicks.toLocaleString() || 0;
+  document.getElementById("idleClicks-done").innerHTML = eggData.idleClicks.toLocaleString() || 0;
 });
 
 window.addEventListener("load", function() {
