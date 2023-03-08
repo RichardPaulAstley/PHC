@@ -60,7 +60,6 @@ main {
   padding: 20px;
   text-align: center;
   width: 100%;
-  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -189,7 +188,6 @@ footer {
 .team-stats {
   margin-top: 40px;
   margin-left: 5%;
-  height: 80vh;
 }
 
 .button-container {
@@ -332,7 +330,6 @@ th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10%;
   height: 100%;
 }
 
@@ -401,6 +398,7 @@ max-height: 96px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+	padding-bottom: 5%;
 }
 
 .daycare-team-container, .parents-container, .eggs-container {
@@ -427,6 +425,19 @@ max-height: 96px;
 	max-height: 96px;
 }
 
+
+.parent-text, .egg-text {
+  margin-top: 10px;
+}
+
 .selected {
   background-color: lightblue;
+}
+
+.parents-container, .eggs-container {
+  flex-direction: column;
+}
+
+footer {
+  margin-top: 5%;
 }

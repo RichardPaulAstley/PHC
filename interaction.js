@@ -84,6 +84,36 @@ function generateToken() {
   window.alert(`You got a ${tokenType} token!`);
 }
 
+function calculateClicsBeforeNextEgg(species) {
+  const eggBaseSpecies = pokemonDatabase.find(p => p.name === species).base_species;
+  const eggRarity = pokemonDatabase.find(p => p.name === eggBaseSpecies).rarity;
+
+  if (eggRarity === "common") {
+    return 250;
+  } else if (eggRarity === "uncommon") {
+    return 350;
+  } else if (eggRarity === "rare") {
+    return 500;
+  } else if (eggRarity === "novelty") {
+    return 2000;
+  }
+}
+
+function generateDaycareEgg() {
+  if (!daycare.eggsAvailable.species) {
+    return;
+  }
+
+  if (daycare.eggsAvailable.clicsBeforeNextEgg > 0) {
+    daycare.eggsAvailable.clicsBeforeNextEgg--;
+  }
+
+  if (daycare.eggsAvailable.clicsBeforeNextEgg === 0) {
+    daycare.eggsAvailable.amount++;
+    daycare.eggsAvailable.clicsBeforeNextEgg = calculateClicsBeforeNextEgg(daycare.eggsAvailable.species);
+  }
+}
+
 let lastClickTime = 0;
 let clickIntervals = [];
 
@@ -99,19 +129,19 @@ img.addEventListener("click", () => {
   lastClickTime = now;
 
   // Check for consistent clicking intervals
-  if (lastClickTime !== 0) {
+  /*if (lastClickTime !== 0) {
     clickIntervals.push(clickInterval);
   }
-  if (clickIntervals.length >= 100) {
+  if (clickIntervals.length >= 50) {
     const firstInterval = clickIntervals[0];
     for (let i = 1; i < clickIntervals.length; i++) {
-      if (Math.abs(clickIntervals[i] - firstInterval) > 75) {
+      if (Math.abs(clickIntervals[i] - firstInterval) > 10000) {
         alert("Automated clicking detected. Please play the game manually.");
         return;
       }
     }
     clickIntervals.shift();
-  }
+  }*/
 
   let eggData = JSON.parse(localStorage.getItem("eggData") || "{}");
   if (!eggData.clicks) {
@@ -157,7 +187,9 @@ img.addEventListener("click", () => {
     return member;
   });
   updateEggsReadyToHatch();
+  generateDaycareEgg();
   localStorage.setItem("team", JSON.stringify(team));
+  localStorage.setItem("daycare", JSON.stringify(daycare));
   img.src = getRandomPokemonOrEgg();
 });
 
@@ -238,8 +270,6 @@ idleButton.addEventListener("click", () => {
     count++;
   }, 250); // Change the interval as needed
 });
-
-
 
 img.src = getRandomPokemonOrEgg();
 
