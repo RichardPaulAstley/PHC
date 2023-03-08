@@ -84,6 +84,37 @@ function generateToken() {
   window.alert(`You got a ${tokenType} token!`);
 }
 
+function calculateClicsBeforeNextEgg(species) {
+  const eggBaseSpecies = pokemonDatabase.find(p => p.name === species).base_species;
+  const eggRarity = pokemonDatabase.find(p => p.name === eggBaseSpecies).rarity;
+
+  if (eggRarity === "common") {
+    return 500;
+  } else if (eggRarity === "uncommon") {
+    return 700;
+  } else if (eggRarity === "rare") {
+    return 1000;
+  } else if (eggRarity === "novelty") {
+    return 5000;
+  }
+}
+
+function generateDaycareEgg() {
+  console.log("Before generation: ", daycare.eggsAvailable);
+  if (!daycare.eggsAvailable.species) {
+    return;
+  }
+
+  if (daycare.eggsAvailable.clicsBeforeNextEgg > 0) {
+    daycare.eggsAvailable.clicsBeforeNextEgg--;
+  }
+
+  if (daycare.eggsAvailable.clicsBeforeNextEgg === 0) {
+    daycare.eggsAvailable.amount++;
+    daycare.eggsAvailable.clicsBeforeNextEgg = calculateClicsBeforeNextEgg(daycare.eggsAvailable.species);
+  }
+}
+
 let lastClickTime = 0;
 let clickIntervals = [];
 
@@ -102,10 +133,10 @@ img.addEventListener("click", () => {
   if (lastClickTime !== 0) {
     clickIntervals.push(clickInterval);
   }
-  if (clickIntervals.length >= 100) {
+  if (clickIntervals.length >= 50) {
     const firstInterval = clickIntervals[0];
     for (let i = 1; i < clickIntervals.length; i++) {
-      if (Math.abs(clickIntervals[i] - firstInterval) > 100) {
+      if (Math.abs(clickIntervals[i] - firstInterval) > 3000) {
         alert("Automated clicking detected. Please play the game manually.");
         return;
       }
@@ -121,7 +152,6 @@ img.addEventListener("click", () => {
   localStorage.setItem("eggData", JSON.stringify(eggData));
   
   generateToken();
-  generateDaycareEgg();
 
   let balance = JSON.parse(localStorage.getItem("balance") || "{}");
   if (!balance.pokeDollar) {
@@ -158,30 +188,11 @@ img.addEventListener("click", () => {
     return member;
   });
   updateEggsReadyToHatch();
+  generateDaycareEgg();
   localStorage.setItem("team", JSON.stringify(team));
+  localStorage.setItem("daycare", JSON.stringify(daycare));
   img.src = getRandomPokemonOrEgg();
 });
-
-function generateDaycareEgg() {
-  const eggsAvailable = daycare.eggsAvailable;
-  if (!eggsAvailable.species) {
-    return;
-  }
-
-  const rarity = pokemonDatabase.find(p => p.name === eggsAvailable.species).rarity;
-  const clickThreshold = rarity === 'common' ? 2 :
-                         rarity === 'uncommon' ? 600 :
-                         rarity === 'rare' ? 1000 :
-                         rarity === 'novelty' ? 5000 : 0;
-
-  if (eggData.clicks % clickThreshold === 0) {
-    if (!daycare.eggsAvailable.amount) {
-      daycare.eggsAvailable.amount = 0;
-    } else {
-      daycare.eggsAvailable.amount++;
-    }
-  }
-}
 
 //Idle Mode
 

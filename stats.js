@@ -11,6 +11,7 @@ let daycare = {
 	eggsAvailable : {
 		species: null,
 		amount: 0,
+		clicsBeforeNextEgg: 0,
 	},
 }
 

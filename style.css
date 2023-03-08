@@ -401,6 +401,7 @@ max-height: 96px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+	padding-bottom: 5%;
 }
 
 .daycare-team-container, .parents-container, .eggs-container {
