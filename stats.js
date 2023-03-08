@@ -4,15 +4,19 @@ if (localStorage.getItem("team")) {
     team = JSON.parse(localStorage.getItem("team"));
 }
 
-/* let daycare = {
+let daycare = {
 	parent0 : null,
 	parent1 : null,
-	eggsAvailable : "",
+	isCompatible: false,
+	eggsAvailable : {
+		species: null,
+		amount: 0,
+	},
 }
 
 if (localStorage.getItem("daycare")) {
     daycare = JSON.parse(localStorage.getItem("daycare"));
-} */
+} 
 
 
 let eggData = {

@@ -105,7 +105,7 @@ img.addEventListener("click", () => {
   if (clickIntervals.length >= 100) {
     const firstInterval = clickIntervals[0];
     for (let i = 1; i < clickIntervals.length; i++) {
-      if (Math.abs(clickIntervals[i] - firstInterval) > 75) {
+      if (Math.abs(clickIntervals[i] - firstInterval) > 100) {
         alert("Automated clicking detected. Please play the game manually.");
         return;
       }
@@ -121,6 +121,7 @@ img.addEventListener("click", () => {
   localStorage.setItem("eggData", JSON.stringify(eggData));
   
   generateToken();
+  generateDaycareEgg();
 
   let balance = JSON.parse(localStorage.getItem("balance") || "{}");
   if (!balance.pokeDollar) {
@@ -160,6 +161,27 @@ img.addEventListener("click", () => {
   localStorage.setItem("team", JSON.stringify(team));
   img.src = getRandomPokemonOrEgg();
 });
+
+function generateDaycareEgg() {
+  const eggsAvailable = daycare.eggsAvailable;
+  if (!eggsAvailable.species) {
+    return;
+  }
+
+  const rarity = pokemonDatabase.find(p => p.name === eggsAvailable.species).rarity;
+  const clickThreshold = rarity === 'common' ? 2 :
+                         rarity === 'uncommon' ? 600 :
+                         rarity === 'rare' ? 1000 :
+                         rarity === 'novelty' ? 5000 : 0;
+
+  if (eggData.clicks % clickThreshold === 0) {
+    if (!daycare.eggsAvailable.amount) {
+      daycare.eggsAvailable.amount = 0;
+    } else {
+      daycare.eggsAvailable.amount++;
+    }
+  }
+}
 
 //Idle Mode
 
@@ -238,8 +260,6 @@ idleButton.addEventListener("click", () => {
     count++;
   }, 250); // Change the interval as needed
 });
-
-
 
 img.src = getRandomPokemonOrEgg();
 
