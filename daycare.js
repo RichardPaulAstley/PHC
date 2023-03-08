@@ -148,7 +148,7 @@ function renderParents() {
 const daycareTeamBoxes = document.querySelectorAll(".daycare-team-container .team-slot");
 
 for (let i = 0; i < daycareTeamBoxes.length; i++) {
-  daycareTeamBoxes[i].addEventListener('dblclick', () => {
+  daycareTeamBoxes[i].addEventListener('click', () => {
     if (daycare.parent0 && daycare.parent1) {
       alert('No more free space in the daycare.');
       return;
@@ -190,7 +190,7 @@ for (let i = 0; i < daycareTeamBoxes.length; i++) {
 const parent0El = document.getElementById("parent-0");
 const parent1El = document.getElementById("parent-1");
 
-parent0El.addEventListener('dblclick', () => {
+parent0El.addEventListener('click', () => {
   if (team.length < 6 && daycare.parent0) {
     // Add the Pokemon back to the team array
     team.push(daycare.parent0);
@@ -208,7 +208,7 @@ parent0El.addEventListener('dblclick', () => {
   }
 });
 
-parent1El.addEventListener('dblclick', () => {
+parent1El.addEventListener('click', () => {
   if (team.length < 6 && daycare.parent1) {
     // Add the Pokemon back to the team array
     team.push(daycare.parent1);
