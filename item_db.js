@@ -120,6 +120,13 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+	  "name": "Shiny Stone",
+	  "sprite": "sprites/items/shinystone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It shines with a dazzling light.",
+	  "price": 3000
+	},
+	{
 	  "name": "Oval Stone",
 	  "sprite": "sprites/items/ovalstone.png",
 	  "type": "Evolution",
