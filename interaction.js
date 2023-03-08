@@ -100,7 +100,6 @@ function calculateClicsBeforeNextEgg(species) {
 }
 
 function generateDaycareEgg() {
-  console.log("Before generation: ", daycare.eggsAvailable);
   if (!daycare.eggsAvailable.species) {
     return;
   }
