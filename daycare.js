@@ -3,12 +3,21 @@ function renderEgg() {
   const eggSlot = document.getElementById('egg-0');
   const eggAmount = daycare.eggsAvailable.amount;
   const eggContent = eggSlot.querySelector('.egg-content');
+  let eggText = document.querySelector('.egg-text');
+
+  if (!eggText) {
+    eggText = document.createElement('div');
+    eggText.classList.add('egg-text');
+    eggsContainer.appendChild(eggText);
+  }
 
   if (eggAmount > 0) {
     const eggSprite = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species).egg_sprite;
-    eggContent.innerHTML = `<img src="${eggSprite}" class="egg-sprite" alt="Egg Sprite"> <p>${eggAmount} egg(s) are waiting for you</p>`;
+    eggContent.innerHTML = `<img src="${eggSprite}" class="egg-sprite" alt="Egg Sprite">`;
+    eggText.innerHTML = `${eggAmount} egg(s) are waiting for you`;
   } else {
-    eggContent.innerHTML = `<img src="sprites/none.png" class="egg-sprite" alt="Egg Sprite"> <p>0 egg(s) waiting for you</p>`;
+    eggContent.innerHTML = `<img src="sprites/none.png" class="egg-sprite" alt="Egg Sprite">`;
+    eggText.innerHTML = `No egg available`;
   }
 }
 
@@ -20,13 +29,13 @@ function checkCompatibility(parent0, parent1) {
   let clickThreshold;
 
   if (eggRarity === "common") {
-    clickThreshold = 500;
+    clickThreshold = 250;
   } else if (eggRarity === "uncommon") {
-    clickThreshold = 700;
+    clickThreshold = 350;
   } else if (eggRarity === "rare") {
-    clickThreshold = 1000;
+    clickThreshold = 500;
   } else if (eggRarity === "novelty") {
-    clickThreshold = 5000;
+    clickThreshold = 2000;
   }
 
   let parent0Groups = pokemonDatabase.find(p => p.name === parent0.species).egg_group;
@@ -140,30 +149,41 @@ const daycareTeamBoxes = document.querySelectorAll(".daycare-team-container .tea
 
 for (let i = 0; i < daycareTeamBoxes.length; i++) {
   daycareTeamBoxes[i].addEventListener('dblclick', () => {
+    if (daycare.parent0 && daycare.parent1) {
+      alert('No more free space in the daycare.');
+      return;
+    }
+
     const clickedBox = daycareTeamBoxes[i];
     const pokemonIndex = Number(clickedBox.id.split('-')[1]);
     const pokemon = team[pokemonIndex];
 
-if (!daycare.parent0) {
-  daycare.parent0 = pokemon;
-} else if (!daycare.parent1) {
-  daycare.parent1 = pokemon;
-}
+    // Check if the pokemon is hatched
+    if (pokemon.isEgg) {
+      alert('You cannot add an egg to the daycare.');
+      return;
+    }
 
-// Check for compatibility
-if (daycare.parent0 && daycare.parent1) {
-  daycare.isCompatible = checkCompatibility(daycare.parent0, daycare.parent1);
-}
+    if (!daycare.parent0) {
+      daycare.parent0 = pokemon;
+    } else if (!daycare.parent1) {
+      daycare.parent1 = pokemon;
+    }
 
-// Remove the pokemon from the team array
-if (daycare.parent0 || daycare.parent1) {
-  team.splice(pokemonIndex, 1);
-}
+    // Check for compatibility
+    if (daycare.parent0 && daycare.parent1) {
+      daycare.isCompatible = checkCompatibility(daycare.parent0, daycare.parent1);
+    }
 
-// Save the updated team and daycare arrays to localStorage
-localStorage.setItem("team", JSON.stringify(team));
-localStorage.setItem("daycare", JSON.stringify(daycare));
-location.reload();
+    // Remove the pokemon from the team array
+    if (daycare.parent0 || daycare.parent1) {
+      team.splice(pokemonIndex, 1);
+    }
+
+    // Save the updated team and daycare arrays to localStorage
+    localStorage.setItem("team", JSON.stringify(team));
+    localStorage.setItem("daycare", JSON.stringify(daycare));
+    location.reload();
   });
 }
 
