@@ -211,6 +211,27 @@ const itemDatabase = [
 	  "price": 3000
 	},
 	{
+	  "name": "Leek",
+	  "sprite": "sprites/items/leek.png",
+	  "type": "Evolution",
+	  "description": "An item to be held by Farfetch'd. This very long and stiff stalk of leek boosts its critical-hit ratio.",
+	  "price": 3500
+	},
+	{
+	  "name": "Galarica Cuff",
+	  "sprite": "sprites/items/galaricacuff.png",
+	  "type": "Evolution",
+	  "description": "A cuff made from woven-together Galarica Twigs. Giving it to a Galarian Slowpoke makes the Pokémon very happy.",
+	  "price": 3500
+	},
+	{
+	  "name": "Galarica Wreath",
+	  "sprite": "sprites/items/galaricawreath.png",
+	  "type": "Evolution",
+	  "description": "A wreath made from woven-together Galarica Twigs. Placing it on the head of a Galarian Slowpoke makes the Pokémon very happy.",
+	  "price": 3500
+	},
+	{
 	  "name": "Peat Block",
 	  "sprite": "sprites/items/peatblock.png",
 	  "type": "Evolution",

@@ -63,6 +63,13 @@ const tokenExchange = [
 	  "amount": 2 
     },
 	{
+      "pokemon": "Galarian Articuno",
+	  "sprite": "sprites/egg/articuno.1.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
       "pokemon": "Zapdos",
 	  "sprite": "sprites/egg/zapdos.png",
 	  "type": "legendary",
@@ -70,8 +77,22 @@ const tokenExchange = [
 	  "amount": 2 
     },
 	{
+      "pokemon": "Galarian Zapdos",
+	  "sprite": "sprites/egg/zapdos.1.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
       "pokemon": "Moltres",
 	  "sprite": "sprites/egg/moltres.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
+      "pokemon": "Galarian Moltres",
+	  "sprite": "sprites/egg/moltres.1.png",
 	  "type": "legendary",
 	  "available": true,
 	  "amount": 2 
@@ -86,6 +107,48 @@ const tokenExchange = [
 	{
       "pokemon": "Mew",
 	  "sprite": "sprites/egg/mew.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 3 
+    },
+	{
+      "pokemon": "Raikou",
+	  "sprite": "sprites/egg/raikou.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
+      "pokemon": "Entei",
+	  "sprite": "sprites/egg/entei.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
+      "pokemon": "Suicune",
+	  "sprite": "sprites/egg/suicune.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 2 
+    },
+	{
+      "pokemon": "Lugia",
+	  "sprite": "sprites/egg/lugia.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 3 
+    },
+	{
+      "pokemon": "Ho-oh",
+	  "sprite": "sprites/egg/hooh.png",
+	  "type": "legendary",
+	  "available": true,
+	  "amount": 3 
+    },
+	{
+      "pokemon": "Celebi",
+	  "sprite": "sprites/egg/celebi.png",
 	  "type": "legendary",
 	  "available": true,
 	  "amount": 3 
