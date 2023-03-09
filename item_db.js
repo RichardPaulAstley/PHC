@@ -134,6 +134,13 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+	  "name": "Remoraid Toy",
+	  "sprite": "sprites/items/remoraidtoy.png",
+	  "type": "Evolution",
+	  "description": "A toy of a Remoraid. It seems to be enough realistic to fool a certain Pokemon thinking it's a real one.",
+	  "price": 2000
+	},
+	{
 	  "name": "Protector",
 	  "sprite": "sprites/items/protector.png",
 	  "type": "Evolution",
@@ -155,10 +162,31 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+	  "name": "Razor Fang",
+	  "sprite": "sprites/items/razorfang.png",
+	  "type": "Evolution",
+	  "description": "A sharp and pointed fang that seems as though it might be able to pierce straight through anything at all. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Razor Claw",
+	  "sprite": "sprites/items/razorclaw.png",
+	  "type": "Evolution",
+	  "description": "A sharp and pointed claw that seems as though it might be able to cut through anything at all. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
 	  "name": "Dawn Stone",
 	  "sprite": "sprites/items/dawnstone.png",
 	  "type": "Evolution",
 	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It sparkles like a glittering eye.",
+	  "price": 3000
+	},
+	{
+	  "name": "Dusk Stone",
+	  "sprite": "sprites/items/duskstone.png",
+	  "type": "Evolution",
+	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It holds dark shadows within it.",
 	  "price": 3000
 	},
 	{
@@ -181,6 +209,13 @@ const itemDatabase = [
 	  "type": "Evolution",
 	  "description": "A peculiar stone that can make certain species of Pokémon evolve. It has a snowflake pattern in it.",
 	  "price": 3000
+	},
+	{
+	  "name": "Peat Block",
+	  "sprite": "sprites/items/peatblock.png",
+	  "type": "Evolution",
+	  "description": "A block of muddy material that can be used as fuel for burning when it is dried. It’s loved by a certain Pokémon.",
+	  "price": 4000
 	},
 	/*{
 	  "name": "Big Malasada",
