@@ -337,20 +337,31 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
 }
 	// If there is only one evolution available, use it
 	else {
-		const chosenEvolutionData = pokemonData.evolutions[0];
-		// Replace the species of the pokemon with the evolved species
-		team[index].species = chosenEvolutionData.evolves_to;
-		// Find the evolved pokemon in the database
-		const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
-		// Update the sprite URL to the evolved species
-		team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
-		// Decrement the amount of the item used for evolution
-		if (chosenEvolutionData.method[0] === 'item') {
-			let item = inventory.find(i => i.name === chosenEvolutionData.value);
-			item.amount--;
-			localStorage.setItem("inventory", JSON.stringify(inventory));
-		}
-	}
+  const chosenEvolutionData = pokemonData.evolutions[0];
+  // Replace the species of the pokemon with the evolved species
+  team[index].species = chosenEvolutionData.evolves_to;
+  // Find the evolved pokemon in the database
+  const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
+  
+  // Update the sprite URL to the evolved species
+  if (evolvedPokemon.name === 'Dudunsparce') {
+    const randomNum = Math.floor(Math.random() * 100);
+    if (randomNum === 0) {
+      team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/982.1.png' : 'sprites/pokemon/982.1.png';
+    } else {
+      team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+    }
+  } else {
+    team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+  }
+  
+  // Decrement the amount of the item used for evolution
+  if (chosenEvolutionData.method[0] === 'item') {
+    let item = inventory.find(i => i.name === chosenEvolutionData.value);
+    item.amount--;
+    localStorage.setItem("inventory", JSON.stringify(inventory));
+  }
+}
 }
 	// Save the updated team and inventory to local storage
 	localStorage.setItem("team", JSON.stringify(team));
