@@ -93,7 +93,7 @@ if (localStorage.getItem("storage")) {
     storage = JSON.parse(localStorage.getItem("storage"));
 }
 
-function updatePokemonSprites() {
+/*function updatePokemonSprites() {
   [team, storage].forEach((pokemonArray) => {
     pokemonArray.forEach((pokemon) => {
       if (!pokemon) return; // ignore null values
@@ -118,4 +118,4 @@ function updatePokemonSprites() {
   
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
-}
+}*/

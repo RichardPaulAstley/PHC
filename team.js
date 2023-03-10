@@ -303,7 +303,11 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       // Find the evolved pokemon in the database
       const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
       // Update the sprite URL to the evolved species
-      team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+      let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+	  if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+		 sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+	  }		
+		team[index].sprite = sprite;
       // Decrement the amount of the item used for evolution
       if (chosenEvolutionData.method[0] === 'item') {
         let item = inventory.find(i => i.name === chosenEvolutionData.value);
@@ -326,7 +330,11 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
         // Find the evolved pokemon in the database
         const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
         // Update the sprite URL to the evolved species
-        team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+        let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+		if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+		  sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+		}		
+		team[index].sprite = sprite;
         // Decrement the amount of the item used for evolution
 		if (chosenEvolutionData.method[0] === 'item') {
 		let item = inventory.find(i => i.name === chosenEvolutionData.value);
@@ -407,5 +415,3 @@ if (spriteElement) {
 for (let pokemon of team) {
   checkEvolutionConditions(pokemon, inventory);
 }
-
-updatePokemonSprites();
