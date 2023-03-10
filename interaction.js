@@ -109,7 +109,7 @@ function generateDaycareEgg() {
   }
 
   if (daycare.eggsAvailable.clicsBeforeNextEgg === 0) {
-    daycare.eggsAvailable.amount++;
+    daycare.eggsAvailable.amount += Math.floor(Math.random() * 4) + 1;
     daycare.eggsAvailable.clicsBeforeNextEgg = calculateClicsBeforeNextEgg(daycare.eggsAvailable.species);
   }
 }
