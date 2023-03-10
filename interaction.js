@@ -89,13 +89,13 @@ function calculateClicsBeforeNextEgg(species) {
   const eggRarity = pokemonDatabase.find(p => p.name === eggBaseSpecies).rarity;
 
   if (eggRarity === "common") {
-    return 250;
+    return 100;
   } else if (eggRarity === "uncommon") {
-    return 350;
+    return 150;
   } else if (eggRarity === "rare") {
-    return 500;
+    return 250;
   } else if (eggRarity === "novelty") {
-    return 2000;
+    return 1000;
   }
 }
 

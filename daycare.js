@@ -29,13 +29,13 @@ function checkCompatibility(parent0, parent1) {
   let clickThreshold;
 
   if (eggRarity === "common") {
-    clickThreshold = 250;
+    clickThreshold = 100;
   } else if (eggRarity === "uncommon") {
-    clickThreshold = 350;
+    clickThreshold = 150;
   } else if (eggRarity === "rare") {
-    clickThreshold = 500;
+    clickThreshold = 250;
   } else if (eggRarity === "novelty") {
-    clickThreshold = 2000;
+    clickThreshold = 1000;
   }
 
   let parent0Groups = pokemonDatabase.find(p => p.name === parent0.species).egg_group;
