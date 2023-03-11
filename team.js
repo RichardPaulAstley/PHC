@@ -70,16 +70,10 @@ window.onload = function() {
     }
   }
 
+  //Check to move this function inside the hatchEgg one.
   function updateUI(idx) {
   let currentPokemon = team[idx];
   document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.species;
-  if (currentPokemon.species === "Unown") {
-    // Don't update sprite if the current pokemon is an Unown
-    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`).src = currentPokemon.sprite;
-  } else {
-    let sprite = currentPokemon.isShiny ? pokemonDatabase.find(p => p.name === currentPokemon.species).shiny_sprite : pokemonDatabase.find(p => p.name === currentPokemon.species).sprite;
-    document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`).src = sprite;
-  }
   document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender;
   document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = currentPokemon.level;
   document.querySelector(`.team-box:nth-child(${idx + 1}) .hatching-button`).style.display = 'none';
@@ -107,8 +101,18 @@ window.onload = function() {
 	  let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
 	  egg.sprite = spritePath + `201.${form}.png`;
     } else {
-      egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
+        egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
     }
+    if (egg.gender === "Female") {
+        let femaleSprite = pokemon.female_sprite;
+        if (egg.isShiny && pokemon.female_shiny_sprite) {
+            femaleSprite = pokemon.female_shiny_sprite
+        }
+        if (femaleSprite) {
+            egg.sprite = femaleSprite;
+        }
+    }
+	document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
     /* egg.name = pokemon.name; */
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
@@ -299,7 +303,11 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       // Find the evolved pokemon in the database
       const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
       // Update the sprite URL to the evolved species
-      team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+      let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+	  if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+		 sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+	  }		
+		team[index].sprite = sprite;
       // Decrement the amount of the item used for evolution
       if (chosenEvolutionData.method[0] === 'item') {
         let item = inventory.find(i => i.name === chosenEvolutionData.value);
@@ -322,7 +330,11 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
         // Find the evolved pokemon in the database
         const evolvedPokemon = pokemonDatabase.find(p => p.name === chosenEvolutionData.evolves_to);
         // Update the sprite URL to the evolved species
-        team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+        let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+		if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+		  sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+		}		
+		team[index].sprite = sprite;
         // Decrement the amount of the item used for evolution
 		if (chosenEvolutionData.method[0] === 'item') {
 		let item = inventory.find(i => i.name === chosenEvolutionData.value);
@@ -349,10 +361,18 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
     if (randomNum === 0) {
       team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/982.1.png' : 'sprites/pokemon/982.1.png';
     } else {
-      team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+      let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+      if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+        sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+      }
+      team[index].sprite = sprite;
     }
   } else {
-    team[index].sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+    let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+    if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+      sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+    }
+    team[index].sprite = sprite;
   }
   
   // Decrement the amount of the item used for evolution

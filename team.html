@@ -103,4 +103,37 @@
   <script src="pokemon_db.js"></script>
   <script src="team.js"></script>
   <script src="shelter.js"></script>
+  <script>function updatePokemonSprites() {
+  [team, storage].forEach((pokemonArray) => {
+    pokemonArray.forEach((pokemon) => {
+      if (!pokemon || pokemon.isEgg) return; // ignore null values and eggs
+      
+      const pokemonData = pokemonDatabase.find((p) => p.name === pokemon.species);
+      if (!pokemonData) return;
+	  
+	  if (pokemon.gender !== 'Female' || !pokemonData.female_sprite) return; // ignore non-female pokemon without a female sprite
+
+      let sprite = pokemon.isShiny ? pokemonData.shiny_sprite : pokemonData.sprite;
+
+      if (pokemon.gender === 'Female') {
+        if (pokemonData.female_sprite !== undefined) {
+          if (!pokemon.isShiny) {
+            sprite = pokemonData.female_sprite;
+          } else if (pokemonData.female_shiny_sprite !== undefined) {
+            sprite = pokemonData.female_shiny_sprite;
+          }
+        }
+      } else if (pokemonData.female_sprite !== undefined) {
+        return; // ignore non-female pokemon with a female sprite
+      }
+
+      pokemon.sprite = sprite;
+    });
+  });
+  
+  localStorage.setItem('team', JSON.stringify(team));
+  localStorage.setItem('storage', JSON.stringify(storage));
+}
+updatePokemonSprites();</script>
+
 </html>

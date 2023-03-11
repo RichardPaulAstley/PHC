@@ -93,27 +93,29 @@ if (localStorage.getItem("storage")) {
     storage = JSON.parse(localStorage.getItem("storage"));
 }
 
-function updateSprites() {
-  let pokemonData;
-  let team = JSON.parse(localStorage.getItem("team")) || [];
-  let storage = JSON.parse(localStorage.getItem("storage")) || [];
+/*function updatePokemonSprites() {
+  [team, storage].forEach((pokemonArray) => {
+    pokemonArray.forEach((pokemon) => {
+      if (!pokemon) return; // ignore null values
+      if (pokemon.isEgg) return; // ignore eggs
+      
+      const pokemonData = pokemonDatabase.find((p) => p.name === pokemon.species);
+      if (!pokemonData) return;
 
-  team = team.map((member) => {
-    pokemonData = pokemonDatabase.find(data => data.name === member.species);
-    if (pokemonData && pokemonData.sprite !== member.sprite) {
-      member.sprite = pokemonData.sprite;
-    }
-    return member;
+      let sprite = pokemon.isShiny ? pokemonData.shiny_sprite : pokemonData.sprite;
+
+      if (pokemon.gender === 'Female' && pokemonData.female_sprite) {
+        if (!pokemon.isShiny) {
+          sprite = pokemonData.female_sprite;
+        } else if (pokemonData.female_shiny_sprite) {
+          sprite = pokemonData.female_shiny_sprite;
+        }
+      }
+
+      pokemon.sprite = sprite;
+    });
   });
-
-  storage = storage.map((member) => {
-    pokemonData = pokemonDatabase.find(data => data.name === member.species);
-    if (pokemonData && pokemonData.sprite !== member.sprite) {
-      member.sprite = pokemonData.sprite;
-    }
-    return member;
-  });
-
-  localStorage.setItem("team", JSON.stringify(team));
-  localStorage.setItem("storage", JSON.stringify(storage));
-}
+  
+  localStorage.setItem('team', JSON.stringify(team));
+  localStorage.setItem('storage', JSON.stringify(storage));
+}*/
