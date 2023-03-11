@@ -30,14 +30,39 @@ eggBoxes.forEach(eggBox => {
             alert("This egg has already been claimed!");
         }
         else if(team.length < 6){
-            team.push({/*id: team.length+1,*/ species: randomPokemon.name, eggSteps: 0, level:0, experience: 0, gender:"none", isEgg: true, isShiny: false, sprite: randomPokemon.egg_sprite});
-            console.log(team);
-			localStorage.setItem("team", JSON.stringify(team));
-			eggBox.claimed = true;
-			eggBox.innerHTML = "";
-			updateTeamLength();
-        }else {
-            alert("Team is full!");
-        }
+  const isShiny = Math.random() < 1/256;
+  let pokemon = pokemonDatabase.find(p => p.name === randomPokemon.name);
+  const genderRate = pokemon.gender_rate;
+  let gender;
+  if (genderRate === "-") {
+    gender = "-";
+  } else if (genderRate === "0") {
+    gender = "Genderless";
+  } else if (genderRate === "1") {
+    gender = "Male";
+  } else if (genderRate === "8") {
+    gender = "Female";
+  } else {
+    gender = Math.random() * 100 < genderRate ? "Male" : "Female";
+  }
+  const egg = {
+    species: randomPokemon.name,
+    eggSteps: 0,
+    level: 0,
+    experience: 0,
+    gender: gender,
+    isEgg: true,
+    isShiny: isShiny,
+    sprite: randomPokemon.egg_sprite
+  };
+  team.push(egg);
+  console.log(team);
+  localStorage.setItem("team", JSON.stringify(team));
+  eggBox.claimed = true;
+  eggBox.innerHTML = "";
+  updateTeamLength();
+} else {
+  alert("Team is full!");
+}
     });
 });

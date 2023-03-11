@@ -89,13 +89,13 @@ window.onload = function() {
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    egg.isShiny = Math.random() < 1/256;
-    let pokemon = pokemonDatabase.find(p => p.name === egg.species);
+	let pokemon = pokemonDatabase.find(p => p.name === egg.species);
+    /*egg.isShiny = Math.random() < 1/256;
     if (pokemon.gender_rate !== "-") {
       egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
     } else {
       egg.gender = "-";
-    }
+    }*/
     if (egg.species === "Unown") {
 	  let form = Math.floor(Math.random() * 28) + 1;
 	  let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
