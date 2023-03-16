@@ -57,7 +57,7 @@ nav a {
 
 
 main {
-  padding: 20px;
+  padding: 20px 20% 20px 20%;
   text-align: center;
   width: 100%;
   justify-content: center;
@@ -68,12 +68,13 @@ main h2 {
   margin: 0 0 20px;
 }
 
-#start-button {
+main button {
   background-color: #424242;
   color: #fff;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  margin: 10px;
 }
 
 footer {
@@ -195,11 +196,24 @@ footer {
 }
 
 .hatching-button, .evolving-button {
-  margin-right: 10px;
-  padding: 2%; 
+  margin-right: 30px;
+  padding: 4%; 
+  background-color: #424242;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
+.main-content, h1 {
+	margin-top: 20px;
+	margin-left: 20px;
+}
 
+.stats-title h1 {
+	margin-top: 10%;
+	margin-left: 20px;
+}
 
 /* Shop */
 
@@ -358,6 +372,10 @@ max-height: 96px;
 #idle-button {
   margin-top: 20px;
   padding:1%;
+  background-color: #424242;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 /* Token */

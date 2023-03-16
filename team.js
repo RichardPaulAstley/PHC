@@ -10,8 +10,6 @@ teamBoxes.forEach((teamBox, index) => {
   return;
 }
 
-	console.log(currentTeamMember);
-
     // Update the pokemon-sprite element
     const sprite = teamBox.querySelector('.pokemon-sprite img');
 sprite.src = currentTeamMember.sprite;
@@ -22,9 +20,9 @@ sprite.src = currentTeamMember.sprite;
     if(currentTeamMember.isEgg){
         name.innerText = "Egg"
     }else{
-        name.innerText = currentTeamMember.isShiny 
-  ? "Sh." + currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "(M)" : currentTeamMember.gender === "Female" ? "(F)" : "(-)")
-  : currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "(M)" : currentTeamMember.gender === "Female" ? "(F)" : "(-)");
+        name.innerHTML = currentTeamMember.isShiny 
+  ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
+  : currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
 
     }
 
@@ -73,9 +71,15 @@ window.onload = function() {
   //Check to move this function inside the hatchEgg one.
   function updateUI(idx) {
   let currentPokemon = team[idx];
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.species;
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender;
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = currentPokemon.level;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
+    ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentPokemon.species
+    : currentPokemon.species;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male" 
+  ? "♂" 
+  : currentPokemon.gender === "Female" 
+  ? "♀" 
+  : "-";
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = 'Lvl.' + currentPokemon.level;
   document.querySelector(`.team-box:nth-child(${idx + 1}) .hatching-button`).style.display = 'none';
 }
     
@@ -89,7 +93,9 @@ window.onload = function() {
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    egg.isShiny = Math.random() < 1/256;
+    if (!egg.isShiny) {  
+		egg.isShiny = Math.random() < 1/256;
+	}
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
       egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
@@ -113,7 +119,6 @@ window.onload = function() {
         }
     }
 	document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
-    /* egg.name = pokemon.name; */
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
       if (egg.isShiny) {
