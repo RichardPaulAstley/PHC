@@ -365,6 +365,7 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
     const randomNum = Math.floor(Math.random() * 100);
     if (randomNum === 0) {
       team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/982.1.png' : 'sprites/pokemon/982.1.png';
+	  alert(`Wait... What happened with your Dunsparce?!`)
     } else {
       let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
       if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
@@ -378,6 +379,27 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
     }
     team[index].sprite = sprite;
+	alert(`Your Pokémon has evolved into ${pokemon.species}!`)
+  }
+  
+  if (evolvedPokemon.name === 'Ninjask') {
+    // Check if there is a free slot in the team
+    if (team.length < 6) {
+      // Create a new Shedinja object and push it to the team array
+      const newPokemon = {
+        species: 'Shedinja',
+        eggSteps: 0,
+        level: pokemon.level,
+        experience: pokemon.experience,
+        gender: pokemon.gender,
+        isEgg: false,
+        isShiny: pokemon.isShiny,
+        sprite: pokemon.isShiny ? 'sprites/pokemon/shiny/292.png' : 'sprites/pokemon/292.png'
+      };
+      team.push(newPokemon);
+	  alert("Seems another Pokemon shown up next to your Ninjask...")
+	  location.reload();
+    }
   }
   
   // Decrement the amount of the item used for evolution
