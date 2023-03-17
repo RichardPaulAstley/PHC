@@ -260,6 +260,7 @@ storage[storageIndex] = null; // Set the storage slot to null
 
 // Save the updated arrays
 reorderTeamArray();
+location.reload();
 localStorage.setItem('team', JSON.stringify(team));
 localStorage.setItem('storage', JSON.stringify(storage));
 }

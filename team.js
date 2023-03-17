@@ -347,8 +347,6 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
 		localStorage.setItem("inventory", JSON.stringify(inventory));
 			}
 			const newPokemonName = team[index].species;
-  const confirmationMessage = `Your Pokémon has evolved into ${pokemon.species}!`;
-  alert(confirmationMessage);
 		}
 	}
 }
@@ -379,7 +377,6 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
     }
     team[index].sprite = sprite;
-	alert(`Your Pokémon has evolved into ${pokemon.species}!`)
   }
   
   if (evolvedPokemon.name === 'Ninjask') {
@@ -435,6 +432,7 @@ if (spriteElement) {
     // Update the UI to reflect the evolution
     updateUI(index);
 	localStorage.setItem("team", JSON.stringify(team));
+	alert(`Your Pokémon has evolved into ${pokemon.species}!`)
   });
 });
 
