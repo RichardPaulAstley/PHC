@@ -129,8 +129,11 @@ const eventTokenAmount = tokenInventory.find(token => token.type === "event")?.a
 document.getElementById("event-tokens").innerHTML = eventTokenAmount.toLocaleString() || 0;
 
 const legendaryTableBody = document.querySelector(".token-table:nth-of-type(4) tbody");
-legendaryTokens.forEach(token => {
-  if (token.available) {
+let filteredTokens = [...legendaryTokens];
+
+function renderTokens() {
+  legendaryTableBody.innerHTML = "";
+  filteredTokens.forEach(token => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
@@ -138,8 +141,33 @@ legendaryTokens.forEach(token => {
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
     legendaryTableBody.appendChild(row);
-  }
-});
+  });
+}
+
+function filterTokensByGeneration(generation) {
+  filteredTokens = legendaryTokens.filter(token => token.generation === generation);
+  renderTokens();
+}
+
+filterTokensByGeneration(1);
 
 const legendaryTokenAmount = tokenInventory.find(token => token.type === "legendary")?.amount || 0;
 document.getElementById("legendary-tokens").innerHTML = legendaryTokenAmount.toLocaleString() || 0;
+
+const generationDropdown = document.getElementById("generation-dropdown");
+const selectElement = document.createElement("select");
+const generationList = [...new Set(legendaryTokens.map(token => token.generation))];
+generationList.forEach(generation => {
+  const optionElement = document.createElement("option");
+  optionElement.textContent = `Generation ${generation}`;
+  optionElement.value = generation;
+  selectElement.appendChild(optionElement);
+});
+
+selectElement.addEventListener("change", (event) => {
+  const selectedGeneration = parseInt(event.target.value);
+  filterTokensByGeneration(selectedGeneration);
+});
+
+generationDropdown.appendChild(selectElement);
+renderTokens();
