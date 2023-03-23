@@ -167,4 +167,84 @@ const tokenExchange = [
 	  "available": true,
 	  "amount": 3 
     },
+	{
+		"pokemon": "Regirock",
+		"sprite": "sprites/egg/regirock.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Regice",
+		"sprite": "sprites/egg/regice.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Registeel",
+		"sprite": "sprites/egg/registeel.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Latias",
+		"sprite": "sprites/egg/latias.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Latios",
+		"sprite": "sprites/egg/latios.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Kyogre",
+		"sprite": "sprites/egg/kyogre.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Groudon",
+		"sprite": "sprites/egg/groudon.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Rayquaza",
+		"sprite": "sprites/egg/rayquaza.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 4 
+	},
+	{
+		"pokemon": "Jirachi",
+		"sprite": "sprites/egg/jirachi.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Deoxys",
+		"sprite": "sprites/egg/deoxys.png",
+		"type": "legendary",
+		"generation": 3,
+		"available": true,
+		"amount": 4 
+	},
 ]

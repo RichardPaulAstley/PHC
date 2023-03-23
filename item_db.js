@@ -15,6 +15,13 @@ const itemDatabase = [
 	  "price": 50000
 	},
 	{
+		"name": "Primal Orb",
+		"sprite": "sprites/items/primalorb.png",
+		"type": "Evolution",
+		"description": "An orb that radiates an immense power. It seems to react to two specific Pokémon...",
+		"price": 80000
+	  },
+	{
 	  "name": "Max Mushrooms",
 	  "sprite": "sprites/items/maxmushrooms.png",
 	  "type": "Evolution",
@@ -146,6 +153,20 @@ const itemDatabase = [
 		"type": "Evolution",
 		"description": "A mysterious scale that causes a certain Pokémon to evolve. It shines in rainbow colors.",
 		"price": 5000
+	},
+	{
+		"name": "Deep Sea Tooth",
+		"sprite": "sprites/items/deepseatooth.png",
+		"type": "Evolution",
+		"description": "An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.",
+		"price": 4000
+	},
+	{
+		"name": "Deep Sea Scale",
+		"sprite": "sprites/items/deepseascale.png",
+		"type": "Evolution",
+		"description": "An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.",
+		"price": 4000
 	},
 	{
 	  "name": "Protector",
