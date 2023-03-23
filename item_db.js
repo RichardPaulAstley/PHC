@@ -141,6 +141,13 @@ const itemDatabase = [
 	  "price": 2000
 	},
 	{
+		"name": "Prism Scale",
+		"sprite": "sprites/items/prismscale.png",
+		"type": "Evolution",
+		"description": "A mysterious scale that causes a certain Pokémon to evolve. It shines in rainbow colors.",
+		"price": 5000
+	},
+	{
 	  "name": "Protector",
 	  "sprite": "sprites/items/protector.png",
 	  "type": "Evolution",
@@ -173,6 +180,13 @@ const itemDatabase = [
 	  "sprite": "sprites/items/razorclaw.png",
 	  "type": "Evolution",
 	  "description": "A sharp and pointed claw that seems as though it might be able to cut through anything at all. It's loved by a certain Pokémon.",
+	  "price": 3500
+	},
+	{
+	  "name": "Reaper Cloth",
+	  "sprite": "sprites/items/razorclaw.png",
+	  "type": "Evolution",
+	  "description": "A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokémon.",
 	  "price": 3500
 	},
 	{
