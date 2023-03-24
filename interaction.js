@@ -122,7 +122,7 @@ img.addEventListener("click", () => {
   
   // Check for automated clicking
   const clickInterval = now - lastClickTime;
-  if (clickInterval < 10) { // Set a minimum interval of 10 milliseconds
+  if (clickInterval < 5) { // Set a minimum interval of 10 milliseconds
     alert("Slow down! You're clicking too fast.");
     return;
   }
