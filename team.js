@@ -87,54 +87,55 @@ window.onload = function() {
         localStorage.setItem("team", JSON.stringify(team));
     }
     
-  function hatchEgg(team, index) {
-    if (!team[index]) return;
-    let egg = team[index];
-    egg.isEgg = false;
-    egg.eggSteps = 0;
-    egg.level = 1;
-    if (!egg.isShiny) {  
-		egg.isShiny = Math.random() < 1/256;
-	}
-    let pokemon = pokemonDatabase.find(p => p.name === egg.species);
-    if (pokemon.gender_rate !== "-") {
-      egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
-    } else {
-      egg.gender = "-";
-    }
-    if (egg.species === "Unown") {
-	  let form = Math.floor(Math.random() * 28) + 1;
-	  let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
-	  egg.sprite = spritePath + `201.${form}.png`;
-    } else {
+    function hatchEgg(team, index) {
+      if (!team[index]) return;
+      let egg = team[index];
+      egg.isEgg = false;
+      egg.eggSteps = 0;
+      egg.level = 1;
+      if (!egg.isShiny) {  
+        egg.isShiny = Math.random() < 1/256;
+      }
+      let pokemon = pokemonDatabase.find(p => p.name === egg.species);
+      if (pokemon.gender_rate !== "-") {
+        egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
+      } else {
+        egg.gender = "-";
+      }
+      if (egg.species === "Unown") {
+        let form = Math.floor(Math.random() * 28) + 1;
+        let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
+        egg.sprite = spritePath + `201.${form}.png`;
+      } else {
         egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
-    }
-    if (egg.gender === "Female") {
+      }
+      if (egg.gender === "Female") {
         let femaleSprite = pokemon.female_sprite;
         if (egg.isShiny && pokemon.female_shiny_sprite) {
-            femaleSprite = pokemon.female_shiny_sprite
+          femaleSprite = pokemon.female_shiny_sprite
         }
         if (femaleSprite) {
-            egg.sprite = femaleSprite;
+          egg.sprite = femaleSprite;
         }
+      }
+      document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
+      let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
+      eggData.hatches = (eggData.hatches || 0) + 1;
+      if (egg.isShiny) {
+        eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
+        setTimeout(() => {
+          window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
+        }, 500);
+      }
+      team.forEach((p, i) => {
+        if (p.species === pokemon.name) {
+          team[i].totalHatched = (team[i].totalHatched || 0) + eggData.hatches;
+        }
+      });
+      localStorage.setItem("eggData", JSON.stringify(eggData));
+      updateUI(index);
+      saveTeam();
     }
-	document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
-    let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
-    eggData.hatches = (eggData.hatches || 0) + 1;
-    if (egg.isShiny) {
-      eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
-      setTimeout(() => {
-        window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
-        const hatchedPokemon = team.find(p => p.species === pokemon.name);
-        if (hatchedPokemon) {
-          hatchedPokemon.totalHatched = (hatchedPokemon.totalHatched || 0) + eggData.hatches;
-        }
-      }, 500);
-  }
-  localStorage.setItem("eggData", JSON.stringify(eggData));
-  updateUI(index);
-  saveTeam();
-}
 };
 
 /* To think - Guaranteed Shiny
