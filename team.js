@@ -10,8 +10,6 @@ teamBoxes.forEach((teamBox, index) => {
   return;
 }
 
-	console.log(currentTeamMember);
-
     // Update the pokemon-sprite element
     const sprite = teamBox.querySelector('.pokemon-sprite img');
 sprite.src = currentTeamMember.sprite;
@@ -22,9 +20,9 @@ sprite.src = currentTeamMember.sprite;
     if(currentTeamMember.isEgg){
         name.innerText = "Egg"
     }else{
-        name.innerText = currentTeamMember.isShiny 
-  ? "Sh." + currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "(M)" : currentTeamMember.gender === "Female" ? "(F)" : "(-)")
-  : currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "(M)" : currentTeamMember.gender === "Female" ? "(F)" : "(-)");
+        name.innerHTML = currentTeamMember.isShiny 
+  ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
+  : currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
 
     }
 
@@ -73,9 +71,15 @@ window.onload = function() {
   //Check to move this function inside the hatchEgg one.
   function updateUI(idx) {
   let currentPokemon = team[idx];
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.species;
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender;
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = currentPokemon.level;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
+    ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentPokemon.species
+    : currentPokemon.species;
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male" 
+  ? "♂" 
+  : currentPokemon.gender === "Female" 
+  ? "♀" 
+  : "-";
+  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = 'Lvl.' + currentPokemon.level;
   document.querySelector(`.team-box:nth-child(${idx + 1}) .hatching-button`).style.display = 'none';
 }
     
@@ -89,7 +93,9 @@ window.onload = function() {
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    egg.isShiny = Math.random() < 1/256;
+    if (!egg.isShiny) {  
+		egg.isShiny = Math.random() < 1/256;
+	}
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
       egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
@@ -113,7 +119,6 @@ window.onload = function() {
         }
     }
 	document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
-    /* egg.name = pokemon.name; */
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
       if (egg.isShiny) {
@@ -342,8 +347,6 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
 		localStorage.setItem("inventory", JSON.stringify(inventory));
 			}
 			const newPokemonName = team[index].species;
-  const confirmationMessage = `Your Pokémon has evolved into ${pokemon.species}!`;
-  alert(confirmationMessage);
 		}
 	}
 }
@@ -360,6 +363,7 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
     const randomNum = Math.floor(Math.random() * 100);
     if (randomNum === 0) {
       team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/982.1.png' : 'sprites/pokemon/982.1.png';
+	  alert(`Wait... What happened with your Dunsparce?!`)
     } else {
       let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
       if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
@@ -373,6 +377,26 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
       sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
     }
     team[index].sprite = sprite;
+  }
+  
+  if (evolvedPokemon.name === 'Ninjask') {
+    // Check if there is a free slot in the team
+    if (team.length < 6) {
+      // Create a new Shedinja object and push it to the team array
+      const newPokemon = {
+        species: 'Shedinja',
+        eggSteps: 0,
+        level: pokemon.level,
+        experience: pokemon.experience,
+        gender: pokemon.gender,
+        isEgg: false,
+        isShiny: pokemon.isShiny,
+        sprite: pokemon.isShiny ? 'sprites/pokemon/shiny/292.png' : 'sprites/pokemon/292.png'
+      };
+      team.push(newPokemon);
+	  alert("Seems another Pokemon shown up next to your Ninjask...")
+	  location.reload();
+    }
   }
   
   // Decrement the amount of the item used for evolution
@@ -408,6 +432,7 @@ if (spriteElement) {
     // Update the UI to reflect the evolution
     updateUI(index);
 	localStorage.setItem("team", JSON.stringify(team));
+	alert(`Your Pokémon has evolved into ${pokemon.species}!`)
   });
 });
 

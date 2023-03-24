@@ -28,16 +28,18 @@ eggBoxes.forEach(eggBox => {
     eggBox.addEventListener('click', () => {
         if(eggBox.claimed){
             alert("This egg has already been claimed!");
-        }
-        else if(team.length < 6){
-            team.push({/*id: team.length+1,*/ species: randomPokemon.name, eggSteps: 0, level:0, experience: 0, gender:"none", isEgg: true, isShiny: false, sprite: randomPokemon.egg_sprite});
-            console.log(team);
-			localStorage.setItem("team", JSON.stringify(team));
-			eggBox.claimed = true;
-			eggBox.innerHTML = "";
-			updateTeamLength();
-        }else {
+        } else if (team.length === 6) {
             alert("Team is full!");
+        } else {
+            const confirmation = window.confirm(`Do you want to pick up the ${randomPokemon.name} egg? (${randomPokemon.egg_steps} steps)`);
+            if (confirmation) {
+                team.push({/*id: team.length+1,*/ species: randomPokemon.name, eggSteps: 0, level:0, experience: 0, gender:"none", isEgg: true, isShiny: false, sprite: randomPokemon.egg_sprite});
+                console.log(team);
+                localStorage.setItem("team", JSON.stringify(team));
+                eggBox.claimed = true;
+                eggBox.innerHTML = "";
+                updateTeamLength();
+            }
         }
     });
 });

@@ -237,28 +237,33 @@ eggSprite.addEventListener('click', function() {
 
     // check if there is space in the team array
     if (team.length < 6) {
-      // generate the egg
-      const egg = {
-        species: pokemon.name,
-        eggSteps: 0,
-        level: 0,
-        experience: 0,
-        gender: "none",
-        isEgg: true,
-        isShiny: false,
-        sprite: pokemon.egg_sprite
-      };
+		// confirmation message
+		const confirmation = confirm(`Do you want to pick up the ${pokemon.name} egg?`);
+		
+		if (confirmation) {
+		  // generate the egg
+		  const egg = {
+			species: pokemon.name,
+			eggSteps: 0,
+			level: 0,
+			experience: 0,
+			gender: "none",
+			isEgg: true,
+			isShiny: false,
+			sprite: pokemon.egg_sprite
+		  };
 
-      // add egg to the team and update local storage
-      team.push(egg);
-      localStorage.setItem('team', JSON.stringify(team));
+		  // add egg to the team and update local storage
+		  team.push(egg);
+		  localStorage.setItem('team', JSON.stringify(team));
 
-      // decrease eggAvailable amount in daycare
-      daycare.eggsAvailable.amount--;
-      localStorage.setItem('daycare', JSON.stringify(daycare));
-	  location.reload();
+		  // decrease eggAvailable amount in daycare
+		  daycare.eggsAvailable.amount--;
+		  localStorage.setItem('daycare', JSON.stringify(daycare));
+		  location.reload();
+		}
     } else {
-      alert("Your team is full, you need to make space before picking up an egg.");
+      alert("Your team is full!");
     }
   } else {
     alert("There are no eggs available at the daycare.");
