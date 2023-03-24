@@ -127,11 +127,7 @@ window.onload = function() {
           window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
         }, 500);
       }
-      team.forEach((p, i) => {
-        if (p.species === pokemon.name) {
-          team[i].totalHatched = (team[i].totalHatched || 0) + eggData.hatches;
-        }
-      });
+      egg.totalHatched = eggData.hatches;
       localStorage.setItem("eggData", JSON.stringify(eggData));
       updateUI(index);
       saveTeam();
