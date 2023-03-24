@@ -337,6 +337,12 @@ th {
   background-color: lightblue;
 }
 
+.pc-storage-container {
+  height: 600px; 
+  overflow-y: auto;
+}
+
+
 /* Interaction */
 
 .interaction-container {
