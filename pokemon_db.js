@@ -7003,7 +7003,7 @@ const pokemonDatabase = [
       "name": "Shroomish",
 	  "gen" : 3,
       "type": ["Grass"],
-	  "base_species": "Surskit",
+	  "base_species": "Shroomish",
       "egg_steps": 3840,
 	  "egg_group": ["Fairy", "Grass"],
 	  "evolutions": [
@@ -7026,7 +7026,7 @@ const pokemonDatabase = [
       "name": "Breloom",
 	  "gen" : 3,
       "type": ["Grass", "Fighting"],
-	  "base_species": "Surskit",
+	  "base_species": "Shroomish",
       "egg_steps": 3840,
 	  "egg_group": ["Fairy", "Grass"],
       "gender_rate": 50,
