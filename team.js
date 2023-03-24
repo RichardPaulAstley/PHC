@@ -121,11 +121,15 @@ window.onload = function() {
 	document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
-      if (egg.isShiny) {
+    if (egg.isShiny) {
       eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
       setTimeout(() => {
-      window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
-    }, 500);
+        window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
+        const hatchedPokemon = team.find(p => p.species === pokemon.name);
+        if (hatchedPokemon) {
+          hatchedPokemon.totalHatched = (hatchedPokemon.totalHatched || 0) + eggData.hatches;
+        }
+      }, 500);
   }
   localStorage.setItem("eggData", JSON.stringify(eggData));
   updateUI(index);
