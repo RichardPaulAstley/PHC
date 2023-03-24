@@ -342,7 +342,6 @@ th {
   overflow-y: auto;
 }
 
-
 /* Interaction */
 
 .interaction-container {
@@ -415,7 +414,7 @@ max-height: 96px;
   font-weight: bold;
 }
 
-// Daycare 
+/* Daycare */
 
 .daycare-container {
     display: flex;

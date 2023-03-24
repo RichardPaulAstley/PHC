@@ -330,3 +330,35 @@ for (const key in localStorage) {
     }
   }
 }
+
+// Get all the img elements inside the pc-team-container and pc-storage-container
+const imgs = document.querySelectorAll('.pc-team-container img, .pc-storage-container img');
+
+// Attach a mouseover event listener to each img
+imgs.forEach((img) => {
+  img.addEventListener('mouseover', () => {
+    // Get the ID of the parent pc-team-box element
+    const parentID = img.parentElement.id;
+
+    // Determine if the Pokemon is in the team or in the storage
+    const isInTeam = parentID.startsWith('team');
+    const pokemonArray = isInTeam ? team : storage;
+
+    // Get the index of the Pokemon in the corresponding array
+    const index = parseInt(parentID.split('-')[1]);
+
+    // Get the corresponding Pokemon data
+    const pokemonData = pokemonArray[index];
+
+    // Construct the title string with the Pokemon data
+    let titleString = `${pokemonData.species} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
+
+    // Add a line break if the totalHatched count is defined
+    if (pokemonData.totalHatched !== undefined) {
+      titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
+    }
+
+    // Update the title attribute with the Pokemon data
+    img.title = titleString;
+  });
+});
