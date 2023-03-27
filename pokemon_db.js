@@ -5681,7 +5681,7 @@ const pokemonDatabase = [
 	  "evolutions": [
 	  	{
 	  		"method": ["level"],
-	  		"value": 33,
+	  		"value": 25,
 	  		"evolves_to": "Octillery"
 	  	},
 	  ],
