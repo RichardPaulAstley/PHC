@@ -347,15 +347,18 @@ imgs.forEach((img) => {
     // Get the index of the Pokemon in the corresponding array
     const index = parseInt(parentID.split('-')[1]);
 
-    // Get the corresponding Pokemon data
+    // Get the corresponding Pokemon data, if it exists
     const pokemonData = pokemonArray[index];
 
-    // Construct the title string with the Pokemon data
-    let titleString = `${pokemonData.species} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
-
-    // Add a line break if the totalHatched count is defined
-    if (pokemonData.totalHatched !== undefined) {
-      titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
+    // Construct the title string with the Pokemon data, if it exists
+    let titleString = '';
+    if (pokemonData) {
+      titleString = `${pokemonData.species} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
+  
+      // Add a line break if the totalHatched count is defined
+      if (pokemonData.totalHatched !== undefined) {
+        titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
+      }
     }
 
     // Update the title attribute with the Pokemon data
