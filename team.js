@@ -3,31 +3,40 @@ console.log(team);
 const teamBoxes = document.querySelectorAll('.team-box');
 
 teamBoxes.forEach((teamBox, index) => {
-    // Get the current team member
-    const currentTeamMember = team[index];
-	
+
+// Get the current team member
+const currentTeamMember = team[index];
 	if (currentTeamMember == null) {
-  return;
-}
+	  return;
+	}
 
     // Update the pokemon-sprite element
-    const sprite = teamBox.querySelector('.pokemon-sprite img');
-sprite.src = currentTeamMember.sprite;
+const sprite = teamBox.querySelector('.pokemon-sprite img');
+	sprite.src = currentTeamMember.sprite;
+	
+// Function used to use the 'display_name' value for forms in case.
+function getDisplayName(species) {
+  let pokemonData = pokemonDatabase.find(p => p.name === species);
+  if (pokemonData.display_name) {
+    return pokemonData.display_name;
+  } else {
+    return species;
+  }
+}
 
+// Update the pokemon-name element
+const name = teamBox.querySelector('.pokemon-name');
+	  if (currentTeamMember.isEgg) {
+		name.innerText = "Egg";
+	  } else {
+		const displayName = getDisplayName(currentTeamMember.species);
+		  name.innerHTML = currentTeamMember.isShiny 
+		  ? '<img src="sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
+		 : displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
+		}
 
-    // Update the pokemon-name element
-    const name = teamBox.querySelector('.pokemon-name');
-    if(currentTeamMember.isEgg){
-        name.innerText = "Egg"
-    }else{
-        name.innerHTML = currentTeamMember.isShiny 
-  ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
-  : currentTeamMember.species + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
-
-    }
-
-    // Update the pokemon-level element
-    const level = teamBox.querySelector('.pokemon-level');
+// Update the pokemon-level element
+const level = teamBox.querySelector('.pokemon-level');
     if(currentTeamMember.isEgg){
         for (let i = 0; i < pokemonDatabase.length; i++) {
             if (currentTeamMember.species === pokemonDatabase[i].name) {
@@ -71,9 +80,15 @@ window.onload = function() {
   //Check to move this function inside the hatchEgg one.
   function updateUI(idx) {
   let currentPokemon = team[idx];
-  document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
-    ? '<img src="sprites/shiny.png" alt="Shiny"> ' + currentPokemon.species
-    : currentPokemon.species;
+  const pokemonData = pokemonDatabase.find(p => p.name === currentPokemon.species);
+	let displayName = pokemonData.name;
+	if (pokemonData.display_name) {
+		displayName = pokemonData.display_name;
+	}
+
+document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
+  ? '<img src="sprites/shiny.png" alt="Shiny"> ' + displayName
+  : displayName;
   document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male" 
   ? "♂" 
   : currentPokemon.gender === "Female" 
@@ -207,35 +222,32 @@ function checkEvolutionConditions(pokemon, index, inventory) {
       // Check all conditions for evolution
       for (let i = 0; i < evolution.method.length; i++) {
         let method = evolution.method[i];
-        let value = evolution[`value_${i + 1}`];
-        // Check if the evolution method is level
+        let value = evolution.value;
+        if (i === 1 && evolution.value_2) {
+          value = evolution.value_2;
+        } else if (i > 1) {
+          break; // Only support value and value_2 for now
+        }
         if (method === 'level') {
-          // Check if the level of the pokemon is equal to or greater than the value required for evolution
-          if (pokemon.level < evolution.value) {
+          if (pokemon.level < value) {
             meetsConditions = false;
             break;
           }
         }
-        // Check if the evolution method is item
         if (method === 'item') {
-          // Find the item in the inventory
           let item = inventory.find(i => i.name === evolution.value);
-          // Check if the item exists and its amount is greater than 0
           if (!item || item.amount === 0) {
             meetsConditions = false;
             break;
           }
         }
-        // Check if the evolution method is gender
         if (method === 'gender') {
-          // Check if the pokemon's gender matches the required value
-          if (pokemon.gender !== evolution.value) {
+          if (pokemon.gender !== value) {
             meetsConditions = false;
             break;
           }
         }
       }
-      // If all conditions are met, show the evolving button
       if (meetsConditions) {
         for (let j = 0; j < evolvingButtons.length; j++) {
           if (evolvingButtons[j].getAttribute('data-index') === (index + 1).toString()) {
@@ -270,32 +282,56 @@ if (pokemonData.evolutions && pokemonData.evolutions.length) {
     // Create a list of available evolutions
     let availableEvolutions = [];
     for (let evolution of pokemonData.evolutions) {
-      // Check if the evolution method is level
+      let meetsConditions = true;
+      // Check if the first evolution method is level
       if (evolution.method[0] === 'level') {
         // Check if the level of the pokemon is equal to or greater than the value required for evolution
-        if (pokemon.level >= evolution.value) {
-          // Add the evolution to the list of available evolutions
-          availableEvolutions.push(evolution);
+        if (pokemon.level < evolution.value) {
+          meetsConditions = false;
         }
       }
-      // Check if the evolution method is item
+      // Check if the first evolution method is item
       if (evolution.method[0] === 'item') {
         // Find the item in the inventory
         let item = inventory.find(i => i.name === evolution.value);
         // Check if the item exists and its amount is greater than 0
-        if (item && item.amount > 0) {
-          // Add the evolution to the list of available evolutions
-          availableEvolutions.push(evolution);
+        if (!item || item.amount <= 0) {
+          meetsConditions = false;
         }
       }
-	 // Check if the evolution method is gender
-          if (evolution.method[0] === 'gender') {
-            // Check if the pokemon's gender matches the required gender for evolution
-            if (pokemon.gender === evolution.value) {
-              // Add the evolution to the list of available evolutions
-              availableEvolutions.push(evolution);
-            }
+      // Check if the first evolution method is gender
+      if (evolution.method[0] === 'gender') {
+        // Check if the pokemon's gender matches the required gender for evolution
+        if (pokemon.gender !== evolution.value) {
+          meetsConditions = false;
+        }
+      }
+      // Check if the evolution has a second value and if it meets the conditions
+      if (evolution.value_2 && meetsConditions) {
+        // Check if the second evolution method is level
+        if (evolution.method[1] === 'level') {
+          if (pokemon.level < evolution.value_2) {
+            meetsConditions = false;
           }
+        }
+        // Check if the second evolution method is item
+        if (evolution.method[1] === 'item') {
+          let item = inventory.find(i => i.name === evolution.value_2);
+          if (!item || item.amount <= 0) {
+            meetsConditions = false;
+          }
+        }
+        // Check if the second evolution method is gender
+        if (evolution.method[1] === 'gender') {
+          if (pokemon.gender !== evolution.value_2) {
+            meetsConditions = false;
+          }
+        }
+      }
+      // If the evolution meets all conditions, add it to the list of available evolutions
+      if (meetsConditions) {
+        availableEvolutions.push(evolution);
+      }
     }
     // If there are no available evolutions, exit the function
     if (availableEvolutions.length === 0) {

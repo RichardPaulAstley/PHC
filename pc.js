@@ -353,8 +353,11 @@ imgs.forEach((img) => {
     // Construct the title string with the Pokemon data, if it exists
     let titleString = '';
     if (pokemonData) {
-      titleString = `${pokemonData.species} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
-  
+      const pokemonDatabaseEntry = pokemonDatabase.find(entry => entry.name === pokemonData.species);
+      const displayName = pokemonDatabaseEntry.display_name || pokemonData.species;
+      
+      titleString = `${displayName} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
+
       // Add a line break if the totalHatched count is defined
       if (pokemonData.totalHatched !== undefined) {
         titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;

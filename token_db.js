@@ -247,4 +247,108 @@ const tokenExchange = [
 		"available": true,
 		"amount": 4 
 	},
+	{
+		"pokemon": "Uxie",
+		"sprite": "sprites/egg/uxie.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Mesprit",
+		"sprite": "sprites/egg/mesprit.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Azelf",
+		"sprite": "sprites/egg/azelf.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Dialga",
+		"sprite": "sprites/egg/dialga.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Palkia",
+		"sprite": "sprites/egg/palkia.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Heatran",
+		"sprite": "sprites/egg/heatran.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Giratina",
+		"sprite": "sprites/egg/giratina.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 4 
+	},
+	{
+		"pokemon": "Regigigas",
+		"sprite": "sprites/egg/regigigas.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Cresselia",
+		"sprite": "sprites/egg/cresselia.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Manaphy",
+		"sprite": "sprites/egg/manaphy.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 2 
+	},
+	{
+		"pokemon": "Darkrai",
+		"sprite": "sprites/egg/darkrai.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Shaymin",
+		"sprite": "sprites/egg/shaymin.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 3 
+	},
+	{
+		"pokemon": "Arceus",
+		"sprite": "sprites/egg/arceus.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": false,
+		"amount": 10 
+	},
 ]
