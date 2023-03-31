@@ -134,6 +134,7 @@ let filteredTokens = [...legendaryTokens];
 function renderTokens() {
   legendaryTableBody.innerHTML = "";
   filteredTokens.forEach(token => {
+   if (token.available) {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
@@ -141,6 +142,7 @@ function renderTokens() {
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
     legendaryTableBody.appendChild(row);
+   }
   });
 }
 
