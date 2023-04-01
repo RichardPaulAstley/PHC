@@ -10453,6 +10453,7 @@ const pokemonDatabase = [
       "type": ["Normal", "Flying"],
       "egg_steps": 5120,
 	  "egg_group": ["Flying"],
+	  "base_species": "Chatot",
 	  "gender_rate": 50,
 	  "experience_group": 10599,
 	  "sprite": "sprites/pokemon/441.png",
