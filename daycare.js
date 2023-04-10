@@ -163,6 +163,17 @@ for (let i = 0; i < daycareTeamBoxes.length; i++) {
       alert('You cannot add an egg to the daycare.');
       return;
     }
+	
+	const hasUndiscoveredEggGroup = pokemonDatabase.find(p => p.name === pokemon.species).egg_group.includes("Undiscovered");
+    if (hasUndiscoveredEggGroup) {
+      alert('This Pokémon cannot be put in the daycare.');
+      return;
+    }
+	
+	if (daycare.parent0 && daycare.parent0.species === "Ditto" && pokemon.species === "Ditto") {
+      alert('You cannot add two Dittos to the daycare.');
+      return;
+    }
 
     if (!daycare.parent0) {
       daycare.parent0 = pokemon;
