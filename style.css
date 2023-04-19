@@ -7,6 +7,12 @@
 body {
   background-color: #e0e0e0;
   font-family: Arial, sans-serif;
+  /* 
+  background-image: url(""),
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  */
 }
 
 header {
