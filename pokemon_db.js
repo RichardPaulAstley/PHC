@@ -76,6 +76,7 @@ const pokemonDatabase = [
 	{
       "id": 3.1,
       "name": "Mega Venusaur",
+	  "display_name": "Venusaur",
 	  "gen": 1,
       "type": ["Grass", "Poison"],
 	  "base_species": "Bulbasaur",
@@ -91,6 +92,7 @@ const pokemonDatabase = [
 	{
       "id": 3.2,
       "name": "Gigantamax Venusaur",
+	  "display_name": "Venusaur",
 	  "gen": 1,
       "type": ["Grass", "Poison"],
 	  "base_species": "Bulbasaur",
@@ -183,6 +185,7 @@ const pokemonDatabase = [
 	{
       "id": 6.1,
       "name": "Mega Charizard (X)",
+	  "display_name": "Charizard",
 	  "gen": 1,
       "type": ["Fire", "Dragon"],
 	  "base_species": "Charmander",
@@ -198,6 +201,7 @@ const pokemonDatabase = [
 	{
       "id": 6.2,
       "name": "Mega Charizard (Y)",
+	  "display_name": "Charizard",
 	  "gen": 1,
       "type": ["Fire", "Flying"],
 	  "base_species": "Charmander",
@@ -214,6 +218,7 @@ const pokemonDatabase = [
 	{
       "id": 6.3,
       "name": "Gigantamax Charizard",
+	  "display_name": "Charizard",
 	  "gen": 1,
       "type": ["Fire", "Flying"],
 	  "base_species": "Charmander",
@@ -301,6 +306,7 @@ const pokemonDatabase = [
 	{
 	  "id": 9.1,
 	  "name": "Mega Blastoise",
+	  "display_name": "Blastoise",
 	  "gen": 1,
 	  "type": ["Water"],
 	  "base_species": "Squirtle",
@@ -400,6 +406,7 @@ const pokemonDatabase = [
 	{
 	  "id": 12.1,
 	  "name": "Gigantamax Butterfree",
+	  "display_name": "Butterfree",
 	  "gen": 1,
 	  "type": ["Bug", "Flying"],
 	  "base_species": "Caterpie",
@@ -482,6 +489,7 @@ const pokemonDatabase = [
 	{
 	  "id": 15.1,
 	  "name": "Mega Beedrill",
+	  "display_name": "Beedrill",
 	  "gen": 1,
 	  "type": ["Bug", "Poison"],
 	  "base_species": "Weedle",
@@ -564,6 +572,7 @@ const pokemonDatabase = [
 	{
 	  "id": 18.1,
       "name": "Mega Pidgeot",
+	  "display_name": "Pidgeot",
       "gen": 1,
       "type": ["Normal", "Flying"],
 	  "base_species": "Pidgey",
@@ -604,6 +613,7 @@ const pokemonDatabase = [
 	{
 	  "id": 19.1,
       "name": "Alolan Rattata",
+	  "display_name": "Rattata",
       "gen": 1,
       "type": ["Dark", "Normal"],
 	  "base_species": "Alolan Rattata",
@@ -644,6 +654,7 @@ const pokemonDatabase = [
 	{
 	  "id": 20.1,
       "name": "Alolan Raticate",
+	  "display_name": "Raticate",
       "gen": 1,
       "type": ["Dark", "Normal"],
 	  "base_species": "Alolan Rattata",
@@ -769,6 +780,7 @@ const pokemonDatabase = [
 	{
 	  "id": 25.1,
       "name": "Gigantamax Pikachu",
+	  "display_name": "Pikachu",
       "gen": 1,
       "type": ["Electric"],
 	  "base_species": "Pichu",
@@ -801,6 +813,7 @@ const pokemonDatabase = [
 	{
 	  "id": 26.1,
       "name": "Alolan Raichu",
+	  "display_name": "Raichu",
       "gen": 1,
       "type": ["Electric", "Psychic"],
 	  "base_species": "Pichu",
@@ -839,6 +852,7 @@ const pokemonDatabase = [
 	{
 	  "id": 27.1,
       "name": "Alolan Sandshrew",
+	  "display_name": "Sandshrew",
       "gen": 1,
       "type": ["Ice", "Steel"],
 	  "base_species": "Alolan Sandshrew",
@@ -877,6 +891,7 @@ const pokemonDatabase = [
 	{
 	  "id": 28.1,
       "name": "Alolan Sandslash",
+	  "display_name": "Sandslash",
       "gen": 1,
       "type": ["Ice", "Steel"],
 	  "base_species": "Alolan Sandshrew",
@@ -892,6 +907,7 @@ const pokemonDatabase = [
 	{
       "id": 29,
       "name": "Nidoran F",
+	  "display_name": "Nidoran",
 	  "gen" : 1,
       "type": ["Poison"],
 	  "base_species": "Nidoran F",
@@ -952,6 +968,7 @@ const pokemonDatabase = [
 	{
       "id": 32,
       "name": "Nidoran M",
+	  "display_name": "Nidoran",
 	  "gen" : 1,
       "type": ["Poison"],
 	  "base_species": "Nidoran M",
@@ -1072,6 +1089,7 @@ const pokemonDatabase = [
 	{
 	  "id": 37.1,
       "name": "Alolan Vulpix",
+	  "display_name": "Vulpix",
       "gen": 1,
       "type": ["Ice"],
 	  "base_species": "Alolan Vulpix",
@@ -1110,6 +1128,7 @@ const pokemonDatabase = [
 	{
 	  "id": 38.1,
       "name": "Alolan Ninetales",
+	  "display_name": "Ninetales",
       "gen": 1,
       "type": ["Ice", "Fairy"],
 	  "base_species": "Alolan Vulpix",
@@ -1379,6 +1398,7 @@ const pokemonDatabase = [
 	{
 	  "id": 50.1,
       "name": "Alolan Diglett",
+	  "display_name": "Diglett",
       "gen": 1,
       "type": ["Ground", "Steel"],
 	  "base_species": "Alolan Diglett",
@@ -1417,6 +1437,7 @@ const pokemonDatabase = [
 	{
 	  "id": 51.1,
       "name": "Alolan Dugtrio",
+	  "display_name": "Dugtrio",
       "gen": 1,
       "type": ["Ground", "Steel"],
 	  "base_species": "Alolan Diglett",
@@ -1460,6 +1481,7 @@ const pokemonDatabase = [
 	{
 	  "id": 52.1,
       "name": "Alolan Meowth",
+	  "display_name": "Meowth",
       "gen": 1,
       "type": ["Dark"],
 	  "base_species": "Alolan Meowth",
@@ -1483,6 +1505,7 @@ const pokemonDatabase = [
 	{
 	  "id": 52.2,
       "name": "Galarian Meowth",
+	  "display_name": "Meowth",
       "gen": 1,
       "type": ["Steel"],
 	  "base_species": "Galarian Meowth",
@@ -1506,6 +1529,7 @@ const pokemonDatabase = [
 	{
 	  "id": 52.3,
       "name": "Gigantamax Meowth",
+	  "display_name": "Meowth",
       "gen": 1,
       "type": ["Normal"],
 	  "base_species": "Meowth",
@@ -1536,6 +1560,7 @@ const pokemonDatabase = [
 	{
 	  "id": 53.1,
       "name": "Alolan Persian",
+	  "display_name": "Persian",
       "gen": 1,
       "type": ["Dark"],
 	  "base_species": "Alolan Meowth",
@@ -1655,6 +1680,30 @@ const pokemonDatabase = [
 	  "evolution_stage": "base"
 	},
 	{
+	  "id": 58.1,
+      "name": "Growlithe [Hisuian]",
+	  "display_name": "Growlithe",
+      "gen": 1,
+      "type": ["Fire", "Rock"],
+	  "base_species": "Hisuian Growlithe",
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "evolutions": [
+		{
+			"method": ["item"],
+			"value": "Fire Stone",
+			"evolves_to": "Arcanine [Hisuian]"
+		}
+	  ],
+	  "gender_rate": 75,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/58.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/58.1.png",
+	  "egg_sprite": "sprites/egg/growlithe.1.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "base"
+	},
+	{
 	  "id": 59,
       "name": "Arcanine",
       "gen": 1,
@@ -1666,6 +1715,22 @@ const pokemonDatabase = [
 	  "experience_group": 12500,
 	  "sprite": "sprites/pokemon/59.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/59.png",
+	  "rarity": "uncommon",
+	  "evolution_stage": "first_stage"
+	},
+	{
+	  "id": 59.1,
+      "name": "Arcanine [Hisuian]",
+	  "display_name": "Arcanine",
+      "gen": 1,
+      "type": ["Fire", "Rock"],
+	  "base_species": "Growlithe [Hisuian]",
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 75,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/59.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/59.1.png",
 	  "rarity": "uncommon",
 	  "evolution_stage": "first_stage"
 	},
@@ -1808,6 +1873,7 @@ const pokemonDatabase = [
 	{
       "id": 65.1,
       "name": "Mega Alakazam",
+	  "display_name": "Alakazam",
 	  "gen": 1,
       "type": ["Psychic"],
 	  "base_species": "Abra",
@@ -1890,6 +1956,7 @@ const pokemonDatabase = [
 	{
       "id": 68.1,
       "name": "Gigantamax Machamp",
+	  "display_name": "Machamp",
 	  "gen": 1,
       "type": ["Fighting"],
 	  "base_species": "Machop",
@@ -2026,6 +2093,7 @@ const pokemonDatabase = [
 	{
       "id": 74.1,
       "name": "Alolan Geodude",
+	  "display_name": "Geodude",
 	  "gen" : 1,
       "type": ["Rock", "Electric"],
 	  "base_species": "Alolan Geodude",
@@ -2071,6 +2139,7 @@ const pokemonDatabase = [
 	{
       "id": 75.1,
       "name": "Alolan Graveler",
+	  "display_name": "Graveler",
 	  "gen" : 1,
       "type": ["Rock", "Electric"],
 	  "base_species": "Alolan Geodude",
@@ -2108,6 +2177,7 @@ const pokemonDatabase = [
     {
       "id": 76.1,
       "name": "Alolan Golem",
+	  "display_name": "Golem",
 	  "gen": 1,
       "type": ["Rock", "Electric"],
 	  "base_species": "Alolan Geodude",
@@ -2146,6 +2216,7 @@ const pokemonDatabase = [
 	{
 	  "id": 77.1,
       "name": "Galarian Ponyta",
+	  "display_name": "Ponyta",
       "gen": 1,
       "type": ["Psychic"],
 	  "base_species": "Galarian Ponyta",
@@ -2184,6 +2255,7 @@ const pokemonDatabase = [
 	{
 	  "id": 78.1,
       "name": "Galarian Rapidash",
+	  "display_name": "Rapidash",
       "gen": 1,
       "type": ["Psychic", "Fairy"],
 	  "base_species": "Galarian Ponyta",
@@ -2227,6 +2299,7 @@ const pokemonDatabase = [
 	{
 	  "id": 79.1,
       "name": "Galarian Slowpoke",
+	  "display_name": "Slowpoke",
       "gen": 1,
       "type": ["Psychic"],
 	  "base_species": "Galarian Slowpoke",
@@ -2277,6 +2350,7 @@ const pokemonDatabase = [
 	{
 	  "id": 80.1,
       "name": "Mega Slowbro",
+	  "display_name": "Slowbro",
       "gen": 1,
       "type": ["Water", "Psychic"],
 	  "base_species": "Slowpoke",
@@ -2292,6 +2366,7 @@ const pokemonDatabase = [
 	{
 	  "id": 80.2,
       "name": "Galarian Slowbro",
+	  "display_name": "Slowbro",
       "gen": 1,
       "type": ["Poison", "Psychic"],
 	  "base_species": "Galarian Slowpoke",
@@ -2368,6 +2443,7 @@ const pokemonDatabase = [
 	{
       "id": 83.1,
       "name": "Galarian Farfetch\'d",
+	  "display_name": "Farfetch\'d",
 	  "gen" : 1,
       "type": ["Fighting"],
 	  "base_species": "Galarian Farfetch\'d",
@@ -2494,6 +2570,7 @@ const pokemonDatabase = [
 	{
       "id": 88.1,
       "name": "Alolan Grimer",
+	  "display_name": "Grimer",
 	  "gen" : 1,
       "type": ["Poison", "Dark"],
 	  "base_species": "Alolan Grimer",
@@ -2532,6 +2609,7 @@ const pokemonDatabase = [
 	{
       "id": 89.1,
       "name": "Alolan Muk",
+	  "display_name": "Muk",
 	  "gen" : 1,
       "type": ["Poison", "Dark"],
 	  "base_species": "Alolan Grimer",
@@ -2657,6 +2735,7 @@ const pokemonDatabase = [
 	{
       "id": 94.1,
       "name": "Mega Gengar",
+	  "display_name": "Gengar",
 	  "gen": 1,
       "type": ["Ghost", "Poison"],
 	  "base_species": "Gastly",
@@ -2672,6 +2751,7 @@ const pokemonDatabase = [
 	{
       "id": 94.2,
       "name": "Gigantamax Gengar",
+	  "display_name": "Gengar",
 	  "gen": 1,
       "type": ["Ghost", "Poison"],
 	  "base_species": "Gastly",
@@ -2795,6 +2875,7 @@ const pokemonDatabase = [
 	{
       "id": 99.1,
       "name": "Gigantamax Kingler",
+	  "display_name": "Kingler",
 	  "gen" : 1,
       "type": ["Water"],
 	  "base_species": "Krabby",
@@ -2831,6 +2912,30 @@ const pokemonDatabase = [
 	  "evolution_stage": "base",
     },
 	{
+      "id": 100.1,
+      "name": "Voltorb [Hisuian]",
+	  "display_name": "Voltorb",
+	  "gen" : 1,
+      "type": ["Electric", "Grass"],
+	  "base_species": "Voltorb [Hisuian]",
+      "egg_steps": 5120,
+	  "egg_group": ["Mineral"],
+	  "evolutions": [
+	  	{
+	  		"method": ["item"],
+	  		"value": "Leaf Stone",
+	  		"evolves_to": "Electrode [Hisuian]"
+	  	},
+	  ],
+      "gender_rate": "-",
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/100.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/100.1.png",
+	  "egg_sprite": "sprites/egg/voltorb.1.png",
+	  "rarity": "common",
+	  "evolution_stage": "base",
+    },
+	{
       "id": 101,
       "name": "Electrode",
 	  "gen" : 1,
@@ -2842,6 +2947,22 @@ const pokemonDatabase = [
       "experience_group": 10000,
       "sprite": "sprites/pokemon/101.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/101.png",
+	  "rarity": "common",
+	  "evolution_stage": "first_stage",
+    },
+	{
+      "id": 101.1,
+      "name": "Electrode [Hisuian]",
+	  "display_name": "Electrode",
+	  "gen" : 1,
+      "type": ["Electric", "Grass"],
+	  "base_species": "Voltorb [Hisuian]",
+      "egg_steps": 5120,
+	  "egg_group": ["Mineral"],
+      "gender_rate": "-",
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/101.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/101.1.png",
 	  "rarity": "common",
 	  "evolution_stage": "first_stage",
     },
@@ -2891,6 +3012,7 @@ const pokemonDatabase = [
 	{
       "id": 103.1,
       "name": "Alolan Exeggutor",
+	  "display_name": "Exeggutor",
 	  "gen" : 1,
       "type": ["Grass", "Dragon"],
 	  "base_species": "Exeggcute",
@@ -2949,6 +3071,7 @@ const pokemonDatabase = [
 	{
       "id": 105.1,
       "name": "Alolan Marowak",
+	  "display_name": "Marowak",
 	  "gen" : 1,
       "type": ["Fire", "Ghost"],
 	  "base_species": "Cubone",
@@ -3060,6 +3183,7 @@ const pokemonDatabase = [
 	{
       "id": 110.1,
       "name": "Galarian Weezing",
+	  "display_name": "Weezing",
 	  "gen" : 1,
       "type": ["Poison", "Fairy"],
 	  "base_species": "Koffing",
@@ -3192,6 +3316,7 @@ const pokemonDatabase = [
 	{
       "id": 115.1,
       "name": "Mega Kangaskhan",
+	  "display_name": "Kangaskhan",
 	  "gen" : 1,
       "type": ["Normal"],
 	  "base_species": "Kangaskhan",
@@ -3347,6 +3472,7 @@ const pokemonDatabase = [
 	{
 	  "id": 122.1,
       "name": "Galarian Mr. Mime",
+	  "display_name": "Mr. Mime",
       "gen": 1,
       "type": ["Ice", "Psychic"],
 	  "base_species": "Mime Jr.",
@@ -3379,6 +3505,11 @@ const pokemonDatabase = [
 	  		"method": ["item"],
 	  		"value": "Metal Coat",
 	  		"evolves_to": "Scizor"
+	  	},
+		{
+	  		"method": ["item"],
+	  		"value": "Black Augurite",
+	  		"evolves_to": "Kleavor"
 	  	},
 	  ],
       "gender_rate": 50,
@@ -3476,6 +3607,7 @@ const pokemonDatabase = [
 	{
 	  "id": 127.1,
       "name": "Mega Pinsir",
+	  "display_name": "Pinsir",
       "gen": 1,
       "type": ["Bug", "Flying"],
 	  "base_species": "Pinsir",
@@ -3501,6 +3633,57 @@ const pokemonDatabase = [
 	  "sprite": "sprites/pokemon/128.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/128.png",
 	  "egg_sprite": "sprites/egg/tauros.png",
+	  "rarity": "rare",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 128.1,
+      "name": "Tauros [Paldean - Combat Breed]",
+	  "display_name": "Tauros",
+      "gen": 1,
+      "type": ["Fighting"],
+	  "base_species": "Tauros [Paldean - Combat Breed]",
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 100,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/128.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/128.1.png",
+	  "egg_sprite": "sprites/egg/tauros.1.png",
+	  "rarity": "rare",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 128.2,
+      "name": "Tauros [Paldean - Blaze Breed]",
+	  "display_name": "Tauros",
+      "gen": 1,
+      "type": ["Fighting", "Fire"],
+	  "base_species": "Tauros [Paldean - Blaze Breed]",
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 100,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/128.2.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/128.2.png",
+	  "egg_sprite": "sprites/egg/tauros.2.png",
+	  "rarity": "rare",
+	  "evolution_stage": "base"
+	},
+	{
+	  "id": 128.3,
+      "name": "Tauros [Paldean - Aqua Breed]",
+	  "display_name": "Tauros",
+      "gen": 1,
+      "type": ["Fighting", "Water"],
+	  "base_species": "Tauros [Paldean - Aqua Breed]",
+      "egg_steps": 5120,
+	  "egg_group": ["Field"],
+	  "gender_rate": 100,
+	  "experience_group": 12500,
+	  "sprite": "sprites/pokemon/128.3.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/128.3.png",
+	  "egg_sprite": "sprites/egg/tauros.3.png",
 	  "rarity": "rare",
 	  "evolution_stage": "base"
 	},
@@ -3556,6 +3739,7 @@ const pokemonDatabase = [
 	{
       "id": 130.1,
       "name": "Mega Gyarados",
+	  "display_name": "Gyarados",
 	  "gen" : 1,
       "type": ["Water", "Dark"],
 	  "base_species": "Magikarp",
@@ -3594,6 +3778,7 @@ const pokemonDatabase = [
 	{
       "id": 131.1,
       "name": "Gigantamax Lapras",
+	  "display_name": "Lapras",
 	  "gen" : 1,
       "type": ["Water", "Ice"],
 	  "base_species": "Lapras",
@@ -3689,6 +3874,7 @@ const pokemonDatabase = [
 	{
       "id": 133.1,
       "name": "Gigantamax Eevee",
+	  "display_name": "Eevee",
 	  "gen": 1,
       "type": ["Normal"],
 	  "base_species": "Eevee",
@@ -3871,6 +4057,7 @@ const pokemonDatabase = [
 	{
       "id": 142.1,
       "name": "Mega Aerodactyl",
+	  "display_name": "Aerodactyl",
 	  "gen" : 1,
       "type": ["Rock", "Flying"],
 	  "base_species": "Aerodactyl",
@@ -3908,6 +4095,7 @@ const pokemonDatabase = [
 	{
 	  "id": 143.1,
       "name": "Gigantamax Snorlax",
+	  "display_name": "Snorlax",
       "gen": 1,
       "type": ["Normal"],
 	  "base_species": "Munchlax",
@@ -3938,6 +4126,7 @@ const pokemonDatabase = [
 	{
       "id": 144.1,
       "name": "Galarian Articuno",
+	  "display_name": "Articuno",
 	  "gen" : 1,
       "type": ["Psychic", "Flying"],
       "egg_steps": 20480,
@@ -3968,6 +4157,7 @@ const pokemonDatabase = [
 	{
       "id": 145.1,
       "name": "Galarian Zapdos",
+	  "display_name": "Zapdos",
 	  "gen" : 1,
       "type": ["Fighting", "Flying"],
       "egg_steps": 20480,
@@ -3998,6 +4188,7 @@ const pokemonDatabase = [
 	{
       "id": 146,
       "name": "Galarian Moltres",
+	  "display_name": "Moltres",
 	  "gen" : 1,
       "type": ["Dark", "Flying"],
       "egg_steps": 20480,
@@ -4100,6 +4291,7 @@ const pokemonDatabase = [
 	{
       "id": 150.1,
       "name": "Mega Mewtwo (X)",
+	  "display_name": "Mewtwo",
 	  "gen" : 1,
       "type": ["Psychic", "Fighting"],
       "egg_steps": 30720,
@@ -4114,6 +4306,7 @@ const pokemonDatabase = [
 	{
       "id": 150.2,
       "name": "Mega Mewtwo (Y)",
+	  "display_name": "Mewtwo",
 	  "gen" : 1,
       "type": ["Psychic"],
       "egg_steps": 30720,
@@ -4556,6 +4749,7 @@ const pokemonDatabase = [
 	{
 	  "id": 172.1,
       "name": "Spiky-eared Pichu",
+	  "display_name": "Pichu",
       "gen": 2,
       "type": ["Electric"],
       "egg_steps": 2560,
@@ -4766,6 +4960,7 @@ const pokemonDatabase = [
 	{
       "id": 181.1,
       "name": "Mega Ampharos",
+	  "display_name": "Ampharos",
 	  "gen": 2,
       "type": ["Electric", "Dragon"],
 	  "base_species": "Mareep",
@@ -5125,6 +5320,7 @@ const pokemonDatabase = [
 	{
 	  "id": 199.1,
       "name": "Galarian Slowking",
+	  "display_name": "Slowking",
       "gen": 2,
       "type": ["Poison", "Psychic"],
 	  "base_species": "Galarian Slowpoke",
@@ -5329,6 +5525,7 @@ const pokemonDatabase = [
 	{
       "id": 208,
       "name": "Mega Steelix",
+	  "display_name": "Steelix",
 	  "gen" : 2,
       "type": ["Steel", "Ground"],
 	  "base_species": "Onix",
@@ -5422,6 +5619,7 @@ const pokemonDatabase = [
 	{
       "id": 212.1,
       "name": "Mega Scizor",
+	  "display_name": "Scizor",
 	  "gen" : 2,
       "type": ["Bug", "Steel"],
 	  "base_species": "Scyther",
@@ -5478,6 +5676,7 @@ const pokemonDatabase = [
 	{
       "id": 214.1,
       "name": "Mega Heracross",
+	  "display_name": "Heracross",
 	  "gen" : 2,
       "type": ["Bug", "Fighting"],
 	  "base_species": "Heracross",
@@ -5650,6 +5849,7 @@ const pokemonDatabase = [
 	{
       "id": 222.1,
       "name": "Galarian Corsola",
+	  "display_name": "Corsola",
 	  "gen" : 2,
       "type": ["Ghost"],
 	  "base_species": "Glarian Corsola",
@@ -5806,6 +6006,7 @@ const pokemonDatabase = [
 	{
       "id": 229.1,
       "name": "Mega Houndoom",
+	  "display_name": "Houndoom",
 	  "gen" : 2,
       "type": ["Dark", "Fire"],
 	  "base_species": "Houndour",
@@ -6193,6 +6394,7 @@ const pokemonDatabase = [
 	{
 	  "id": 248.1,
       "name": "Mega Tyranitar",
+	  "display_name": "Tyranitar",
       "gen": 2,
       "type": ["Rock", "Dark"],
 	  "base_species": "Larvitar",
@@ -6219,6 +6421,22 @@ const pokemonDatabase = [
 	  "egg_sprite": "sprites/egg/lugia.png",
 	  "rarity": "legendary",
 	  "evolution_stage": "legendary",
+    },
+	{
+      "id": 249.1,
+      "name": "Shadow Lugia",
+	  "display_name": "XD001",
+	  "gen" : 2,
+      "type": ["Psychic", "Flying"],
+      "egg_steps": 30720,
+	  "egg_group": ["Undiscovered"],
+      "gender_rate": "-",
+      "experience_group": 12500,
+      "sprite": "sprites/pokemon/249.1.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/249.1.png",
+	  "egg_sprite": "sprites/egg/249.1.png",
+	  "rarity": "event",
+	  "evolution_stage": "event",
     },
 	{
       "id": 250,
@@ -6320,6 +6538,7 @@ const pokemonDatabase = [
 	{
 	  "id": 254.1,
       "name": "Mega Sceptile",
+	  "display_name": "Sceptile",
       "gen": 3,
       "type": ["Grass", "Dragon"],
 	  "base_species": "Treecko",
@@ -6402,6 +6621,7 @@ const pokemonDatabase = [
 	{
 	  "id": 257.1,
       "name": "Mega Blaziken",
+	  "display_name": "Blaziken",
       "gen": 3,
       "type": ["Fire", "Fighting"],
 	  "base_species": "Torchic",
@@ -6484,6 +6704,7 @@ const pokemonDatabase = [
 	{
 	  "id": 257.1,
       "name": "Mega Swampert",
+	  "display_name": "Swampert",
       "gen": 3,
       "type": ["Water", "Ground"],
 	  "base_species": "Mudkip",
@@ -6948,6 +7169,7 @@ const pokemonDatabase = [
 	{
 	  "id": 282.1,
       "name": "Mega Gardevoir",
+	  "display_name": "Gardevoir",
       "gen": 3,
       "type": ["Psychic", "Fairy"],
 	  "base_species": "Ralts",
@@ -7356,6 +7578,7 @@ const pokemonDatabase = [
 	{
       "id": 302.1,
       "name": "Mega Sableye",
+	  "display_name": "Sableye",
 	  "gen" : 3,
       "type": ["Dark", "Ghost"],
 	  "base_species": "Sableye",
@@ -7394,6 +7617,7 @@ const pokemonDatabase = [
 	{
       "id": 303.1,
       "name": "Mega Mawile",
+	  "display_name": "Mawile",
 	  "gen" : 3,
       "type": ["Steel", "Fairy"],
 	  "base_species": "Mawile",
@@ -7476,6 +7700,7 @@ const pokemonDatabase = [
 	{
       "id": 306.1,
       "name": "Mega Aggron",
+	  "display_name": "Aggron",
 	  "gen" : 3,
       "type": ["Steel"],
 	  "base_species": "Aron",
@@ -7536,6 +7761,7 @@ const pokemonDatabase = [
 	{
       "id": 308.1,
       "name": "Mega Medicham",
+	  "display_name": "Medicham",
 	  "gen" : 3,
       "type": ["Fighting", "Psychic"],
 	  "base_species": "Meditite",
@@ -7596,6 +7822,7 @@ const pokemonDatabase = [
 	{
       "id": 310.1,
       "name": "Mega Manectric",
+	  "display_name": "Manectric",
 	  "gen" : 3,
       "type": ["Electric"],
 	  "base_species": "Electrike",
@@ -7780,6 +8007,7 @@ const pokemonDatabase = [
 	{
 		"id": 319.1,
 		"name": "Mega Sharpedo",
+		"display_name": "Sharpedo",
 		"gen" : 3,
 		"type": ["Water", "Dark"],
 		"base_species": "Carvanha",
@@ -7878,6 +8106,7 @@ const pokemonDatabase = [
 	{
 		"id": 323.1,
 		"name": "Mega Camerupt",
+		"display_name": "Camerupt",
 		"gen" : 3,
 		"type": ["Fire", "Ground"],
 		"base_species": "Numel",
@@ -8106,6 +8335,7 @@ const pokemonDatabase = [
 	{
 		"id": 334.1,
 		"name": "Mega Altaria",
+		"display_name": "Altaria",
 		"gen" : 3,
 		"type": ["Dragon", "Fairy"],
 		"base_species": "Swablu",
@@ -8490,6 +8720,7 @@ const pokemonDatabase = [
 	{
 		"id": 354.1,
 		"name": "Mega Banette",
+		"display_name": "Banette",
 		"gen" : 3,
 		"type": ["Ghost"],
 		"base_species": "Shuppet",
@@ -8604,6 +8835,7 @@ const pokemonDatabase = [
 	{
 		"id": 359.1,
 		"name": "Mega Absol",
+		"display_name": "Absol",
 		"gen" : 3,
 		"type": ["Dark"],
 		"base_species": "Absol",
@@ -8692,6 +8924,7 @@ const pokemonDatabase = [
 	{
 		"id": 362.1,
 		"name": "Mega Glalie",
+		"display_name": "Glalie",
 		"gen": 3,
 		"type": ["Ice"],
 		"base_species": "Snorunt",
@@ -8924,6 +9157,7 @@ const pokemonDatabase = [
 	{
 		"id": 373.1,
 		"name": "Mega Salamence",
+		"display_name": "Salamence",
 		"gen": 3,
 		"type": ["Dragon", "Flying"],
 		"base_species": "Bagon",
@@ -9006,6 +9240,7 @@ const pokemonDatabase = [
 	{
 		"id": 376,
 		"name": "Mega Metagross",
+		"display_name": "Metagross",
 		"gen": 3,
 		"type": ["Steel", "Psychic"],
 		"base_species": "Beldum",
@@ -9088,6 +9323,7 @@ const pokemonDatabase = [
 	{
 		"id": 380.1,
 		"name": "Mega Latias",
+		"display_name": "Latias",
 		"gen" : 3,
 		"type": ["Dragon", "Psychic"],
 		"egg_steps": 30720,
@@ -9124,6 +9360,7 @@ const pokemonDatabase = [
 	{
 		"id": 381.1,
 		"name": "Mega Latios",
+		"display_name": "Latios",
 		"gen" : 3,
 		"type": ["Dragon", "Psychic"],
 		"egg_steps": 30720,
@@ -9160,6 +9397,7 @@ const pokemonDatabase = [
 	{
 		"id": 381.1,
 		"name": "Primal Kyogre",
+		"display_name": "Kyogre",
 		"gen" : 3,
 		"type": ["Water"],
 		"egg_steps": 30720,
@@ -9196,6 +9434,7 @@ const pokemonDatabase = [
 	{
 		"id": 383.1,
 		"name": "Primal Groudon",
+		"display_name": "Groudon",
 		"gen" : 3,
 		"type": ["Ground", "Fire"],
 		"egg_steps": 30720,
@@ -9232,6 +9471,7 @@ const pokemonDatabase = [
 	{
 		"id": 384.1,
 		"name": "Mega Rayquaza",
+		"display_name": "Rayquaza",
 		"gen" : 3,
 		"type": ["Dragon", "Psychic"],
 		"egg_steps": 30720,
@@ -11513,6 +11753,21 @@ const pokemonDatabase = [
       "sprite": "sprites/pokemon/899.png",
 	  "shiny_sprite": "sprites/pokemon/shiny/899.png",
 	  "rarity": "rare",
+	  "evolution_stage": "first_stage",
+    },
+	{
+      "id": 900,
+      "name": "Kleavor",
+	  "gen" : 8,
+      "type": ["Bug", "Rock"],
+	  "base_species": "Scyther",
+      "egg_steps": 6400,
+	  "egg_group": ["Bug"],
+      "gender_rate": 50,
+      "experience_group": 10000,
+      "sprite": "sprites/pokemon/900.png",
+	  "shiny_sprite": "sprites/pokemon/shiny/900.png",
+	  "rarity": "uncommon",
 	  "evolution_stage": "first_stage",
     },
 	{

@@ -61,6 +61,7 @@ window.onload = function() {
     });
   }
   
+  let hasHatchableEggs = false;
   for (let i = 0; i < team.length; i++) {
     if (team[i].isEgg) {
       for (let j = 0; j < pokemonDatabase.length; j++) {
@@ -68,8 +69,9 @@ window.onload = function() {
           if (team[i].eggSteps >= pokemonDatabase[j].egg_steps) {
             document.getElementsByClassName("hatching-button")[i].style.display = "block";
             document.getElementsByClassName("hatching-button")[i].setAttribute("data-index", i);
-			team[i].eggSteps = pokemonDatabase[j].egg_steps;
-			localStorage.setItem("team", JSON.stringify(team));
+			      team[i].eggSteps = pokemonDatabase[j].egg_steps;
+			      localStorage.setItem("team", JSON.stringify(team));
+            hasHatchableEggs = true;
           }
           break;
         }
@@ -147,6 +149,22 @@ document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTM
       updateUI(index);
       saveTeam();
     }
+	
+	const hatchAllButton = document.getElementById("hatch-all-button");
+  if (hatchAllButton) {
+    if (hasHatchableEggs) {
+      hatchAllButton.style.display = "block";
+      hatchAllButton.addEventListener("click", function() {
+        for (let i = 0; i < team.length; i++) {
+          if (team[i].isEgg && team[i].eggSteps >= pokemonDatabase.find(p => p.name === team[i].species).egg_steps) {
+            hatchEgg(team, i);
+          }
+        }
+      });
+    } else {
+      hatchAllButton.style.display = "none";
+    }
+  }
 };
 
 /* To think - Guaranteed Shiny

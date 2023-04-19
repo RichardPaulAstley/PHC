@@ -205,7 +205,7 @@ const itemDatabase = [
 	},
 	{
 	  "name": "Reaper Cloth",
-	  "sprite": "sprites/items/razorclaw.png",
+	  "sprite": "sprites/items/reapercloth.png",
 	  "type": "Evolution",
 	  "description": "A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokémon.",
 	  "price": 3500
@@ -271,6 +271,13 @@ const itemDatabase = [
 	  "sprite": "sprites/items/peatblock.png",
 	  "type": "Evolution",
 	  "description": "A block of muddy material that can be used as fuel for burning when it is dried. It’s loved by a certain Pokémon.",
+	  "price": 4000
+	},
+	{
+	  "name": "Black Augurite",
+	  "sprite": "sprites/items/blackaugurite.png",
+	  "type": "Evolution",
+	  "description": "A glassy black stone that produces a sharp cutting edge when split. It’s loved by a certain Pokémon.",
 	  "price": 4000
 	},
 	/*{

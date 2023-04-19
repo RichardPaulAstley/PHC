@@ -59,13 +59,6 @@ team = JSON.parse(localStorage.getItem("team"));
   document.getElementById("team-length").innerHTML = team.length.toLocaleString() || 0;
 });
 
-window.addEventListener("load", function() {
-  if (localStorage.getItem("team")) {
-    team = JSON.parse(localStorage.getItem("team"));
-  }
-  updateEggsReadyToHatch();
-});
-
 if (localStorage.getItem("balance")) {
   balance = JSON.parse(localStorage.getItem("balance"));
 }
@@ -92,6 +85,55 @@ let storage = new Array(totalStorage).fill(undefined);
 if (localStorage.getItem("storage")) {
     storage = JSON.parse(localStorage.getItem("storage"));
 }
+
+function updateDaycareDisplay() {
+  let daycareCheck = JSON.parse(localStorage.getItem('daycare'));
+  let daycareDisplay = daycareCheck.eggsAvailable.amount;
+  if (daycareDisplay > 0) {
+    document.getElementById('daycare-display').textContent = daycareDisplay;
+  } else {
+    document.getElementById('daycare-display').textContent = '';
+  }
+}
+
+updateDaycareDisplay();
+
+window.addEventListener("load", function() {
+  if (localStorage.getItem("daycare")) {
+    daycare = JSON.parse(localStorage.getItem("daycare"));
+  }
+  updateDaycareDisplay();
+});
+
+function countReadyToHatchEggs() {
+  let count = 0;
+  for (let i = 0; i < team.length; i++) {
+    if (team[i].isEgg) {
+      const pokemonData = pokemonDatabase.find(pokemon => pokemon.name === team[i].species);
+      if (pokemonData.egg_steps <= team[i].eggSteps) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+function updateEggsReadyToHatch() {
+  const count = countReadyToHatchEggs();
+  if (count > 0) {
+    document.getElementById("eggs-ready-to-hatch").textContent = count;
+  } else {
+    document.getElementById("eggs-ready-to-hatch").textContent = "";
+  }
+}
+  
+window.addEventListener("load", function() {
+  if (localStorage.getItem("team")) {
+    team = JSON.parse(localStorage.getItem("team"));
+  }
+  updateEggsReadyToHatch();
+});
+
 
 function exportSave() {
   const lastExportTimestamp = parseInt(localStorage.getItem('lastExportTimestamp')) || 0;

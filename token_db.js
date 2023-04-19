@@ -49,6 +49,13 @@ const tokenExchange = [
 	  "amount": 5 
     },
 	{
+      "pokemon": "Shadow Lugia",
+	  "sprite": "sprites/egg/249.1.png",
+	  "type": "event",
+	  "available": true,
+	  "amount": 82
+    },
+	{
       "pokemon": "MissingNo.",
 	  "sprite": "sprites/egg/missingno.png",
 	  "type": "missingno",

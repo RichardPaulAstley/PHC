@@ -9,3 +9,21 @@ const helpButton = document.querySelector('#help-button');
 helpButton.addEventListener('click', () => {
   window.location.href = 'help.html';
 });
+
+const creditsButton = document.querySelector('#credits-button');
+
+creditsButton.addEventListener('click', () => {
+  window.location.href = 'credits.html';
+});
+
+const updatesButton = document.querySelector('#updates-button');
+
+updatesButton.addEventListener('click', () => {
+  window.location.href = 'updates.html';
+});
+
+const discordButton = document.querySelector('#discord-button');
+
+discordButton.addEventListener('click', () => {
+  window.open('https://discord.gg/Z4Ydx9MTRp', '_blank');
+});
