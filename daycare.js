@@ -203,37 +203,45 @@ const parent1El = document.getElementById("parent-1");
 
 parent0El.addEventListener('click', () => {
   if (team.length < 6 && daycare.parent0) {
-    // Add the Pokemon back to the team array
-    team.push(daycare.parent0);
+    // Confirmation message
+    const confirmation = confirm(`Are you sure you want to take ${daycare.parent0.species} out of the daycare?`);
+    if (confirmation) {
+      // Add the Pokemon back to the team array
+      team.push(daycare.parent0);
 
-    // Remove the Pokemon from the daycare array
-    daycare.parent0 = null;
-	daycare.isCompatible = false;
-	daycare.eggsAvailable.species = null;
-	daycare.eggsAvailable.amount = 0;
+      // Remove the Pokemon from the daycare array
+      daycare.parent0 = null;
+      daycare.isCompatible = false;
+      daycare.eggsAvailable.species = null;
+      daycare.eggsAvailable.amount = 0;
 
-    // Save the updated team and daycare arrays to localStorage
-    localStorage.setItem("team", JSON.stringify(team));
-    localStorage.setItem("daycare", JSON.stringify(daycare));
-    location.reload();
+      // Save the updated team and daycare arrays to localStorage
+      localStorage.setItem("team", JSON.stringify(team));
+      localStorage.setItem("daycare", JSON.stringify(daycare));
+      location.reload();
+    }
   }
 });
 
 parent1El.addEventListener('click', () => {
   if (team.length < 6 && daycare.parent1) {
-    // Add the Pokemon back to the team array
-    team.push(daycare.parent1);
+    // Confirmation message
+    const confirmation = confirm(`Are you sure you want to take ${daycare.parent1.species} out of the daycare?`);
+    if (confirmation) {
+      // Add the Pokemon back to the team array
+      team.push(daycare.parent1);
 
-    // Remove the Pokemon from the daycare array
-    daycare.parent1 = null;
-	daycare.isCompatible = false;
-	daycare.eggsAvailable.species = null;
-	daycare.eggsAvailable.amount = 0;
+      // Remove the Pokemon from the daycare array
+      daycare.parent1 = null;
+      daycare.isCompatible = false;
+      daycare.eggsAvailable.species = null;
+      daycare.eggsAvailable.amount = 0;
 
-    // Save the updated team and daycare arrays to localStorage
-    localStorage.setItem("team", JSON.stringify(team));
-    localStorage.setItem("daycare", JSON.stringify(daycare));
-	location.reload();
+      // Save the updated team and daycare arrays to localStorage
+      localStorage.setItem("team", JSON.stringify(team));
+      localStorage.setItem("daycare", JSON.stringify(daycare));
+      location.reload();
+    }
   }
 });
   
@@ -248,31 +256,26 @@ eggSprite.addEventListener('click', function() {
 
     // check if there is space in the team array
     if (team.length < 6) {
-		// confirmation message
-		const confirmation = confirm(`Do you want to pick up the ${pokemon.name} egg?`);
-		
-		if (confirmation) {
-		  // generate the egg
-		  const egg = {
-			species: pokemon.name,
-			eggSteps: 0,
-			level: 0,
-			experience: 0,
-			gender: "none",
-			isEgg: true,
-			isShiny: false,
-			sprite: pokemon.egg_sprite
-		  };
+      // generate the egg
+      const egg = {
+        species: pokemon.name,
+        eggSteps: 0,
+        level: 0,
+        experience: 0,
+        gender: "none",
+        isEgg: true,
+        isShiny: false,
+        sprite: pokemon.egg_sprite
+      };
 
-		  // add egg to the team and update local storage
-		  team.push(egg);
-		  localStorage.setItem('team', JSON.stringify(team));
+      // add egg to the team and update local storage
+      team.push(egg);
+      localStorage.setItem('team', JSON.stringify(team));
 
-		  // decrease eggAvailable amount in daycare
-		  daycare.eggsAvailable.amount--;
-		  localStorage.setItem('daycare', JSON.stringify(daycare));
-		  location.reload();
-		}
+      // decrease eggAvailable amount in daycare
+      daycare.eggsAvailable.amount--;
+      localStorage.setItem('daycare', JSON.stringify(daycare));
+      location.reload();
     } else {
       alert("Your team is full!");
     }
