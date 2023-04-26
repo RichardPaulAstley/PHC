@@ -263,7 +263,7 @@ const itemDatabase = [
 		"name": "Gracidea",
 		"sprite": "sprites/items/gracidea.png",
 		"type": "Form",
-		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
+		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
 		"price": 80000
 	},
 	{
