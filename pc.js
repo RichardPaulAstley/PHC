@@ -363,6 +363,12 @@ imgs.forEach((img) => {
         titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
       }
     }
+	
+	if (pokemonData.timeHatched !== undefined) {
+		const hatchedTime = new Date(pokemonData.timeHatched);
+		const formattedTime = hatchedTime.toLocaleString();
+		titleString += '\nHatched on: ' + formattedTime;
+	}
 
     // Update the title attribute with the Pokemon data
     img.title = titleString;

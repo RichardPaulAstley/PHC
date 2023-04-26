@@ -145,6 +145,7 @@ document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTM
         }, 500);
       }
       egg.totalHatched = eggData.hatches;
+	  egg.timeHatched = new Date();
       localStorage.setItem("eggData", JSON.stringify(eggData));
       updateUI(index);
       saveTeam();
