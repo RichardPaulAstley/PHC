@@ -20,7 +20,7 @@ const itemDatabase = [
 		"type": "Evolution",
 		"description": "An orb that radiates an immense power. It seems to react to two specific Pokémon...",
 		"price": 80000
-	  },
+	},
 	{
 	  "name": "Max Mushrooms",
 	  "sprite": "sprites/items/maxmushrooms.png",
@@ -127,6 +127,20 @@ const itemDatabase = [
 	  "price": 3500
 	},
 	{
+		"name": "Weather Rock",
+		"sprite": "sprites/items/weatherrock.png",
+		"type": "Form",
+		"description": "An item which shines differently based on the weather. It could react with some specifics Pokémon.",
+		"price": 2000
+	},
+	{
+		"name": "Meteorite",
+		"sprite": "sprites/items/meteorite.png",
+		"type": "Form",
+		"description": "A strange rock that irradiate an incredible power.",
+		"price": 50000
+	},
+	{
 	  "name": "Shiny Stone",
 	  "sprite": "sprites/items/shinystone.png",
 	  "type": "Evolution",
@@ -230,6 +244,27 @@ const itemDatabase = [
 	  "type": "Evolution",
 	  "description": "A transparent device overflowing with dubious data. Its producer is unknown.",
 	  "price": 5000
+	},
+	{
+		"name": "Household Appliance",
+		"sprite": "sprites/items/householdappliance.png",
+		"type": "Form",
+		"description": "An odd item that has been possessed in the past...",
+		"price": 10000
+	},
+	{
+		"name": "Origin Orb",
+		"sprite": "sprites/items/originorb.png",
+		"type": "Form",
+		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
+		"price": 80000
+	},
+	{
+		"name": "Gracidea",
+		"sprite": "sprites/items/gracidea.png",
+		"type": "Form",
+		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
+		"price": 80000
 	},
 	{
 	  "name": "Fairy Ribbon",
