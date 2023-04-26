@@ -203,7 +203,7 @@ idleButton.addEventListener("click", () => {
     return; // do nothing if numClicks is not a number
   }
 
-  const cost = numClicks * 30; // Change the cost as needed
+  const cost = numClicks * 0; // Change the cost as needed
 
   const balance = JSON.parse(localStorage.getItem("balance") || "{}");
   if (balance.pokeDollar < cost) {
