@@ -50,7 +50,7 @@ const tokenExchange = [
     },
 	{
       "pokemon": "Shadow Lugia",
-	  "sprite": "sprites/egg/249.1.png",
+	  "sprite": "sprites/egg/shadowlugia.png",
 	  "type": "event",
 	  "available": true,
 	  "amount": 82
@@ -303,20 +303,20 @@ const tokenExchange = [
 		"amount": 2 
 	},
 	{
-		"pokemon": "Giratina",
-		"sprite": "sprites/egg/giratina.png",
-		"type": "legendary",
-		"generation": 4,
-		"available": true,
-		"amount": 4 
-	},
-	{
 		"pokemon": "Regigigas",
 		"sprite": "sprites/egg/regigigas.png",
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
 		"amount": 3 
+	},
+	{
+		"pokemon": "Giratina",
+		"sprite": "sprites/egg/giratina.png",
+		"type": "legendary",
+		"generation": 4,
+		"available": true,
+		"amount": 4 
 	},
 	{
 		"pokemon": "Cresselia",
@@ -357,5 +357,13 @@ const tokenExchange = [
 		"generation": 4,
 		"available": false,
 		"amount": 10 
+	},
+	{
+		"pokemon": "Victini",
+		"sprite": "sprites/egg/victini.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
 	},
 ]

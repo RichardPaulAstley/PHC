@@ -30,32 +30,32 @@ function renderTeam() {
 }
 
 const pokemonBoxes = document.querySelectorAll(".pc-team-box");
-  pokemonBoxes.forEach((pokemonBox, index) => {
+pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
-  if (event.shiftKey || (event.type === "touchstart" && event.touches.length === 2)) {
-	if (event.ctrlKey && event.shiftKey) {
-	const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
-	  if (confirmRelease) {
-	  team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
-	  renderTeam();
-	  localStorage.setItem("team", JSON.stringify(team));
-	  location.reload();
-	  }
-	} else {
-	  if (team[index].isEgg) {
-	  window.alert("You can't release eggs");
-	  return;
-}
-	const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
-	if (confirmRelease) {
-	  team.splice(index, 1);
-	  renderTeam();
-	  localStorage.setItem("team", JSON.stringify(team));
-	  location.reload();
-	  }
-	}
-  }
-});
+    if (event.shiftKey || (event.type === "touchstart" && event.touches.length === 2)) {
+      if (event.ctrlKey && event.shiftKey) {
+        const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
+        if (confirmRelease) {
+          team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
+          renderTeam();
+          localStorage.setItem("team", JSON.stringify(team));
+          location.reload();
+        }
+      } else {
+        if (team[index].isEgg) {
+          window.alert("You can't release eggs");
+          return;
+        }
+        const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
+        if (confirmRelease) {
+          team.splice(index, 1);
+          renderTeam();
+          localStorage.setItem("team", JSON.stringify(team));
+          location.reload();
+        }
+      }
+    }
+  });
 });
 
 // Mobile Release
@@ -132,11 +132,11 @@ for (let i = 0; i < totalSlots; i++) {
   slotNum++;
 
 
- const newSprite = document.createElement("img");
-newSprite.src = "sprites/none.png";
-newSprite.alt = "Pokemon sprite";
-newSprite.classList.add("pc-storage-sprite");
-newSlot.appendChild(newSprite);
+  const newSprite = document.createElement("img");
+  newSprite.src = "sprites/none.png";
+  newSprite.alt = "Pokemon sprite";
+  newSprite.classList.add("pc-storage-sprite");
+  newSlot.appendChild(newSprite);
 
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
@@ -217,55 +217,55 @@ function reorderTeamArray() {
 }
 
 function swapSlots(slot1, slot2) {
-const slot1Content = slot1.innerHTML;
-const slot2Content = slot2.innerHTML;
+  const slot1Content = slot1.innerHTML;
+  const slot2Content = slot2.innerHTML;
 
-slot1.innerHTML = slot2Content;
-slot2.innerHTML = slot1Content;
+  slot1.innerHTML = slot2Content;
+  slot2.innerHTML = slot1Content;
 
-// Get the index of the slots in their respective arrays
-const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
-const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
+  // Get the index of the slots in their respective arrays
+  const slot1Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot1);
+  const slot2Index = [...pcTeamBoxes, ...pcStorageBoxes].indexOf(slot2);
 
-// Swap the Pokémon in the team array and storage array
-if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
-// Swap between team slots
-[team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
-} else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
-// Swap from team to storage
-const storageIndex = slot2Index - pcTeamBoxes.length;
-if (storage[storageIndex]) {
-// If the storage slot is not empty, swap with the team slot
-[team[slot1Index], storage[storageIndex]] = [storage[storageIndex], team[slot1Index]];
-} else {
-// If the storage slot is empty, move the team Pokémon to the storage
-storage[storageIndex] = team[slot1Index];
-team[slot1Index] = null; // Set the team slot to null
+  // Swap the Pokémon in the team array and storage array
+  if (slot1Index < pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+    // Swap between team slots
+    [team[slot1Index], team[slot2Index]] = [team[slot2Index], team[slot1Index]];
+  } else if (slot1Index < pcTeamBoxes.length && slot2Index >= pcTeamBoxes.length) {
+    // Swap from team to storage
+    const storageIndex = slot2Index - pcTeamBoxes.length;
+    if (storage[storageIndex]) {
+      // If the storage slot is not empty, swap with the team slot
+      [team[slot1Index], storage[storageIndex]] = [storage[storageIndex], team[slot1Index]];
+    } else {
+      // If the storage slot is empty, move the team Pokémon to the storage
+      storage[storageIndex] = team[slot1Index];
+      team[slot1Index] = null; // Set the team slot to null
+    }
+  } else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
+    // Swap from storage to team
+    const storageIndex = slot1Index - pcTeamBoxes.length;
+    if (team[slot2Index]) {
+      // If the team slot is not empty, swap with the storage slot
+      [team[slot2Index], storage[storageIndex]] = [storage[storageIndex], team[slot2Index]];
+    } else {
+      // If the team slot is empty, move the storage Pokémon to the team
+      team[slot2Index] = storage[storageIndex];
+      storage[storageIndex] = null; // Set the storage slot to null
+    }
+  } else {
+    // Swap between storage slots
+    [storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
+  }
+
+  // Save the updated arrays
+  reorderTeamArray();
+  location.reload();
+  localStorage.setItem('team', JSON.stringify(team));
+  localStorage.setItem('storage', JSON.stringify(storage));
 }
-} else if (slot1Index >= pcTeamBoxes.length && slot2Index < pcTeamBoxes.length) {
-// Swap from storage to team
-const storageIndex = slot1Index - pcTeamBoxes.length;
-if (team[slot2Index]) {
-// If the team slot is not empty, swap with the storage slot
-[team[slot2Index], storage[storageIndex]] = [storage[storageIndex], team[slot2Index]];
-} else {
-// If the team slot is empty, move the storage Pokémon to the team
-team[slot2Index] = storage[storageIndex];
-storage[storageIndex] = null; // Set the storage slot to null
-}
-} else {
-// Swap between storage slots
-[storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
-}
 
-// Save the updated arrays
-reorderTeamArray();
-location.reload();
-localStorage.setItem('team', JSON.stringify(team));
-localStorage.setItem('storage', JSON.stringify(storage));
-}
-
-/* Sprite Update */ 
+/* Sprite Update */
 
 // Loop through each member of the team
 team = team.map((member) => {
@@ -355,7 +355,7 @@ imgs.forEach((img) => {
     if (pokemonData) {
       const pokemonDatabaseEntry = pokemonDatabase.find(entry => entry.name === pokemonData.species);
       const displayName = pokemonDatabaseEntry.display_name || pokemonData.species;
-      
+
       titleString = `${displayName} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
 
       // Add a line break if the totalHatched count is defined
@@ -363,12 +363,12 @@ imgs.forEach((img) => {
         titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
       }
     }
-	
-	if (pokemonData.timeHatched !== undefined) {
-		const hatchedTime = new Date(pokemonData.timeHatched);
-		const formattedTime = hatchedTime.toLocaleString();
-		titleString += '\nHatched on: ' + formattedTime;
-	}
+
+    if (pokemonData.timeHatched !== undefined) {
+      const hatchedTime = new Date(pokemonData.timeHatched);
+      const formattedTime = hatchedTime.toLocaleString();
+      titleString += '\nHatched on: ' + formattedTime;
+    }
 
     // Update the title attribute with the Pokemon data
     img.title = titleString;

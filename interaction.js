@@ -210,14 +210,14 @@ idleButton.addEventListener("click", () => {
       // Update team data as in the click event listener
       team = team.map((member) => {
         if (member.isEgg) {
-          member.eggSteps += getRandomValue(17, 19);
+          member.eggSteps += getRandomValue(6, 8);
           if (new Date().getDay() === 5) { // Friday
-            member.eggSteps += getRandomValue(11, 13);
+            member.eggSteps += getRandomValue(4, 5);
           }
         } else {
-          member.experience += getRandomValue(210, 260);
+          member.experience += getRandomValue(110, 160);
           if (new Date().getDay() === 5) { // Friday
-            member.experience += getRandomValue(140, 173);
+            member.experience += getRandomValue(37, 54);
           }
           const pokemonData = pokemonDatabase.find(data => data.name === member.species);
           if (pokemonData) {
@@ -241,7 +241,7 @@ idleButton.addEventListener("click", () => {
 	  localStorage.setItem("daycare", JSON.stringify(daycare));
       localStorage.setItem("team", JSON.stringify(team));
       img.src = getRandomPokemonOrEgg();
-    }, 170); // Change the interval as needed
+    }, 190); // Change the interval as needed
 
     isIdleModeOn = true;
   }
