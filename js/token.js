@@ -9,16 +9,16 @@ function exchangeTokens() {
 
   // find the exchange information for the clicked button
   const exchangeInfo = tokenExchange.find(exchange => exchange.pokemon === event.target.dataset.token);
-  
+
   // check if player has enough tokens to exchange
   let totalTokens = 0;
   if (exchangeInfo.type && exchangeInfo.amount) {
     const matchingInventoryToken = tokenInventory.find(invToken => invToken.type === exchangeInfo.type);
     if (matchingInventoryToken && matchingInventoryToken.amount >= exchangeInfo.amount) {
-	  let confirmTokenMessage = `Are you sure you want to use your ${exchangeInfo.type} tokens?`;
-    if (!confirm(confirmTokenMessage)) {
-      return;
-    }
+      let confirmTokenMessage = `Are you sure you want to use your ${exchangeInfo.type} tokens?`;
+      if (!confirm(confirmTokenMessage)) {
+        return;
+      }
       totalTokens += exchangeInfo.amount;
     }
   }
@@ -37,20 +37,20 @@ function exchangeTokens() {
   const pokemon = pokemonDatabase.find(p => p.name === exchangeInfo.pokemon);
 
   // generate the egg
-const egg = {
-  species: pokemon.name,
-  eggSteps: 0,
-  level: 0,
-  experience: 0,
-  gender: "none",
-  isEgg: true,
-  isShiny: false,
-  sprite: pokemon.egg_sprite
-};
+  const egg = {
+    species: pokemon.name,
+    eggSteps: 0,
+    level: 0,
+    experience: 0,
+    gender: "none",
+    isEgg: true,
+    isShiny: false,
+    sprite: pokemon.egg_sprite
+  };
 
-if (egg.species === "Unown") {
-  egg.sprite = "sprites/egg/unown.png";
-}
+  if (egg.species === "Unown") {
+    egg.sprite = "sprites/egg/unown.png";
+  }
 
 
   // remove the tokens from the inventory
@@ -81,7 +81,7 @@ specialTokens.forEach(token => {
   if (token.available) {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
+      <td><img src="../${token.sprite}" alt="${token.pokemon}"></td>
       <td>${token.amount}</td>
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
@@ -101,7 +101,7 @@ noveltyTokens.forEach(token => {
   if (token.available) {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
+      <td><img src="../${token.sprite}" alt="${token.pokemon}"></td>
       <td>${token.amount}</td>
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
@@ -117,7 +117,7 @@ eventTokens.forEach(token => {
   if (token.available) {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
+      <td><img src="../${token.sprite}" alt="${token.pokemon}"></td>
       <td>${token.amount}</td>
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
@@ -134,15 +134,15 @@ let filteredTokens = [...legendaryTokens];
 function renderTokens() {
   legendaryTableBody.innerHTML = "";
   filteredTokens.forEach(token => {
-   if (token.available) {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td><img src="${token.sprite}" alt="${token.pokemon}"></td>
+    if (token.available) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+      <td><img src="../${token.sprite}" alt="${token.pokemon}"></td>
       <td>${token.amount}</td>
       <td><button class="exchange-btn" data-token="${token.pokemon}" onclick="exchangeTokens()">Exchange</button></td>
     `;
-    legendaryTableBody.appendChild(row);
-   }
+      legendaryTableBody.appendChild(row);
+    }
   });
 }
 

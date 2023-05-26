@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pokemon Hatching Center</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" type="image/x-icon" href="sprites/favicon.ico">
-  </head>
-  <body>
-    <header>
-      <h1>Pokemon Hatching Center</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shelter.html">Shelter</a></li>
-		<li><a href="team.html">Team&nbsp;<span id="eggs-ready-to-hatch"></span></a></li>
-		<li><a href="pc.html">PC</a></li>
-		<li><a href="daycare.html">Daycare&nbsp;<span id="daycare-display"></span></a></li>
-        <li><a href="shop.html">Shop</a></li>
-		<li><a href="token.html">Tokens</a></li>
-        <li><a href="interaction.html">Interaction</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h2>Welcome to Pokemon Hatching Center!</h2>
-	  <p style="margin-bottom: 30px;"><button id="help-button">Help</button><button id="credits-button">Credits</button><button id="updates-button">Updates</button><button id="discord-button">Discord</button></p>
-      <p>In this game, you will be able to collect and hatch eggs in order to get all the possible Pokémon !
-	  <br>You should start by taking some eggs in the Shelter. Then you should go to the Interaction page to interact with some eggs and Pokémon !</p>
-      <p><button id="start-button">Start Playing</button></p>
-	  <p>Since the game works only with your browser (that way you'll never have to worry about the game closing), you should backup your save quite often. Or this will come in handy if you need to play in another PC. However, in order to avoid to abuse of that system, <span style="font-weight: bold;">you can only export your Save every 2 hours, and import it every 8 hours !</span>
-	  <p><button id="export-button" onclick="exportSave()">Export Save</button>
-	  <button id="import-button" onclick="importSave()">Import Save</button></p>  
-    </main>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-  <script src="stats.js"></script>
-  <script src="index.js"></script>
+
+<head>
+  <title>Pokemon Hatching Center</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="sprites/favicon.ico">
+</head>
+
+<body>
+  <header>
+    <h1>Pokemon Hatching Center</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="html/shelter.html">Shelter</a></li>
+      <li><a href="html/team.html">Team&nbsp;<span id="eggs-ready-to-hatch"></span></a></li>
+      <li><a href="html/pc.html">PC</a></li>
+      <li><a href="html/daycare.html">Daycare&nbsp;<span id="daycare-display"></span></a></li>
+      <li><a href="html/shop.html">Shop</a></li>
+      <li><a href="html/token.html">Tokens</a></li>
+      <li><a href="html/interaction.html">Interaction</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Welcome to Pokemon Hatching Center!</h2>
+    <p style="margin-bottom: 30px;"><button id="help-button">Help</button><button
+        id="credits-button">Credits</button><button id="updates-button">Updates</button><button
+        id="discord-button">Discord</button></p>
+    <p>In this game, you will be able to collect and hatch eggs in order to get all the possible Pokémon !
+      <br>You should start by taking some eggs in the Shelter. Then you should go to the Interaction page to interact
+      with some eggs and Pokémon !
+    </p>
+    <p><button id="start-button">Start Playing</button></p>
+    <p>Since the game works only with your browser (that way you'll never have to worry about the game closing), you
+      should backup your save quite often. Or this will come in handy if you need to play in another PC. However, in
+      order to avoid to abuse of that system, <span style="font-weight: bold;">you can only export your Save every 2
+        hours, and import it every 8 hours !</span>
+    <p><button id="export-button" onclick="exportSave()">Export Save</button>
+      <button id="import-button" onclick="importSave()">Import Save</button>
+    </p>
+  </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/index.js"></script>
+
 </html>

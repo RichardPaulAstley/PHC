@@ -1,5 +1,5 @@
 function addBuyEvent(itemActionButton, item) {
-  itemActionButton.addEventListener("click", function() {
+  itemActionButton.addEventListener("click", function () {
     let amount = parseInt(prompt("How many items would you like to buy?"));
     if (isNaN(amount) || amount <= 0) {
       return alert("Invalid input.");
@@ -38,10 +38,10 @@ function addBuyEvent(itemActionButton, item) {
     localStorage.setItem("balance", JSON.stringify(balance));
     localStorage.setItem("inventory", JSON.stringify(inventory));
     document.getElementById("currency-amount").innerHTML = balance.pokeDollar.toLocaleString();
-	location.reload();
+    location.reload();
 
     alert(`Successfully bought ${amount} ${item.name} for ${totalPrice} Pokédollars.`);
-	
+
   });
 }
 
@@ -49,12 +49,12 @@ function addBuyEvent(itemActionButton, item) {
 
 let inventoryItems = document.querySelector("#inventory-items");
 
-itemDatabase.forEach(function(item) {
+itemDatabase.forEach(function (item) {
   let itemRow = document.createElement("tr");
-  
+
   let itemName = document.createElement("td");
   let itemImage = document.createElement("img");
-  itemImage.src = item.sprite;
+  itemImage.src = `../` + item.sprite;
   itemImage.style.width = "32px";
   itemImage.style.height = "32px";
   itemName.appendChild(itemImage);
@@ -65,16 +65,16 @@ itemDatabase.forEach(function(item) {
   itemName.appendChild(itemNameText);
 
   itemRow.appendChild(itemName);
-  
+
   let itemDescription = document.createElement("td");
   itemDescription.textContent = item.description;
   itemRow.appendChild(itemDescription);
-  
+
   let itemPrice = document.createElement("td");
   let formattedPrice = new Intl.NumberFormat().format(item.price);
   itemPrice.textContent = formattedPrice;
   itemRow.appendChild(itemPrice);
-  
+
   let itemActions = document.createElement("td");
   let itemActionButton = document.createElement("button");
   itemActionButton.textContent = "Buy";
@@ -82,9 +82,9 @@ itemDatabase.forEach(function(item) {
   itemActionButton.style.height = "30px";
   itemActions.appendChild(itemActionButton);
   itemRow.appendChild(itemActions);
-   
+
   addBuyEvent(itemActionButton, item);
-  
+
   inventoryItems.appendChild(itemRow);
 });
 
@@ -103,8 +103,8 @@ function addSellButton(item, itemData, sellButton) {
       alert("Invalid amount");
       return;
     }
-	
-	let sellPrice = itemData.price * 0.6;
+
+    let sellPrice = itemData.price * 0.6;
 
     if (!confirm(`Are you sure you want to sell ${sellAmount} of ${item.name} for a total of ${sellPrice * sellAmount} PokéDollars?`)) return;
 
@@ -121,54 +121,54 @@ let sellingItems = document.querySelector('#selling-items');
 
 
 for (let item of inventory) {
-if (item.amount <= 0) continue;
+  if (item.amount <= 0) continue;
 
-let itemData = itemDatabase.find(i => i.name === item.name);
-let row = document.createElement('tr');
+  let itemData = itemDatabase.find(i => i.name === item.name);
+  let row = document.createElement('tr');
 
-let itemCell = document.createElement('td');
-let itemImage = document.createElement('img');
-itemImage.src = itemData.sprite;
-itemImage.width = 32;
-itemImage.height = 32;
-itemCell.appendChild(itemImage);
+  let itemCell = document.createElement('td');
+  let itemImage = document.createElement('img');
+  itemImage.src = `../` + itemData.sprite;
+  itemImage.width = 32;
+  itemImage.height = 32;
+  itemCell.appendChild(itemImage);
 
-let itemName = document.createElement('p');
-itemName.textContent = item.name;
-itemName.style.fontSize = "10px";
-itemCell.appendChild(itemName);
-row.appendChild(itemCell);
+  let itemName = document.createElement('p');
+  itemName.textContent = item.name;
+  itemName.style.fontSize = "10px";
+  itemCell.appendChild(itemName);
+  row.appendChild(itemCell);
 
-let descriptionCell = document.createElement('td');
-descriptionCell.textContent = itemData.description;
-row.appendChild(descriptionCell);
+  let descriptionCell = document.createElement('td');
+  descriptionCell.textContent = itemData.description;
+  row.appendChild(descriptionCell);
 
-let amountCell = document.createElement('td');
-amountCell.textContent = item.amount;
-row.appendChild(amountCell);
+  let amountCell = document.createElement('td');
+  amountCell.textContent = item.amount;
+  row.appendChild(amountCell);
 
-let useCell = document.createElement('td');
-if (itemData.effect) {
-let useButton = document.createElement('button');
-useButton.textContent = 'Use';
-useButton.style.width = '40px';
-useButton.style.height = '30px';
-useCell.appendChild(useButton);
-}
-row.appendChild(useCell);
+  let useCell = document.createElement('td');
+  if (itemData.effect) {
+    let useButton = document.createElement('button');
+    useButton.textContent = 'Use';
+    useButton.style.width = '40px';
+    useButton.style.height = '30px';
+    useCell.appendChild(useButton);
+  }
+  row.appendChild(useCell);
 
-if (itemData.type !== "Upgrade") {
-let sellButton = document.createElement('button');
-sellButton.textContent = 'Sell';
-sellButton.style.width = '40px';
-sellButton.style.height = '30px';
+  if (itemData.type !== "Upgrade") {
+    let sellButton = document.createElement('button');
+    sellButton.textContent = 'Sell';
+    sellButton.style.width = '40px';
+    sellButton.style.height = '30px';
 
-addSellButton(item, itemData, sellButton);
+    addSellButton(item, itemData, sellButton);
 
-let sellCell = document.createElement('td');
-sellCell.appendChild(sellButton);
-row.appendChild(sellCell);
-}
+    let sellCell = document.createElement('td');
+    sellCell.appendChild(sellButton);
+    row.appendChild(sellCell);
+  }
 
-sellingItems.appendChild(row);
+  sellingItems.appendChild(row);
 }
