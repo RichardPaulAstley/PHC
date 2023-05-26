@@ -1,186 +1,186 @@
 const tokenDatabase = [
 	{
-      "name": "Special Token",
-	  "type": "special",
-	  "count": 1500
-    },
+		"name": "Special Token",
+		"type": "special",
+		"count": 1500
+	},
 	{
-      "name": "Event Token",
-	  "type": "event",
-	  "count": 2500
-    },
+		"name": "Event Token",
+		"type": "event",
+		"count": 2500
+	},
 	{
-      "name": "Novelty Token",
-	  "type": "novelty",
-	  "count": 1000 
-    },
+		"name": "Novelty Token",
+		"type": "novelty",
+		"count": 1000
+	},
 	{
-      "name": "Legendary Token",
-	  "type": "legendary",
-	  "count": 5000 
-    },
+		"name": "Legendary Token",
+		"type": "legendary",
+		"count": 5000
+	},
 	{
-      "name": "404 Not Found",
-	  "type": "missingno",
-	  "count": 44404
-    },
+		"name": "404 Not Found",
+		"type": "missingno",
+		"count": 44404
+	},
 ]
 
 const tokenExchange = [
 	{
-      "pokemon": "Ditto",
-	  "sprite": "sprites/egg/ditto.png",
-	  "type": "special",
-	  "available": true,
-	  "amount": 50 
-    },
+		"pokemon": "Ditto",
+		"sprite": "sprites/egg/ditto.png",
+		"type": "special",
+		"available": true,
+		"amount": 50
+	},
 	{
-      "pokemon": "Unown",
-	  "sprite": "sprites/egg/unown.png",
-	  "type": "special",
-	  "available": true,
-	  "amount": 15 
-    },
+		"pokemon": "Unown",
+		"sprite": "sprites/egg/unown.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
 	{
-      "pokemon": "Spiky-eared Pichu",
-	  "sprite": "sprites/egg/pichu.png",
-	  "type": "event",
-	  "available": true,
-	  "amount": 5 
-    },
+		"pokemon": "Spiky-eared Pichu",
+		"sprite": "sprites/egg/pichu.png",
+		"type": "event",
+		"available": true,
+		"amount": 5
+	},
 	{
-      "pokemon": "Shadow Lugia",
-	  "sprite": "sprites/egg/shadowlugia.png",
-	  "type": "event",
-	  "available": true,
-	  "amount": 82
-    },
+		"pokemon": "Shadow Lugia",
+		"sprite": "sprites/egg/shadowlugia.png",
+		"type": "event",
+		"available": true,
+		"amount": 82
+	},
 	{
-      "pokemon": "MissingNo.",
-	  "sprite": "sprites/egg/missingno.png",
-	  "type": "missingno",
-	  "available": false,
-	  "amount": 1
-    },
+		"pokemon": "MissingNo.",
+		"sprite": "sprites/egg/missingno.png",
+		"type": "missingno",
+		"available": false,
+		"amount": 1
+	},
 	{
-      "pokemon": "Articuno",
-	  "sprite": "sprites/egg/articuno.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Articuno",
+		"sprite": "sprites/egg/articuno.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Galarian Articuno",
-	  "sprite": "sprites/egg/articuno.1.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Galarian Articuno",
+		"sprite": "sprites/egg/articuno.1.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Zapdos",
-	  "sprite": "sprites/egg/zapdos.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Zapdos",
+		"sprite": "sprites/egg/zapdos.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Galarian Zapdos",
-	  "sprite": "sprites/egg/zapdos.1.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Galarian Zapdos",
+		"sprite": "sprites/egg/zapdos.1.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Moltres",
-	  "sprite": "sprites/egg/moltres.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Moltres",
+		"sprite": "sprites/egg/moltres.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Galarian Moltres",
-	  "sprite": "sprites/egg/moltres.1.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Galarian Moltres",
+		"sprite": "sprites/egg/moltres.1.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Mewtwo",
-	  "sprite": "sprites/egg/mewtwo.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 5 
-    },
+		"pokemon": "Mewtwo",
+		"sprite": "sprites/egg/mewtwo.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 5
+	},
 	{
-      "pokemon": "Mew",
-	  "sprite": "sprites/egg/mew.png",
-	  "type": "legendary",
-	  "generation": 1,
-	  "available": true,
-	  "amount": 3 
-    },
+		"pokemon": "Mew",
+		"sprite": "sprites/egg/mew.png",
+		"type": "legendary",
+		"generation": 1,
+		"available": true,
+		"amount": 3
+	},
 	{
-      "pokemon": "Raikou",
-	  "sprite": "sprites/egg/raikou.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Raikou",
+		"sprite": "sprites/egg/raikou.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Entei",
-	  "sprite": "sprites/egg/entei.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Entei",
+		"sprite": "sprites/egg/entei.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Suicune",
-	  "sprite": "sprites/egg/suicune.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 2 
-    },
+		"pokemon": "Suicune",
+		"sprite": "sprites/egg/suicune.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 2
+	},
 	{
-      "pokemon": "Lugia",
-	  "sprite": "sprites/egg/lugia.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 3 
-    },
+		"pokemon": "Lugia",
+		"sprite": "sprites/egg/lugia.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 3
+	},
 	{
-      "pokemon": "Ho-oh",
-	  "sprite": "sprites/egg/hooh.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 3 
-    },
+		"pokemon": "Ho-oh",
+		"sprite": "sprites/egg/hooh.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 3
+	},
 	{
-      "pokemon": "Celebi",
-	  "sprite": "sprites/egg/celebi.png",
-	  "type": "legendary",
-	  "generation": 2,
-	  "available": true,
-	  "amount": 3 
-    },
+		"pokemon": "Celebi",
+		"sprite": "sprites/egg/celebi.png",
+		"type": "legendary",
+		"generation": 2,
+		"available": true,
+		"amount": 3
+	},
 	{
 		"pokemon": "Regirock",
 		"sprite": "sprites/egg/regirock.png",
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Regice",
@@ -188,7 +188,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Registeel",
@@ -196,7 +196,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Latias",
@@ -204,7 +204,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Latios",
@@ -212,7 +212,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Kyogre",
@@ -220,7 +220,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Groudon",
@@ -228,7 +228,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Rayquaza",
@@ -236,7 +236,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 4 
+		"amount": 4
 	},
 	{
 		"pokemon": "Jirachi",
@@ -244,7 +244,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Deoxys",
@@ -252,7 +252,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 4 
+		"amount": 4
 	},
 	{
 		"pokemon": "Uxie",
@@ -260,7 +260,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Mesprit",
@@ -268,7 +268,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Azelf",
@@ -276,7 +276,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Dialga",
@@ -284,7 +284,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Palkia",
@@ -292,7 +292,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Heatran",
@@ -300,7 +300,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Regigigas",
@@ -308,7 +308,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Giratina",
@@ -316,7 +316,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 4 
+		"amount": 4
 	},
 	{
 		"pokemon": "Cresselia",
@@ -324,7 +324,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Manaphy",
@@ -332,7 +332,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2 
+		"amount": 2
 	},
 	{
 		"pokemon": "Darkrai",
@@ -340,7 +340,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Shaymin",
@@ -348,7 +348,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3 
+		"amount": 3
 	},
 	{
 		"pokemon": "Arceus",
@@ -356,7 +356,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": false,
-		"amount": 10 
+		"amount": 10
 	},
 	{
 		"pokemon": "Victini",

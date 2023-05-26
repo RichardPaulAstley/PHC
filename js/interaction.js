@@ -16,25 +16,25 @@ function getRandomPokemonOrEgg() {
   if (isEgg) {
     const basePokemon = pokemonDatabase.filter(pokemon => pokemon.evolution_stage === "base");
     const randomBasePokemon = basePokemon[Math.floor(Math.random() * basePokemon.length)];
-    return randomBasePokemon.egg_sprite;
+    return `../${randomBasePokemon.egg_sprite}`;
   } else {
     const randomPokemon = pokemonDatabase[randomIndex];
-    const isShiny = Math.random() < 1/256 && randomPokemon.shiny_sprite;
-    return isShiny ? randomPokemon.shiny_sprite : randomPokemon.sprite;
+    const isShiny = Math.random() < 1 / 256 && randomPokemon.shiny_sprite;
+    return isShiny ? `../${randomPokemon.shiny_sprite}` : `../${randomPokemon.sprite}`;
   }
 }
 
 function updateTeamArray(id, update) {
-for (let i = 0; i < team.length; i++) {
-if (team[i].id === id) {
-team[i] = { ...team[i], ...update };
-break;
-}
-}
+  for (let i = 0; i < team.length; i++) {
+    if (team[i].id === id) {
+      team[i] = { ...team[i], ...update };
+      break;
+    }
+  }
 }
 
 function getRandomValue(min, max) {
-return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function generateToken() {
@@ -101,8 +101,8 @@ let lastClickTime = 0;
 let clickIntervals = [];
 
 img.addEventListener("click", () => {
-    const now = Date.now();
-  
+  const now = Date.now();
+
   // Check for automated clicking
   const clickInterval = now - lastClickTime;
   if (clickInterval < 5) { // Set a minimum interval of 10 milliseconds
@@ -132,7 +132,7 @@ img.addEventListener("click", () => {
   }
   eggData.clicks += 1;
   localStorage.setItem("eggData", JSON.stringify(eggData));
-  
+
   generateToken();
 
   let balance = JSON.parse(localStorage.getItem("balance") || "{}");
@@ -197,15 +197,15 @@ idleButton.addEventListener("click", () => {
       }
       eggData.idleClicks += 1;
       localStorage.setItem("eggData", JSON.stringify(eggData));
-	  
-	  generateToken();
 
-	  let balance = JSON.parse(localStorage.getItem("balance") || "{}");
-	  if (!balance.pokeDollar) {
-		balance.pokeDollar = 0;
-	  }
-		balance.pokeDollar += getRandomValue(1, 2);
-		localStorage.setItem("balance", JSON.stringify(balance));
+      generateToken();
+
+      let balance = JSON.parse(localStorage.getItem("balance") || "{}");
+      if (!balance.pokeDollar) {
+        balance.pokeDollar = 0;
+      }
+      balance.pokeDollar += getRandomValue(1, 2);
+      localStorage.setItem("balance", JSON.stringify(balance));
 
       // Update team data as in the click event listener
       team = team.map((member) => {
@@ -236,9 +236,9 @@ idleButton.addEventListener("click", () => {
         return member;
       });
       updateEggsReadyToHatch();
-	  generateDaycareEgg();
-	  updateDaycareDisplay();
-	  localStorage.setItem("daycare", JSON.stringify(daycare));
+      generateDaycareEgg();
+      updateDaycareDisplay();
+      localStorage.setItem("daycare", JSON.stringify(daycare));
       localStorage.setItem("team", JSON.stringify(team));
       img.src = getRandomPokemonOrEgg();
     }, 190); // Change the interval as needed

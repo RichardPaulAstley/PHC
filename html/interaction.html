@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PHC - Interaction</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../sprites/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+</head>
+
+<body>
+  <header>
+    <h1>Pokemon Hatching Center</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="shelter.html">Shelter</a></li>
+      <li><a href="team.html">Team&nbsp;<span id="eggs-ready-to-hatch"></span></a></li>
+      <li><a href="pc.html">PC</a></li>
+      <li><a href="daycare.html">Daycare&nbsp;<span id="daycare-display"></span></a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="token.html">Tokens</a></li>
+      <li><a href="interaction.html">Interaction</a></li>
+    </ul>
+  </nav>
+  <div class="interaction-container">
+    <button id="idle-button">PokeIdle Mode</button>
+    <div class="interaction-box">
+      <img src="../sprites/none.png" alt="Egg or Pokemon">
+    </div>
+    <div class="hatch-alert">
+      Did you know ? You gain x1.5 more Egg Steps / Experience when it's Friday!
+    </div>
+  </div>
+</body>
+<script src="../js/pokemon_db.js"></script>
+<script src="../js/token_db.js"></script>
+<script src="../js/stats.js"></script>
+<script src="../js/interaction.js"></script>
+
+</html>

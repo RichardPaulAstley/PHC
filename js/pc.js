@@ -4,7 +4,7 @@ for (let i = 0; i < team.length; i++) {
   const pokemon = team[i];
   const pcTeamBox = pcTeamBoxes[i];
   const pcTeamSprite = pcTeamBox.querySelector(".pc-team-sprite");
-  pcTeamSprite.src = pokemon.sprite;
+  pcTeamSprite.src = `../` + pokemon.sprite;
 }
 
 function renderTeam() {
@@ -133,7 +133,7 @@ for (let i = 0; i < totalSlots; i++) {
 
 
   const newSprite = document.createElement("img");
-  newSprite.src = "sprites/none.png";
+  newSprite.src = "../sprites/none.png";
   newSprite.alt = "Pokemon sprite";
   newSprite.classList.add("pc-storage-sprite");
   newSlot.appendChild(newSprite);
@@ -150,7 +150,7 @@ for (let i = 0; i < storage.length; i++) {
     const pcStorageBox = pcStorageBoxes[i];
     const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
     if (pcStorageSprite) {
-      pcStorageSprite.src = pokemon.sprite;
+      pcStorageSprite.src = `../` + pokemon.sprite;
     }
   }
 }

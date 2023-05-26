@@ -12,7 +12,7 @@ teamBoxes.forEach((teamBox, index) => {
 
   // Update the pokemon-sprite element
   const sprite = teamBox.querySelector('.pokemon-sprite img');
-  sprite.src = currentTeamMember.sprite;
+  sprite.src = `../` + currentTeamMember.sprite;
 
   // Function used to use the 'display_name' value for forms in case.
   function getDisplayName(species) {
@@ -31,7 +31,7 @@ teamBoxes.forEach((teamBox, index) => {
   } else {
     const displayName = getDisplayName(currentTeamMember.species);
     name.innerHTML = currentTeamMember.isShiny
-      ? '<img src="sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
+      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
       : displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
   }
 
@@ -89,7 +89,7 @@ window.onload = function () {
     }
 
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
-      ? '<img src="sprites/shiny.png" alt="Shiny"> ' + displayName
+      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName
       : displayName;
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male"
       ? "♂"
@@ -121,7 +121,7 @@ window.onload = function () {
     }
     if (egg.species === "Unown") {
       let form = Math.floor(Math.random() * 28) + 1;
-      let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
+      let spritePath = egg.isShiny ? "../sprites/pokemon/shiny/" : "../sprites/pokemon/";
       egg.sprite = spritePath + `201.${form}.png`;
     } else {
       egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
@@ -135,7 +135,7 @@ window.onload = function () {
         egg.sprite = femaleSprite;
       }
     }
-    document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = egg.sprite;
+    document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = `../` + egg.sprite;
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
     if (egg.isShiny) {
@@ -472,9 +472,9 @@ evolvingButton.forEach(button => {
         let currentPokemon = team[idx];
         let nameElement = document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`);
         if (nameElement) {
-          nameElement.innerHTML = currentPokemon.species;
+          nameElement.innerHTML = `../` + currentPokemon.species;
         }
-        let sprite = currentPokemon.sprite;
+        let sprite = `../` + currentPokemon.sprite;
         let spriteElement = document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`);
         if (spriteElement) {
           spriteElement.src = sprite;
