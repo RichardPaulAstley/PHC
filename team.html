@@ -1,143 +1,145 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>PHC - Team</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="image/x-icon" href="sprites/favicon.ico">
   <meta charset="UTF-8">
 </head>
+
 <body>
   <header>
-      <h1>Pokemon Hatching Center</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shelter.html">Shelter</a></li>
-		<li><a href="team.html">Team&nbsp;<span id="eggs-ready-to-hatch"></span></a></li>
-		<li><a href="pc.html">PC</a></li>
-		<li><a href="daycare.html">Daycare&nbsp;<span id="daycare-display"></span></a></li>
-        <li><a href="shop.html">Shop</a></li>
-		<li><a href="token.html">Tokens</a></li>
-        <li><a href="interaction.html">Interaction</a></li>
-      </ul>
-    </nav>
-<div class="main-content">
+    <h1>Pokemon Hatching Center</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shelter.html">Shelter</a></li>
+      <li><a href="team.html">Team&nbsp;<span id="eggs-ready-to-hatch"></span></a></li>
+      <li><a href="pc.html">PC</a></li>
+      <li><a href="daycare.html">Daycare&nbsp;<span id="daycare-display"></span></a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="token.html">Tokens</a></li>
+      <li><a href="interaction.html">Interaction</a></li>
+    </ul>
+  </nav>
+  <div class="main-content">
     <h1>Your Team</h1>
     <div class="team-container">
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	   <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="1">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="1">Evolve</button>
-		</div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	  <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="2">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="2">Evolve</button>
-		</div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	  <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="3">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="3">Evolve</button>
-		</div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	  <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="4">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="4">Evolve</button>
-		</div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	  <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="5">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="5">Evolve</button>
-	  </div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-    <div class="team-box">
-      <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
-	  <div class="button-container">
-      <button class="hatching-button" style="display: none;" data-index="6">Hatch</button>
-      <button class="evolving-button" style="display: none;" data-index="6">Evolve</button>
-		</div>
-      <div class="pokemon-name"></div>
-	  <div class="pokemon-gender"></div>
-      <div class="pokemon-level"></div>
-    </div>
-	</div>
-	<div class="team-actions-container">
-        <div class="hatch-all-button">
-            <button id="hatch-all-button">Hatch All</button>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="1">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="1">Evolve</button>
         </div>
-        <!-- Other buttons and actions can be added here -->
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="2">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="2">Evolve</button>
+        </div>
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="3">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="3">Evolve</button>
+        </div>
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="4">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="4">Evolve</button>
+        </div>
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="5">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="5">Evolve</button>
+        </div>
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
+      <div class="team-box">
+        <div class="pokemon-sprite"><img src="sprites/none.png" alt="Empty"></div>
+        <div class="button-container">
+          <button class="hatching-button" style="display: none;" data-index="6">Hatch</button>
+          <button class="evolving-button" style="display: none;" data-index="6">Evolve</button>
+        </div>
+        <div class="pokemon-name"></div>
+        <div class="pokemon-gender"></div>
+        <div class="pokemon-level"></div>
+      </div>
     </div>
-	<div class="stats-title">
-	<h1>Statistics</h1>
-	</div>
-	<div class="team-stats">
-		<p>Eggs Hatched: <span id="eggs-hatched"></span></p>
-		<p>Shiny Hatched: <span id="shiny-hatched"></span></p>
-		<p>Clicks Done: <span id="clicks-done"></span></p>
-		<p>Clicks Done in PokeIdle mode: <span id="idleClicks-done"></span></p>
-	</div>
-</div>
+    <div class="team-actions-container">
+      <div class="hatch-all-button">
+        <button id="hatch-all-button">Hatch All</button>
+      </div>
+      <!-- Other buttons and actions can be added here -->
+    </div>
+    <div class="stats-title">
+      <h1>Statistics</h1>
+    </div>
+    <div class="team-stats">
+      <p>Eggs Hatched: <span id="eggs-hatched"></span></p>
+      <p>Shiny Hatched: <span id="shiny-hatched"></span></p>
+      <p>Clicks Done: <span id="clicks-done"></span></p>
+      <p>Clicks Done in PokeIdle mode: <span id="idleClicks-done"></span></p>
+    </div>
+  </div>
 </body>
-  <script src="stats.js"></script>
-  <script src="pokemon_db.js"></script>
-  <script src="team.js"></script>
-  <script src="shelter.js"></script>
-  <script>function updatePokemonSprites() {
-  [team, storage].forEach((pokemonArray) => {
-    pokemonArray.forEach((pokemon) => {
-      if (!pokemon || pokemon.isEgg) return; // ignore null values and eggs
-      
-      const pokemonData = pokemonDatabase.find((p) => p.name === pokemon.species);
-      if (!pokemonData) return;
-	  
-	  if (pokemon.gender !== 'Female' || !pokemonData.female_sprite) return; // ignore non-female pokemon without a female sprite
+<script src="stats.js"></script>
+<script src="pokemon_db.js"></script>
+<script src="team.js"></script>
+<script src="shelter.js"></script>
+<script>function updatePokemonSprites() {
+    [team, storage].forEach((pokemonArray) => {
+      pokemonArray.forEach((pokemon) => {
+        if (!pokemon || pokemon.isEgg) return; // ignore null values and eggs
 
-      let sprite = pokemon.isShiny ? pokemonData.shiny_sprite : pokemonData.sprite;
+        const pokemonData = pokemonDatabase.find((p) => p.name === pokemon.species);
+        if (!pokemonData) return;
 
-      if (pokemon.gender === 'Female') {
-        if (pokemonData.female_sprite !== undefined) {
-          if (!pokemon.isShiny) {
-            sprite = pokemonData.female_sprite;
-          } else if (pokemonData.female_shiny_sprite !== undefined) {
-            sprite = pokemonData.female_shiny_sprite;
+        if (pokemon.gender !== 'Female' || !pokemonData.female_sprite) return; // ignore non-female pokemon without a female sprite
+
+        let sprite = pokemon.isShiny ? pokemonData.shiny_sprite : pokemonData.sprite;
+
+        if (pokemon.gender === 'Female') {
+          if (pokemonData.female_sprite !== undefined) {
+            if (!pokemon.isShiny) {
+              sprite = pokemonData.female_sprite;
+            } else if (pokemonData.female_shiny_sprite !== undefined) {
+              sprite = pokemonData.female_shiny_sprite;
+            }
           }
+        } else if (pokemonData.female_sprite !== undefined) {
+          return; // ignore non-female pokemon with a female sprite
         }
-      } else if (pokemonData.female_sprite !== undefined) {
-        return; // ignore non-female pokemon with a female sprite
-      }
 
-      pokemon.sprite = sprite;
+        pokemon.sprite = sprite;
+      });
     });
-  });
-  
-  localStorage.setItem('team', JSON.stringify(team));
-  localStorage.setItem('storage', JSON.stringify(storage));
-}
-updatePokemonSprites();</script>
+
+    localStorage.setItem('team', JSON.stringify(team));
+    localStorage.setItem('storage', JSON.stringify(storage));
+  }
+  updatePokemonSprites();</script>
 
 </html>

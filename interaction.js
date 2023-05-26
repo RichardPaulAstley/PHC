@@ -144,14 +144,14 @@ img.addEventListener("click", () => {
 
   team = team.map((member) => {
     if (member.isEgg) {
-      member.eggSteps += getRandomValue(25, 31);
+      member.eggSteps += getRandomValue(18, 24);
       if (new Date().getDay() === 5) { // Friday
-        member.eggSteps += getRandomValue(11, 13);
+        member.eggSteps += getRandomValue(6, 8);
       }
     } else {
-      member.experience += getRandomValue(310, 370);
+      member.experience += getRandomValue(220, 320);
       if (new Date().getDay() === 5) { // Friday
-        member.experience += getRandomValue(140, 173);
+        member.experience += getRandomValue(80, 107);
       }
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
       if (pokemonData) {
@@ -210,9 +210,9 @@ idleButton.addEventListener("click", () => {
       // Update team data as in the click event listener
       team = team.map((member) => {
         if (member.isEgg) {
-          member.eggSteps += getRandomValue(6, 8);
+          member.eggSteps += getRandomValue(9, 12);
           if (new Date().getDay() === 5) { // Friday
-            member.eggSteps += getRandomValue(4, 5);
+            member.eggSteps += getRandomValue(3, 4);
           }
         } else {
           member.experience += getRandomValue(110, 160);

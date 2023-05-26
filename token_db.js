@@ -366,4 +366,100 @@ const tokenExchange = [
 		"available": true,
 		"amount": 3
 	},
+	{
+		"pokemon": "Cobalion",
+		"sprite": "sprites/egg/cobalion.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Terrakion",
+		"sprite": "sprites/egg/terrakion.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Virizion",
+		"sprite": "sprites/egg/virizion.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tornadus",
+		"sprite": "sprites/egg/tornadus.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Thundurus",
+		"sprite": "sprites/egg/thundurus.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Reshiram",
+		"sprite": "sprites/egg/reshiram.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zekrom",
+		"sprite": "sprites/egg/zekrom.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Landorus",
+		"sprite": "sprites/egg/landorus.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Kyurem",
+		"sprite": "sprites/egg/kyurem.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Keldeo",
+		"sprite": "sprites/egg/keldeo.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Meloetta",
+		"sprite": "sprites/egg/meloetta.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Genesect",
+		"sprite": "sprites/egg/genesect.png",
+		"type": "legendary",
+		"generation": 5,
+		"available": true,
+		"amount": 3
+	},
 ]
