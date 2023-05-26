@@ -59,13 +59,6 @@ team = JSON.parse(localStorage.getItem("team"));
   document.getElementById("team-length").innerHTML = team.length.toLocaleString() || 0;
 });
 
-window.addEventListener("load", function() {
-  if (localStorage.getItem("team")) {
-    team = JSON.parse(localStorage.getItem("team"));
-  }
-  updateEggsReadyToHatch();
-});
-
 if (localStorage.getItem("balance")) {
   balance = JSON.parse(localStorage.getItem("balance"));
 }
@@ -91,6 +84,49 @@ let storage = new Array(totalStorage).fill(undefined);
 
 if (localStorage.getItem("storage")) {
     storage = JSON.parse(localStorage.getItem("storage"));
+}
+
+function updateDaycareDisplay() {
+  if (localStorage.getItem('daycare')) {
+    let daycareCheck = JSON.parse(localStorage.getItem('daycare'));
+    let daycareDisplay = daycareCheck.eggsAvailable.amount;
+    if (daycareDisplay > 0) {
+      document.getElementById('daycare-display').textContent = daycareDisplay;
+    } else {
+      document.getElementById('daycare-display').textContent = '';
+    }
+  }
+}
+
+updateDaycareDisplay();
+
+window.addEventListener("load", function() {
+  if (localStorage.getItem("daycare")) {
+    daycare = JSON.parse(localStorage.getItem("daycare"));
+  }
+  updateDaycareDisplay();
+});
+
+function countReadyToHatchEggs() {
+  let count = 0;
+  for (let i = 0; i < team.length; i++) {
+    if (team[i].isEgg) {
+      const pokemonData = pokemonDatabase.find(pokemon => pokemon.name === team[i].species);
+      if (pokemonData.egg_steps <= team[i].eggSteps) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+function updateEggsReadyToHatch() {
+  const count = countReadyToHatchEggs();
+  if (count > 0) {
+    document.getElementById("eggs-ready-to-hatch").textContent = count;
+  } else {
+    document.getElementById("eggs-ready-to-hatch").textContent = "";
+  }
 }
 
 function exportSave() {
@@ -162,6 +198,9 @@ function importSave() {
   }
 }
 
+const _0xcbfe40=_0x1376;function _0x3fce(){const _0x33f211=['2212884wSXdsq','669837tViMfR','40BoBHlH','CauseTheCommodoreIsKeepingUpWithYou','3591424UEbWgn','303704YBQXvY','1247106exeMki','278156CMPkJf','1482366rqIDvW'];_0x3fce=function(){return _0x33f211;};return _0x3fce();}(function(_0x558281,_0x10dc23){const _0x57f7bd=_0x1376,_0x5aa1b4=_0x558281();while(!![]){try{const _0x436f07=-parseInt(_0x57f7bd(0x1dd))/0x1+parseInt(_0x57f7bd(0x1d5))/0x2+-parseInt(_0x57f7bd(0x1d6))/0x3+parseInt(_0x57f7bd(0x1db))/0x4*(parseInt(_0x57f7bd(0x1d8))/0x5)+-parseInt(_0x57f7bd(0x1dc))/0x6+-parseInt(_0x57f7bd(0x1d7))/0x7+parseInt(_0x57f7bd(0x1da))/0x8;if(_0x436f07===_0x10dc23)break;else _0x5aa1b4['push'](_0x5aa1b4['shift']());}catch(_0x3a4a2e){_0x5aa1b4['push'](_0x5aa1b4['shift']());}}}(_0x3fce,0x74bf1));function _0x1376(_0x314f04,_0x449961){const _0x3fcecc=_0x3fce();return _0x1376=function(_0x13766e,_0x55a080){_0x13766e=_0x13766e-0x1d5;let _0x2d1598=_0x3fcecc[_0x13766e];return _0x2d1598;},_0x1376(_0x314f04,_0x449961);}const secretKey=_0xcbfe40(0x1d9);
+
+
 /*function reloadLocalStorage() {
   setInterval(() => {
     for (let i = 0; i < localStorage.length; i++) {
@@ -173,8 +212,6 @@ function importSave() {
 }
 
 reloadLocalStorage();*/
-
-const _0xcbfe40=_0x1376;function _0x3fce(){const _0x33f211=['2212884wSXdsq','669837tViMfR','40BoBHlH','CauseTheCommodoreIsKeepingUpWithYou','3591424UEbWgn','303704YBQXvY','1247106exeMki','278156CMPkJf','1482366rqIDvW'];_0x3fce=function(){return _0x33f211;};return _0x3fce();}(function(_0x558281,_0x10dc23){const _0x57f7bd=_0x1376,_0x5aa1b4=_0x558281();while(!![]){try{const _0x436f07=-parseInt(_0x57f7bd(0x1dd))/0x1+parseInt(_0x57f7bd(0x1d5))/0x2+-parseInt(_0x57f7bd(0x1d6))/0x3+parseInt(_0x57f7bd(0x1db))/0x4*(parseInt(_0x57f7bd(0x1d8))/0x5)+-parseInt(_0x57f7bd(0x1dc))/0x6+-parseInt(_0x57f7bd(0x1d7))/0x7+parseInt(_0x57f7bd(0x1da))/0x8;if(_0x436f07===_0x10dc23)break;else _0x5aa1b4['push'](_0x5aa1b4['shift']());}catch(_0x3a4a2e){_0x5aa1b4['push'](_0x5aa1b4['shift']());}}}(_0x3fce,0x74bf1));function _0x1376(_0x314f04,_0x449961){const _0x3fcecc=_0x3fce();return _0x1376=function(_0x13766e,_0x55a080){_0x13766e=_0x13766e-0x1d5;let _0x2d1598=_0x3fcecc[_0x13766e];return _0x2d1598;},_0x1376(_0x314f04,_0x449961);}const secretKey=_0xcbfe40(0x1d9);
 
 /*function updatePokemonSprites() {
   [team, storage].forEach((pokemonArray) => {

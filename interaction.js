@@ -24,23 +24,6 @@ function getRandomPokemonOrEgg() {
   }
 }
 
-function countReadyToHatchEggs() {
-  let count = 0;
-  for (let i = 0; i < team.length; i++) {
-    if (team[i].isEgg) {
-      const pokemonData = pokemonDatabase.find(pokemon => pokemon.name === team[i].species);
-      if (pokemonData.egg_steps <= team[i].eggSteps) {
-        count++;
-      }
-    }
-  }
-  return count;
-}
-
-function updateEggsReadyToHatch() {
-    document.getElementById("eggs-ready-to-hatch").textContent = countReadyToHatchEggs();
-  }
-
 function updateTeamArray(id, update) {
 for (let i = 0; i < team.length; i++) {
 if (team[i].id === id) {
@@ -156,19 +139,19 @@ img.addEventListener("click", () => {
   if (!balance.pokeDollar) {
     balance.pokeDollar = 0;
   }
-  balance.pokeDollar += getRandomValue(3, 5);
+  balance.pokeDollar += getRandomValue(8, 12);
   localStorage.setItem("balance", JSON.stringify(balance));
 
   team = team.map((member) => {
     if (member.isEgg) {
-      member.eggSteps += getRandomValue(17, 19);
+      member.eggSteps += getRandomValue(18, 24);
       if (new Date().getDay() === 5) { // Friday
-        member.eggSteps += getRandomValue(11, 13);
+        member.eggSteps += getRandomValue(6, 8);
       }
     } else {
-      member.experience += getRandomValue(210, 260);
+      member.experience += getRandomValue(220, 320);
       if (new Date().getDay() === 5) { // Friday
-        member.experience += getRandomValue(140, 173);
+        member.experience += getRandomValue(80, 107);
       }
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
       if (pokemonData) {
@@ -188,6 +171,7 @@ img.addEventListener("click", () => {
   });
   updateEggsReadyToHatch();
   generateDaycareEgg();
+  updateDaycareDisplay();
   localStorage.setItem("team", JSON.stringify(team));
   localStorage.setItem("daycare", JSON.stringify(daycare));
   img.src = getRandomPokemonOrEgg();
@@ -197,78 +181,70 @@ img.addEventListener("click", () => {
 
 const idleButton = document.querySelector("#idle-button");
 
+let isIdleModeOn = false;
+let intervalId;
+
 idleButton.addEventListener("click", () => {
-  let numClicks = parseInt(prompt("How many automatic clicks do you want?"));
-  if (isNaN(numClicks)) {
-    return; // do nothing if numClicks is not a number
-  }
-
-  const cost = numClicks * 30; // Change the cost as needed
-
-  const balance = JSON.parse(localStorage.getItem("balance") || "{}");
-  if (balance.pokeDollar < cost) {
-    alert("You don't have enough pokeDollars to use the idle mode.");
-    return;
-  }
-  
-  const confirmation = confirm(`Do you want to spend ${cost} PokeDollars for ${numClicks} clicks? If you leave the page while having the mode on, you'll not have your money back!`);
-  if (!confirmation) {
-    return; // do nothing if the user cancels the confirmation
-  }
-
-  // Deduct the cost from the balance
-  balance.pokeDollar -= cost;
-  localStorage.setItem("balance", JSON.stringify(balance));
-
-  // Start the idle mode loop
-  let count = 0;
-  const intervalId = setInterval(() => {
-    if (count >= numClicks) {
-      clearInterval(intervalId);
-      alert("Idle mode is over.");
-      return;
-    }
-
-  let eggData = JSON.parse(localStorage.getItem("eggData") || "{}");
-  if (!eggData.idleClicks) {
-    eggData.idleClicks = 0;
-  }
-  eggData.idleClicks += 1;
-  localStorage.setItem("eggData", JSON.stringify(eggData));
-	
-    // Update team data as in the click event listener
-    team = team.map((member) => {
-      if (member.isEgg) {
-        member.eggSteps += getRandomValue(17, 19);
-        if (new Date().getDay() === 5) { // Friday
-          member.eggSteps += getRandomValue(11, 13);
-        }
-      } else {
-        member.experience += getRandomValue(210, 260);
-        if (new Date().getDay() === 5) { // Friday
-          member.experience += getRandomValue(140, 173);
-        }
-        const pokemonData = pokemonDatabase.find(data => data.name === member.species);
-        if (pokemonData) {
-          const xpRequired = pokemonData.experience_group;
-
-          while (member.experience >= xpRequired && member.level < 100) {
-            member.level++;
-            member.experience -= xpRequired;
-          }
-
-          if (member.level >= 100) {
-            member.experience = xpRequired * 100;
-          }
-        }
+  if (isIdleModeOn) {
+    clearInterval(intervalId);
+    alert("Idle mode is over.");
+    isIdleModeOn = false;
+  } else {
+    intervalId = setInterval(() => {
+      let eggData = JSON.parse(localStorage.getItem("eggData") || "{}");
+      if (!eggData.idleClicks) {
+        eggData.idleClicks = 0;
       }
-      return member;
-    });
-    updateEggsReadyToHatch();
-    localStorage.setItem("team", JSON.stringify(team));
-	img.src = getRandomPokemonOrEgg();
-    count++;
-  }, 250); // Change the interval as needed
+      eggData.idleClicks += 1;
+      localStorage.setItem("eggData", JSON.stringify(eggData));
+	  
+	  generateToken();
+
+	  let balance = JSON.parse(localStorage.getItem("balance") || "{}");
+	  if (!balance.pokeDollar) {
+		balance.pokeDollar = 0;
+	  }
+		balance.pokeDollar += getRandomValue(1, 2);
+		localStorage.setItem("balance", JSON.stringify(balance));
+
+      // Update team data as in the click event listener
+      team = team.map((member) => {
+        if (member.isEgg) {
+          member.eggSteps += getRandomValue(9, 12);
+          if (new Date().getDay() === 5) { // Friday
+            member.eggSteps += getRandomValue(3, 4);
+          }
+        } else {
+          member.experience += getRandomValue(110, 160);
+          if (new Date().getDay() === 5) { // Friday
+            member.experience += getRandomValue(37, 54);
+          }
+          const pokemonData = pokemonDatabase.find(data => data.name === member.species);
+          if (pokemonData) {
+            const xpRequired = pokemonData.experience_group;
+
+            while (member.experience >= xpRequired && member.level < 100) {
+              member.level++;
+              member.experience -= xpRequired;
+            }
+
+            if (member.level >= 100) {
+              member.experience = xpRequired * 100;
+            }
+          }
+        }
+        return member;
+      });
+      updateEggsReadyToHatch();
+	  generateDaycareEgg();
+	  updateDaycareDisplay();
+	  localStorage.setItem("daycare", JSON.stringify(daycare));
+      localStorage.setItem("team", JSON.stringify(team));
+      img.src = getRandomPokemonOrEgg();
+    }, 190); // Change the interval as needed
+
+    isIdleModeOn = true;
+  }
 });
 
 img.src = getRandomPokemonOrEgg();
