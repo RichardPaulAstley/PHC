@@ -129,7 +129,7 @@ window.onload = function () {
     }
     if (egg.species === "Unown") {
       let form = Math.floor(Math.random() * 28) + 1;
-      let spritePath = egg.isShiny ? "../sprites/pokemon/shiny/" : "../sprites/pokemon/";
+      let spritePath = egg.isShiny ? "./sprites/pokemon/shiny/" : "./sprites/pokemon/";
       egg.sprite = spritePath + `201.${form}.png`;
     } else {
       egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
