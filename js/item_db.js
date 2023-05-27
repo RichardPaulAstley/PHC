@@ -322,6 +322,27 @@ const itemDatabase = [
 		"description": "A shard of what appears to be an old blade of some sort. It is held only by Bisharp that head up a group of Pawniard.",
 		"price": 4000
 	},
+	{
+		"name": "Postcard",
+		"sprite": "sprites/items/postcard.png",
+		"type": "Evolution",
+		"description": "An item sent from far away ! A Pokémon seems to react when being in contact with...",
+		"price": 10000
+	},
+	{
+		"name": "Sachet",
+		"sprite": "sprites/items/sachet.png",
+		"type": "Evolution",
+		"description": "A sachet filled with fragrant perfumes that are just slightly too overwhelming. Yet it's loved by a certain Pokémon.",
+		"price": 3500
+	},
+	{
+		"name": "Whipped Dream",
+		"sprite": "sprites/items/whippeddream.png",
+		"type": "Evolution",
+		"description": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokémon.",
+		"price": 3500
+	},
 	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",

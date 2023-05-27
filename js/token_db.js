@@ -462,4 +462,52 @@ const tokenExchange = [
 		"available": true,
 		"amount": 3
 	},
+	{
+		"pokemon": "Xerneas",
+		"sprite": "sprites/egg/xerneas.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Yveltal",
+		"sprite": "sprites/egg/yveltal.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zygarde",
+		"sprite": "sprites/egg/zygarde.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Diancie",
+		"sprite": "sprites/egg/diancie.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Hoopa",
+		"sprite": "sprites/egg/hoopa.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Volcanion",
+		"sprite": "sprites/egg/volcanion.png",
+		"type": "legendary",
+		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
 ]
