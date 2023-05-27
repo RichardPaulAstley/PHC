@@ -88,18 +88,33 @@ pokemonBoxes.forEach((pokemonBox, index) => {
 });
 
 function releasePokemon(index) {
-  if (team[index].isEgg) {
+  const pokemon = team[index];
+
+  if (pokemon.isEgg && !pokemon.isShiny) {
     window.alert("You can't release eggs");
     return;
   }
-  const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
-  if (confirmRelease) {
-    team.splice(index, 1);
+
+  const confirmReleaseAll = window.confirm("Do you want to release all non-egg and non-shiny Pokemon from your team?");
+  
+  if (confirmReleaseAll) {
+    const filteredTeam = team.filter(pokemon => (pokemon.isEgg || pokemon.isShiny));
+    team = filteredTeam;
     renderTeam();
     localStorage.setItem("team", JSON.stringify(team));
     location.reload();
+  } else {
+    const confirmReleaseSelected = window.confirm(`Are you sure you want to release ${pokemon.species}?`);
+    
+    if (confirmReleaseSelected) {
+      team.splice(index, 1);
+      renderTeam();
+      localStorage.setItem("team", JSON.stringify(team));
+      location.reload();
+    }
   }
 }
+
 
 /* PC Système */
 
