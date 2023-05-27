@@ -1,25 +1,25 @@
 const startButton = document.querySelector('#start-button');
 
 startButton.addEventListener('click', () => {
-  window.location.href = 'shelter.html';
+  window.location.href = './html/shelter.html';
 });
 
 const helpButton = document.querySelector('#help-button');
 
 helpButton.addEventListener('click', () => {
-  window.location.href = 'help.html';
+  window.location.href = './html/help.html';
 });
 
 const creditsButton = document.querySelector('#credits-button');
 
 creditsButton.addEventListener('click', () => {
-  window.location.href = 'credits.html';
+  window.location.href = './html/credits.html';
 });
 
 const updatesButton = document.querySelector('#updates-button');
 
 updatesButton.addEventListener('click', () => {
-  window.location.href = 'updates.html';
+  window.location.href = './html/updates.html';
 });
 
 const discordButton = document.querySelector('#discord-button');
