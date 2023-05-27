@@ -14,6 +14,7 @@ teamBoxes.forEach((teamBox, index) => {
   const sprite = teamBox.querySelector('.pokemon-sprite img');
   sprite.src = `../` + currentTeamMember.sprite;
 
+
   // Function used to use the 'display_name' value for forms in case.
   function getDisplayName(species) {
     let pokemonData = pokemonDatabase.find(p => p.name === species);
@@ -33,6 +34,13 @@ teamBoxes.forEach((teamBox, index) => {
     name.innerHTML = currentTeamMember.isShiny
       ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
       : displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
+  }
+
+  // Add shiny class if the Pokémon is shiny
+  if (currentTeamMember.isShiny) {
+    teamBox.classList.add('shiny');
+  } else {
+    teamBox.classList.remove('shiny');
   }
 
   // Update the pokemon-level element
@@ -135,7 +143,17 @@ window.onload = function () {
         egg.sprite = femaleSprite;
       }
     }
-    document.querySelector(`.team-box:nth-child(${index + 1}) .pokemon-sprite img`).src = `../` + egg.sprite;
+
+    let teamBox = document.querySelector(`.team-box:nth-child(${index + 1})`);
+    if (teamBox) {
+      teamBox.classList.toggle('shiny', egg.isShiny);
+
+      let spriteElement = teamBox.querySelector('.pokemon-sprite img');
+      if (spriteElement) {
+        spriteElement.src = `../` + egg.sprite;
+      }
+    }
+
     let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
     if (egg.isShiny) {
@@ -419,7 +437,7 @@ evolvingButton.forEach(button => {
           const randomNum = Math.floor(Math.random() * 100);
           if (randomNum === 0) {
             team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/982.1.png' : 'sprites/pokemon/982.1.png';
-            alert(`Wait... What happened with your Dunsparce?!`)
+            alert(`Wait... What happened with your Dunsparce?!`);
           } else {
             let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
             if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
@@ -427,6 +445,16 @@ evolvingButton.forEach(button => {
             }
             team[index].sprite = sprite;
           }
+        } else if (evolvedPokemon.name === 'Vivillon') {
+          let randomNum = Math.floor(Math.random() * 18);
+          let spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/666.${randomNum}.png` : `sprites/pokemon/666.${randomNum}.png`;
+
+          while (team[index].sprite.endsWith(`666.${randomNum}.png`)) {
+            randomNum = Math.floor(Math.random() * 18);
+            spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/666.${randomNum}.png` : `sprites/pokemon/666.${randomNum}.png`;
+          }
+
+          team[index].sprite = spritePath;
         } else {
           let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
           if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
@@ -450,7 +478,7 @@ evolvingButton.forEach(button => {
               sprite: pokemon.isShiny ? 'sprites/pokemon/shiny/292.png' : 'sprites/pokemon/292.png'
             };
             team.push(newPokemon);
-            alert("Seems another Pokemon shown up next to your Ninjask...")
+            alert("Seems another Pokemon shown up next to your Ninjask...");
             location.reload();
           }
         }
@@ -472,7 +500,7 @@ evolvingButton.forEach(button => {
         let currentPokemon = team[idx];
         let nameElement = document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`);
         if (nameElement) {
-          nameElement.innerHTML = `../` + currentPokemon.species;
+          nameElement.innerHTML = currentPokemon.species;
         }
         let sprite = `../` + currentPokemon.sprite;
         let spriteElement = document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-sprite img`);

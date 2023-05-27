@@ -327,6 +327,14 @@ th {
     vertical-align: top;
 }
 
+.shiny {
+  background-color: rgb(255, 255, 240);
+}
+
+.shiny-bg {
+  background-color: rgb(255, 253, 208);
+}
+
 .pc-storage-container {
   display: flex;
   flex-wrap: wrap;
@@ -364,7 +372,7 @@ th {
 }
 
 .selected {
-  background-color: lightblue;
+  background-color: lightblue !important; 
 }
 
 .pc-storage-container {

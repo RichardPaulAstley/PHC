@@ -5,6 +5,13 @@ for (let i = 0; i < team.length; i++) {
   const pcTeamBox = pcTeamBoxes[i];
   const pcTeamSprite = pcTeamBox.querySelector(".pc-team-sprite");
   pcTeamSprite.src = `../` + pokemon.sprite;
+  
+  // Add or remove shiny-bg class based on isShiny property
+  if (pokemon.isShiny) {
+    pcTeamBox.classList.add('shiny-bg');
+  } else {
+    pcTeamBox.classList.remove('shiny-bg');
+  }
 }
 
 function renderTeam() {
@@ -151,6 +158,11 @@ for (let i = 0; i < storage.length; i++) {
     const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
     if (pcStorageSprite) {
       pcStorageSprite.src = `../` + pokemon.sprite;
+      if (pokemon.isShiny) {
+        pcStorageBox.style.backgroundColor = 'rgb(255, 253, 208)';
+      } else {
+        pcStorageBox.style.backgroundColor = 'white';
+      }
     }
   }
 }
@@ -349,6 +361,11 @@ imgs.forEach((img) => {
 
     // Get the corresponding Pokemon data, if it exists
     const pokemonData = pokemonArray[index];
+
+    // Check if pokemonData is null, and exit the function if it is
+    if (pokemonData === null) {
+      return;
+    }
 
     // Construct the title string with the Pokemon data, if it exists
     let titleString = '';
