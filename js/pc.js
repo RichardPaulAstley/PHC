@@ -12,7 +12,11 @@ for (let i = 0; i < team.length; i++) {
   } else {
     pcTeamBox.classList.remove('shiny-bg');
   }
+  
+  // Add the event listener for click event
+  pcTeamBox.addEventListener("click", handleSlotClick);
 }
+
 
 function renderTeam() {
   // Get the container for the team
@@ -153,7 +157,6 @@ for (let i = 0; i < totalSlots; i++) {
   newSlot.id = `slot-${slotNum}`;
   slotNum++;
 
-
   const newSprite = document.createElement("img");
   newSprite.src = "../sprites/none.png";
   newSprite.alt = "Pokemon sprite";
@@ -162,6 +165,9 @@ for (let i = 0; i < totalSlots; i++) {
 
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
+
+  // Add the event listener for click event
+  newSlot.addEventListener("click", handleSlotClick);
 }
 
 const pcStorageBoxes = document.querySelectorAll(".pc-storage-box");
@@ -187,13 +193,13 @@ for (let i = 0; i < storage.length; i++) {
 let selectedSlot = null;
 
 // Add click event listeners to each slot
-pcTeamBoxes.forEach((slot) => {
+/*pcTeamBoxes.forEach((slot) => {
   slot.addEventListener("click", handleSlotClick);
-});
+});*/
 
-pcStorageBoxes.forEach((slot) => {
+/*pcStorageBoxes.forEach((slot) => {
   slot.addEventListener("click", handleSlotClick);
-});
+});*/
 
 function handleSlotClick(event) {
   const clickedSlot = event.target.closest(".pc-team-box, .pc-storage-box");
@@ -287,7 +293,7 @@ function swapSlots(slot1, slot2) {
 
   // Save the updated arrays
   reorderTeamArray();
-  location.reload();
+  /*location.reload();*/
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
 }
@@ -378,7 +384,7 @@ imgs.forEach((img) => {
     const pokemonData = pokemonArray[index];
 
     // Check if pokemonData is null, and exit the function if it is
-    if (pokemonData === null) {
+    if (pokemonData === null || pokemonData.isEgg === true) {
       return;
     }
 
