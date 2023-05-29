@@ -42,6 +42,86 @@ const tokenExchange = [
 		"amount": 15
 	},
 	{
+		"pokemon": "Nihilego",
+		"sprite": "sprites/egg/nihilego.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Buzzwole",
+		"sprite": "sprites/egg/buzzwole.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Pheromosa",
+		"sprite": "sprites/egg/pheromosa.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Xurkitree",
+		"sprite": "sprites/egg/xurkitree.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Celesteela",
+		"sprite": "sprites/egg/celesteela.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Kartana",
+		"sprite": "sprites/egg/kartana.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Guzzlord",
+		"sprite": "sprites/egg/guzzlord.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Poipole",
+		"sprite": "sprites/egg/poipole.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Stakataka",
+		"sprite": "sprites/egg/stakataka.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Blacephalon",
+		"sprite": "sprites/egg/blacephalon.png",
+		"type": "special",
+		"generation": 7,
+		"available": true,
+		"amount": 30
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/pichu.png",
 		"type": "event",
@@ -507,6 +587,86 @@ const tokenExchange = [
 		"sprite": "sprites/egg/volcanion.png",
 		"type": "legendary",
 		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Type: Null",
+		"sprite": "sprites/egg/typenull.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 1
+	},
+	{
+		"pokemon": "Tapu Koko",
+		"sprite": "sprites/egg/tapukoko.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Lele",
+		"sprite": "sprites/egg/tapulele.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Bulu",
+		"sprite": "sprites/egg/tapubulu.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Fini",
+		"sprite": "sprites/egg/tapufini.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Cosmog",
+		"sprite": "sprites/egg/cosmog.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Necrozma",
+		"sprite": "sprites/egg/necrozma.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Magearna",
+		"sprite": "sprites/egg/magearna.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Marshadow",
+		"sprite": "sprites/egg/marshadow.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zeraora",
+		"sprite": "sprites/egg/zeraora.png",
+		"type": "legendary",
+		"generation": 7,
 		"available": true,
 		"amount": 3
 	},

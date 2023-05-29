@@ -22,6 +22,20 @@ const itemDatabase = [
 		"price": 80000
 	},
 	{
+		"name": "Sun Flute",
+		"sprite": "sprites/items/sunflute.png",
+		"type": "Evolution",
+		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the sun.",
+		"price": 75000
+	},
+	{
+		"name": "Moon Flute",
+		"sprite": "sprites/items/moonflute.png",
+		"type": "Evolution",
+		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the moon.",
+		"price": 75000
+	},
+	{
 		"name": "Max Mushrooms",
 		"sprite": "sprites/items/maxmushrooms.png",
 		"type": "Evolution",
@@ -342,6 +356,13 @@ const itemDatabase = [
 		"type": "Evolution",
 		"description": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokémon.",
 		"price": 3500
+	},
+	{
+		"name": "Wishiwashi Toy",
+		"sprite": "sprites/items/wishiwashitoy.png",
+		"type": "Evolution",
+		"description": "A toy of a Wishiwashi. It seems to be enough realistic to fool a certain Pokemon thinking it's a real one.",
+		"price": 2000
 	},
 	/*{
 	  "name": "Big Malasada",
