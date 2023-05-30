@@ -36,6 +36,13 @@ const itemDatabase = [
 		"price": 75000
 	},
 	{
+		"name": "400 Meltan Candy",
+		"sprite": "sprites/items/400meltancandies.png",
+		"type": "Evolution",
+		"description": "That's a lot of candies! That does explain the price...",
+		"price": 200000
+	},
+	{
 		"name": "Max Mushrooms",
 		"sprite": "sprites/items/maxmushrooms.png",
 		"type": "Evolution",

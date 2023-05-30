@@ -1,22 +1,66 @@
+function cleanUpTeamArray() {
+  function removeNulls(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
+
+  function reorderTeamArray() {
+    for (let i = 0; i < team.length; i++) {
+      if (!team[i]) {
+        for (let j = i + 1; j < team.length; j++) {
+          if (team[j]) {
+            team[i] = team[j];
+            team[j] = null;
+            break;
+          }
+        }
+      }
+    }
+    team = removeNulls(team);
+  }
+
+  // Check if the team array contains null values
+  if (team.includes(null)) {
+    // If null values exist, remove them and reorder the array
+    team = removeNulls(team);
+    reorderTeamArray();
+    // Save the updated team array in local storage
+    localStorage.setItem('team', JSON.stringify(team));
+    location.reload();
+  }
+}
+
+window.addEventListener('load', cleanUpTeamArray);
+
 const pcTeamBoxes = document.querySelectorAll(".pc-team-box");
 
-for (let i = 0; i < team.length; i++) {
-  const pokemon = team[i];
+for (let i = 0; i < pcTeamBoxes.length; i++) {
   const pcTeamBox = pcTeamBoxes[i];
   const pcTeamSprite = pcTeamBox.querySelector(".pc-team-sprite");
-  pcTeamSprite.src = `../` + pokemon.sprite;
   
-  // Add or remove shiny-bg class based on isShiny property
-  if (pokemon.isShiny) {
-    pcTeamBox.classList.add('shiny-bg');
+  if (i < team.length) {
+    const pokemon = team[i];
+    pcTeamSprite.src = `../` + pokemon.sprite;
+    
+    // Add or remove shiny-bg class based on isShiny property
+    if (pokemon.isShiny) {
+      pcTeamBox.classList.add('shiny-bg');
+    } else {
+      pcTeamBox.classList.remove('shiny-bg');
+    }
   } else {
-    pcTeamBox.classList.remove('shiny-bg');
+    pcTeamSprite.src = "../sprites/none.png"; // Set the sprite source to empty for empty slots
+    pcTeamBox.classList.remove('shiny-bg'); // Remove shiny-bg class for empty slots
   }
   
   // Add the event listener for click event
   pcTeamBox.addEventListener("click", handleSlotClick);
 }
-
 
 function renderTeam() {
   // Get the container for the team
@@ -224,7 +268,7 @@ function handleSlotClick(event) {
   }
 }
 
-function removeNulls(array) {
+/*function removeNulls(array) {
   let newArray = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i]) {
@@ -247,7 +291,8 @@ function reorderTeamArray() {
     }
   }
   team = removeNulls(team);
-}
+}*/
+
 
 function swapSlots(slot1, slot2) {
   const slot1Content = slot1.innerHTML;
@@ -292,8 +337,8 @@ function swapSlots(slot1, slot2) {
   }
 
   // Save the updated arrays
-  reorderTeamArray();
   /*location.reload();*/
+  /*reorderTeamArray();*/
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
 }

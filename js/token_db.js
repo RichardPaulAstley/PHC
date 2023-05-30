@@ -45,7 +45,6 @@ const tokenExchange = [
 		"pokemon": "Nihilego",
 		"sprite": "sprites/egg/nihilego.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -53,7 +52,6 @@ const tokenExchange = [
 		"pokemon": "Buzzwole",
 		"sprite": "sprites/egg/buzzwole.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -61,7 +59,6 @@ const tokenExchange = [
 		"pokemon": "Pheromosa",
 		"sprite": "sprites/egg/pheromosa.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -69,7 +66,6 @@ const tokenExchange = [
 		"pokemon": "Xurkitree",
 		"sprite": "sprites/egg/xurkitree.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -77,7 +73,6 @@ const tokenExchange = [
 		"pokemon": "Celesteela",
 		"sprite": "sprites/egg/celesteela.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -85,7 +80,6 @@ const tokenExchange = [
 		"pokemon": "Kartana",
 		"sprite": "sprites/egg/kartana.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -93,7 +87,6 @@ const tokenExchange = [
 		"pokemon": "Guzzlord",
 		"sprite": "sprites/egg/guzzlord.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -101,7 +94,6 @@ const tokenExchange = [
 		"pokemon": "Poipole",
 		"sprite": "sprites/egg/poipole.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -109,7 +101,6 @@ const tokenExchange = [
 		"pokemon": "Stakataka",
 		"sprite": "sprites/egg/stakataka.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
 	},
@@ -117,9 +108,16 @@ const tokenExchange = [
 		"pokemon": "Blacephalon",
 		"sprite": "sprites/egg/blacephalon.png",
 		"type": "special",
-		"generation": 7,
 		"available": true,
 		"amount": 30
+	},
+	
+	{
+		"pokemon": "Meltan",
+		"sprite": "sprites/egg/meltan.png",
+		"type": "special",
+		"available": true,
+		"amount": 20
 	},
 	{
 		"pokemon": "Spiky-eared Pichu",

@@ -1,10 +1,41 @@
-/* Ancienne méthode, ne display que les pokemon
-function getRandomSprite() {
-  let randomIndex = Math.floor(Math.random() * pokemonDatabase.length);
-  return pokemonDatabase[randomIndex].sprite;
-} 
+function cleanUpTeamArray() {
+  function removeNulls(array) {
+      let newArray = [];
+      for (let i = 0; i < array.length; i++) {
+          if (array[i]) {
+              newArray.push(array[i]);
+          }
+      }
+      return newArray;
+  }
 
-document.querySelector(".interaction-box img").src = getRandomSprite(); */
+  function reorderTeamArray() {
+      for (let i = 0; i < team.length; i++) {
+          if (!team[i]) {
+              for (let j = i + 1; j < team.length; j++) {
+                  if (team[j]) {
+                      team[i] = team[j];
+                      team[j] = null;
+                      break;
+                  }
+              }
+          }
+      }
+      team = removeNulls(team);
+  }
+
+  // Check if the team array contains null values
+  if (team.includes(null)) {
+      // If null values exist, remove them and reorder the array
+      team = removeNulls(team);
+      reorderTeamArray();
+      // Save the updated team array in local storage
+      localStorage.setItem('team', JSON.stringify(team));
+      location.reload();
+  }
+}
+
+window.addEventListener('load', cleanUpTeamArray);
 
 const mainContent = document.querySelector(".interaction-container");
 const interactionBox = mainContent.querySelector(".interaction-box");
