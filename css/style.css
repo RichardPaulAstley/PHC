@@ -333,7 +333,7 @@ th {
 }
 
 .shiny-bg {
-  background-color: rgb(255, 253, 208);
+  background-color: rgb(255, 253, 208) !important;
 }
 
 .pc-storage-container {

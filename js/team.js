@@ -492,6 +492,28 @@ evolvingButton.forEach(button => {
           }
 
           team[index].sprite = spritePath;
+        } else if (evolvedPokemon.name === 'Alcremie') {
+          const sweetType = prompt('Choose a Sweet type for your Alcremie (Strawberry, Berry, Love, Star, Clover, Flower, Ribbon :');
+          const validSweets = ['Strawberry', 'Berry', 'Love', 'Star', 'Clover', 'Flower', 'Ribbon'];
+          if (validSweets.includes(sweetType)) {
+            const creamType = prompt('Choose a Cream type for your Alcremie (Vanilla, Ruby, Matcha, Mint, Lemon, Salted, Ruby Swirl, Caramel, Rainbow):');
+            const validCreams = ['Vanilla', 'Ruby', 'Matcha', 'Mint', 'Lemon', 'Salted', 'Ruby Swirl', 'Caramel', 'Rainbow'];
+            if (validCreams.includes(creamType)) {
+              const sweetIndex = validSweets.indexOf(sweetType);
+              const creamIndex = validCreams.indexOf(creamType);
+              let sprite = `sprites/pokemon/869.${sweetIndex}.${creamIndex}.png`;
+              if (pokemon.isShiny) {
+                sprite = `sprites/pokemon/shiny/869.${sweetIndex}.png`;
+              }
+              team[index].sprite = sprite;
+            } else {
+              alert('Invalid Cream type! Evolution cancelled.');
+              return; // Cancel the evolution
+            }
+          } else {
+            alert('Invalid Sweet type! Evolution cancelled.');
+            return; // Cancel the evolution
+          }
         } else {
           let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
           if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {

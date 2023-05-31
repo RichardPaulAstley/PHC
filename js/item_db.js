@@ -22,6 +22,20 @@ const itemDatabase = [
 		"price": 80000
 	},
 	{
+		"name": "Origin Orb",
+		"sprite": "sprites/items/originorb.png",
+		"type": "Form",
+		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
+		"price": 80000
+	},
+	{
+		"name": "Gracidea",
+		"sprite": "sprites/items/gracidea.png",
+		"type": "Form",
+		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
+		"price": 80000
+	},
+	{
 		"name": "Sun Flute",
 		"sprite": "sprites/items/sunflute.png",
 		"type": "Evolution",
@@ -274,20 +288,6 @@ const itemDatabase = [
 		"price": 10000
 	},
 	{
-		"name": "Origin Orb",
-		"sprite": "sprites/items/originorb.png",
-		"type": "Form",
-		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
-		"price": 80000
-	},
-	{
-		"name": "Gracidea",
-		"sprite": "sprites/items/gracidea.png",
-		"type": "Form",
-		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
-		"price": 80000
-	},
-	{
 		"name": "Fairy Ribbon",
 		"sprite": "sprites/items/fairyribbon.png",
 		"type": "Evolution",
@@ -370,6 +370,30 @@ const itemDatabase = [
 		"type": "Evolution",
 		"description": "A toy of a Wishiwashi. It seems to be enough realistic to fool a certain Pokemon thinking it's a real one.",
 		"price": 2000
+	},
+	{
+		"name": "Tart Apple",
+		"sprite": "sprites/items/tartapple.png",
+		"description": "A peculiar apple that can make a certain species of Pokémon evolve. It\'s exceptionally tart.",
+		"price": 5000
+	},
+	{
+		"name": "Sweet Apple",
+		"sprite": "sprites/items/sweetapple.png",
+		"description": "A peculiar apple that can make a certain species of Pokémon evolve. It\'s exceptionally sweet.",
+		"price": 5000
+	},
+	{
+		"name": "Cracked Pot",
+		"sprite": "sprites/items/crackedpot.png",
+		"description": "A peculiar teapot that can make a certain species of Pokémon evolve. It may be cracked, but tea poured from it is delicious.",
+		"price": 5000
+	},
+	{
+		"name": "Candy Jar",
+		"sprite": "sprites/items/candyjar.png",
+		"description": "A jar full of sweets. It seems to be put on a Pokémon",
+		"price": 3000
 	},
 	/*{
 	  "name": "Big Malasada",
