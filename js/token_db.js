@@ -668,4 +668,92 @@ const tokenExchange = [
 		"available": true,
 		"amount": 3
 	},
+	{
+		"pokemon": "Zacian",
+		"sprite": "sprites/egg/zacian.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zamazenta",
+		"sprite": "sprites/egg/zamazenta.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Eternatus",
+		"sprite": "sprites/egg/eternatus.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Kubfu",
+		"sprite": "sprites/egg/kubfu.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zarude",
+		"sprite": "sprites/egg/zarude.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Regieleki",
+		"sprite": "sprites/egg/regieleki.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Regidrago",
+		"sprite": "sprites/egg/regidrago.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Glastrier",
+		"sprite": "sprites/egg/glastrier.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Spectrier",
+		"sprite": "sprites/egg/spectrier.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Calyrex",
+		"sprite": "sprites/egg/calyrex.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Enamorus",
+		"sprite": "sprites/egg/enamorus.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
 ]

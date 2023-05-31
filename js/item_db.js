@@ -57,6 +57,34 @@ const itemDatabase = [
 		"price": 200000
 	},
 	{
+		"name": "Rusted Sword",
+		"sprite": "sprites/items/rustedsword.png",
+		"type": "Evolution",
+		"description": "It is said that a hero used this sword to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.",
+		"price": 75000
+	},
+	{
+		"name": "Rusted Shield",
+		"sprite": "sprites/items/rustedshield.png",
+		"type": "Evolution",
+		"description": "It is said that a hero used this shield to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.",
+		"price": 70000
+	},
+	{
+		"name": "Scroll of Darkness",
+		"sprite": "sprites/items/scrollofdarkness.png",
+		"type": "Evolution",
+		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness.",
+		"price": 70000
+	},
+	{
+		"name": "Scroll of Waters",
+		"sprite": "sprites/items/scrollofwaters.png",
+		"type": "Evolution",
+		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water.",
+		"price": 70000
+	},
+	{
 		"name": "Max Mushrooms",
 		"sprite": "sprites/items/maxmushrooms.png",
 		"type": "Evolution",

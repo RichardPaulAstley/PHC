@@ -89,6 +89,7 @@ pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
     if (event.shiftKey || (event.type === "touchstart" && event.touches.length === 2)) {
       if (event.ctrlKey && event.shiftKey) {
+        cleanUpTeamArray();
         const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
         if (confirmRelease) {
           team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
