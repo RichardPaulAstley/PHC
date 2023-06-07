@@ -20056,7 +20056,7 @@ const pokemonDatabase = [
 		"sprite": "sprites/pokemon/883.png",
 		"shiny_sprite": "sprites/pokemon/shiny/883.png",
 		"egg_sprite": "sprites/egg/arctovish.png",
-		"rarity": "common",
+		"rarity": "rare",
 		"evolution_stage": "base",
 	},
 	{

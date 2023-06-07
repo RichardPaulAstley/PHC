@@ -114,7 +114,7 @@ function calculateClicsBeforeNextEgg(species) {
 }
 
 function generateDaycareEgg() {
-  if (!daycare.eggsAvailable.species) {
+  if (!daycare.eggsAvailable.species || daycare.eggsAvailable.amount > 100) {
     return;
   }
 

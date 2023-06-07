@@ -214,6 +214,7 @@ window.onload = function () {
         for (let i = 0; i < team.length; i++) {
           if (team[i].isEgg && team[i].eggSteps >= pokemonDatabase.find(p => p.name === team[i].species).egg_steps) {
             hatchEgg(team, i);
+            hatchAllButton.style.display = "none";
           }
         }
       });
