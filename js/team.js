@@ -523,6 +523,20 @@ evolvingButton.forEach(button => {
           team[index].sprite = sprite;
         }
 
+        if (evolvedPokemon.name === 'Maushold') {
+          const randomNum = Math.floor(Math.random() * 100);
+          if (randomNum === 0) {
+            team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/925.1.png' : 'sprites/pokemon/925.1.png';
+            alert(`Wait... What happened with your thing?!`);
+          } else {
+            let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+            if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+              sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+            }
+            team[index].sprite = sprite;
+          }
+        }
+
         if (evolvedPokemon.name === 'Ninjask') {
           // Check if there is a free slot in the team
           if (team.length < 6) {

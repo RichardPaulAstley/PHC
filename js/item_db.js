@@ -423,6 +423,24 @@ const itemDatabase = [
 		"description": "A jar full of sweets. It seems to be put on a Pokémon",
 		"price": 3000
 	},
+	{
+		"name": "Running Shoes",
+		"sprite": "sprites/items/runnihgshoes.png",
+		"description": "A pair of shoes that seems to help to create a bound between some Pokemon and their owners... Weird right ?",
+		"price": 3500
+	},
+	{
+		"name": "Auspicious Armor",
+		"sprite": "sprites/items/auspiciousarmor.png",
+		"description": "A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.",
+		"price": 5000
+	},
+	{
+		"name": "Malicious Armor",
+		"sprite": "sprites/items/maliciousarmor.png",
+		"description": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",
+		"price": 5000
+	},
 	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",
