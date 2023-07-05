@@ -441,6 +441,12 @@ const itemDatabase = [
 		"description": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",
 		"price": 5000
 	},
+	{
+		"name": "999 Gimmighoul Coins",
+		"sprite": "sprites/items/999gimmighoulcoins.png",
+		"description": "That's a lot of coins... I wonder who could gather so much money?",
+		"price": 99990
+	},
 	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",

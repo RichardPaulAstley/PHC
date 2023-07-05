@@ -111,13 +111,131 @@ const tokenExchange = [
 		"available": true,
 		"amount": 30
 	},
-	
 	{
 		"pokemon": "Meltan",
 		"sprite": "sprites/egg/meltan.png",
 		"type": "special",
 		"available": true,
 		"amount": 20
+	},
+	{
+		"pokemon": "Great Tusk",
+		"sprite": "sprites/egg/greattusk.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Scream Tail",
+		"sprite": "sprites/egg/screamtail.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Brute Bonnet",
+		"sprite": "sprites/egg/brutebonnet.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Flutter Mane",
+		"sprite": "sprites/egg/fluttermane.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Slither Wing",
+		"sprite": "sprites/egg/slitherwing.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Sandy Shocks",
+		"sprite": "sprites/egg/sandyshocks.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Treads",
+		"sprite": "sprites/egg/irontreads.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Bundle",
+		"sprite": "sprites/egg/ironbundle.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Hands",
+		"sprite": "sprites/egg/ironhands.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Jugulis",
+		"sprite": "sprites/egg/ironjugulis.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Moth",
+		"sprite": "sprites/egg/ironmoth.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Thorns",
+		"sprite": "sprites/egg/ironthorns.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Gimmighoul [Chest]",
+		"sprite": "sprites/egg/gimmighoul.png",
+		"type": "special",
+		"available": true,
+		"amount": 20
+	},
+	{
+		"pokemon": "Roaring Moon",
+		"sprite": "sprites/egg/roaringmoon.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Iron Valiant",
+		"sprite": "sprites/egg/ironvaliant.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Walking Wake",
+		"sprite": "sprites/egg/walkingwake.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
+		"pokemon": "Iron Leaves",
+		"sprite": "sprites/egg/ironleaves.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
 	},
 	{
 		"pokemon": "Spiky-eared Pichu",
@@ -755,5 +873,53 @@ const tokenExchange = [
 		"generation": 8,
 		"available": true,
 		"amount": 2
+	},
+	{
+		"pokemon": "Wo-Chien",
+		"sprite": "sprites/egg/wo-chien.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Chien-Pao",
+		"sprite": "sprites/egg/chien-pao.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Ting-Lu",
+		"sprite": "sprites/egg/ting-lu.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Chi-Yu",
+		"sprite": "sprites/egg/chi-yu.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Koraidon",
+		"sprite": "sprites/egg/koraidon.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Miraidon",
+		"sprite": "sprites/egg/miraidon.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 3
 	},
 ]
