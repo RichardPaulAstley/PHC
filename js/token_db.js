@@ -42,6 +42,202 @@ const tokenExchange = [
 		"amount": 15
 	},
 	{
+		"pokemon": "Nihilego",
+		"sprite": "sprites/egg/nihilego.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Buzzwole",
+		"sprite": "sprites/egg/buzzwole.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Pheromosa",
+		"sprite": "sprites/egg/pheromosa.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Xurkitree",
+		"sprite": "sprites/egg/xurkitree.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Celesteela",
+		"sprite": "sprites/egg/celesteela.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Kartana",
+		"sprite": "sprites/egg/kartana.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Guzzlord",
+		"sprite": "sprites/egg/guzzlord.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Poipole",
+		"sprite": "sprites/egg/poipole.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Stakataka",
+		"sprite": "sprites/egg/stakataka.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Blacephalon",
+		"sprite": "sprites/egg/blacephalon.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Meltan",
+		"sprite": "sprites/egg/meltan.png",
+		"type": "special",
+		"available": true,
+		"amount": 20
+	},
+	{
+		"pokemon": "Great Tusk",
+		"sprite": "sprites/egg/greattusk.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Scream Tail",
+		"sprite": "sprites/egg/screamtail.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Brute Bonnet",
+		"sprite": "sprites/egg/brutebonnet.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Flutter Mane",
+		"sprite": "sprites/egg/fluttermane.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Slither Wing",
+		"sprite": "sprites/egg/slitherwing.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Sandy Shocks",
+		"sprite": "sprites/egg/sandyshocks.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Treads",
+		"sprite": "sprites/egg/irontreads.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Bundle",
+		"sprite": "sprites/egg/ironbundle.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Hands",
+		"sprite": "sprites/egg/ironhands.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Jugulis",
+		"sprite": "sprites/egg/ironjugulis.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Moth",
+		"sprite": "sprites/egg/ironmoth.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Iron Thorns",
+		"sprite": "sprites/egg/ironthorns.png",
+		"type": "special",
+		"available": true,
+		"amount": 15
+	},
+	{
+		"pokemon": "Gimmighoul [Chest]",
+		"sprite": "sprites/egg/gimmighoul.png",
+		"type": "special",
+		"available": true,
+		"amount": 20
+	},
+	{
+		"pokemon": "Roaring Moon",
+		"sprite": "sprites/egg/roaringmoon.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Iron Valiant",
+		"sprite": "sprites/egg/ironvaliant.png",
+		"type": "special",
+		"available": true,
+		"amount": 30
+	},
+	{
+		"pokemon": "Walking Wake",
+		"sprite": "sprites/egg/walkingwake.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
+		"pokemon": "Iron Leaves",
+		"sprite": "sprites/egg/ironleaves.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/pichu.png",
 		"type": "event",
@@ -507,6 +703,222 @@ const tokenExchange = [
 		"sprite": "sprites/egg/volcanion.png",
 		"type": "legendary",
 		"generation": 6,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Type: Null",
+		"sprite": "sprites/egg/typenull.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 1
+	},
+	{
+		"pokemon": "Tapu Koko",
+		"sprite": "sprites/egg/tapukoko.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Lele",
+		"sprite": "sprites/egg/tapulele.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Bulu",
+		"sprite": "sprites/egg/tapubulu.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Tapu Fini",
+		"sprite": "sprites/egg/tapufini.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Cosmog",
+		"sprite": "sprites/egg/cosmog.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Necrozma",
+		"sprite": "sprites/egg/necrozma.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Magearna",
+		"sprite": "sprites/egg/magearna.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Marshadow",
+		"sprite": "sprites/egg/marshadow.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zeraora",
+		"sprite": "sprites/egg/zeraora.png",
+		"type": "legendary",
+		"generation": 7,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zacian",
+		"sprite": "sprites/egg/zacian.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zamazenta",
+		"sprite": "sprites/egg/zamazenta.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Eternatus",
+		"sprite": "sprites/egg/eternatus.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Kubfu",
+		"sprite": "sprites/egg/kubfu.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Zarude",
+		"sprite": "sprites/egg/zarude.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Regieleki",
+		"sprite": "sprites/egg/regieleki.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Regidrago",
+		"sprite": "sprites/egg/regidrago.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Glastrier",
+		"sprite": "sprites/egg/glastrier.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Spectrier",
+		"sprite": "sprites/egg/spectrier.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Calyrex",
+		"sprite": "sprites/egg/calyrex.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 4
+	},
+	{
+		"pokemon": "Enamorus",
+		"sprite": "sprites/egg/enamorus.png",
+		"type": "legendary",
+		"generation": 8,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Wo-Chien",
+		"sprite": "sprites/egg/wo-chien.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Chien-Pao",
+		"sprite": "sprites/egg/chien-pao.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Ting-Lu",
+		"sprite": "sprites/egg/ting-lu.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Chi-Yu",
+		"sprite": "sprites/egg/chi-yu.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 2
+	},
+	{
+		"pokemon": "Koraidon",
+		"sprite": "sprites/egg/koraidon.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 3
+	},
+	{
+		"pokemon": "Miraidon",
+		"sprite": "sprites/egg/miraidon.png",
+		"type": "legendary",
+		"generation": 9,
 		"available": true,
 		"amount": 3
 	},

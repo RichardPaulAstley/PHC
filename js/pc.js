@@ -1,20 +1,68 @@
-const pcTeamBoxes = document.querySelectorAll(".pc-team-box");
+function cleanUpTeamArray() {
+  function removeNulls(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
 
-for (let i = 0; i < team.length; i++) {
-  const pokemon = team[i];
-  const pcTeamBox = pcTeamBoxes[i];
-  const pcTeamSprite = pcTeamBox.querySelector(".pc-team-sprite");
-  pcTeamSprite.src = `../` + pokemon.sprite;
-  
-  // Add or remove shiny-bg class based on isShiny property
-  if (pokemon.isShiny) {
-    pcTeamBox.classList.add('shiny-bg');
-  } else {
-    pcTeamBox.classList.remove('shiny-bg');
+  function reorderTeamArray() {
+    for (let i = 0; i < team.length; i++) {
+      if (!team[i]) {
+        for (let j = i + 1; j < team.length; j++) {
+          if (team[j]) {
+            team[i] = team[j];
+            team[j] = null;
+            break;
+          }
+        }
+      }
+    }
+    team = removeNulls(team);
+  }
+
+  // Check if the team array contains null values
+  if (team.includes(null)) {
+    // If null values exist, remove them and reorder the array
+    team = removeNulls(team);
+    reorderTeamArray();
+    // Save the updated team array in local storage
+    localStorage.setItem('team', JSON.stringify(team));
+    location.reload();
   }
 }
 
-function renderTeam() {
+window.addEventListener('load', cleanUpTeamArray);
+
+const pcTeamBoxes = document.querySelectorAll(".pc-team-box");
+
+for (let i = 0; i < pcTeamBoxes.length; i++) {
+  const pcTeamBox = pcTeamBoxes[i];
+  const pcTeamSprite = pcTeamBox.querySelector(".pc-team-sprite");
+  
+  if (i < team.length) {
+    const pokemon = team[i];
+    pcTeamSprite.src = `../` + pokemon.sprite;
+    
+    // Add or remove shiny-bg class based on isShiny property
+    if (pokemon.isShiny) {
+      pcTeamBox.classList.add('shiny-bg');
+    } else {
+      pcTeamBox.classList.remove('shiny-bg');
+    }
+  } else {
+    pcTeamSprite.src = "../sprites/none.png"; // Set the sprite source to empty for empty slots
+    pcTeamBox.classList.remove('shiny-bg'); // Remove shiny-bg class for empty slots
+  }
+  
+  // Add the event listener for click event
+  pcTeamBox.addEventListener("click", handleSlotClick);
+}
+
+/*function renderTeam() {
   // Get the container for the team
   const teamContainer = document.querySelector('.pc-team-container');
   // Clear the current content of the container
@@ -34,17 +82,18 @@ function renderTeam() {
     // Add the team box to the container
     teamContainer.appendChild(teamBox);
   }
-}
+}*/
 
 const pokemonBoxes = document.querySelectorAll(".pc-team-box");
 pokemonBoxes.forEach((pokemonBox, index) => {
   pokemonBox.addEventListener("click", (event) => {
     if (event.shiftKey || (event.type === "touchstart" && event.touches.length === 2)) {
       if (event.ctrlKey && event.shiftKey) {
+        cleanUpTeamArray();
         const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
         if (confirmRelease) {
           team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
-          renderTeam();
+          /*renderTeam();*/
           localStorage.setItem("team", JSON.stringify(team));
           location.reload();
         }
@@ -56,7 +105,7 @@ pokemonBoxes.forEach((pokemonBox, index) => {
         const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
         if (confirmRelease) {
           team.splice(index, 1);
-          renderTeam();
+          /*renderTeam();*/
           localStorage.setItem("team", JSON.stringify(team));
           location.reload();
         }
@@ -100,7 +149,7 @@ function releasePokemon(index) {
   if (confirmReleaseAll) {
     const filteredTeam = team.filter(pokemon => (pokemon.isEgg || pokemon.isShiny));
     team = filteredTeam;
-    renderTeam();
+    /*renderTeam();*/
     localStorage.setItem("team", JSON.stringify(team));
     location.reload();
   } else {
@@ -108,7 +157,7 @@ function releasePokemon(index) {
     
     if (confirmReleaseSelected) {
       team.splice(index, 1);
-      renderTeam();
+      /*renderTeam();*/
       localStorage.setItem("team", JSON.stringify(team));
       location.reload();
     }
@@ -153,7 +202,6 @@ for (let i = 0; i < totalSlots; i++) {
   newSlot.id = `slot-${slotNum}`;
   slotNum++;
 
-
   const newSprite = document.createElement("img");
   newSprite.src = "../sprites/none.png";
   newSprite.alt = "Pokemon sprite";
@@ -162,6 +210,9 @@ for (let i = 0; i < totalSlots; i++) {
 
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
+
+  // Add the event listener for click event
+  newSlot.addEventListener("click", handleSlotClick);
 }
 
 const pcStorageBoxes = document.querySelectorAll(".pc-storage-box");
@@ -173,10 +224,12 @@ for (let i = 0; i < storage.length; i++) {
     const pcStorageSprite = pcStorageBox.querySelector(".pc-storage-sprite");
     if (pcStorageSprite) {
       pcStorageSprite.src = `../` + pokemon.sprite;
+
+      // Add or remove shiny-bg class based on isShiny property
       if (pokemon.isShiny) {
-        pcStorageBox.style.backgroundColor = 'rgb(255, 253, 208)';
+        pcStorageBox.classList.add('shiny-bg');
       } else {
-        pcStorageBox.style.backgroundColor = 'white';
+        pcStorageBox.classList.remove('shiny-bg');
       }
     }
   }
@@ -185,15 +238,6 @@ for (let i = 0; i < storage.length; i++) {
 /* Moving */
 
 let selectedSlot = null;
-
-// Add click event listeners to each slot
-pcTeamBoxes.forEach((slot) => {
-  slot.addEventListener("click", handleSlotClick);
-});
-
-pcStorageBoxes.forEach((slot) => {
-  slot.addEventListener("click", handleSlotClick);
-});
 
 function handleSlotClick(event) {
   const clickedSlot = event.target.closest(".pc-team-box, .pc-storage-box");
@@ -216,31 +260,6 @@ function handleSlotClick(event) {
     selectedSlot.classList.remove("selected"); // remove the "selected" class from the previously selected slot
     selectedSlot = null;
   }
-}
-
-function removeNulls(array) {
-  let newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i]) {
-      newArray.push(array[i]);
-    }
-  }
-  return newArray;
-}
-
-function reorderTeamArray() {
-  for (let i = 0; i < team.length; i++) {
-    if (!team[i]) {
-      for (let j = i + 1; j < team.length; j++) {
-        if (team[j]) {
-          team[i] = team[j];
-          team[j] = null;
-          break;
-        }
-      }
-    }
-  }
-  team = removeNulls(team);
 }
 
 function swapSlots(slot1, slot2) {
@@ -285,11 +304,42 @@ function swapSlots(slot1, slot2) {
     [storage[slot1Index - pcTeamBoxes.length], storage[slot2Index - pcTeamBoxes.length]] = [storage[slot2Index - pcTeamBoxes.length], storage[slot1Index - pcTeamBoxes.length]];
   }
 
-  // Save the updated arrays
-  reorderTeamArray();
-  location.reload();
   localStorage.setItem('team', JSON.stringify(team));
   localStorage.setItem('storage', JSON.stringify(storage));
+
+  // Update the shiny background class for the swapped slots
+  const slot1IsShiny = team[slot1Index] && team[slot1Index].isShiny;
+  const slot2IsShiny = team[slot2Index] && team[slot2Index].isShiny;
+  if (slot1IsShiny) {
+    slot1.classList.add('shiny-bg');
+  } else {
+    slot1.classList.remove('shiny-bg');
+  }
+  if (slot2IsShiny) {
+    slot2.classList.add('shiny-bg');
+  } else {
+    slot2.classList.remove('shiny-bg');
+  }
+
+  // Update the shiny background class for the storage slots
+  const storageSlot1Index = slot1Index - pcTeamBoxes.length;
+  const storageSlot2Index = slot2Index - pcTeamBoxes.length;
+  if (pcStorageBoxes[storageSlot1Index]) {
+    const storageSlot1IsShiny = storage[storageSlot1Index] && storage[storageSlot1Index].isShiny;
+    if (storageSlot1IsShiny) {
+      pcStorageBoxes[storageSlot1Index].classList.add('shiny-bg');
+    } else {
+      pcStorageBoxes[storageSlot1Index].classList.remove('shiny-bg');
+    }
+  }
+  if (pcStorageBoxes[storageSlot2Index]) {
+    const storageSlot2IsShiny = storage[storageSlot2Index] && storage[storageSlot2Index].isShiny;
+    if (storageSlot2IsShiny) {
+      pcStorageBoxes[storageSlot2Index].classList.add('shiny-bg');
+    } else {
+      pcStorageBoxes[storageSlot2Index].classList.remove('shiny-bg');
+    }
+  }
 }
 
 /* Sprite Update */
@@ -378,7 +428,7 @@ imgs.forEach((img) => {
     const pokemonData = pokemonArray[index];
 
     // Check if pokemonData is null, and exit the function if it is
-    if (pokemonData === null) {
+    if (!pokemonData || pokemonData.isEgg) {
       return;
     }
 

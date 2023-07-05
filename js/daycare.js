@@ -1,3 +1,42 @@
+function cleanUpTeamArray() {
+  function removeNulls(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
+
+  function reorderTeamArray() {
+    for (let i = 0; i < team.length; i++) {
+      if (!team[i]) {
+        for (let j = i + 1; j < team.length; j++) {
+          if (team[j]) {
+            team[i] = team[j];
+            team[j] = null;
+            break;
+          }
+        }
+      }
+    }
+    team = removeNulls(team);
+  }
+
+  // Check if the team array contains null values
+  if (team.includes(null)) {
+    // If null values exist, remove them and reorder the array
+    team = removeNulls(team);
+    reorderTeamArray();
+    // Save the updated team array in local storage
+    localStorage.setItem('team', JSON.stringify(team));
+    location.reload();
+  }
+}
+
+window.addEventListener('load', cleanUpTeamArray);
+
 function renderEgg() {
   const eggsContainer = document.querySelector('.eggs-container');
   const eggSlot = document.getElementById('egg-0');
@@ -249,38 +288,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const eggSprite = document.querySelector('.egg-sprite');
 
-  eggSprite.addEventListener('click', function () {
-    if (daycare.eggsAvailable.amount > 0) {
-      // find the corresponding pokemon in the database
-      const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
+  eggSprite.addEventListener('click', function (event) {
+    if (event.ctrlKey) {
+      // Withdraw a single egg
 
-      // check if there is space in the team array
-      if (team.length < 6) {
-        // generate the egg
-        const egg = {
-          species: pokemon.name,
-          eggSteps: 0,
-          level: 0,
-          experience: 0,
-          gender: "none",
-          isEgg: true,
-          isShiny: false,
-          sprite: pokemon.egg_sprite
-        };
+      if (daycare.eggsAvailable.amount > 0) {
+        // find the corresponding pokemon in the database
+        const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
 
-        // add egg to the team and update local storage
-        team.push(egg);
-        localStorage.setItem('team', JSON.stringify(team));
+        // check if there is space in the team array
+        if (team.length < 6) {
+          // generate the egg
+          const egg = {
+            species: pokemon.name,
+            eggSteps: 0,
+            level: 0,
+            experience: 0,
+            gender: "none",
+            isEgg: true,
+            isShiny: false,
+            sprite: pokemon.egg_sprite
+          };
 
-        // decrease eggAvailable amount in daycare
-        daycare.eggsAvailable.amount--;
-        localStorage.setItem('daycare', JSON.stringify(daycare));
+          // add egg to the team and update local storage
+          team.push(egg);
+          localStorage.setItem('team', JSON.stringify(team));
+
+          // decrease eggAvailable amount in daycare
+          daycare.eggsAvailable.amount--;
+          localStorage.setItem('daycare', JSON.stringify(daycare));
+          location.reload();
+        } else {
+          alert("Your team is full!");
+        }
+      } else {
+        alert("There are no eggs available at the daycare.");
+      }
+
+    } else {
+      // Withdraw multiple eggs
+
+      const maxEggsToWithdraw = 6 - team.length;
+
+      if (daycare.eggsAvailable.amount > 0 && maxEggsToWithdraw > 0) {
+        const eggsToWithdraw = Math.min(daycare.eggsAvailable.amount, maxEggsToWithdraw);
+
+        for (let i = 0; i < eggsToWithdraw; i++) {
+          // find the corresponding pokemon in the database
+          const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
+
+          // generate the egg
+          const egg = {
+            species: pokemon.name,
+            eggSteps: 0,
+            level: 0,
+            experience: 0,
+            gender: "none",
+            isEgg: true,
+            isShiny: false,
+            sprite: pokemon.egg_sprite
+          };
+
+          // add egg to the team and update local storage
+          team.push(egg);
+          localStorage.setItem('team', JSON.stringify(team));
+
+          // decrease eggAvailable amount in daycare
+          daycare.eggsAvailable.amount--;
+          localStorage.setItem('daycare', JSON.stringify(daycare));
+        }
+
         location.reload();
       } else {
-        alert("Your team is full!");
+        alert("There are no eggs available at the daycare or your team is already full!");
       }
-    } else {
-      alert("There are no eggs available at the daycare.");
     }
   });
 });

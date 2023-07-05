@@ -22,6 +22,69 @@ const itemDatabase = [
 		"price": 80000
 	},
 	{
+		"name": "Origin Orb",
+		"sprite": "sprites/items/originorb.png",
+		"type": "Form",
+		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
+		"price": 80000
+	},
+	{
+		"name": "Gracidea",
+		"sprite": "sprites/items/gracidea.png",
+		"type": "Form",
+		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
+		"price": 80000
+	},
+	{
+		"name": "Sun Flute",
+		"sprite": "sprites/items/sunflute.png",
+		"type": "Evolution",
+		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the sun.",
+		"price": 75000
+	},
+	{
+		"name": "Moon Flute",
+		"sprite": "sprites/items/moonflute.png",
+		"type": "Evolution",
+		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the moon.",
+		"price": 75000
+	},
+	{
+		"name": "400 Meltan Candy",
+		"sprite": "sprites/items/400meltancandies.png",
+		"type": "Evolution",
+		"description": "That's a lot of candies! That does explain the price...",
+		"price": 200000
+	},
+	{
+		"name": "Rusted Sword",
+		"sprite": "sprites/items/rustedsword.png",
+		"type": "Evolution",
+		"description": "It is said that a hero used this sword to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.",
+		"price": 75000
+	},
+	{
+		"name": "Rusted Shield",
+		"sprite": "sprites/items/rustedshield.png",
+		"type": "Evolution",
+		"description": "It is said that a hero used this shield to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.",
+		"price": 70000
+	},
+	{
+		"name": "Scroll of Darkness",
+		"sprite": "sprites/items/scrollofdarkness.png",
+		"type": "Evolution",
+		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness.",
+		"price": 70000
+	},
+	{
+		"name": "Scroll of Waters",
+		"sprite": "sprites/items/scrollofwaters.png",
+		"type": "Evolution",
+		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water.",
+		"price": 70000
+	},
+	{
 		"name": "Max Mushrooms",
 		"sprite": "sprites/items/maxmushrooms.png",
 		"type": "Evolution",
@@ -253,20 +316,6 @@ const itemDatabase = [
 		"price": 10000
 	},
 	{
-		"name": "Origin Orb",
-		"sprite": "sprites/items/originorb.png",
-		"type": "Form",
-		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
-		"price": 80000
-	},
-	{
-		"name": "Gracidea",
-		"sprite": "sprites/items/gracidea.png",
-		"type": "Form",
-		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
-		"price": 80000
-	},
-	{
 		"name": "Fairy Ribbon",
 		"sprite": "sprites/items/fairyribbon.png",
 		"type": "Evolution",
@@ -342,6 +391,61 @@ const itemDatabase = [
 		"type": "Evolution",
 		"description": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokémon.",
 		"price": 3500
+	},
+	{
+		"name": "Wishiwashi Toy",
+		"sprite": "sprites/items/wishiwashitoy.png",
+		"type": "Evolution",
+		"description": "A toy of a Wishiwashi. It seems to be enough realistic to fool a certain Pokemon thinking it's a real one.",
+		"price": 2000
+	},
+	{
+		"name": "Tart Apple",
+		"sprite": "sprites/items/tartapple.png",
+		"description": "A peculiar apple that can make a certain species of Pokémon evolve. It\'s exceptionally tart.",
+		"price": 5000
+	},
+	{
+		"name": "Sweet Apple",
+		"sprite": "sprites/items/sweetapple.png",
+		"description": "A peculiar apple that can make a certain species of Pokémon evolve. It\'s exceptionally sweet.",
+		"price": 5000
+	},
+	{
+		"name": "Cracked Pot",
+		"sprite": "sprites/items/crackedpot.png",
+		"description": "A peculiar teapot that can make a certain species of Pokémon evolve. It may be cracked, but tea poured from it is delicious.",
+		"price": 5000
+	},
+	{
+		"name": "Candy Jar",
+		"sprite": "sprites/items/candyjar.png",
+		"description": "A jar full of sweets. It seems to be put on a Pokémon",
+		"price": 3000
+	},
+	{
+		"name": "Running Shoes",
+		"sprite": "sprites/items/runnihgshoes.png",
+		"description": "A pair of shoes that seems to help to create a bound between some Pokemon and their owners... Weird right ?",
+		"price": 3500
+	},
+	{
+		"name": "Auspicious Armor",
+		"sprite": "sprites/items/auspiciousarmor.png",
+		"description": "A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.",
+		"price": 5000
+	},
+	{
+		"name": "Malicious Armor",
+		"sprite": "sprites/items/maliciousarmor.png",
+		"description": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",
+		"price": 5000
+	},
+	{
+		"name": "999 Gimmighoul Coins",
+		"sprite": "sprites/items/999gimmighoulcoins.png",
+		"description": "That's a lot of coins... I wonder who could gather so much money?",
+		"price": 99990
 	},
 	/*{
 	  "name": "Big Malasada",

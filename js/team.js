@@ -1,4 +1,41 @@
-console.log(team);
+function cleanUpTeamArray() {
+  function removeNulls(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
+
+  function reorderTeamArray() {
+    for (let i = 0; i < team.length; i++) {
+      if (!team[i]) {
+        for (let j = i + 1; j < team.length; j++) {
+          if (team[j]) {
+            team[i] = team[j];
+            team[j] = null;
+            break;
+          }
+        }
+      }
+    }
+    team = removeNulls(team);
+  }
+
+  // Check if the team array contains null values
+  if (team.includes(null)) {
+    // If null values exist, remove them and reorder the array
+    team = removeNulls(team);
+    reorderTeamArray();
+    // Save the updated team array in local storage
+    localStorage.setItem('team', JSON.stringify(team));
+    location.reload();
+  }
+}
+
+window.addEventListener('load', cleanUpTeamArray);
 
 const teamBoxes = document.querySelectorAll('.team-box');
 
@@ -177,6 +214,7 @@ window.onload = function () {
         for (let i = 0; i < team.length; i++) {
           if (team[i].isEgg && team[i].eggSteps >= pokemonDatabase.find(p => p.name === team[i].species).egg_steps) {
             hatchEgg(team, i);
+            hatchAllButton.style.display = "none";
           }
         }
       });
@@ -455,12 +493,48 @@ evolvingButton.forEach(button => {
           }
 
           team[index].sprite = spritePath;
+        } else if (evolvedPokemon.name === 'Alcremie') {
+          const sweetType = prompt('Choose a Sweet type for your Alcremie (Strawberry, Berry, Love, Star, Clover, Flower, Ribbon :');
+          const validSweets = ['Strawberry', 'Berry', 'Love', 'Star', 'Clover', 'Flower', 'Ribbon'];
+          if (validSweets.includes(sweetType)) {
+            const creamType = prompt('Choose a Cream type for your Alcremie (Vanilla, Ruby, Matcha, Mint, Lemon, Salted, Ruby Swirl, Caramel, Rainbow):');
+            const validCreams = ['Vanilla', 'Ruby', 'Matcha', 'Mint', 'Lemon', 'Salted', 'Ruby Swirl', 'Caramel', 'Rainbow'];
+            if (validCreams.includes(creamType)) {
+              const sweetIndex = validSweets.indexOf(sweetType);
+              const creamIndex = validCreams.indexOf(creamType);
+              let sprite = `sprites/pokemon/869.${sweetIndex}.${creamIndex}.png`;
+              if (pokemon.isShiny) {
+                sprite = `sprites/pokemon/shiny/869.${sweetIndex}.png`;
+              }
+              team[index].sprite = sprite;
+            } else {
+              alert('Invalid Cream type! Evolution cancelled.');
+              return; // Cancel the evolution
+            }
+          } else {
+            alert('Invalid Sweet type! Evolution cancelled.');
+            return; // Cancel the evolution
+          }
         } else {
           let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
           if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
             sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
           }
           team[index].sprite = sprite;
+        }
+
+        if (evolvedPokemon.name === 'Maushold') {
+          const randomNum = Math.floor(Math.random() * 100);
+          if (randomNum === 0) {
+            team[index].sprite = pokemon.isShiny ? 'sprites/pokemon/shiny/925.1.png' : 'sprites/pokemon/925.1.png';
+            alert(`Wait... What happened with your thing?!`);
+          } else {
+            let sprite = pokemon.isShiny ? evolvedPokemon.shiny_sprite : evolvedPokemon.sprite;
+            if (pokemon.gender === 'Female' && evolvedPokemon.female_sprite) {
+              sprite = pokemon.isShiny ? evolvedPokemon.female_shiny_sprite || evolvedPokemon.female_sprite : evolvedPokemon.female_sprite;
+            }
+            team[index].sprite = sprite;
+          }
         }
 
         if (evolvedPokemon.name === 'Ninjask') {
