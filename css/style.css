@@ -6,7 +6,7 @@
 
 body {
   background-color: #e0e0e0;
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   /* 
   background-image: url(""),
   background-repeat: no-repeat;
@@ -508,4 +508,10 @@ Daycare
 
 footer {
   margin-top: 5%;
+}
+
+/* Help */ 
+
+.credits-p, .update-p, .help-p {
+  padding-bottom:50px;
 }

@@ -46,7 +46,6 @@ function addBuyEvent(itemActionButton, item) {
 }
 
 
-
 let inventoryItems = document.querySelector("#inventory-items");
 
 itemDatabase.forEach(function (item) {
