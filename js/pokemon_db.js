@@ -1774,7 +1774,7 @@ const pokemonDatabase = [
 			{
 				"method": ["item"],
 				"value": "King\'s Rock",
-				"evolves_to": "Bellossom"
+				"evolves_to": "Politoed"
 			},
 		],
 		"gender_rate": 50,
