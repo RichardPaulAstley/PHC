@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const eggSprite = document.querySelector('.egg-sprite');
 
   eggSprite.addEventListener('click', function (event) {
-    if (event.ctrlKey) {
+    if (!event.ctrlKey) {
       // Withdraw a single egg
 
       if (daycare.eggsAvailable.amount > 0) {

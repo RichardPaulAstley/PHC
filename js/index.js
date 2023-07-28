@@ -25,5 +25,5 @@ updatesButton.addEventListener('click', () => {
 const discordButton = document.querySelector('#discord-button');
 
 discordButton.addEventListener('click', () => {
-  window.open('https://discord.gg/Z4Ydx9MTRp', '_blank');
+  window.open('https://discord.gg/Zdqr7UZ7Ka', '_blank');
 });

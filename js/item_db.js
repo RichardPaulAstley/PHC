@@ -50,7 +50,7 @@ const itemDatabase = [
 		"price": 75000
 	},
 	{
-		"name": "400 Meltan Candy",
+		"name": "400 Meltan Candies",
 		"sprite": "sprites/items/400meltancandies.png",
 		"type": "Evolution",
 		"description": "That's a lot of candies! That does explain the price...",
@@ -425,7 +425,7 @@ const itemDatabase = [
 	},
 	{
 		"name": "Running Shoes",
-		"sprite": "sprites/items/runnihgshoes.png",
+		"sprite": "sprites/items/runningshoes.png",
 		"description": "A pair of shoes that seems to help to create a bound between some Pokemon and their owners... Weird right ?",
 		"price": 3500
 	},
