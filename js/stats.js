@@ -31,7 +31,20 @@ let balance = {
   pokeDollar: 0
 }
 
-let inventory = []
+function initializeInventory() {
+  let inventoryData = localStorage.getItem("inventory");
+  if (!inventoryData || JSON.parse(inventoryData).length === 0) {
+    // If inventory data doesn't exist in local storage or is empty, initialize it with the default value
+    let defaultInventory = [{"name":"Soothe Bell","amount":0}];
+    localStorage.setItem("inventory", JSON.stringify(defaultInventory));
+    return defaultInventory;
+  } else {
+    // If inventory data exists in local storage, parse and return it
+    return JSON.parse(inventoryData);
+  }
+}
+
+let inventory = initializeInventory();
 
 let tokenInventory = []
 
