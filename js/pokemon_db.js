@@ -4729,6 +4729,7 @@ const pokemonDatabase = [
 		"name": "Pichu",
 		"gen": 2,
 		"type": ["Electric"],
+		"base_species": "Pichu",
 		"egg_steps": 2560,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -4767,6 +4768,7 @@ const pokemonDatabase = [
 		"name": "Cleffa",
 		"gen": 2,
 		"type": ["Fairy"],
+		"base_species": "Cleffa",
 		"egg_steps": 2560,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -4789,6 +4791,7 @@ const pokemonDatabase = [
 		"name": "Igglybuff",
 		"gen": 2,
 		"type": ["Normal", "Fairy"],
+		"base_species": "Igglybuff",
 		"egg_steps": 2560,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -4811,6 +4814,7 @@ const pokemonDatabase = [
 		"name": "Togepi",
 		"gen": 2,
 		"type": ["Fairy"],
+		"base_species": "Togepi",
 		"egg_steps": 2560,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -6018,8 +6022,9 @@ const pokemonDatabase = [
 		"name": "Mantine",
 		"gen": 2,
 		"type": ["Water", "Flying"],
+		"base_species": "Mantyke",
 		"egg_steps": 6400,
-		"egg_group": ["Undiscovered"],
+		"egg_group": ["Water 1"],
 		"gender_rate": 50,
 		"experience_group": 12500,
 		"sprite": "sprites/pokemon/226.png",
@@ -6227,6 +6232,7 @@ const pokemonDatabase = [
 		"name": "Tyrogue",
 		"gen": 2,
 		"type": ["Fighting"],
+		"base_species": "Tyrogue",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -6274,6 +6280,7 @@ const pokemonDatabase = [
 		"name": "Smoochum",
 		"gen": 2,
 		"type": ["Ice", "Psychic"],
+		"base_species": "Smoochum",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -6296,6 +6303,7 @@ const pokemonDatabase = [
 		"name": "Elekid",
 		"gen": 2,
 		"type": ["Electric"],
+		"base_species": "Elekid",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -6318,6 +6326,7 @@ const pokemonDatabase = [
 		"name": "Magby",
 		"gen": 2,
 		"type": ["Fire"],
+		"base_species": "Magby",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -7608,6 +7617,7 @@ const pokemonDatabase = [
 		"name": "Azurill",
 		"gen": 3,
 		"type": ["Normal", "Fairy"],
+		"base_species": "Azurill",
 		"egg_steps": 2560,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -9052,6 +9062,7 @@ const pokemonDatabase = [
 		"name": "Wynaut",
 		"gen": 3,
 		"type": ["Psychic"],
+		"base_species": "Wynaut",
 		"egg_steps": 5120,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -10944,6 +10955,7 @@ const pokemonDatabase = [
 		"name": "Bonsly",
 		"gen": 4,
 		"type": ["Rock"],
+		"base_species": "Bonsly",
 		"egg_steps": 5120,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -10966,6 +10978,7 @@ const pokemonDatabase = [
 		"name": "Mime Jr.",
 		"gen": 4,
 		"type": ["Psychic", "Fairy"],
+		"base_species": "Mime Jr.",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -10993,6 +11006,7 @@ const pokemonDatabase = [
 		"name": "Happiny",
 		"gen": 4,
 		"type": ["Normal"],
+		"base_species": "Happiny",
 		"egg_steps": 10240,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -11129,6 +11143,7 @@ const pokemonDatabase = [
 		"name": "Munchlax",
 		"gen": 4,
 		"type": ["Normal"],
+		"base_species": "Munchlax",
 		"egg_steps": 10240,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
@@ -11384,6 +11399,7 @@ const pokemonDatabase = [
 		"name": "Mantyke",
 		"gen": 4,
 		"type": ["Water", "Flying"],
+		"base_species": "Mantyke",
 		"egg_steps": 6400,
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
