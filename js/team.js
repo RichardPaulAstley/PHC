@@ -149,14 +149,30 @@ window.onload = function () {
     localStorage.setItem("team", JSON.stringify(team));
   }
 
+  // Function to get the "prngValue" from local storage
+function getPrngValue() {
+  const prngValue = JSON.parse(localStorage.getItem('prng'));
+  return prngValue || 0;
+}
+
+function reRollPrngValue() {
+  const newPrngValue = generateRandomNumber();
+  localStorage.setItem('prng', JSON.stringify(newPrngValue));
+}
+
+// Call the getPrngValue function during page load
+const prngValue = getPrngValue();
+
   function hatchEgg(team, index) {
     if (!team[index]) return;
     let egg = team[index];
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    if (!egg.isShiny) {
-      egg.isShiny = Math.random() < 1 / 256;
+    if (prngValue === 0) {
+      egg.isShiny = true;
+    } else {
+      egg.isShiny = false;
     }
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
@@ -201,6 +217,7 @@ window.onload = function () {
     }
     egg.totalHatched = eggData.hatches;
     egg.timeHatched = new Date();
+    reRollPrngValue();
     localStorage.setItem("eggData", JSON.stringify(eggData));
     updateUI(index);
     saveTeam();
@@ -591,6 +608,7 @@ evolvingButton.forEach(button => {
     updateUI(index);
     localStorage.setItem("team", JSON.stringify(team));
     alert(`Your Pokémon has evolved into ${pokemon.species}!`)
+    location.reload();
   });
 });
 
