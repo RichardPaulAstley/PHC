@@ -243,7 +243,7 @@ const parent1El = document.getElementById("parent-1");
 parent0El.addEventListener('click', () => {
   if (team.length < 6 && daycare.parent0) {
     // Check if eggsAvailable.amount is greater than 10
-    if (daycare.eggsAvailable.amount > 5) {
+    if (daycare.eggsAvailable.amount > 0) {
       // Confirmation message
       const confirmation = confirm(`Are you sure you want to take ${daycare.parent0.species} out of the daycare?`);
       if (!confirmation) {
