@@ -2413,7 +2413,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Town Map",
+				"value": "Thunder Stone",
 				"evolves_to": "Magnezone"
 			},
 		],

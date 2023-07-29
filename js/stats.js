@@ -48,6 +48,26 @@ let inventory = initializeInventory();
 
 let tokenInventory = []
 
+// Function to generate a random number between 0 and 255
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 256);
+}
+
+// Function to check if the "prng" value exists in local storage, if not, generate and save it
+function initializePrngValue() {
+  const prngValue = JSON.parse(localStorage.getItem('prng'));
+  if (prngValue === null || typeof prngValue !== 'number') {
+    const newPrngValue = generateRandomNumber();
+    localStorage.setItem('prng', JSON.stringify(newPrngValue));
+  }
+}
+
+// Call the initializePrngValue function only when the "prng" value is not already present
+const prngValue = JSON.parse(localStorage.getItem('prng'));
+if (prngValue === null || typeof prngValue !== 'number') {
+  initializePrngValue();
+}
+
 window.addEventListener("load", function () {
   if (localStorage.getItem("eggData")) {
     eggData = JSON.parse(localStorage.getItem("eggData"));
@@ -143,14 +163,6 @@ function updateEggsReadyToHatch() {
 }
 
 function exportSave() {
-  const lastExportTimestamp = parseInt(localStorage.getItem('lastExportTimestamp')) || 0;
-  const currentTimestamp = new Date().getTime();
-  const cooldown = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
-  if (currentTimestamp - lastExportTimestamp < cooldown) {
-    alert('You can only export your data once every  2 hours.');
-    return;
-  }
-
   const saveData = {};
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -162,25 +174,15 @@ function exportSave() {
   const blob = new Blob([encryptedSaveData], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
 
-  if (confirm('Are you sure you want to download the file? The cooldown will be triggered!')) {
+  if (confirm('Are you sure you want to download the file?')) {
     const link = document.createElement('a');
     link.href = url;
     link.download = 'PHC-save.txt';
     link.click();
-
-    localStorage.setItem('lastExportTimestamp', currentTimestamp.toString());
   }
 }
 
 function importSave() {
-  const lastImportTimestamp = parseInt(localStorage.getItem('lastImportTimestamp')) || 0;
-  const currentTimestamp = new Date().getTime();
-  const cooldown = 8 * 60 * 60 * 1000; // 8 hours in milliseconds
-  if (currentTimestamp - lastImportTimestamp < cooldown) {
-    alert('You can only import your data once every 8 hours.');
-    return;
-  }
-
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = 'text/plain';
@@ -207,12 +209,22 @@ function importSave() {
   const confirmImport = confirm('Are you sure you want to import save data? This will overwrite your current save data.');
   if (confirmImport) {
     input.click();
-    localStorage.setItem('lastImportTimestamp', currentTimestamp.toString());
   }
 }
 
 const _0xcbfe40 = _0x1376; function _0x3fce() { const _0x33f211 = ['2212884wSXdsq', '669837tViMfR', '40BoBHlH', 'CauseTheCommodoreIsKeepingUpWithYou', '3591424UEbWgn', '303704YBQXvY', '1247106exeMki', '278156CMPkJf', '1482366rqIDvW']; _0x3fce = function () { return _0x33f211; }; return _0x3fce(); } (function (_0x558281, _0x10dc23) { const _0x57f7bd = _0x1376, _0x5aa1b4 = _0x558281(); while (!![]) { try { const _0x436f07 = -parseInt(_0x57f7bd(0x1dd)) / 0x1 + parseInt(_0x57f7bd(0x1d5)) / 0x2 + -parseInt(_0x57f7bd(0x1d6)) / 0x3 + parseInt(_0x57f7bd(0x1db)) / 0x4 * (parseInt(_0x57f7bd(0x1d8)) / 0x5) + -parseInt(_0x57f7bd(0x1dc)) / 0x6 + -parseInt(_0x57f7bd(0x1d7)) / 0x7 + parseInt(_0x57f7bd(0x1da)) / 0x8; if (_0x436f07 === _0x10dc23) break; else _0x5aa1b4['push'](_0x5aa1b4['shift']()); } catch (_0x3a4a2e) { _0x5aa1b4['push'](_0x5aa1b4['shift']()); } } }(_0x3fce, 0x74bf1)); function _0x1376(_0x314f04, _0x449961) { const _0x3fcecc = _0x3fce(); return _0x1376 = function (_0x13766e, _0x55a080) { _0x13766e = _0x13766e - 0x1d5; let _0x2d1598 = _0x3fcecc[_0x13766e]; return _0x2d1598; }, _0x1376(_0x314f04, _0x449961); } const secretKey = _0xcbfe40(0x1d9);
 
+function removeTimestamps() {
+  if (localStorage.getItem('lastExportTimestamp')) {
+    localStorage.removeItem('lastExportTimestamp');
+  }
+  if (localStorage.getItem('lastImportTimestamp')) {
+    localStorage.removeItem('lastImportTimestamp');
+  }
+}
+
+// Call the removeTimestamps function during page load
+removeTimestamps();
 
 /*function reloadLocalStorage() {
   setInterval(() => {

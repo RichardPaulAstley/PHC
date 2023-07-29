@@ -95,7 +95,7 @@ function generateToken() {
 
   localStorage.setItem("tokenInventory", JSON.stringify(tokenInventory));
 
-  window.alert(`You got a ${tokenType} token!`);
+  //window.alert(`You got a ${tokenType} token!`);
 }
 
 function calculateClicsBeforeNextEgg(species) {
