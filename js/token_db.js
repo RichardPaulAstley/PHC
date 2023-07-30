@@ -239,7 +239,7 @@ const tokenExchange = [
 	},
 	{
 		"pokemon": "Spiky-eared Pichu",
-		"sprite": "sprites/egg/pichu.png",
+		"sprite": "sprites/egg/spikyearedpichu.png",
 		"type": "event",
 		"available": true,
 		"amount": 5
