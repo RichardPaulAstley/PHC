@@ -10788,7 +10788,7 @@ const pokemonDatabase = [
 		"name": "Mismagius",
 		"gen": 4,
 		"type": ["Ghost"],
-		"base_species": "Murkrow",
+		"base_species": "Misdreavus",
 		"egg_steps": 5120,
 		"egg_group": ["Amorphous"],
 		"gender_rate": 50,
@@ -15282,7 +15282,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["level"],
-				"value": 16,
+				"value": 36,
 				"evolves_to": "Chesnaught"
 			},
 		],

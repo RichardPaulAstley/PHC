@@ -165,7 +165,7 @@ const prngValue = getPrngValue();
 
   function hatchEgg(team, index) {
     const prngValue = getPrngValue();
-    
+
     if (!team[index]) return;
     let egg = team[index];
     egg.isEgg = false;
