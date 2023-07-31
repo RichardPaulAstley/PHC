@@ -43,8 +43,9 @@ const eggBoxes = document.querySelectorAll('.egg-box');
 const rarityProbabilities = {
     common: 0.5,
     uncommon: 0.4,
-    rare: 0.0999,
-    legendary: 0.0001
+    rare: 0.1,
+    legendary: 0,
+    novelty: 0
 };
 
 // select a random Pokemon from your database that is a base stage Pokemon 
