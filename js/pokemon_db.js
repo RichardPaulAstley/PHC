@@ -16007,7 +16007,7 @@ const pokemonDatabase = [
 		"display_name": "Floette",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Red]",
+		"base_species": "Flabebe [Red]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -16030,7 +16030,7 @@ const pokemonDatabase = [
 		"display_name": "Floette",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Yellow]",
+		"base_species": "Flabebe [Yellow]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -16053,7 +16053,7 @@ const pokemonDatabase = [
 		"display_name": "Floette",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Orange]",
+		"base_species": "Flabebe [Orange]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -16076,7 +16076,7 @@ const pokemonDatabase = [
 		"display_name": "Floette",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Blue]",
+		"base_species": "Flabebe [Blue]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -16099,7 +16099,7 @@ const pokemonDatabase = [
 		"display_name": "Floette",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [White]",
+		"base_species": "Flabebe [White]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -16122,7 +16122,7 @@ const pokemonDatabase = [
 		"display_name": "Florges",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Red]",
+		"base_species": "Flabebe [Red]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"gender_rate": 0,
@@ -16138,7 +16138,7 @@ const pokemonDatabase = [
 		"display_name": "Florges",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Yellow]",
+		"base_species": "Flabebe [Yellow]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"gender_rate": 0,
@@ -16154,7 +16154,7 @@ const pokemonDatabase = [
 		"display_name": "Florges",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Orange]",
+		"base_species": "Flabebe [Orange]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"gender_rate": 0,
@@ -16170,7 +16170,7 @@ const pokemonDatabase = [
 		"display_name": "Florges",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [Blue]",
+		"base_species": "Flabebe [Blue]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"gender_rate": 0,
@@ -16186,7 +16186,7 @@ const pokemonDatabase = [
 		"display_name": "Florges",
 		"gen": 6,
 		"type": ["Fairy"],
-		"base_species": "Flabébé [White]",
+		"base_species": "Flabebe [White]",
 		"egg_steps": 5120,
 		"egg_group": ["Fairy"],
 		"gender_rate": 0,
@@ -18870,7 +18870,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "400 Meltan Candy",
+				"value": "400 Meltan Candies",
 				"evolves_to": "Melmetal"
 			},
 		],
