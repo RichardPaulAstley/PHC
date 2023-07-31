@@ -23209,6 +23209,6 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/C.png",
 		"egg_sprite": "sprites/egg/ancientjigglypuff.png",
 		"rarity": "novelty",
-		"evolution_stage": "base",
+		"evolution_stage": "novelty",
 	},
 ]
