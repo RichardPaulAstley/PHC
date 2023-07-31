@@ -23154,7 +23154,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/A.png",
 		"egg_sprite": "sprites/egg/crystalonix.png",
 		"rarity": "novelty",
-		"evolution_stage": "base",
+		"evolution_stage": "novelty",
 	},
 	{
 		"id": "B",
