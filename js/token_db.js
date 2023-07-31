@@ -238,6 +238,20 @@ const tokenExchange = [
 		"amount": 40
 	},
 	{
+		"pokemon": "Crystal Onix",
+		"sprite": "sprites/egg/crystalonix.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 50
+	},
+	{
+		"pokemon": "Ancient Jigglypuff",
+		"sprite": "sprites/egg/ancientjigglypuff.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 100
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/spikyearedpichu.png",
 		"type": "event",

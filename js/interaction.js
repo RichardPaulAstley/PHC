@@ -109,7 +109,7 @@ function calculateClicsBeforeNextEgg(species) {
   } else if (eggRarity === "rare") {
     return 250;
   } else if (eggRarity === "novelty") {
-    return 1000;
+    return 1500;
   }
 }
 
@@ -123,7 +123,47 @@ function generateDaycareEgg() {
   }
 
   if (daycare.eggsAvailable.clicsBeforeNextEgg === 0) {
-    daycare.eggsAvailable.amount += Math.floor(Math.random() * 4) + 1;
+    const eggRarity = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species).rarity;
+
+    // Modify the number of eggs based on rarity and add a chance for each rarity
+    let eggsToAdd = 1; // Default value for common, uncommon, and rare rarity
+
+    if (eggRarity === "novelty") {
+      if (Math.random() < 0.1) {
+        // 10% chance to add an egg
+        if (daycare.eggsAvailable.amount < 6) {
+          // Only add an egg if there are less than 6 eggs in the daycare
+          eggsToAdd = 1;
+        } else {
+          // If there are already 6 eggs, don't add more
+          eggsToAdd = 0;
+        }
+      } else {
+        // If the random number is >= 0.1, no egg is added
+        eggsToAdd = 0;
+      }
+    } else if (eggRarity === "rare") {
+      if (Math.random() < 0.6) {
+        // 60% chance to add between 1 and 3 eggs
+        eggsToAdd = Math.floor(Math.random() * 3) + 1;
+      } else {
+        // If the random number is >= 0.6, no egg is added
+        eggsToAdd = 0;
+      }
+    } else if (eggRarity === "uncommon") {
+      if (Math.random() < 0.8) {
+        // 80% chance to add between 1 and 4 eggs
+        eggsToAdd = Math.floor(Math.random() * 4) + 1;
+      } else {
+        // If the random number is >= 0.8, no egg is added
+        eggsToAdd = 0;
+      }
+    } else if (eggRarity === "common") {
+      // 1 and 6 eggs for common rarity
+      eggsToAdd = Math.floor(Math.random() * 6) + 1;
+    }
+
+    daycare.eggsAvailable.amount += eggsToAdd;
     daycare.eggsAvailable.clicsBeforeNextEgg = calculateClicsBeforeNextEgg(daycare.eggsAvailable.species);
   }
 }
