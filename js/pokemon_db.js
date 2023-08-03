@@ -3866,7 +3866,7 @@ const pokemonDatabase = [
 		"sprite": "sprites/pokemon/133.png",
 		"female_sprite": "sprites/pokemon/female/133.png",
 		"shiny_sprite": "sprites/pokemon/shiny/133.png",
-		"female_shiny_sprite": "sprites/pokemon/female/shiny/133.png",
+		"female_shiny_sprite": "sprites/pokemon/shiny/female/133.png",
 		"egg_sprite": "sprites/egg/eevee.png",
 		"rarity": "rare",
 		"evolution_stage": "base",
