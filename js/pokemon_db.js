@@ -1208,7 +1208,7 @@ const pokemonDatabase = [
 		"name": "Golbat",
 		"gen": 1,
 		"type": ["Poison", "Flying"],
-		"base_species": "Iglypuff",
+		"base_species": "Zubat",
 		"egg_steps": 3840,
 		"egg_group": ["Flying"],
 		"evolutions": [
