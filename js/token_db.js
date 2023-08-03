@@ -32,84 +32,84 @@ const tokenExchange = [
 		"sprite": "sprites/egg/ditto.png",
 		"type": "special",
 		"available": true,
-		"amount": 50
+		"amount": 70
 	},
 	{
 		"pokemon": "Unown",
 		"sprite": "sprites/egg/unown.png",
 		"type": "special",
 		"available": true,
-		"amount": 15
+		"amount": 10
 	},
 	{
 		"pokemon": "Nihilego",
 		"sprite": "sprites/egg/nihilego.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Buzzwole",
 		"sprite": "sprites/egg/buzzwole.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Pheromosa",
 		"sprite": "sprites/egg/pheromosa.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Xurkitree",
 		"sprite": "sprites/egg/xurkitree.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Celesteela",
 		"sprite": "sprites/egg/celesteela.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Kartana",
 		"sprite": "sprites/egg/kartana.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Guzzlord",
 		"sprite": "sprites/egg/guzzlord.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Poipole",
 		"sprite": "sprites/egg/poipole.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Stakataka",
 		"sprite": "sprites/egg/stakataka.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Blacephalon",
 		"sprite": "sprites/egg/blacephalon.png",
 		"type": "special",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Meltan",
@@ -242,42 +242,42 @@ const tokenExchange = [
 		"sprite": "sprites/egg/crystalonix.png",
 		"type": "novelty",
 		"available": true,
-		"amount": 50
+		"amount": 25
 	},
 	{
 		"pokemon": "Ancient Jigglypuff",
 		"sprite": "sprites/egg/ancientjigglypuff.png",
 		"type": "novelty",
 		"available": true,
-		"amount": 100
+		"amount": 30
 	},
 	{
 		"pokemon": "Purple Kecleon",
 		"sprite": "sprites/egg/purplekecleon.png",
 		"type": "novelty",
 		"available": true,
-		"amount": 30
+		"amount": 20
 	},
 	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/spikyearedpichu.png",
 		"type": "event",
 		"available": true,
-		"amount": 5
+		"amount": 6
 	},
 	{
 		"pokemon": "Shadow Lugia",
 		"sprite": "sprites/egg/shadowlugia.png",
 		"type": "event",
 		"available": true,
-		"amount": 82
+		"amount": 26
 	},
 	{
 		"pokemon": "MissingNo.",
 		"sprite": "sprites/egg/missingno.png",
 		"type": "missingno",
 		"available": false,
-		"amount": 1
+		"amount": 404
 	},
 	{
 		"pokemon": "Articuno",
@@ -285,7 +285,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Galarian Articuno",
@@ -293,7 +293,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Zapdos",
@@ -301,7 +301,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Galarian Zapdos",
@@ -309,7 +309,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Moltres",
@@ -317,7 +317,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Galarian Moltres",
@@ -325,7 +325,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Mewtwo",
@@ -333,7 +333,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 5
+		"amount": 15
 	},
 	{
 		"pokemon": "Mew",
@@ -341,7 +341,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 1,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Raikou",
@@ -349,7 +349,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Entei",
@@ -357,7 +357,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Suicune",
@@ -365,7 +365,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Lugia",
@@ -373,7 +373,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Ho-oh",
@@ -381,7 +381,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Celebi",
@@ -389,7 +389,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 2,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Regirock",
@@ -397,7 +397,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Regice",
@@ -405,7 +405,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Registeel",
@@ -413,7 +413,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Latias",
@@ -421,7 +421,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Latios",
@@ -429,7 +429,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Kyogre",
@@ -437,7 +437,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Groudon",
@@ -445,7 +445,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Rayquaza",
@@ -453,7 +453,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Jirachi",
@@ -461,7 +461,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Deoxys",
@@ -469,7 +469,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 3,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Uxie",
@@ -477,7 +477,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Mesprit",
@@ -485,7 +485,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Azelf",
@@ -493,7 +493,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Dialga",
@@ -501,7 +501,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Palkia",
@@ -509,7 +509,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Heatran",
@@ -517,7 +517,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Regigigas",
@@ -525,7 +525,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Giratina",
@@ -533,7 +533,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Cresselia",
@@ -541,7 +541,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Manaphy",
@@ -549,7 +549,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Darkrai",
@@ -557,7 +557,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Shaymin",
@@ -565,7 +565,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Arceus",
@@ -573,7 +573,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 4,
 		"available": false,
-		"amount": 10
+		"amount": 30
 	},
 	{
 		"pokemon": "Victini",
@@ -581,7 +581,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Cobalion",
@@ -589,7 +589,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Terrakion",
@@ -597,7 +597,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Virizion",
@@ -605,7 +605,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Tornadus",
@@ -613,7 +613,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Thundurus",
@@ -621,7 +621,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Reshiram",
@@ -629,7 +629,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zekrom",
@@ -637,7 +637,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Landorus",
@@ -645,7 +645,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Kyurem",
@@ -653,7 +653,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Keldeo",
@@ -661,7 +661,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Meloetta",
@@ -669,7 +669,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Genesect",
@@ -677,7 +677,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 5,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Xerneas",
@@ -685,7 +685,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Yveltal",
@@ -693,7 +693,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zygarde",
@@ -701,7 +701,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Diancie",
@@ -709,7 +709,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Hoopa",
@@ -717,7 +717,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Volcanion",
@@ -725,7 +725,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 6,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Type: Null",
@@ -733,7 +733,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 1
+		"amount": 8
 	},
 	{
 		"pokemon": "Tapu Koko",
@@ -741,7 +741,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Tapu Lele",
@@ -749,7 +749,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Tapu Bulu",
@@ -757,7 +757,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Tapu Fini",
@@ -765,7 +765,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Cosmog",
@@ -773,7 +773,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Necrozma",
@@ -781,7 +781,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Magearna",
@@ -789,7 +789,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Marshadow",
@@ -797,7 +797,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zeraora",
@@ -805,7 +805,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 7,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zacian",
@@ -813,7 +813,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zamazenta",
@@ -821,7 +821,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Eternatus",
@@ -829,7 +829,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Kubfu",
@@ -837,7 +837,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Zarude",
@@ -845,7 +845,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Regieleki",
@@ -853,7 +853,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Regidrago",
@@ -861,7 +861,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Glastrier",
@@ -869,7 +869,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Spectrier",
@@ -877,7 +877,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Calyrex",
@@ -885,7 +885,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 4
+		"amount": 15
 	},
 	{
 		"pokemon": "Enamorus",
@@ -893,7 +893,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 8,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Wo-Chien",
@@ -901,7 +901,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Chien-Pao",
@@ -909,7 +909,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Ting-Lu",
@@ -917,7 +917,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Chi-Yu",
@@ -925,7 +925,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 2
+		"amount": 10
 	},
 	{
 		"pokemon": "Koraidon",
@@ -933,7 +933,7 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 	{
 		"pokemon": "Miraidon",
@@ -941,6 +941,6 @@ const tokenExchange = [
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
-		"amount": 3
+		"amount": 12
 	},
 ]
