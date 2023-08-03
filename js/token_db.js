@@ -252,6 +252,13 @@ const tokenExchange = [
 		"amount": 100
 	},
 	{
+		"pokemon": "Purple Kecleon",
+		"sprite": "sprites/egg/purplekecleon.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 30
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/spikyearedpichu.png",
 		"type": "event",

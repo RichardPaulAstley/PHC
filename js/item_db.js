@@ -36,6 +36,13 @@ const itemDatabase = [
 		"price": 80000
 	},
 	{
+		"name": "Reveal Glass",
+		"sprite": "sprites/items/revealglass.png",
+		"type": "Form",
+		"description": "A mysterious looking glass that reveals the truth. It can return a Pokémon to its original shape.",
+		"price": 75000
+	},
+	{
 		"name": "Sun Flute",
 		"sprite": "sprites/items/sunflute.png",
 		"type": "Evolution",
