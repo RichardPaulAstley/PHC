@@ -11068,6 +11068,7 @@ const pokemonDatabase = [
 		"type": ["Ghost", "Dark"],
 		"egg_steps": 7680,
 		"egg_group": ["Amorphous"],
+		"base_species": "Spiritomb",
 		"gender_rate": 50,
 		"experience_group": 10000,
 		"sprite": "sprites/pokemon/442.png",
