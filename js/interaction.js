@@ -129,7 +129,7 @@ function generateDaycareEgg() {
     let eggsToAdd = 1; // Default value for common, uncommon, and rare rarity
 
     if (eggRarity === "novelty") {
-      if (Math.random() < 0.1) {
+      if (Math.random() < 0.25) {
         // 10% chance to add an egg
         if (daycare.eggsAvailable.amount < 6) {
           // Only add an egg if there are less than 6 eggs in the daycare
@@ -143,7 +143,7 @@ function generateDaycareEgg() {
         eggsToAdd = 0;
       }
     } else if (eggRarity === "rare") {
-      if (Math.random() < 0.6) {
+      if (Math.random() < 0.9) {
         // 60% chance to add between 1 and 3 eggs
         eggsToAdd = Math.floor(Math.random() * 3) + 1;
       } else {
@@ -151,7 +151,7 @@ function generateDaycareEgg() {
         eggsToAdd = 0;
       }
     } else if (eggRarity === "uncommon") {
-      if (Math.random() < 0.8) {
+      if (Math.random() < 0.95) {
         // 80% chance to add between 1 and 4 eggs
         eggsToAdd = Math.floor(Math.random() * 4) + 1;
       } else {

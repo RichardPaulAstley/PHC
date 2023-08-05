@@ -572,7 +572,7 @@ const tokenExchange = [
 		"sprite": "sprites/egg/arceus.png",
 		"type": "legendary",
 		"generation": 4,
-		"available": false,
+		"available": true,
 		"amount": 30
 	},
 	{
