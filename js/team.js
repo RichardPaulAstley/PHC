@@ -528,10 +528,12 @@ evolvingButton.forEach(button => {
               team[index].sprite = sprite;
             } else {
               alert('Invalid Cream type! Evolution cancelled.');
+              location.reload();
               return; // Cancel the evolution
             }
           } else {
             alert('Invalid Sweet type! Evolution cancelled.');
+            location.reload();
             return; // Cancel the evolution
           }
         } else {
