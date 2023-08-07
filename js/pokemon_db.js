@@ -1146,7 +1146,7 @@ const pokemonDatabase = [
 		"name": "Jigglypuff",
 		"gen": 1,
 		"type": ["Normal", "Fairy"],
-		"base_species": "Iglypuff",
+		"base_species": "Igglybuff",
 		"egg_steps": 2560,
 		"egg_group": ["Fairy"],
 		"evolutions": [
@@ -1168,7 +1168,7 @@ const pokemonDatabase = [
 		"name": "Wigglytuff",
 		"gen": 1,
 		"type": ["Fairy"],
-		"base_species": "Iglypuff",
+		"base_species": "Igglybuff",
 		"egg_steps": 2560,
 		"egg_group": ["Fairy"],
 		"gender_rate": 25,
