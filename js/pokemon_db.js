@@ -18519,7 +18519,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/778.1.png",
 		"egg_sprite": "sprites/egg/mimikyu.png",
 		"rarity": "rare",
-		"evolution_stage": "base",
+		"evolution_stage": "first_stage",
 	},
 	{
 		"id": 779,
@@ -20710,7 +20710,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/875.1.png",
 		"egg_sprite": "sprites/egg/eiscue.png",
 		"rarity": "common",
-		"evolution_stage": "base",
+		"evolution_stage": "first_stage",
 	},
 	{
 		"id": 876,
