@@ -4547,7 +4547,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["level"],
-				"value": 18,
+				"value": 15,
 				"evolves_to": "Furret"
 			},
 		],
@@ -5424,6 +5424,7 @@ const pokemonDatabase = [
 		"name": "Wobbuffet",
 		"gen": 2,
 		"type": ["Psychic"],
+		"base_species": "Wynaut",
 		"egg_steps": 5120,
 		"egg_group": ["Amorphous"],
 		"gender_rate": 50,
