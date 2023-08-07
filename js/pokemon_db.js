@@ -20013,7 +20013,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/845.1.png",
 		"egg_sprite": "sprites/egg/cramorant.png",
 		"rarity": "uncommon",
-		"evolution_stage": "base",
+		"evolution_stage": "first_stage",
 	},
 	{
 		"id": 845.2,
@@ -20030,7 +20030,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/845.2.png",
 		"egg_sprite": "sprites/egg/cramorant.png",
 		"rarity": "uncommon",
-		"evolution_stage": "base",
+		"evolution_stage": "first_stage",
 	},
 	{
 		"id": 846,
@@ -20768,7 +20768,7 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/877.1.png",
 		"egg_sprite": "sprites/egg/morpeko.png",
 		"rarity": "uncommon",
-		"evolution_stage": "base",
+		"evolution_stage": "first_stage",
 	},
 	{
 		"id": 878,
