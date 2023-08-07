@@ -3530,7 +3530,7 @@ const pokemonDatabase = [
 		"base_species": "Smoochum",
 		"egg_steps": 6400,
 		"egg_group": ["Human-Like"],
-		"gender_rate": 100,
+		"gender_rate": 0,
 		"experience_group": 10000,
 		"sprite": "sprites/pokemon/124.png",
 		"shiny_sprite": "sprites/pokemon/shiny/124.png",
@@ -6311,7 +6311,7 @@ const pokemonDatabase = [
 				"evolves_to": "Jynx"
 			}
 		],
-		"gender_rate": 100,
+		"gender_rate": 0,
 		"experience_group": 10000,
 		"sprite": "sprites/pokemon/238.png",
 		"shiny_sprite": "sprites/pokemon/shiny/238.png",
