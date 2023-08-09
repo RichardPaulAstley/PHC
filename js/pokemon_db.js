@@ -20969,7 +20969,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["level"],
-				"value": 50,
+				"value": 60,
 				"evolves_to": "Dragapult"
 			},
 		],
