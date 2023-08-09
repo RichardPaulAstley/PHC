@@ -7668,7 +7668,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Thunder Stone",
 				"evolves_to": "Probopass"
 			},
 		],
@@ -12785,7 +12785,9 @@ const pokemonDatabase = [
 		"gender_rate": 50,
 		"experience_group": 10599,
 		"sprite": "sprites/pokemon/521.png",
+		"female_sprite": "sprites/pokemon/female/521.png",
 		"shiny_sprite": "sprites/pokemon/shiny/521.png",
+		"female_shiny_sprite": "sprites/pokemon/shiny/female/521.png",
 		"rarity": "common",
 		"evolution_stage": "second_stage",
 	},
@@ -13569,8 +13571,8 @@ const pokemonDatabase = [
 		"egg_group": ["Field"],
 		"evolutions": [
 			{
-				"method": ["level"],
-				"value": 35,
+				"method": ["item"],
+				"value": "Ability Capsule",
 				"evolves_to": "Darmanitan [Zen]"
 			},
 		],
@@ -13608,8 +13610,8 @@ const pokemonDatabase = [
 		"egg_group": ["Field"],
 		"evolutions": [
 			{
-				"method": ["level"],
-				"value": "1",
+				"method": ["item"],
+				"value": "Ability Capsule",
 				"evolves_to": "Darmanitan [Galarian - Zen]"
 			},
 		],
@@ -14251,7 +14253,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["level"],
-				"value": 35,
+				"value": 47,
 				"evolves_to": "Vanilluxe"
 			},
 		],
@@ -16469,7 +16471,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Aegislash [Blade]"
 			},
 		],
@@ -16492,7 +16494,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Aegislash"
 			},
 		],
@@ -17886,7 +17888,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item", "level"],
-				"value": "Wishiwashi Toy",
+				"value": "Ability Capsule",
 				"value_2": 20,
 				"evolves_to": "Wishiwashi [School]"
 			}
@@ -18493,7 +18495,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Mimikyu [Busted]"
 			},
 		],
@@ -19943,8 +19945,8 @@ const pokemonDatabase = [
 		"egg_group": ["Field", "Dragon"],
 		"evolutions": [
 			{
-				"method": ["level"],
-				"value": 36,
+				"method": ["item"],
+				"value": "Max Mushrooms",
 				"evolves_to": "Sandaconda [Gigantamax]"
 			},
 		],
@@ -19982,12 +19984,12 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Cramorant [Gulping]"
 			},
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Cramorant [Gorging]"
 			},
 		],
@@ -20408,8 +20410,8 @@ const pokemonDatabase = [
 		"egg_group": ["Fairy", "Human-Like"],
 		"evolutions": [
 			{
-				"method": ["level"],
-				"value": 42,
+				"method": ["item"],
+				"value": "Max Mushrooms",
 				"evolves_to": "Grimmsnarl [Gigantamax]"
 			},
 		],
@@ -20684,7 +20686,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Eiscue [No Ice]"
 			},
 		],
@@ -20742,7 +20744,7 @@ const pokemonDatabase = [
 		"evolutions": [
 			{
 				"method": ["item"],
-				"value": "Evolution TM",
+				"value": "Ability Capsule",
 				"evolves_to": "Morpeko [Hangry]"
 			},
 		],

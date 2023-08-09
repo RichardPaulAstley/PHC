@@ -15,25 +15,39 @@ const itemDatabase = [
 		"price": 50000
 	},
 	{
+		"name": "Max Mushrooms",
+		"sprite": "sprites/items/maxmushrooms.png",
+		"type": "Evolution",
+		"description": "Mushrooms that have the power of changing Dynamax forms. They boost all stats of a Pokémon during battle.",
+		"price": 50000
+	},
+	{
 		"name": "Primal Orb",
 		"sprite": "sprites/items/primalorb.png",
 		"type": "Evolution",
 		"description": "An orb that radiates an immense power. It seems to react to two specific Pokémon...",
-		"price": 80000
+		"price": 75000
+	},
+	{
+		"name": "Meteorite",
+		"sprite": "sprites/items/meteorite.png",
+		"type": "Form",
+		"description": "A strange rock that irradiate an incredible power.",
+		"price": 75000
 	},
 	{
 		"name": "Origin Orb",
 		"sprite": "sprites/items/originorb.png",
 		"type": "Form",
 		"description": "An item to be held by Dialga, Palkia or Giratina. This large, glowing orb wells with power and allows the Pokémon to change form.",
-		"price": 80000
+		"price": 75000
 	},
 	{
 		"name": "Gracidea",
 		"sprite": "sprites/items/gracidea.png",
 		"type": "Form",
 		"description": "A flower sometimes bundled into a bouquet to be given as an expression of gratitude on special occasions, such as birthdays and anniversaries.",
-		"price": 80000
+		"price": 75000
 	},
 	{
 		"name": "Reveal Glass",
@@ -47,21 +61,21 @@ const itemDatabase = [
 		"sprite": "sprites/items/sunflute.png",
 		"type": "Evolution",
 		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the sun.",
-		"price": 75000
+		"price": 100000
 	},
 	{
 		"name": "Moon Flute",
 		"sprite": "sprites/items/moonflute.png",
 		"type": "Evolution",
 		"description": "It is said that the tones it produces were offered up as an expression of gratitude to the Legendary Pokémon of the moon.",
-		"price": 75000
+		"price": 100000
 	},
 	{
 		"name": "400 Meltan Candies",
 		"sprite": "sprites/items/400meltancandies.png",
 		"type": "Evolution",
 		"description": "That's a lot of candies! That does explain the price...",
-		"price": 200000
+		"price": 100000
 	},
 	{
 		"name": "Rusted Sword",
@@ -75,28 +89,27 @@ const itemDatabase = [
 		"sprite": "sprites/items/rustedshield.png",
 		"type": "Evolution",
 		"description": "It is said that a hero used this shield to halt a terrible disaster in ancient times. But it\'s grown rusty and worn.",
-		"price": 70000
+		"price": 75000
 	},
 	{
 		"name": "Scroll of Darkness",
 		"sprite": "sprites/items/scrollofdarkness.png",
 		"type": "Evolution",
 		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness.",
-		"price": 70000
+		"price": 100000
 	},
 	{
 		"name": "Scroll of Waters",
 		"sprite": "sprites/items/scrollofwaters.png",
 		"type": "Evolution",
 		"description": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water.",
-		"price": 70000
+		"price": 100000
 	},
 	{
-		"name": "Max Mushrooms",
-		"sprite": "sprites/items/maxmushrooms.png",
-		"type": "Evolution",
-		"description": "Mushrooms that have the power of changing Dynamax forms. They boost all stats of a Pokémon during battle.",
-		"price": 50000
+		"name": "999 Gimmighoul Coins",
+		"sprite": "sprites/items/999gimmighoulcoins.png",
+		"description": "That's a lot of coins... I wonder who could gather so much money?",
+		"price": 99990
 	},
 	{
 		"name": "Thunder Stone",
@@ -202,13 +215,6 @@ const itemDatabase = [
 		"type": "Form",
 		"description": "An item which shines differently based on the weather. It could react with some specifics Pokémon.",
 		"price": 2000
-	},
-	{
-		"name": "Meteorite",
-		"sprite": "sprites/items/meteorite.png",
-		"type": "Form",
-		"description": "A strange rock that irradiate an incredible power.",
-		"price": 50000
 	},
 	{
 		"name": "Shiny Stone",
@@ -399,13 +405,13 @@ const itemDatabase = [
 		"description": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokémon.",
 		"price": 3500
 	},
-	{
+	/*{
 		"name": "Wishiwashi Toy",
 		"sprite": "sprites/items/wishiwashitoy.png",
 		"type": "Evolution",
 		"description": "A toy of a Wishiwashi. It seems to be enough realistic to fool a certain Pokemon thinking it's a real one.",
 		"price": 2000
-	},
+	},*/
 	{
 		"name": "Tart Apple",
 		"sprite": "sprites/items/tartapple.png",
@@ -449,10 +455,10 @@ const itemDatabase = [
 		"price": 5000
 	},
 	{
-		"name": "999 Gimmighoul Coins",
-		"sprite": "sprites/items/999gimmighoulcoins.png",
-		"description": "That's a lot of coins... I wonder who could gather so much money?",
-		"price": 99990
+		"name": "Ability Capsule",
+		"sprite": "sprites/items/abilitycapsule.png",
+		"description": "A capsule that allows a Pokémon with two Abilities to switch between these Abilities when it is used.",
+		"price": 2500
 	},
 	/*{
 	  "name": "Big Malasada",
