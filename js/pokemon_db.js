@@ -1685,7 +1685,7 @@ const pokemonDatabase = [
 		"display_name": "Growlithe",
 		"gen": 1,
 		"type": ["Fire", "Rock"],
-		"base_species": "Hisuian Growlithe",
+		"base_species": "Growlithe [Hisuian]",
 		"egg_steps": 5120,
 		"egg_group": ["Field"],
 		"evolutions": [
@@ -5965,7 +5965,7 @@ const pokemonDatabase = [
 		"display_name": "Corsola",
 		"gen": 2,
 		"type": ["Ghost"],
-		"base_species": "Glarian Corsola",
+		"base_species": "Galarian Corsola",
 		"egg_steps": 5120,
 		"egg_group": ["Water 1", "Water 3"],
 		"evolutions": [
@@ -20473,7 +20473,7 @@ const pokemonDatabase = [
 		"name": "Cursola",
 		"gen": 8,
 		"type": ["Ghost"],
-		"base_species": "Glarian Corsola",
+		"base_species": "Galarian Corsola",
 		"egg_steps": 5120,
 		"egg_group": ["Water 1", "Water 3"],
 		"gender_rate": 25,
