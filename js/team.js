@@ -150,18 +150,6 @@ window.onload = function () {
   }
 
   // Function to get the "prngValue" from local storage
-function getPrngValue() {
-  const prngValue = JSON.parse(localStorage.getItem('prng'));
-  return prngValue || 0;
-}
-
-function reRollPrngValue() {
-  const newPrngValue = generateRandomNumber();
-  localStorage.setItem('prng', JSON.stringify(newPrngValue));
-}
-
-// Call the getPrngValue function during page load
-const prngValue = getPrngValue();
 
   function hatchEgg(team, index) {
     const prngValue = getPrngValue();

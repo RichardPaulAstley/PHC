@@ -68,6 +68,17 @@ if (prngValue === null || typeof prngValue !== 'number') {
   initializePrngValue();
 }
 
+function getPrngValue() {
+  const prngValue = JSON.parse(localStorage.getItem('prng'));
+  return prngValue || 0;
+}
+
+function reRollPrngValue() {
+  const newPrngValue = generateRandomNumber();
+  localStorage.setItem('prng', JSON.stringify(newPrngValue));
+}
+
+
 window.addEventListener("load", function () {
   if (localStorage.getItem("eggData")) {
     eggData = JSON.parse(localStorage.getItem("eggData"));
