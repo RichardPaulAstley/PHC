@@ -48,7 +48,7 @@ for (let i = 0; i < pcTeamBoxes.length; i++) {
     pcTeamSprite.src = `../` + pokemon.sprite;
     
     // Add or remove shiny-bg class based on isShiny property
-    if (pokemon.isShiny) {
+    if (pokemon.isShiny & pokemon.isEgg == false) {
       pcTeamBox.classList.add('shiny-bg');
     } else {
       pcTeamBox.classList.remove('shiny-bg');
@@ -70,14 +70,14 @@ pokemonBoxes.forEach((pokemonBox, index) => {
         cleanUpTeamArray();
         const confirmRelease = window.confirm(`Are you sure you want to release all non-egg and non-Shiny Pokemon from your team?`);
         if (confirmRelease) {
-          team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny);
+          team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
           /*renderTeam();*/
           localStorage.setItem("team", JSON.stringify(team));
           location.reload();
         }
       } else {
-        if (team[index].isEgg) {
-          window.alert("You can't release eggs");
+        if (team[index].isEgg || team[index].isLocked) {
+          window.alert("You can't release eggs / Locked Pokémon!");
           return;
         }
         const confirmRelease = window.confirm(`Are you sure you want to release ${team[index].species}?`);
@@ -117,15 +117,15 @@ pokemonBoxes.forEach((pokemonBox, index) => {
 function releasePokemon(index) {
   const pokemon = team[index];
 
-  if (pokemon.isEgg && !pokemon.isShiny) {
-    window.alert("You can't release eggs");
+  if (pokemon.isEgg || pokemon.isLocked) {
+    window.alert("You can't release eggs / Locked Pokémon");
     return;
   }
 
   const confirmReleaseAll = window.confirm("Do you want to release all non-egg and non-shiny Pokemon from your team?");
   
   if (confirmReleaseAll) {
-    const filteredTeam = team.filter(pokemon => (pokemon.isEgg || pokemon.isShiny));
+    const filteredTeam = team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
     team = filteredTeam;
     /*renderTeam();*/
     localStorage.setItem("team", JSON.stringify(team));
@@ -286,18 +286,19 @@ function swapSlots(slot1, slot2) {
   localStorage.setItem('storage', JSON.stringify(storage));
 
   // Update the shiny background class for the swapped slots
-  const slot1IsShiny = team[slot1Index] && team[slot1Index].isShiny;
-  const slot2IsShiny = team[slot2Index] && team[slot2Index].isShiny;
-  if (slot1IsShiny) {
-    slot1.classList.add('shiny-bg');
-  } else {
-    slot1.classList.remove('shiny-bg');
-  }
-  if (slot2IsShiny) {
-    slot2.classList.add('shiny-bg');
-  } else {
-    slot2.classList.remove('shiny-bg');
-  }
+const slot1IsShiny = team[slot1Index] && team[slot1Index].isShiny && !team[slot1Index].isEgg;
+const slot2IsShiny = team[slot2Index] && team[slot2Index].isShiny && !team[slot2Index].isEgg;
+if (slot1IsShiny) {
+  slot1.classList.add('shiny-bg');
+} else {
+  slot1.classList.remove('shiny-bg');
+}
+
+if (slot2IsShiny) {
+  slot2.classList.add('shiny-bg');
+} else {
+  slot2.classList.remove('shiny-bg');
+}
 
   // Update the shiny background class for the storage slots
   const storageSlot1Index = slot1Index - pcTeamBoxes.length;

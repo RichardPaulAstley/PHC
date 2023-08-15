@@ -135,6 +135,13 @@ for (let i = 0; i < team.length; i++) {
   const daycareTeamBox = daycareTeam[i];
   const pcTeamSprite = daycareTeamBox.querySelector(".team-sprite");
   pcTeamSprite.src = `../` + pokemon.sprite;
+
+  // Check if the pokemon is shiny and its sprite contains "shiny"
+  if (pokemon.isShiny & !pokemon.isEgg) {
+    daycareTeamBox.classList.add('shiny-bg');
+  } else {
+    daycareTeamBox.classList.remove('shiny-bg');
+  }
 }
 
 function renderTeam() {
@@ -166,14 +173,26 @@ function renderParents() {
 
   if (daycare.parent0 && daycare.parent0.sprite) {
     parent0El.innerHTML = `<img src="../${daycare.parent0.sprite}" class="parent-sprite" alt="Pokemon Sprite">`;
+    if (daycare.parent0.isShiny) {
+      parent0El.classList.add('shiny-bg');
+    } else {
+      parent0El.classList.remove('shiny-bg');
+    }
   } else {
     parent0El.innerHTML = `<img src="../sprites/none.png" class="parent-sprite" alt="Pokemon Sprite">`;
+    parent0El.classList.remove('shiny-bg');
   }
 
   if (daycare.parent1 && daycare.parent1.sprite) {
     parent1El.innerHTML = `<img src="../${daycare.parent1.sprite}" class="parent-sprite" alt="Pokemon Sprite">`;
+    if (daycare.parent1.isShiny) {
+      parent1El.classList.add('shiny-bg');
+    } else {
+      parent1El.classList.remove('shiny-bg');
+    }
   } else {
     parent1El.innerHTML = `<img src="../sprites/none.png" class="parent-sprite" alt="Pokemon Sprite">`;
+    parent1El.classList.remove('shiny-bg');
   }
 
   if (daycare.isCompatible) {
@@ -181,6 +200,7 @@ function renderParents() {
   } else {
     parentTextEl.textContent = "The two Pokémon aren't compatible";
   }
+
 }
 
 
@@ -309,14 +329,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // check if there is space in the team array
         if (team.length < 6) {
           // generate the egg
+          const prngValue = parseFloat(localStorage.getItem("prng"));
           const egg = {
             species: pokemon.name,
             eggSteps: 0,
             level: 0,
             experience: 0,
             gender: "none",
-            isEgg: true,
-            isShiny: false,
+            isEgg: false,
+            isShiny: prngValue,
             sprite: pokemon.egg_sprite
           };
 
@@ -348,6 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
 
           // generate the egg
+          const prngValue = parseFloat(localStorage.getItem("prng"));
           const egg = {
             species: pokemon.name,
             eggSteps: 0,
@@ -355,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function () {
             experience: 0,
             gender: "none",
             isEgg: true,
-            isShiny: false,
+            isShiny: prngValue,
             sprite: pokemon.egg_sprite
           };
 
@@ -366,6 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // decrease eggAvailable amount in daycare
           daycare.eggsAvailable.amount--;
           localStorage.setItem('daycare', JSON.stringify(daycare));
+          reRollPrngValue();
         }
 
         location.reload();

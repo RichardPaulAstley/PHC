@@ -5412,6 +5412,13 @@ const pokemonDatabase = [
 		"type": ["Psychic"],
 		"egg_steps": 10240,
 		"egg_group": ["Undiscovered"],
+		"evolutions": [
+			{
+				"method": ["level"],
+				"value": 1,
+				"evolves_to":"Unown"
+			},
+		],
 		"gender_rate": "-",
 		"experience_group": 10240,
 		"sprite": "sprites/pokemon/201.1.png",

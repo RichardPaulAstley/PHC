@@ -74,7 +74,7 @@ teamBoxes.forEach((teamBox, index) => {
   }
 
   // Add shiny class if the Pokémon is shiny
-  if (currentTeamMember.isShiny) {
+  if (currentTeamMember.isShiny && currentTeamMember.isEgg === false) {
     teamBox.classList.add('shiny');
   } else {
     teamBox.classList.remove('shiny');
@@ -149,6 +149,40 @@ window.onload = function () {
     localStorage.setItem("team", JSON.stringify(team));
   }
 
+// Function to toggle the lock status of a Pokémon
+function toggleLock(pokemon) {
+  if (pokemon.isEgg === false) {
+    if (!pokemon.isLocked) {
+      const lockConfirmation = window.confirm("Do you want to lock this Pokémon?");
+      if (lockConfirmation) {
+        pokemon.isLocked = true;
+        saveTeam();
+        alert("Pokémon locked!");
+      }
+    } else {
+      const unlockConfirmation = window.confirm("Do you want to unlock this Pokémon?");
+      if (unlockConfirmation) {
+        delete pokemon.isLocked;
+        saveTeam();
+        alert("Pokémon unlocked!");
+      }
+    }
+  }
+}
+
+// Add event listeners to the Pokémon sprite images
+const spriteElements = document.querySelectorAll('.pokemon-sprite img');
+spriteElements.forEach((sprite, index) => {
+  sprite.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const pokemon = team[index];
+    if (!pokemon) return;
+
+    toggleLock(pokemon);
+  });
+});
+
   // Function to get the "prngValue" from local storage
 
   function hatchEgg(team, index) {
@@ -159,7 +193,7 @@ window.onload = function () {
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    if (prngValue === 0) {
+    if (egg.isShiny === 0) {
       egg.isShiny = true;
     } else {
       egg.isShiny = false;
@@ -297,7 +331,7 @@ for (let i = 0; i < team.length; i++) {
 function checkEvolutionConditions(pokemon, index, inventory) {
   let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
 
-  if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length) {
+  if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length && !pokemon.isLocked) {
     const evolvingButtons = document.querySelectorAll('.evolving-button');
     for (let evolution of pokemonData.evolutions) {
       let meetsConditions = true;
@@ -544,6 +578,18 @@ evolvingButton.forEach(button => {
             }
             team[index].sprite = sprite;
           }
+        }
+
+        if (evolvedPokemon.name === 'Unown') {
+          let randomNum = Math.floor(Math.random() * 29);
+          let spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/201.${randomNum}.png` : `sprites/pokemon/201.${randomNum}.png`;
+
+          while (team[index].sprite.endsWith(`201.${randomNum}.png`)) {
+            randomNum = Math.floor(Math.random() * 29);
+            spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/201.${randomNum}.png` : `sprites/pokemon/201.${randomNum}.png`;
+          }
+
+          team[index].sprite = spritePath;
         }
 
         if (evolvedPokemon.name === 'Ninjask') {

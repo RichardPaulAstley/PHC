@@ -73,12 +73,14 @@ eggBoxes.forEach(eggBox => {
         } else {
             const confirmation = window.confirm(`Do you want to pick up the ${randomPokemon.name} egg? (${randomPokemon.egg_steps} steps)`);
             if (confirmation) {
-                team.push({/*id: team.length+1,*/ species: randomPokemon.name, eggSteps: 0, level: 0, experience: 0, gender: "none", isEgg: true, isShiny: false, sprite: randomPokemon.egg_sprite });
+                const prngValue = parseFloat(localStorage.getItem("prng"));
+                team.push({/*id: team.length+1,*/ species: randomPokemon.name, eggSteps: 0, level: 0, experience: 0, gender: "none", isEgg: true, isShiny: prngValue, sprite: randomPokemon.egg_sprite });
                 console.log(team);
                 localStorage.setItem("team", JSON.stringify(team));
                 eggBox.claimed = true;
                 eggBox.innerHTML = "";
                 updateTeamLength();
+                reRollPrngValue();
             }
         }
     });
