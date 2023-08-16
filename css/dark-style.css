@@ -126,7 +126,7 @@ th {
 }
   
 .team-slot, .parent-slot, .egg-slot {
-    background-color: #858585 !important;
+    background-color: #858585;
     width: 96px !important;
     height: 96px !important;
     margin: 10px !important;
