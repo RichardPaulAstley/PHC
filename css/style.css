@@ -4,14 +4,9 @@
   box-sizing: border-box;
 }
 
-a {
-  color: white;
-}
-
 body {
-  background-color: #4a4947;
+  background-color: #e0e0e0;
   font-family: "Open Sans", sans-serif;
-  color: white;
   /* 
   background-image: url(""),
   background-repeat: no-repeat;
@@ -33,7 +28,7 @@ header h1 {
 }
 
 nav {
-  background-color: #242424;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +122,7 @@ footer {
 }
 
 .egg-box {
-  background-color: #858585;
+  background-color: white;
   width: 96px;
   height: 96px;
   margin: 5px;
@@ -155,7 +150,7 @@ footer {
 }
 
 .team-box {
-    background-color: #858585;
+    background-color: white;
     width: 170px;
     height: 220px;
     margin: 10px;
@@ -296,7 +291,7 @@ footer {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #858585;
+  background-color: white;
 }
 
 th, td {
@@ -306,7 +301,7 @@ th, td {
 }
 
 th {
-  background-color: #242424;
+  background-color: lightgray;
   font-weight: bold;
 }
 
@@ -320,7 +315,7 @@ th {
 }
 
 .pc-team-box {
-    background-color: #858585;
+    background-color: white;
     width: 96px;
     height: 96px;
     margin: 10px;
@@ -333,7 +328,6 @@ th {
 
 .shiny {
   background-color: rgb(255, 253, 208);
-  color: black;
 }
 
 .shiny-bg {
@@ -365,7 +359,7 @@ th {
 }
 
 .pc-storage-box {
-    background-color: #858585;
+    background-color: white;
     width: 96px;
     height: 96px;
     margin: 10px;
@@ -401,7 +395,7 @@ th {
 }
 
 .interaction-box {
-    background-color: #858585;
+    background-color: white;
     width: 100px;
     height: 100px;
     margin: 10px auto;
@@ -425,7 +419,7 @@ max-height: 96px;
 #idle-button {
   margin-top: 20px;
   padding:1%;
-  background-color: black;
+  background-color: #424242;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -459,7 +453,7 @@ max-height: 96px;
 }
 
 .token-table th {
-  background-color: #242424;
+  background-color: lightgray;
   font-weight: bold;
 }
 
@@ -481,7 +475,7 @@ Daycare
 }
 
 .team-slot, .parent-slot, .egg-slot {
-    background-color: #858585;
+    background-color: white;
     width: 96px;
     height: 96px;
     margin: 10px;

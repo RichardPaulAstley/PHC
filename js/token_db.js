@@ -2,27 +2,27 @@ const tokenDatabase = [
 	{
 		"name": "Special Token",
 		"type": "special",
-		"count": 1500
+		"count": 150
 	},
 	{
 		"name": "Event Token",
 		"type": "event",
-		"count": 2500
+		"count": 250
 	},
 	{
 		"name": "Novelty Token",
 		"type": "novelty",
-		"count": 1000
+		"count": 100
 	},
 	{
 		"name": "Legendary Token",
 		"type": "legendary",
-		"count": 5000
+		"count": 500
 	},
 	{
 		"name": "404 Not Found",
 		"type": "missingno",
-		"count": 44404
+		"count": 4440
 	},
 ]
 

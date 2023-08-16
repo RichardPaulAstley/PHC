@@ -4,6 +4,7 @@
 <head>
   <title>Pokemon Hatching Center</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/dark-style.css" id="dark-styles-link" disabled>
   <link rel="icon" type="image/x-icon" href="sprites/favicon.ico">
 </head>
 
@@ -26,6 +27,7 @@
   </nav>
   <main>
     <h2>Welcome to Pokemon Hatching Center!</h2>
+    <p><button id="toggle-mode-button">Mode: <span id="mode-label">Light</span></button></p>
     <p style="margin-bottom: 30px;"><button id="help-button">Help</button><button
         id="credits-button">Credits</button><button id="updates-button">Updates</button><button
         id="discord-button">Discord</button></p>
@@ -44,5 +46,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script src="js/stats.js"></script>
 <script src="js/index.js"></script>
+<script>
+    const toggleButton = document.getElementById("toggle-mode-button");
+    const darkStylesLink = document.getElementById("dark-styles-link");
+    const modeLabel = document.getElementById("mode-label");
 
+    // Check if the user has a saved mode preference
+    const savedMode = localStorage.getItem("themeMode");
+    if (savedMode === "dark") {
+      darkStylesLink.removeAttribute("disabled");
+      modeLabel.textContent = "Dark";
+    } else {
+      darkStylesLink.setAttribute("disabled", "true");
+      modeLabel.textContent = "Light";
+    }
+
+    toggleButton.addEventListener("click", () => {
+      if (darkStylesLink.disabled) {
+        darkStylesLink.removeAttribute("disabled");
+        modeLabel.textContent = "Dark";
+        localStorage.setItem("themeMode", "dark"); // Save the user's preference
+      } else {
+        darkStylesLink.setAttribute("disabled", "true");
+        modeLabel.textContent = "Light";
+        localStorage.setItem("themeMode", "light"); // Save the user's preference
+      }
+    });
+  </script>
 </html>

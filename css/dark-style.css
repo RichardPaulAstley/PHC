@@ -1,0 +1,134 @@
+a {
+    color: white !important;
+}
+
+body {
+    background-color: #4a4947 !important;
+    font-family: "Open Sans", sans-serif !important;
+    color: white !important;
+    /* 
+    background-image: url(""),
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+}
+  
+nav {
+    background-color: #242424 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 80px !important;
+    margin-top: -10px !important; /* adjust as needed */
+    overflow-x: auto !important;
+}
+
+nav a {
+    color: black !important;
+}
+  
+.egg-box {
+    background-color: #858585 !important;
+    width: 96px !important;;
+    height: 96px !important;;
+    margin: 5px !important;;
+    text-align: center !important;;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-box {
+    background-color: #858585 !important;
+    width: 170px;
+    height: 220px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #858585 !important;
+}
+
+th {
+    background-color: #242424 !important;
+    font-weight: bold;
+}
+
+.pc-team-box {
+    background-color: #858585 !important;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.shiny {
+    background-color: rgb(255, 253, 208) !important;
+    color: black !important;
+}
+
+.pc-storage-box {
+    background-color: #858585 !important;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.selected {
+    background-color: lightblue !important; 
+}
+
+.interaction-box {
+    background-color: #858585 !important;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#idle-button {
+    margin-top: 20px;
+    padding:1%;
+    background-color: black !important;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.token-table th {
+    background-color: #242424 !important;
+    font-weight: bold;
+}
+  
+.team-slot, .parent-slot, .egg-slot {
+    background-color: #858585 !important;
+    width: 96px !important;
+    height: 96px !important;
+    margin: 10px !important;
+    text-align: center !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+}

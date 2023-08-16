@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
             level: 0,
             experience: 0,
             gender: "none",
-            isEgg: false,
+            isEgg: true,
             isShiny: prngValue,
             sprite: pokemon.egg_sprite
           };

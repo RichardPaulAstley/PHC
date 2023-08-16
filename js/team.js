@@ -37,6 +37,36 @@ function cleanUpTeamArray() {
 
 window.addEventListener('load', cleanUpTeamArray);
 
+function generateToken() {
+  let tokenType = null;
+  for (let i = 0; i < tokenDatabase.length; i++) {
+    const token = tokenDatabase[i];
+    if (Math.random() <= 1 / token.count) {
+      tokenType = token.type;
+      break;
+    }
+  }
+
+  if (!tokenType) {
+    return;
+  }
+
+  const existingToken = tokenInventory.find(token => token.type === tokenType);
+  if (existingToken) {
+    existingToken.amount++;
+  } else {
+    const token = {
+      type: tokenType,
+      amount: 1
+    };
+    tokenInventory.push(token);
+  }
+
+  localStorage.setItem("tokenInventory", JSON.stringify(tokenInventory));
+
+  //window.alert(`You got a ${tokenType} token!`);
+}
+
 const teamBoxes = document.querySelectorAll('.team-box');
 
 teamBoxes.forEach((teamBox, index) => {
@@ -185,7 +215,7 @@ spriteElements.forEach((sprite, index) => {
 
   // Function to get the "prngValue" from local storage
 
-  function hatchEgg(team, index) {
+function hatchEgg(team, index) {
     const prngValue = getPrngValue();
 
     if (!team[index]) return;
@@ -231,7 +261,7 @@ spriteElements.forEach((sprite, index) => {
       }
     }
 
-    let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
+  let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
     if (egg.isShiny) {
       eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
@@ -242,9 +272,11 @@ spriteElements.forEach((sprite, index) => {
     egg.totalHatched = eggData.hatches;
     egg.timeHatched = new Date();
     reRollPrngValue();
+    generateToken();
     localStorage.setItem("eggData", JSON.stringify(eggData));
     updateUI(index);
     saveTeam();
+    updateEggsReadyToHatch();
   }
 
   const hatchAllButton = document.getElementById("hatch-all-button");

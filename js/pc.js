@@ -204,7 +204,7 @@ for (let i = 0; i < storage.length; i++) {
       pcStorageSprite.src = `../` + pokemon.sprite;
 
       // Add or remove shiny-bg class based on isShiny property
-      if (pokemon.isShiny) {
+      if (pokemon.isShiny && !pokemon.isEgg) {
         pcStorageBox.classList.add('shiny-bg');
       } else {
         pcStorageBox.classList.remove('shiny-bg');
@@ -304,7 +304,7 @@ if (slot2IsShiny) {
   const storageSlot1Index = slot1Index - pcTeamBoxes.length;
   const storageSlot2Index = slot2Index - pcTeamBoxes.length;
   if (pcStorageBoxes[storageSlot1Index]) {
-    const storageSlot1IsShiny = storage[storageSlot1Index] && storage[storageSlot1Index].isShiny;
+    const storageSlot1IsShiny = storage[storageSlot1Index] && storage[storageSlot1Index].isShiny && !storage[storageSlot1Index].isEgg;
     if (storageSlot1IsShiny) {
       pcStorageBoxes[storageSlot1Index].classList.add('shiny-bg');
     } else {
@@ -312,7 +312,7 @@ if (slot2IsShiny) {
     }
   }
   if (pcStorageBoxes[storageSlot2Index]) {
-    const storageSlot2IsShiny = storage[storageSlot2Index] && storage[storageSlot2Index].isShiny;
+    const storageSlot2IsShiny = storage[storageSlot2Index] && storage[storageSlot2Index].isShiny && !storage[storageSlot2Index].isEgg;
     if (storageSlot2IsShiny) {
       pcStorageBoxes[storageSlot2Index].classList.add('shiny-bg');
     } else {
