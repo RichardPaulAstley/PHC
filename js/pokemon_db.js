@@ -5414,8 +5414,8 @@ const pokemonDatabase = [
 		"egg_group": ["Undiscovered"],
 		"evolutions": [
 			{
-				"method": ["level"],
-				"value": 1,
+				"method": ["item"],
+				"value": "Dictionary",
 				"evolves_to":"Unown"
 			},
 		],
@@ -21386,7 +21386,7 @@ const pokemonDatabase = [
 		"name": "Overqwil",
 		"gen": 8,
 		"type": ["Dark", "Poison"],
-		"base_species": "Qwilfish",
+		"base_species": "Qwilfish [Hisuian]",
 		"egg_steps": 5120,
 		"egg_group": ["Water 2"],
 		"gender_rate": 50,
