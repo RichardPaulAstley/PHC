@@ -79,9 +79,13 @@ th {
     background-color: rgb(255, 253, 208) !important;
     color: black !important;
 }
+  
+.shiny-bg {
+    background-color: rgb(255, 253, 208) !important;
+}
 
 .pc-storage-box {
-    background-color: #858585 !important;
+    background-color: #858585;
     width: 96px;
     height: 96px;
     margin: 10px;

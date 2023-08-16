@@ -48,7 +48,7 @@ for (let i = 0; i < pcTeamBoxes.length; i++) {
     pcTeamSprite.src = `../` + pokemon.sprite;
     
     // Add or remove shiny-bg class based on isShiny property
-    if (pokemon.isShiny & pokemon.isEgg == false) {
+    if (pokemon.isShiny && !pokemon.isEgg) {
       pcTeamBox.classList.add('shiny-bg');
     } else {
       pcTeamBox.classList.remove('shiny-bg');
