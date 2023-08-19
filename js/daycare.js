@@ -314,52 +314,45 @@ parent1El.addEventListener('click', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+function withdrawSingleEgg() {
+  if (daycare.eggsAvailable.amount > 0) {
+    // find the corresponding pokemon in the database
+    const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
 
-  const eggSprite = document.querySelector('.egg-sprite');
+    // check if there is space in the team array
+    if (team.length < 6) {
+      // generate the egg
+      const prngValue = parseFloat(localStorage.getItem("prng"));
+      const egg = {
+        species: pokemon.name,
+        eggSteps: 0,
+        level: 0,
+        experience: 0,
+        gender: "none",
+        isEgg: true,
+        isShiny: prngValue,
+        sprite: pokemon.egg_sprite
+      };
 
-  eggSprite.addEventListener('click', function (event) {
-    if (!event.ctrlKey) {
-      // Withdraw a single egg
+      // add egg to the team and update local storage
+      team.push(egg);
+      localStorage.setItem('team', JSON.stringify(team));
 
-      if (daycare.eggsAvailable.amount > 0) {
-        // find the corresponding pokemon in the database
-        const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
-
-        // check if there is space in the team array
-        if (team.length < 6) {
-          // generate the egg
-          const prngValue = parseFloat(localStorage.getItem("prng"));
-          const egg = {
-            species: pokemon.name,
-            eggSteps: 0,
-            level: 0,
-            experience: 0,
-            gender: "none",
-            isEgg: true,
-            isShiny: prngValue,
-            sprite: pokemon.egg_sprite
-          };
-
-          // add egg to the team and update local storage
-          team.push(egg);
-          localStorage.setItem('team', JSON.stringify(team));
-
-          // decrease eggAvailable amount in daycare
-          daycare.eggsAvailable.amount--;
-          localStorage.setItem('daycare', JSON.stringify(daycare));
-          location.reload();
-        } else {
-          alert("Your team is full!");
-        }
-      } else {
-        alert("There are no eggs available at the daycare.");
-      }
-
+      // decrease eggAvailable amount in daycare
+      daycare.eggsAvailable.amount--;
+      localStorage.setItem('daycare', JSON.stringify(daycare));
+      location.reload();
     } else {
-      // Withdraw multiple eggs
+      alert("Your team is full!");
+    }
+  } else {
+    alert("There are no eggs available at the daycare.");
+  }
+}
 
-      const maxEggsToWithdraw = 6 - team.length;
+// Function to withdraw eggs until filling the team
+function withdrawEggsUntilTeamFull() {
+  const maxEggsToWithdraw = 6 - team.length;
 
       if (daycare.eggsAvailable.amount > 0 && maxEggsToWithdraw > 0) {
         const eggsToWithdraw = Math.min(daycare.eggsAvailable.amount, maxEggsToWithdraw);
@@ -395,9 +388,28 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         alert("There are no eggs available at the daycare or your team is already full!");
       }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const eggSprite = document.querySelector('.egg-sprite');
+  const fillTeamButton = document.querySelector('#fillTeamDaycare'); // Get the button element
+
+  eggSprite.addEventListener('click', function (event) {
+    if (!event.ctrlKey) {
+      // Withdraw a single egg
+      withdrawSingleEgg();
+    } else {
+      // Withdraw eggs until filling the team
+      withdrawEggsUntilTeamFull();
     }
+  });
+
+  // Add event listener to the "Fill your team!" button
+  fillTeamButton.addEventListener('click', function () {
+    withdrawEggsUntilTeamFull(); // Call the function when the button is clicked
   });
 });
 
+  
 renderParents();
 renderEgg();

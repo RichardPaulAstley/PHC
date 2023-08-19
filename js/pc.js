@@ -96,19 +96,12 @@ pokemonBoxes.forEach((pokemonBox, index) => {
 
 pokemonBoxes.forEach((pokemonBox, index) => {
   let pressTimer;
-  /* pokemonBox.addEventListener("mouseup", (event) => {
-    clearTimeout(pressTimer);
-  });*/
   pokemonBox.addEventListener("touchend", (event) => {
     clearTimeout(pressTimer);
   });
-  /* pokemonBox.addEventListener("mousedown", (event) => {
-    pressTimer = setTimeout(() => {
-      releasePokemon(index);
-    }, 500);
-  });*/
   pokemonBox.addEventListener("touchstart", (event) => {
     pressTimer = setTimeout(() => {
+      cleanUpTeamArray();
       releasePokemon(index);
     }, 500);
   });
@@ -127,7 +120,6 @@ function releasePokemon(index) {
   if (confirmReleaseAll) {
     const filteredTeam = team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
     team = filteredTeam;
-    /*renderTeam();*/
     localStorage.setItem("team", JSON.stringify(team));
     location.reload();
   } else {
@@ -135,13 +127,30 @@ function releasePokemon(index) {
     
     if (confirmReleaseSelected) {
       team.splice(index, 1);
-      /*renderTeam();*/
       localStorage.setItem("team", JSON.stringify(team));
       location.reload();
     }
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const releaseButton = document.querySelector('#releaseAll'); // Get the button element
+
+  // Add event listener to the "Release your team!" button
+  releaseButton.addEventListener('click', function () {
+    if (confirm("Are you sure you want to release all non-egg and non-shiny Pokémon from your team?")) {
+      releaseAllMons(); // Call the function when the button is clicked
+    }
+  });
+
+  // Function to release all eligible Pokémon
+  function releaseAllMons() {
+    cleanUpTeamArray();
+    const filteredTeam = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
+    localStorage.setItem("team", JSON.stringify(filteredTeam));
+    location.reload();
+  }
+});
 
 /* PC Système */
 

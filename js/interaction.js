@@ -176,6 +176,9 @@ let clickIntervals = [];
 img.addEventListener("click", () => {
   const now = Date.now();
 
+  team = JSON.parse(localStorage.getItem("team") || "[]");
+  daycare = JSON.parse(localStorage.getItem("daycare") || "[]");
+
   // Check for automated clicking
   const clickInterval = now - lastClickTime;
   if (clickInterval < 5) { // Set a minimum interval of 10 milliseconds
@@ -190,8 +193,6 @@ img.addEventListener("click", () => {
   }
   eggData.clicks += 1;
   localStorage.setItem("eggData", JSON.stringify(eggData));
-
-  let team = JSON.parse(localStorage.getItem("team") || "[]");
 
   //generateToken();
 
@@ -244,7 +245,8 @@ let isIdleModeOn = false;
 let intervalId;
 
 idleButton.addEventListener("click", () => {
-  let team = JSON.parse(localStorage.getItem("team") || "[]");
+  team = JSON.parse(localStorage.getItem("team") || "[]");
+  daycare = JSON.parse(localStorage.getItem("daycare") || "[]");
   if (isIdleModeOn) {
     clearInterval(intervalId);
     alert("Idle mode is over.");

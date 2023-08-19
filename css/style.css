@@ -508,6 +508,16 @@ footer {
   margin-top: 5%;
 }
 
+#fillTeamDaycare, #releaseAll {
+  background-color: #424242;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 4px;
+}
+
 /* Help */ 
 
 .credits-p, .update-p, .help-p {
