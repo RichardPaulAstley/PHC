@@ -10435,7 +10435,7 @@ const pokemonDatabase = [
 		"display_name": "Wormadam",
 		"gen": 4,
 		"type": ["Bug", "Steel"],
-		"base_species": "Burmy [Sandy Cloak]",
+		"base_species": "Burmy [Trash Cloak]",
 		"egg_steps": 3840,
 		"egg_group": ["Bug"],
 		"gender_rate": 50,
