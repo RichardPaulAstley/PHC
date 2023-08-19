@@ -414,6 +414,7 @@ imgs.forEach((img) => {
 
     // Get the corresponding Pokemon data, if it exists
     const pokemonData = pokemonArray[index];
+    
 
     // Check if pokemonData is null, and exit the function if it is
     if (!pokemonData || pokemonData.isEgg) {
