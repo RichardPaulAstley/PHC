@@ -173,6 +173,10 @@ function updateEggsReadyToHatch() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  updateEggsReadyToHatch();
+});
+
 function exportSave() {
   const saveData = {};
   for (let i = 0; i < localStorage.length; i++) {

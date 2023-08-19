@@ -112,6 +112,13 @@ const itemDatabase = [
 		"price": 99990
 	},
 	{
+		"name": "Dictionary",
+		"sprite": "sprites/items/dictionary.png",
+		"type": "Form",
+		"description": "An odd book that seems to be a dictionary. However, the letters on the cover book seem to stare at you...",
+		"price": 35000
+	},
+	{
 		"name": "Thunder Stone",
 		"sprite": "sprites/items/thunderstone.png",
 		"type": "Evolution",

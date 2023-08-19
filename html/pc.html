@@ -5,10 +5,20 @@
   <title>PHC - PC</title>
   <link rel="stylesheet" type="text/css" href="../css/pc.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dark-style.css" id="dark-styles-link" disabled>
   <link rel="icon" type="image/x-icon" href="../sprites/favicon.ico">
+  <script>
+    const savedMode = localStorage.getItem("themeMode");
+    if (savedMode === "dark") {
+      const darkStylesLink = document.createElement("link");
+      darkStylesLink.rel = "stylesheet";
+      darkStylesLink.href = "../css/dark-style.css"; // Replace with the actual path to dark-style.css
+      document.head.appendChild(darkStylesLink);
+    }
+  </script>
 </head>
 
-<body>
+<body class="light-mode">
   <header>
     <h1>Pokemon Hatching Center</h1>
   </header>
@@ -28,6 +38,7 @@
   <div class="main-pc-content">
     <div class="pc-container">
       <div class="pc-team-container">
+        <p><button id="releaseAll">Release your team!</button></p>
         <div class="pc-team-box" id="team-0">
           <img src="../sprites/none.png" class="pc-team-sprite" alt="Pokemon Sprite">
         </div>
@@ -56,4 +67,27 @@
 <script>reRollPrngValue();</script>
 <script src="../js/pokemon_db.js"></script>
 <script src="../js/pc.js"></script>
+<script>
+  // Add an event listener to update body class when dark mode is toggled
+  const toggleButton = document.getElementById("toggle-mode-button");
+  const darkStylesLink = document.getElementById("dark-styles-link");
+
+  toggleButton.addEventListener("click", () => {
+    const bodyClass = darkStylesLink.disabled ? "dark-mode" : "light-mode";
+    document.body.className = bodyClass;
+
+    if (darkStylesLink.disabled) {
+      darkStylesLink.removeAttribute("disabled");
+      localStorage.setItem("themeMode", "dark");
+    } else {
+      darkStylesLink.setAttribute("disabled", "true");
+      localStorage.setItem("themeMode", "light");
+    }
+  });
+
+  // Show the content after styles are applied
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.visibility = "visible";
+  });
+</script>
 </html>

@@ -135,6 +135,13 @@ for (let i = 0; i < team.length; i++) {
   const daycareTeamBox = daycareTeam[i];
   const pcTeamSprite = daycareTeamBox.querySelector(".team-sprite");
   pcTeamSprite.src = `../` + pokemon.sprite;
+
+  // Check if the pokemon is shiny and its sprite contains "shiny"
+  if (pokemon.isShiny & !pokemon.isEgg) {
+    daycareTeamBox.classList.add('shiny-bg');
+  } else {
+    daycareTeamBox.classList.remove('shiny-bg');
+  }
 }
 
 function renderTeam() {
@@ -166,14 +173,26 @@ function renderParents() {
 
   if (daycare.parent0 && daycare.parent0.sprite) {
     parent0El.innerHTML = `<img src="../${daycare.parent0.sprite}" class="parent-sprite" alt="Pokemon Sprite">`;
+    if (daycare.parent0.isShiny) {
+      parent0El.classList.add('shiny-bg');
+    } else {
+      parent0El.classList.remove('shiny-bg');
+    }
   } else {
     parent0El.innerHTML = `<img src="../sprites/none.png" class="parent-sprite" alt="Pokemon Sprite">`;
+    parent0El.classList.remove('shiny-bg');
   }
 
   if (daycare.parent1 && daycare.parent1.sprite) {
     parent1El.innerHTML = `<img src="../${daycare.parent1.sprite}" class="parent-sprite" alt="Pokemon Sprite">`;
+    if (daycare.parent1.isShiny) {
+      parent1El.classList.add('shiny-bg');
+    } else {
+      parent1El.classList.remove('shiny-bg');
+    }
   } else {
     parent1El.innerHTML = `<img src="../sprites/none.png" class="parent-sprite" alt="Pokemon Sprite">`;
+    parent1El.classList.remove('shiny-bg');
   }
 
   if (daycare.isCompatible) {
@@ -181,6 +200,7 @@ function renderParents() {
   } else {
     parentTextEl.textContent = "The two Pokémon aren't compatible";
   }
+
 }
 
 
@@ -294,51 +314,45 @@ parent1El.addEventListener('click', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+function withdrawSingleEgg() {
+  if (daycare.eggsAvailable.amount > 0) {
+    // find the corresponding pokemon in the database
+    const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
 
-  const eggSprite = document.querySelector('.egg-sprite');
+    // check if there is space in the team array
+    if (team.length < 6) {
+      // generate the egg
+      const prngValue = parseFloat(localStorage.getItem("prng"));
+      const egg = {
+        species: pokemon.name,
+        eggSteps: 0,
+        level: 0,
+        experience: 0,
+        gender: "none",
+        isEgg: true,
+        isShiny: prngValue,
+        sprite: pokemon.egg_sprite
+      };
 
-  eggSprite.addEventListener('click', function (event) {
-    if (!event.ctrlKey) {
-      // Withdraw a single egg
+      // add egg to the team and update local storage
+      team.push(egg);
+      localStorage.setItem('team', JSON.stringify(team));
 
-      if (daycare.eggsAvailable.amount > 0) {
-        // find the corresponding pokemon in the database
-        const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
-
-        // check if there is space in the team array
-        if (team.length < 6) {
-          // generate the egg
-          const egg = {
-            species: pokemon.name,
-            eggSteps: 0,
-            level: 0,
-            experience: 0,
-            gender: "none",
-            isEgg: true,
-            isShiny: false,
-            sprite: pokemon.egg_sprite
-          };
-
-          // add egg to the team and update local storage
-          team.push(egg);
-          localStorage.setItem('team', JSON.stringify(team));
-
-          // decrease eggAvailable amount in daycare
-          daycare.eggsAvailable.amount--;
-          localStorage.setItem('daycare', JSON.stringify(daycare));
-          location.reload();
-        } else {
-          alert("Your team is full!");
-        }
-      } else {
-        alert("There are no eggs available at the daycare.");
-      }
-
+      // decrease eggAvailable amount in daycare
+      daycare.eggsAvailable.amount--;
+      localStorage.setItem('daycare', JSON.stringify(daycare));
+      location.reload();
     } else {
-      // Withdraw multiple eggs
+      alert("Your team is full!");
+    }
+  } else {
+    alert("There are no eggs available at the daycare.");
+  }
+}
 
-      const maxEggsToWithdraw = 6 - team.length;
+// Function to withdraw eggs until filling the team
+function withdrawEggsUntilTeamFull() {
+  const maxEggsToWithdraw = 6 - team.length;
 
       if (daycare.eggsAvailable.amount > 0 && maxEggsToWithdraw > 0) {
         const eggsToWithdraw = Math.min(daycare.eggsAvailable.amount, maxEggsToWithdraw);
@@ -348,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const pokemon = pokemonDatabase.find(p => p.name === daycare.eggsAvailable.species);
 
           // generate the egg
+          const prngValue = parseFloat(localStorage.getItem("prng"));
           const egg = {
             species: pokemon.name,
             eggSteps: 0,
@@ -355,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
             experience: 0,
             gender: "none",
             isEgg: true,
-            isShiny: false,
+            isShiny: prngValue,
             sprite: pokemon.egg_sprite
           };
 
@@ -366,15 +381,35 @@ document.addEventListener('DOMContentLoaded', function () {
           // decrease eggAvailable amount in daycare
           daycare.eggsAvailable.amount--;
           localStorage.setItem('daycare', JSON.stringify(daycare));
+          reRollPrngValue();
         }
 
         location.reload();
       } else {
         alert("There are no eggs available at the daycare or your team is already full!");
       }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const eggSprite = document.querySelector('.egg-sprite');
+  const fillTeamButton = document.querySelector('#fillTeamDaycare'); // Get the button element
+
+  eggSprite.addEventListener('click', function (event) {
+    if (!event.ctrlKey) {
+      // Withdraw a single egg
+      withdrawSingleEgg();
+    } else {
+      // Withdraw eggs until filling the team
+      withdrawEggsUntilTeamFull();
     }
+  });
+
+  // Add event listener to the "Fill your team!" button
+  fillTeamButton.addEventListener('click', function () {
+    withdrawEggsUntilTeamFull(); // Call the function when the button is clicked
   });
 });
 
+  
 renderParents();
 renderEgg();

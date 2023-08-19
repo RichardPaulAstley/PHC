@@ -5412,6 +5412,13 @@ const pokemonDatabase = [
 		"type": ["Psychic"],
 		"egg_steps": 10240,
 		"egg_group": ["Undiscovered"],
+		"evolutions": [
+			{
+				"method": ["item"],
+				"value": "Dictionary",
+				"evolves_to":"Unown"
+			},
+		],
 		"gender_rate": "-",
 		"experience_group": 10240,
 		"sprite": "sprites/pokemon/201.1.png",
@@ -16485,7 +16492,7 @@ const pokemonDatabase = [
 	{
 		"id": 681.1,
 		"name": "Aegislash [Blade]",
-		"display_name": "Aegislash [Blade]",
+		"display_name": "Aegislash",
 		"gen": 6,
 		"type": ["Steel", "Ghost"],
 		"base_species": "Honedge",
@@ -17904,7 +17911,7 @@ const pokemonDatabase = [
 	{
 		"id": 746.1,
 		"name": "Wishiwashi [School]",
-		"display_name": "Wishiwashi [School]",
+		"display_name": "Wishiwashi",
 		"gen": 7,
 		"type": ["Water"],
 		"base_species": "Wishiwashi",
@@ -20821,6 +20828,7 @@ const pokemonDatabase = [
 	{
 		"id": 879.1,
 		"name": "Copperajah [Gigantamax]",
+		"display_name": "Copperajah",
 		"gen": 8,
 		"type": ["Steel"],
 		"base_species": "Cufant",
@@ -20923,6 +20931,7 @@ const pokemonDatabase = [
 	{
 		"id": 884,
 		"name": "Duraludon [Gigantamax]",
+		"display_name": "Duraludon",
 		"gen": 8,
 		"type": ["Steel", "Dragon"],
 		"base_species": "Duraludon",
@@ -21094,7 +21103,7 @@ const pokemonDatabase = [
 	{
 		"id": 890.1,
 		"name": "Eternatus [Gigantamax]",
-		"display_name": "Eternatus [Gigantamax]",
+		"display_name": "Eternatus",
 		"gen": 8,
 		"type": ["Poison", "Dragon"],
 		"egg_steps": 30720,
@@ -21379,7 +21388,7 @@ const pokemonDatabase = [
 		"name": "Overqwil",
 		"gen": 8,
 		"type": ["Dark", "Poison"],
-		"base_species": "Qwilfish",
+		"base_species": "Qwilfish [Hisuian]",
 		"egg_steps": 5120,
 		"egg_group": ["Water 2"],
 		"gender_rate": 50,

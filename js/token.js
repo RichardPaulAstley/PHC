@@ -76,6 +76,7 @@ function exchangeTokens() {
   const pokemon = pokemonDatabase.find(p => p.name === exchangeInfo.pokemon);
 
   // generate the egg
+  const prngValue = parseFloat(localStorage.getItem("prng"));
   const egg = {
     species: pokemon.name,
     eggSteps: 0,
@@ -83,7 +84,7 @@ function exchangeTokens() {
     experience: 0,
     gender: "none",
     isEgg: true,
-    isShiny: false,
+    isShiny: prngValue,
     sprite: pokemon.egg_sprite
   };
 

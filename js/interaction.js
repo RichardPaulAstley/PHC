@@ -68,7 +68,7 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generateToken() {
+/*function generateToken() {
   let tokenType = null;
   for (let i = 0; i < tokenDatabase.length; i++) {
     const token = tokenDatabase[i];
@@ -96,7 +96,7 @@ function generateToken() {
   localStorage.setItem("tokenInventory", JSON.stringify(tokenInventory));
 
   //window.alert(`You got a ${tokenType} token!`);
-}
+}*/
 
 function calculateClicsBeforeNextEgg(species) {
   const eggBaseSpecies = pokemonDatabase.find(p => p.name === species).base_species;
@@ -176,6 +176,9 @@ let clickIntervals = [];
 img.addEventListener("click", () => {
   const now = Date.now();
 
+  team = JSON.parse(localStorage.getItem("team") || "[]");
+  daycare = JSON.parse(localStorage.getItem("daycare") || "[]");
+
   // Check for automated clicking
   const clickInterval = now - lastClickTime;
   if (clickInterval < 5) { // Set a minimum interval of 10 milliseconds
@@ -191,7 +194,7 @@ img.addEventListener("click", () => {
   eggData.clicks += 1;
   localStorage.setItem("eggData", JSON.stringify(eggData));
 
-  generateToken();
+  //generateToken();
 
   let balance = JSON.parse(localStorage.getItem("balance") || "{}");
   if (!balance.pokeDollar) {
@@ -224,9 +227,9 @@ img.addEventListener("click", () => {
         }
       }
     }
+    updateEggsReadyToHatch();
     return member;
   });
-  updateEggsReadyToHatch();
   generateDaycareEgg();
   updateDaycareDisplay();
   localStorage.setItem("team", JSON.stringify(team));
@@ -242,6 +245,8 @@ let isIdleModeOn = false;
 let intervalId;
 
 idleButton.addEventListener("click", () => {
+  team = JSON.parse(localStorage.getItem("team") || "[]");
+  daycare = JSON.parse(localStorage.getItem("daycare") || "[]");
   if (isIdleModeOn) {
     clearInterval(intervalId);
     alert("Idle mode is over.");
@@ -255,7 +260,7 @@ idleButton.addEventListener("click", () => {
       eggData.idleClicks += 1;
       localStorage.setItem("eggData", JSON.stringify(eggData));
 
-      generateToken();
+      //generateToken();
 
       let balance = JSON.parse(localStorage.getItem("balance") || "{}");
       if (!balance.pokeDollar) {
