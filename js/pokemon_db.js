@@ -10876,7 +10876,7 @@ const pokemonDatabase = [
 		"gender_rate": 25,
 		"experience_group": 8000,
 		"sprite": "sprites/pokemon/432.png",
-		"shiny_sprite": "sprites/pokemon/shiny/432png",
+		"shiny_sprite": "sprites/pokemon/shiny/432.png",
 		"rarity": "common",
 		"evolution_stage": "first_stage",
 	},
