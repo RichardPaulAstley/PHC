@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 body {
@@ -418,12 +419,35 @@ max-height: 96px;
 
 #idle-button {
   margin-top: 20px;
-  padding:1%;
+  padding:20px;
   background-color: #424242;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+}
+
+#hatch-bonus, #release-bonus, #withdraw-bonus {
+  margin-top: 20px;
+  padding:10px;
+  background-color: #424242;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.bonus-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Style for each button (optional) */
+.bonus-buttons button {
+  display: inline-block;
+  margin: 5px; /* Adjust margin as needed */
 }
 
 /* Token */
