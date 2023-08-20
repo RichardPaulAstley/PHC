@@ -15,7 +15,10 @@ let daycare = {
   },
 }
 
-if (localStorage.getItem("daycare")) {
+if (!localStorage.getItem("daycare")) {
+  localStorage.setItem("daycare", JSON.stringify(daycare));
+} else {
+  // If it's already in local storage, load it into your 'daycare' variable
   daycare = JSON.parse(localStorage.getItem("daycare"));
 }
 
