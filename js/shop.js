@@ -123,6 +123,12 @@ for (let item of inventory) {
   if (item.amount <= 0) continue;
 
   let itemData = itemDatabase.find(i => i.name === item.name);
+
+  if (!itemData) {
+    // If the item is not found, skip processing and continue to the next item
+    continue;
+  }
+
   let row = document.createElement('tr');
 
   let itemCell = document.createElement('td');
