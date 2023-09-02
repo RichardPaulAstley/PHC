@@ -348,14 +348,20 @@ function hatchEgg(team, index) {
 
 // Evolution 
 
+const teamContainer = document.querySelector('.team-container');
+
 for (let i = 0; i < team.length; i++) {
   const pokemon = team[i];
-  let evolvingButton = document.createElement('button');
-  evolvingButton.classList.add('evolving-button');
-  evolvingButton.style.display = 'none';
-  evolvingButton.setAttribute('data-index', i + 1);
-  evolvingButton.innerHTML = 'Evolve';
-  document.body.appendChild(evolvingButton);
+
+  // Check if the parent element of the button is the team container
+  if (teamContainer) {
+    let evolvingButton = document.createElement('button');
+    evolvingButton.classList.add('evolving-button');
+    evolvingButton.style.display = 'none';
+    evolvingButton.setAttribute('data-index', i + 1);
+    evolvingButton.innerHTML = 'Evolve';
+    teamContainer.appendChild(evolvingButton);
+  }
 
   checkEvolutionConditions(pokemon, i, inventory);
 }

@@ -167,11 +167,17 @@ function countReadyToHatchEggs() {
   return count;
 }
 
+// Store the original page title
+const originalTitle = document.title;
+
 function updateEggsReadyToHatch() {
   const count = countReadyToHatchEggs();
+
   if (count > 0) {
+    document.title = `(${count}) ${originalTitle}`;
     document.getElementById("eggs-ready-to-hatch").textContent = count;
   } else {
+    document.title = originalTitle;
     document.getElementById("eggs-ready-to-hatch").textContent = "";
   }
 }

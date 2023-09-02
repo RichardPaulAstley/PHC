@@ -111,13 +111,11 @@ th {
 }
 
 #idle-button {
-    margin-top: 20px;
-    padding:1%;
     background-color: black !important;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+}
+
+#hatch-bonus, #release-bonus, #withdraw-bonus {
+    background-color: black !important;
 }
 
 .token-table th {

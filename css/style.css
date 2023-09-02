@@ -444,10 +444,18 @@ max-height: 96px;
   height: 100%;
 }
 
-/* Style for each button (optional) */
 .bonus-buttons button {
   display: inline-block;
-  margin: 5px; /* Adjust margin as needed */
+  margin: 5px; 
+}
+
+.team-int-stats {
+  padding: 3% 0% 0% 2%;
+  font-size: 18px;
+}
+
+.team-int-stats p {
+  margin-bottom: 10px;
 }
 
 /* Token */

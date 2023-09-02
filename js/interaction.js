@@ -68,6 +68,70 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function countPokemonsReadyToEvolve(team, inventory) {
+  let count = 0;
+
+  for (let i = 0; i < team.length; i++) {
+    const pokemon = team[i];
+    let meetsConditions = true;
+    let pokemonData = pokemonDatabase.find(p => p.name === pokemon.species);
+
+    if (!pokemon.isEgg && pokemonData.evolutions && pokemonData.evolutions.length && !pokemon.isLocked) {
+      for (let evolution of pokemonData.evolutions) {
+        // Check all conditions for evolution
+        for (let i = 0; i < evolution.method.length; i++) {
+          let method = evolution.method[i];
+          let value = evolution.value;
+
+          if (i === 1 && evolution.value_2) {
+            value = evolution.value_2;
+          } else if (i > 1) {
+            break; // Only support value and value_2 for now
+          }
+
+          if (method === 'level') {
+            if (pokemon.level < value) {
+              meetsConditions = false;
+              break;
+            }
+          }
+          if (method === 'item') {
+            let item = inventory.find(i => i.name === evolution.value);
+            if (!item || item.amount === 0) {
+              meetsConditions = false;
+              break;
+            }
+          }
+          if (method === 'gender') {
+            if (pokemon.gender !== value) {
+              meetsConditions = false;
+              break;
+            }
+          }
+        }
+
+        if (meetsConditions) {
+          count++;
+          break; // No need to check further if the Pokémon meets one evolution condition
+        }
+      }
+    }
+  }
+
+  return count;
+}
+
+function updateEvolvablePokemonText() {
+  const count = countPokemonsReadyToEvolve(team, inventory);
+  const teamEvoSpan = document.getElementById("team-evo");
+
+  if (teamEvoSpan) {
+    teamEvoSpan.textContent = count;
+  }
+}
+
+updateEvolvablePokemonText();
+
 /*function generateToken() {
   let tokenType = null;
   for (let i = 0; i < tokenDatabase.length; i++) {
@@ -227,11 +291,13 @@ img.addEventListener("click", () => {
         }
       }
     }
-    updateEggsReadyToHatch();
+    
     return member;
   });
+  updateEggsReadyToHatch();
   generateDaycareEgg();
   updateDaycareDisplay();
+  updateEvolvablePokemonText()
   localStorage.setItem("team", JSON.stringify(team));
   localStorage.setItem("daycare", JSON.stringify(daycare));
   img.src = getRandomPokemonOrEgg();
@@ -296,6 +362,7 @@ idleButton.addEventListener("click", () => {
         return member;
       });
       updateEggsReadyToHatch();
+      updateEvolvablePokemonText();
       generateDaycareEgg();
       updateDaycareDisplay();
       localStorage.setItem("daycare", JSON.stringify(daycare));
@@ -323,3 +390,44 @@ function updateBonusAlert() {
 
 // Call the function to update the bonus alert when the page loads
 updateBonusAlert();
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Retrieve the team data from local storage
+  const team = JSON.parse(localStorage.getItem('team')) || [];
+
+  // Get the element where the team species will be displayed
+  const teamSpeciesSpan = document.getElementById("team-name");
+
+  // Function to find the display name for a species in the pokemonDatabase
+  function findDisplayName(speciesName) {
+    const pokemonData = pokemonDatabase.find(entry => entry.name === speciesName);
+    return pokemonData && pokemonData.display_name ? pokemonData.display_name : speciesName;
+  }
+
+  // Check if there are Pokémon in the team
+  if (team.length > 0) {
+    // Iterate over the team and display the species or "Egg" for each Pokémon
+    let speciesList = "";
+    for (let i = 0; i < team.length && i < 6; i++) {
+      if (team[i].isEgg) {
+        speciesList += "Egg";
+      } else if (team[i].species) {
+        speciesList += findDisplayName(team[i].species); // Use display name if available
+      }
+      
+      if (i < team.length - 1) {
+        speciesList += ', '; // Add a comma if there are more Pokémon
+      }
+    }
+
+    // Set the species list as the content of the element
+    if (teamSpeciesSpan) {
+      teamSpeciesSpan.textContent = "Team: " + speciesList;
+    }
+  } else {
+    // If the team is empty, display a message
+    if (teamSpeciesSpan) {
+      teamSpeciesSpan.textContent = "Team is empty";
+    }
+  }
+});
