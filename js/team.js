@@ -136,23 +136,23 @@ window.onload = function () {
     });
   }
 
-  let hasHatchableEggs = false;
-  for (let i = 0; i < team.length; i++) {
-    if (team[i].isEgg) {
-      for (let j = 0; j < pokemonDatabase.length; j++) {
-        if (team[i].species === pokemonDatabase[j].name) {
-          if (team[i].eggSteps >= pokemonDatabase[j].egg_steps) {
-            document.getElementsByClassName("hatching-button")[i].style.display = "block";
-            document.getElementsByClassName("hatching-button")[i].setAttribute("data-index", i);
-            team[i].eggSteps = pokemonDatabase[j].egg_steps;
-            localStorage.setItem("team", JSON.stringify(team));
-            hasHatchableEggs = true;
-          }
-          break;
+  let hasHatchableEggs = 0; 
+for (let i = 0; i < team.length; i++) {
+  if (team[i].isEgg) {
+    for (let j = 0; j < pokemonDatabase.length; j++) {
+      if (team[i].species === pokemonDatabase[j].name) {
+        if (team[i].eggSteps >= pokemonDatabase[j].egg_steps) {
+          document.getElementsByClassName("hatching-button")[i].style.display = "block";
+          document.getElementsByClassName("hatching-button")[i].setAttribute("data-index", i);
+          team[i].eggSteps = pokemonDatabase[j].egg_steps;
+          localStorage.setItem("team", JSON.stringify(team));
+          hasHatchableEggs++; // Increment it here
         }
+        break;
       }
     }
   }
+}
 
   //Check to move this function inside the hatchEgg one.
   function updateUI(idx) {
@@ -281,7 +281,7 @@ function hatchEgg(team, index) {
 
   const hatchAllButton = document.getElementById("hatch-all-button");
   if (hatchAllButton) {
-    if (hasHatchableEggs) {
+    if (hasHatchableEggs > 1) {
       hatchAllButton.style.display = "block";
       hatchAllButton.addEventListener("click", function () {
         for (let i = 0; i < team.length; i++) {
