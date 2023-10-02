@@ -32,7 +32,7 @@ const itemDatabase = [
 		"name": "Meteorite",
 		"sprite": "sprites/items/meteorite.png",
 		"type": "Form",
-		"description": "A strange rock that irradiate an incredible power.",
+		"description": "A strange rock that radiates an incredible power.",
 		"price": 75000
 	},
 	{
@@ -178,7 +178,7 @@ const itemDatabase = [
 		"name": "Evolution TM",
 		"sprite": "sprites/items/evolutiontm.png",
 		"type": "Evolution",
-		"description": "It looks like a regular-blank TM. But some Pokemon seems to react to this item.",
+		"description": "It looks like a  regular blank TM. But some Pokemon seems to react to this item.",
 		"price": 3500
 	},
 	{
@@ -220,7 +220,7 @@ const itemDatabase = [
 		"name": "Weather Rock",
 		"sprite": "sprites/items/weatherrock.png",
 		"type": "Form",
-		"description": "An item which shines differently based on the weather. It could react with some specifics Pokémon.",
+		"description": "An item which shines differently based on the weather. It could react with some specific Pokémon.",
 		"price": 2000
 	},
 	{
@@ -395,7 +395,7 @@ const itemDatabase = [
 		"name": "Postcard",
 		"sprite": "sprites/items/postcard.png",
 		"type": "Evolution",
-		"description": "An item sent from far away ! A Pokémon seems to react when being in contact with...",
+		"description": "An item sent from far away! A Pokémon seems to react when being in contact with...",
 		"price": 10000
 	},
 	{
@@ -446,7 +446,7 @@ const itemDatabase = [
 	{
 		"name": "Running Shoes",
 		"sprite": "sprites/items/runningshoes.png",
-		"description": "A pair of shoes that seems to help to create a bound between some Pokemon and their owners... Weird right ?",
+		"description": "A pair of shoes that seems to help to create a bound between some Pokemon and their owners... Weird right?",
 		"price": 3500
 	},
 	{
