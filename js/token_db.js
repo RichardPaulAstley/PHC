@@ -943,4 +943,28 @@ const tokenExchange = [
 		"available": true,
 		"amount": 12
 	},
+	{
+		"pokemon": "Okidogi",
+		"sprite": "sprites/egg/okidogi.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
+	{
+		"pokemon": "Munkidori",
+		"sprite": "sprites/egg/munkidori.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
+	{
+		"pokemon": "Fezandipiti",
+		"sprite": "sprites/egg/fezandipiti.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
 ]
