@@ -259,8 +259,36 @@ const tokenExchange = [
 		"amount": 20
 	},
 	{
+		"pokemon": "Bulbasaur [Clone]",
+		"sprite": "sprites/egg/e.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 35
+	},
+	{
+		"pokemon": "Charmander [Clone]",
+		"sprite": "sprites/egg/h.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 35
+	},
+	{
+		"pokemon": "Squirtle [Clone]",
+		"sprite": "sprites/egg/k.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 35
+	},
+	{
+		"pokemon": "Pichu [Clone]",
+		"sprite": "sprites/egg/n.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 35
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
-		"sprite": "sprites/egg/spikyearedpichu.png",
+		"sprite": "sprites/egg/n.png",
 		"type": "event",
 		"available": true,
 		"amount": 6
@@ -938,6 +966,38 @@ const tokenExchange = [
 	{
 		"pokemon": "Miraidon",
 		"sprite": "sprites/egg/miraidon.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 12
+	},
+	{
+		"pokemon": "Okidogi",
+		"sprite": "sprites/egg/okidogi.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
+	{
+		"pokemon": "Munkidori",
+		"sprite": "sprites/egg/munkidori.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
+	{
+		"pokemon": "Fezandipiti",
+		"sprite": "sprites/egg/fezandipiti.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 10
+	},
+	{
+		"pokemon": "Ogerpon",
+		"sprite": "sprites/egg/ogerpon.png",
 		"type": "legendary",
 		"generation": 9,
 		"available": true,

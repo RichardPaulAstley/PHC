@@ -467,6 +467,18 @@ const itemDatabase = [
 		"description": "A capsule that allows a Pokémon with two Abilities to switch between these Abilities when it is used.",
 		"price": 2500
 	},
+	{
+		"name": "Syrupy Apple",
+		"sprite": "sprites/items/syrupyapple.png",
+		"description": "A peculiar apple that can make a certain species of Pokémon evolve. It's exceptionally syrupy.",
+		"price": 5000
+	},
+	{
+		"name": "Unremarkable Teacup",
+		"sprite": "sprites/items/unremarkableteacup.png",
+		"description": "A peculiar teacup that can make a certain species of Pokémon evolve. It may be cracked, but tea drunk from it is delicious.",
+		"price": 5000
+	},
 	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",
