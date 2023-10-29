@@ -14790,7 +14790,7 @@ const pokemonDatabase = [
 		"type": ["Dragon"],
 		"base_species": "Axew",
 		"egg_steps": 10240,
-		"egg_group": ["Amorphous"],
+		"egg_group": ["Monster", "Dragon"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -14813,7 +14813,7 @@ const pokemonDatabase = [
 		"type": ["Dragon"],
 		"base_species": "Axew",
 		"egg_steps": 10240,
-		"egg_group": ["Amorphous"],
+		"egg_group": ["Monster", "Dragon"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -14835,7 +14835,7 @@ const pokemonDatabase = [
 		"type": ["Dragon"],
 		"base_species": "Axew",
 		"egg_steps": 10240,
-		"egg_group": ["Amorphous"],
+		"egg_group": ["Monster", "Dragon"],
 		"gender_rate": 50,
 		"experience_group": 12500,
 		"sprite": "sprites/pokemon/612.png",
@@ -23559,6 +23559,21 @@ const pokemonDatabase = [
 		"sprite": "sprites/pokemon/1016.png",
 		"shiny_sprite": "sprites/pokemon/shiny/1016.png",
 		"egg_sprite": "sprites/egg/fezandipiti.png",
+		"rarity": "legendary",
+		"evolution_stage": "legendary",
+	},
+	{
+		"id": 1017,
+		"name": "Ogerpon",
+		"gen": 9,
+		"type": ["Grass"],
+		"egg_steps": 2560,
+		"egg_group": ["Undiscovered"],
+		"gender_rate": 0,
+		"experience_group": 12500,
+		"sprite": "sprites/pokemon/1017.png",
+		"shiny_sprite": "sprites/pokemon/shiny/1017.png",
+		"egg_sprite": "sprites/egg/ogerpon.png",
 		"rarity": "legendary",
 		"evolution_stage": "legendary",
 	},
