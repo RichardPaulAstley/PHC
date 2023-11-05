@@ -619,11 +619,11 @@ evolvingButton.forEach(button => {
         }
 
         if (evolvedPokemon.name === 'Unown') {
-          let randomNum = Math.floor(Math.random() * 29);
+          let randomNum = Math.floor(Math.random() * 28) + 1;
           let spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/201.${randomNum}.png` : `sprites/pokemon/201.${randomNum}.png`;
 
           while (team[index].sprite.endsWith(`201.${randomNum}.png`)) {
-            randomNum = Math.floor(Math.random() * 29);
+            randomNum = Math.floor(Math.random() * 28) + 1;
             spritePath = pokemon.isShiny ? `sprites/pokemon/shiny/201.${randomNum}.png` : `sprites/pokemon/201.${randomNum}.png`;
           }
 
