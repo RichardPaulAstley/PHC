@@ -287,6 +287,13 @@ const tokenExchange = [
 		"amount": 35
 	},
 	{
+		"pokemon": "Bonsly [Gold]",
+		"sprite": "sprites/egg/goldbonsly.png",
+		"type": "novelty",
+		"available": true,
+		"amount": 25
+	},
+	{
 		"pokemon": "Spiky-eared Pichu",
 		"sprite": "sprites/egg/n.png",
 		"type": "event",

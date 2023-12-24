@@ -193,8 +193,8 @@ function generateDaycareEgg() {
     let eggsToAdd = 1; // Default value for common, uncommon, and rare rarity
 
     if (eggRarity === "novelty") {
-      if (Math.random() < 0.25) {
-        // 10% chance to add an egg
+      if (Math.random() < 0.4) {
+        // chance to add an egg
         if (daycare.eggsAvailable.amount < 6) {
           // Only add an egg if there are less than 6 eggs in the daycare
           eggsToAdd = 1;

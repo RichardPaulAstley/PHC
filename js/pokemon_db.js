@@ -23947,4 +23947,44 @@ const pokemonDatabase = [
 		"rarity": "novelty",
 		"evolution_stage": "second_stage"
 	},
+	{
+		"id": "Q",
+		"name": "Bonsly [Gold]",
+		"display_name": "Bonsly",
+		"gen": "PHC",
+		"type": ["Rock"],
+		"base_species": "Bonsly [Gold]",
+		"egg_steps": 5120,
+		"egg_group": ["Undiscovered"],
+		"evolutions": [
+			{
+				"method": ["item"],
+				"value": "Evolution TM",
+				"evolves_to": "Sudowoodo [Gold]"
+			}
+		],
+		"gender_rate": 50,
+		"experience_group": 10000,
+		"sprite": "sprites/pokemon/q.png",
+		"shiny_sprite": "sprites/pokemon/shiny/q.png",
+		"egg_sprite": "sprites/egg/goldbonsly.png",
+		"rarity": "novelty",
+		"evolution_stage": "base"
+	},
+	{
+		"id": "R",
+		"name": "Sudowoodo [Gold]",
+		"display_name": "Sudowoodo",
+		"gen": "PHC",
+		"type": ["Rock"],
+		"egg_steps": 5120,
+		"egg_group": ["Mineral"],
+		"base_species": "Bonsly [Gold]",
+		"gender_rate": 50,
+		"experience_group": 10000,
+		"sprite": "sprites/pokemon/r.png",
+		"shiny_sprite": "sprites/pokemon/shiny/r.png",
+		"rarity": "novelty",
+		"evolution_stage": "first_stage"
+	},
 ]

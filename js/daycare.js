@@ -74,7 +74,7 @@ function checkCompatibility(parent0, parent1) {
   } else if (eggRarity === "rare") {
     clickThreshold = 250;
   } else if (eggRarity === "novelty") {
-    clickThreshold = 1000;
+    clickThreshold = 750;
   }
 
   let parent0Groups = pokemonDatabase.find(p => p.name === parent0.species).egg_group;
