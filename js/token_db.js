@@ -238,6 +238,34 @@ const tokenExchange = [
 		"amount": 40
 	},
 	{
+		"pokemon": "Gouging Fire",
+		"sprite": "sprites/egg/gougingfire.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
+		"pokemon": "Raging Bolt",
+		"sprite": "sprites/egg/ragingbolt.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
+		"pokemon": "Iron Boulder",
+		"sprite": "sprites/egg/ironboulder.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
+		"pokemon": "Iron Crown",
+		"sprite": "sprites/egg/ironcrown.png",
+		"type": "special",
+		"available": true,
+		"amount": 40
+	},
+	{
 		"pokemon": "Crystal Onix",
 		"sprite": "sprites/egg/crystalonix.png",
 		"type": "novelty",
@@ -1005,6 +1033,22 @@ const tokenExchange = [
 	{
 		"pokemon": "Ogerpon",
 		"sprite": "sprites/egg/ogerpon.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 12
+	},
+	{
+		"pokemon": "Terapagos",
+		"sprite": "sprites/egg/terapagos.png",
+		"type": "legendary",
+		"generation": 9,
+		"available": true,
+		"amount": 12
+	},
+	{
+		"pokemon": "Pecharunt",
+		"sprite": "sprites/egg/pecharunt.png",
 		"type": "legendary",
 		"generation": 9,
 		"available": true,
