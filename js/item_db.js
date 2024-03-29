@@ -479,6 +479,12 @@ const itemDatabase = [
 		"description": "A peculiar teacup that can make a certain species of Pokémon evolve. It may be cracked, but tea drunk from it is delicious.",
 		"price": 5000
 	},
+	{
+		"name": "Metal Alloy",
+		"sprite": "sprites/items/metalalloy.png",
+		"description": "A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.",
+		"price": 5000
+	},
 	/*{
 	  "name": "Big Malasada",
 	  "sprite": "sprites/items/bigmalasada.png",
