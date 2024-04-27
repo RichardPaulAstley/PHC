@@ -173,7 +173,7 @@ function calculateClicsBeforeNextEgg(species) {
   } else if (eggRarity === "rare") {
     return 250;
   } else if (eggRarity === "novelty") {
-    return 1500;
+    return 500;
   }
 }
 
@@ -193,7 +193,7 @@ function generateDaycareEgg() {
     let eggsToAdd = 1; // Default value for common, uncommon, and rare rarity
 
     if (eggRarity === "novelty") {
-      if (Math.random() < 0.4) {
+      if (Math.random() < 0.7) {
         // chance to add an egg
         if (daycare.eggsAvailable.amount < 6) {
           // Only add an egg if there are less than 6 eggs in the daycare
@@ -270,11 +270,11 @@ img.addEventListener("click", () => {
   team = team.map((member) => {
     if (member.isEgg) {
       const eggStepsBase = getRandomValue(18, 24);
-      const eggStepsBonus = new Date().getDay() === 5 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Friday
+      const eggStepsBonus = new Date().getDay() === 7 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.eggSteps += eggStepsBase + eggStepsBonus;
     } else {
       const experienceBase = getRandomValue(220, 320);
-      const experienceBonus = new Date().getDay() === 5 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Friday
+      const experienceBonus = new Date().getDay() === 7 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.experience += experienceBase + experienceBonus;
       
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
