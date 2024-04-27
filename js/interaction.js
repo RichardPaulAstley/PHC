@@ -270,11 +270,11 @@ img.addEventListener("click", () => {
   team = team.map((member) => {
     if (member.isEgg) {
       const eggStepsBase = getRandomValue(18, 24);
-      const eggStepsBonus = new Date().getDay() === 6 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
+      const eggStepsBonus = new Date().getDay() === 0 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.eggSteps += eggStepsBase + eggStepsBonus;
     } else {
       const experienceBase = getRandomValue(220, 320);
-      const experienceBonus = new Date().getDay() === 6 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
+      const experienceBonus = new Date().getDay() === 0 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.experience += experienceBase + experienceBonus;
       
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
@@ -378,7 +378,7 @@ img.src = getRandomPokemonOrEgg();
 
 // Function to get the bonus based on the day
 function getBonusMultiplier() {
-  return new Date().getDay() === 5 ? 1.5 : 1;
+  return new Date().getDay() === 0 ? 1.5 : 1;
 }
 
 // Function to update the bonus alert content
