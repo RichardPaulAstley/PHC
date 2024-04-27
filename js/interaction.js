@@ -270,11 +270,11 @@ img.addEventListener("click", () => {
   team = team.map((member) => {
     if (member.isEgg) {
       const eggStepsBase = getRandomValue(18, 24);
-      const eggStepsBonus = new Date().getDay() === 7 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
+      const eggStepsBonus = new Date().getDay() === 0 ? Math.round(eggStepsBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.eggSteps += eggStepsBase + eggStepsBonus;
     } else {
       const experienceBase = getRandomValue(220, 320);
-      const experienceBonus = new Date().getDay() === 7 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
+      const experienceBonus = new Date().getDay() === 0 ? Math.round(experienceBase * 0.5) : 0; // Apply *1.5 bonus if it's Sunday
       member.experience += experienceBase + experienceBonus;
       
       const pokemonData = pokemonDatabase.find(data => data.name === member.species);
