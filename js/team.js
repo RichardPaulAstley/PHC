@@ -272,7 +272,21 @@ function hatchEgg(team, index) {
     egg.totalHatched = eggData.hatches;
     egg.timeHatched = new Date();
     reRollPrngValue();
-    generateToken();
+    let eggStepsRoll = pokemon.eggSteps;
+    // Trigger generateToken() multiple times based on egg steps
+    if (eggStepsRoll <= 9000) {
+      generateToken();
+    } else if (eggStepsRoll <= 20000) {
+      generateToken();
+      generateToken();
+      generateToken();
+    } else {
+      generateToken();
+      generateToken();
+      generateToken();
+      generateToken();
+      generateToken();
+    }
     localStorage.setItem("eggData", JSON.stringify(eggData));
     updateUI(index);
     saveTeam();

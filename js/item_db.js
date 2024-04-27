@@ -4,7 +4,7 @@ const itemDatabase = [
 		"sprite": "sprites/items/pcextension.png",
 		"type": "Upgrade",
 		"description": "Gives access to another box (+30 Pokemon Storage)",
-		"max_amount": 40,
+		"max_amount": 65,
 		"price": 20000
 	},
 	{

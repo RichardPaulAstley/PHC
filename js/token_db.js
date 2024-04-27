@@ -22,7 +22,7 @@ const tokenDatabase = [
 	{
 		"name": "404 Not Found",
 		"type": "missingno",
-		"count": 4440
+		"count": 4040
 	},
 ]
 
