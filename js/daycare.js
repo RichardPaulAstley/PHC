@@ -210,6 +210,7 @@ for (let i = 0; i < daycareTeamBoxes.length; i++) {
   daycareTeamBoxes[i].addEventListener('click', () => {
     if (daycare.parent0 && daycare.parent1) {
       alert('No more free space in the daycare.');
+      location.reload();
       return;
     }
 
