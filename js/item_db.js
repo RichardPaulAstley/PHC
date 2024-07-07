@@ -57,6 +57,34 @@ const itemDatabase = [
 		"price": 75000
 	},
 	{
+		"name": "DNA Splicers",
+		"sprite": "sprites/items/dnasplicers.png",
+		"type": "Form",
+		"description": "A splicer that fuses two Pokémon. They are said to have been one in the beginning.",
+		"price": 75000
+	},
+	{
+		"name": "Hard Drive",
+		"sprite": "sprites/items/harddrive.png",
+		"type": "Form",
+		"description": "A cassette to be held by a certain Pokemon. It seems to change its type.",
+		"price": 75000
+	},
+	{
+		"name": "Zygarde Cube",
+		"sprite": "sprites/items/zygardecube.png",
+		"type": "Form",
+		"description": "An item in which some cells are gathered. You can also use it to change a Pokemon forms.",
+		"price": 100000
+	},
+	{
+		"name": "Prison Bottle",
+		"sprite": "sprites/items/prisonbottle.png",
+		"type": "Form",
+		"description": "A bottle believed to have been used to seal away the power of a certain Pokémon long, long ago.",
+		"price": 125000
+	},
+	{
 		"name": "Sun Flute",
 		"sprite": "sprites/items/sunflute.png",
 		"type": "Evolution",
