@@ -440,7 +440,7 @@ const itemDatabase = [
 	{
 		"name": "Candy Jar",
 		"sprite": "sprites/items/candyjar.png",
-		"description": "A jar full of sweets. It seems to be put on a Pokémon",
+		"description": "A jar full of sweets. It seems that you have put these candies on a Pokémon",
 		"price": 3000
 	},
 	{
