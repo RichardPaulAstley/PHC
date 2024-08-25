@@ -1,5 +1,21 @@
 const pokemonDatabase = [
 	{
+		"id": 0,
+		"name": "MissingNo.",
+		"gen": 1,
+		"type": ["Bird", "Normal"],
+		"base_species": "MissingNo.",
+		"egg_steps": 10240,
+		"egg_group": ["Undiscovered"],
+		"gender_rate": "-",
+		"experience_group": 10599,
+		"sprite": "sprites/pokemon/missingno.png",
+		"shiny_sprite": "sprites/pokemon/shiny/missingno.png",
+		"egg_sprite": "sprites/egg/notfound.png",
+		"rarity": "missingno",
+		"evolution_stage": "missingno",
+	},
+	{
 		"id": 1,
 		"name": "Bulbasaur",
 		"gen": 1,

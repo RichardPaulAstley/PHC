@@ -28,6 +28,13 @@ const tokenDatabase = [
 
 const tokenExchange = [
 	{
+		"pokemon": "MissingNo.",
+		"sprite": "sprites/egg/notfound.png",
+		"type": "missingno",
+		"available": true,
+		"amount": 44
+	},
+	{
 		"pokemon": "Ditto",
 		"sprite": "sprites/egg/ditto.png",
 		"type": "special",
