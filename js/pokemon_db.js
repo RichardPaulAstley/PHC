@@ -18393,7 +18393,7 @@ const pokemonDatabase = [
 		"name": "Pyukumuku",
 		"gen": 7,
 		"type": ["Water"],
-		"base_species": "Passimian",
+		"base_species": "Pyukumuku",
 		"egg_steps": 3840,
 		"egg_group": ["Water 1"],
 		"gender_rate": 50,
