@@ -35,6 +35,22 @@ function cleanUpTeamArray() {
   }
 }
 
+function verifySprites() {
+  team.forEach((pokemon) => {
+    if (!pokemon.sprite) {
+      // Vérifier si un sprite est manquant ou incorrect
+      const speciesData = pokemonDatabase.find(data => data.name === pokemon.species);
+      if (pokemon.isEgg) {
+        pokemon.sprite = speciesData.egg_sprite;
+      } else if (pokemon.isShiny) {
+        pokemon.sprite = speciesData.shiny_sprite;
+      } else {
+        pokemon.sprite = speciesData.sprite;
+      }
+    }
+  });
+}
+
 window.addEventListener('load', cleanUpTeamArray);
 
 const pcTeamBoxes = document.querySelectorAll(".pc-team-box");
@@ -107,7 +123,6 @@ pokemonBoxes.forEach((pokemonBox, index) => {
   });
 });
 
-window.onload = function() {
 function releasePokemon(index) {
   const pokemon = team[index];
 
@@ -119,8 +134,11 @@ function releasePokemon(index) {
   const confirmReleaseAll = window.confirm("Do you want to release all non-egg and non-shiny Pokemon from your team?");
   
   if (confirmReleaseAll) {
-    const filteredTeam = team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
-    team = filteredTeam;
+    team = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
+    
+    // Vérifier les sprites avant la sauvegarde
+    verifySprites();
+    
     localStorage.setItem("team", JSON.stringify(team));
     location.reload();
   } else {
@@ -128,12 +146,15 @@ function releasePokemon(index) {
     
     if (confirmReleaseSelected) {
       team.splice(index, 1);
+      
+      // Vérifier les sprites après suppression
+      verifySprites();
+      
       localStorage.setItem("team", JSON.stringify(team));
       location.reload();
     }
   }
 }
-};
 
 document.addEventListener('DOMContentLoaded', function () {
   const releaseButton = document.querySelector('#releaseAll'); // Get the button element
