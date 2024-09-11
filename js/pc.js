@@ -107,6 +107,7 @@ pokemonBoxes.forEach((pokemonBox, index) => {
   });
 });
 
+window.onload = function() {
 function releasePokemon(index) {
   const pokemon = team[index];
 
@@ -132,6 +133,7 @@ function releasePokemon(index) {
     }
   }
 }
+};
 
 document.addEventListener('DOMContentLoaded', function () {
   const releaseButton = document.querySelector('#releaseAll'); // Get the button element
