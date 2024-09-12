@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function releaseAllMons() {
     cleanUpTeamArray();
     const filteredTeam = team.filter((pokemon) => pokemon.isEgg || pokemon.isShiny || pokemon.isLocked);
+	verifySprites()
     localStorage.setItem("team", JSON.stringify(filteredTeam));
     location.reload();
   }
