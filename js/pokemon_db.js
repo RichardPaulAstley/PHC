@@ -10457,7 +10457,7 @@ const pokemonDatabase = [
 		"name": "Mothim",
 		"gen": 4,
 		"type": ["Bug", "Flying"],
-		"base_species": "Burmy [Grass]",
+		"base_species": "Burmy [Plant Cloak]",
 		"egg_steps": 3840,
 		"egg_group": ["Bug"],
 		"gender_rate": 50,
