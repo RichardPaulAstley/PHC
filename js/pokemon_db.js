@@ -19373,7 +19373,7 @@ const pokemonDatabase = [
 		"type": ["Flying"],
 		"base_species": "Rookidee",
 		"egg_steps": 3840,
-		"egg_group": ["Field"],
+		"egg_group": ["Flying"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -19396,7 +19396,7 @@ const pokemonDatabase = [
 		"type": ["Flying"],
 		"base_species": "Rookidee",
 		"egg_steps": 3840,
-		"egg_group": ["Field"],
+		"egg_group": ["Flying"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -19418,7 +19418,7 @@ const pokemonDatabase = [
 		"type": ["Flying", "Steel"],
 		"base_species": "Rookidee",
 		"egg_steps": 3840,
-		"egg_group": ["Field"],
+		"egg_group": ["Flying"],
 		"evolutions": [
 			{
 				"method": ["item"],
@@ -19441,7 +19441,7 @@ const pokemonDatabase = [
 		"type": ["Flying", "Steel"],
 		"base_species": "Rookidee",
 		"egg_steps": 3840,
-		"egg_group": ["Field"],
+		"egg_group": ["Flying"],
 		"gender_rate": 50,
 		"experience_group": 10599,
 		"sprite": "sprites/pokemon/823.1.png",
