@@ -217,17 +217,31 @@ spriteElements.forEach((sprite, index) => {
 
 function hatchEgg(team, index) {
     const prngValue = getPrngValue();
+	
+	/*let shinyCharm = inventory.find(item => item.name === "Shiny Charm");
+	let shinyCharmCount = shinyCharm ? shinyCharm.amount : 0;*/
 
     if (!team[index]) return;
     let egg = team[index];
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    if (egg.isShiny === 0) {
-      egg.isShiny = true;
-    } else {
-      egg.isShiny = false;
+    // Check if the egg's shiny value or shiny charm amount determines its shiny status
+	if (egg.isShiny === 0) {
+		egg.isShiny = true;
+		} /*else {
+	let possibleValues = [0];
+    for (let i = 1; i <= shinyCharmCount; i++) {
+        possibleValues.push(i);
     }
+
+    if (possibleValues.includes(egg.isShiny)) {
+        egg.isShiny = true;
+    } */ else {
+        egg.isShiny = false;
+    }
+//}
+
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
       egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
