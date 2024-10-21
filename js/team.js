@@ -94,14 +94,16 @@ teamBoxes.forEach((teamBox, index) => {
 
   // Update the pokemon-name element
   const name = teamBox.querySelector('.pokemon-name');
-  if (currentTeamMember.isEgg) {
+if (currentTeamMember.isEgg) {
     name.innerText = "Egg";
-  } else {
+} else {
     const displayName = getDisplayName(currentTeamMember.species);
-    name.innerHTML = currentTeamMember.isShiny
-      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
-      : displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
-  }
+    const shinyIcon = currentTeamMember.isShiny
+        ? (currentTeamMember.isSC ? '<img src="../sprites/shiny_sc.png" alt="Shiny via Shiny Charm"> ' : '<img src="../sprites/shiny.png" alt="Shiny"> ')
+        : '';
+
+    name.innerHTML = shinyIcon + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
+}
 
   // Add shiny class if the Pokémon is shiny
   if (currentTeamMember.isShiny && currentTeamMember.isEgg === false) {
@@ -164,11 +166,11 @@ for (let i = 0; i < team.length; i++) {
     }
 
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
-      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName
-      : displayName;
+    ? (currentPokemon.isSC ? '<img src="../sprites/shiny_sc.png" alt="Shiny via Shiny Charm"> ' : '<img src="../sprites/shiny.png" alt="Shiny"> ') + displayName
+    : displayName;
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male"
       ? "♂"
-      : currentPokemon.gender === "Female"
+        : currentPokemon.gender === "Female"
         ? "♀"
         : "-";
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = 'Lvl.' + currentPokemon.level;
