@@ -217,9 +217,9 @@ spriteElements.forEach((sprite, index) => {
 
 function hatchEgg(team, index) {
     const prngValue = getPrngValue();
-	
-	/*let shinyCharm = inventory.find(item => item.name === "Shiny Charm");
-	let shinyCharmCount = shinyCharm ? shinyCharm.amount : 0;*/
+
+	let shinyCharm = inventory.find(item => item.name === "Shiny Charm");
+	let shinyCharmCount = shinyCharm ? shinyCharm.amount : 0;
 
     if (!team[index]) return;
     let egg = team[index];
@@ -229,18 +229,19 @@ function hatchEgg(team, index) {
     // Check if the egg's shiny value or shiny charm amount determines its shiny status
 	if (egg.isShiny === 0) {
 		egg.isShiny = true;
-		} /*else {
+		} else {
 	let possibleValues = [0];
     for (let i = 1; i <= shinyCharmCount; i++) {
         possibleValues.push(i);
     }
 
     if (possibleValues.includes(egg.isShiny)) {
-        egg.isShiny = true;
-    } */ else {
-        egg.isShiny = false;
+      egg.isShiny = true;
+      egg.isSC = true;
+    }  else {
+      egg.isShiny = false;
     }
-//}
+}
 
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
@@ -277,6 +278,7 @@ function hatchEgg(team, index) {
 
   let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
     eggData.hatches = (eggData.hatches || 0) + 1;
+    eggData.dailyHatch = (eggData.dailyHatch || 0) + 1;;
     if (egg.isShiny) {
       eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
       setTimeout(() => {
@@ -307,6 +309,13 @@ function hatchEgg(team, index) {
     updateEggsReadyToHatch();
   }
 
+  const currentDate = new Date().toDateString();
+    if (eggData.lastUpdate !== currentDate) {
+        eggData.dailyHatch = 0; // Réinitialiser le compteur quotidien
+        eggData.lastUpdate = currentDate; // Mettre à jour la date
+    }
+	
+
   const hatchAllButton = document.getElementById("hatch-all-button");
   if (hatchAllButton) {
     if (hasHatchableEggs > 1) {
@@ -324,55 +333,6 @@ function hatchEgg(team, index) {
     }
   }
 };
-
-/* To think - Guaranteed Shiny
-
-function hatchEgg(team, index) {
-  if (!team[index]) return;
-  let egg = team[index];
-  egg.isEgg = false;
-  egg.eggSteps = 0;
-  egg.level = 1;
-
-  let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
-  eggData.hatches = (eggData.hatches || 0) + 1;
-
-  // Check if eggData.hatches is a multiple of 100000
-  if (eggData.hatches % 100000 === 0) {
-    egg.isShiny = true;
-  } else {
-    egg.isShiny = Math.random() < 1/256;
-  }
-
-  let pokemon = pokemonDatabase.find(p => p.name === egg.species);
-  if (pokemon.gender_rate !== "-") {
-    egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
-  } else {
-    egg.gender = "-";
-  }
-  if (egg.species === "Unown") {
-    let form = Math.floor(Math.random() * 28) + 1;
-    let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
-    egg.sprite = spritePath + `201.${form}.png`;
-  } else {
-    egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
-  }
-
-  localStorage.setItem("eggData", JSON.stringify(eggData));
-
-  if (egg.isShiny) {
-    eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
-    setTimeout(() => {
-      window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
-    }, 500);
-  }
-
-  updateUI(index);
-  saveTeam();
-}
-
-*/
-
 
 // Evolution 
 

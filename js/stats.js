@@ -28,6 +28,19 @@ let eggData = {
   idleClicks: 0,
   hatches: 0,
   shinyHatches: 0,
+  dailyHatch: 0,
+  lastUpdate: new Date().toDateString() // Stocke la date du dernier update
+};
+
+// Charger eggData depuis le localStorage
+if (localStorage.getItem("eggData")) {
+  eggData = JSON.parse(localStorage.getItem("eggData"));
+}
+
+// Forcer l'ajout de "lastUpdate" si elle n'existe pas
+if (!eggData.lastUpdate) {
+  eggData.lastUpdate = new Date().toDateString();
+  localStorage.setItem("eggData", JSON.stringify(eggData));
 }
 
 let balance = {
@@ -86,6 +99,7 @@ window.addEventListener("load", function () {
   if (localStorage.getItem("eggData")) {
     eggData = JSON.parse(localStorage.getItem("eggData"));
   }
+  document.getElementById("dailyHatch-done").innerHTML = eggData.dailyHatch || 0;
   document.getElementById("eggs-hatched").innerHTML = eggData.hatches || 0;
   document.getElementById("shiny-hatched").innerHTML = eggData.shinyHatches || 0;
   document.getElementById("clicks-done").innerHTML = eggData.clicks || 0;
@@ -249,42 +263,3 @@ function removeTimestamps() {
 
 // Call the removeTimestamps function during page load
 removeTimestamps();
-
-/*function reloadLocalStorage() {
-  setInterval(() => {
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      console.log(key, value);
-    }
-  }, 1000);
-}
-
-reloadLocalStorage();*/
-
-/*function updatePokemonSprites() {
-  [team, storage].forEach((pokemonArray) => {
-    pokemonArray.forEach((pokemon) => {
-      if (!pokemon) return; // ignore null values
-      if (pokemon.isEgg) return; // ignore eggs
-      
-      const pokemonData = pokemonDatabase.find((p) => p.name === pokemon.species);
-      if (!pokemonData) return;
-
-      let sprite = pokemon.isShiny ? pokemonData.shiny_sprite : pokemonData.sprite;
-
-      if (pokemon.gender === 'Female' && pokemonData.female_sprite) {
-        if (!pokemon.isShiny) {
-          sprite = pokemonData.female_sprite;
-        } else if (pokemonData.female_shiny_sprite) {
-          sprite = pokemonData.female_shiny_sprite;
-        }
-      }
-
-      pokemon.sprite = sprite;
-    });
-  });
-  
-  localStorage.setItem('team', JSON.stringify(team));
-  localStorage.setItem('storage', JSON.stringify(storage));
-}*/
