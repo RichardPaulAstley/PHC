@@ -64,6 +64,14 @@ let inventory = initializeInventory();
 
 let tokenInventory = []
 
+let pokedex = {}
+
+if (!localStorage.getItem("pokedex")) {
+  localStorage.setItem("pokedex", JSON.stringify(pokedex));
+} else {
+  pokedex = JSON.parse(localStorage.getItem("pokedex"));
+}
+
 // Function to generate a random number between 0 and 255
 function generateRandomNumber() {
   return Math.floor(Math.random() * 256);

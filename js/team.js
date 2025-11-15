@@ -217,6 +217,25 @@ spriteElements.forEach((sprite, index) => {
 
   // Function to get the "prngValue" from local storage
 
+function incrementPokedex(pokemonId, isShiny) {
+  let pokedex = JSON.parse(localStorage.getItem("pokedex")) || {};
+  const idString = String(pokemonId);
+  
+  if (!pokedex[idString]) {
+    pokedex[idString] = { "n": 0, "s": 0 };
+  }
+  
+  pokedex[idString].n = (pokedex[idString].n || 0) + 1;
+  if (isShiny) {
+    pokedex[idString].s = (pokedex[idString].s || 0) + 1;
+  }
+  
+  localStorage.setItem("pokedex", JSON.stringify(pokedex));
+}
+
+// Make sure the function is accessible globally
+window.incrementPokedex = incrementPokedex;
+
 function hatchEgg(team, index) {
     const prngValue = getPrngValue();
 
@@ -292,6 +311,8 @@ function hatchEgg(team, index) {
         window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
       }, 500);
     }
+    // Increment Pokédex entry for hatched Pokémon
+    incrementPokedex(pokemon.id, egg.isShiny);
     egg.totalHatched = eggData.hatches;
     egg.timeHatched = new Date();
     reRollPrngValue();
@@ -498,6 +519,10 @@ evolvingButton.forEach(button => {
             item.amount--;
             localStorage.setItem("inventory", JSON.stringify(inventory));
           }
+          // Increment Pokédex entry for evolved Pokémon
+          if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+            incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
+          }
         }
         // If there are multiple available evolutions, prompt the user to choose one
         else {
@@ -524,6 +549,10 @@ evolvingButton.forEach(button => {
               let item = inventory.find(i => i.name === chosenEvolutionData.value);
               item.amount--;
               localStorage.setItem("inventory", JSON.stringify(inventory));
+            }
+            // Increment Pokédex entry for evolved Pokémon
+            if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+              incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
             }
             const newPokemonName = team[index].species;
           }
@@ -633,6 +662,11 @@ evolvingButton.forEach(button => {
               sprite: pokemon.isShiny ? 'sprites/pokemon/shiny/292.png' : 'sprites/pokemon/292.png'
             };
             team.push(newPokemon);
+            // Increment Pokédex entry for Shedinja
+            const shedinjaPokemon = pokemonDatabase.find(p => p.name === 'Shedinja');
+            if (shedinjaPokemon && shedinjaPokemon.id !== undefined) {
+              incrementPokedex(shedinjaPokemon.id, pokemon.isShiny);
+            }
             alert("Seems another Pokemon shown up next to your Ninjask...");
             location.reload();
           }
@@ -643,6 +677,10 @@ evolvingButton.forEach(button => {
           let item = inventory.find(i => i.name === chosenEvolutionData.value);
           item.amount--;
           localStorage.setItem("inventory", JSON.stringify(inventory));
+        }
+        // Increment Pokédex entry for evolved Pokémon
+        if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+          incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
         }
       }
     }

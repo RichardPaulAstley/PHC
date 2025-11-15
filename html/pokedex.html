@@ -5,6 +5,7 @@
   <title>PHC - Pokedex</title>
   <link rel="stylesheet" type="text/css" href="../css/pc.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/pokedex.css">
   <link rel="stylesheet" href="../css/dark-style.css" id="dark-styles-link" disabled>
   <link rel="icon" type="image/x-icon" href="../sprites/favicon.ico">
   <script>
@@ -35,12 +36,15 @@
       <li><a href="interaction.html">Interaction</a></li>
     </ul>
   </nav>
-<h1>Pokédex</h1>
-<h1>Currently under construction~ Check the  <a href="https://discord.gg/Zdqr7UZ7Ka">Discord</a> for more informations about it.</h1>
+  <main>
+    <h1>Pokédex</h1>
+    <div id="pokedex-container"></div>
+  </main>
 </body>
 <script src="../js/stats.js"></script>
 <script>reRollPrngValue();</script>
 <script src="../js/pokemon_db.js"></script>
+<script src="../js/pokedex.js"></script>
 <script>
   // Add an event listener to update body class when dark mode is toggled
   const toggleButton = document.getElementById("toggle-mode-button");

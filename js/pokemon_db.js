@@ -2,7 +2,7 @@ const pokemonDatabase = [
 	{
 		"id": 0,
 		"name": "MissingNo.",
-		"gen": 1,
+		"gen": "PHC",
 		"type": ["Bird", "Normal"],
 		"base_species": "MissingNo.",
 		"egg_steps": 10240,
@@ -15260,6 +15260,7 @@ const pokemonDatabase = [
 	{
 		"id": 627,
 		"name": "Rufflet",
+		"gen": 5,
 		"type": ["Normal", "Flying"],
 		"base_species": "Rufflet",
 		"egg_steps": 5120,
@@ -15287,6 +15288,7 @@ const pokemonDatabase = [
 	{
 		"id": 628,
 		"name": "Braviary",
+		"gen": 5,
 		"type": ["Normal", "Flying"],
 		"base_species": "Rufflet",
 		"egg_steps": 5120,
@@ -15301,6 +15303,7 @@ const pokemonDatabase = [
 	{
 		"id": 628.1,
 		"name": "Braviary [Hisuian]",
+		"gen": 5,
 		"type": ["Psychic", "Flying"],
 		"base_species": "Rufflet",
 		"egg_steps": 5120,
@@ -15315,6 +15318,7 @@ const pokemonDatabase = [
 	{
 		"id": 629,
 		"name": "Vullaby",
+		"gen": 5,
 		"type": ["Dark", "Flying"],
 		"base_species": "Vullaby",
 		"egg_steps": 5120,
@@ -15337,6 +15341,7 @@ const pokemonDatabase = [
 	{
 		"id": 630,
 		"name": "Mandibuzz",
+		"gen": 5,
 		"type": ["Dark", "Flying"],
 		"base_species": "Vullaby",
 		"egg_steps": 5120,
@@ -15351,6 +15356,7 @@ const pokemonDatabase = [
 	{
 		"id": 631,
 		"name": "Heatmor",
+		"gen": 5,
 		"type": ["Fire"],
 		"base_species": "Heatmor",
 		"egg_steps": 5120,
@@ -15366,6 +15372,7 @@ const pokemonDatabase = [
 	{
 		"id": 632,
 		"name": "Durant",
+		"gen": 5,
 		"type": ["Bug", "Steel"],
 		"base_species": "Durant",
 		"egg_steps": 5120,
@@ -15381,6 +15388,7 @@ const pokemonDatabase = [
 	{
 		"id": 633,
 		"name": "Deino",
+		"gen": 5,
 		"type": ["Dark", "Dragon"],
 		"base_species": "Deino",
 		"egg_steps": 10240,
@@ -15403,6 +15411,7 @@ const pokemonDatabase = [
 	{
 		"id": 634,
 		"name": "Zweilous",
+		"gen": 5,
 		"type": ["Dark", "Dragon"],
 		"base_species": "Deino",
 		"egg_steps": 10240,
@@ -15424,6 +15433,7 @@ const pokemonDatabase = [
 	{
 		"id": 635,
 		"name": "Hydreigon",
+		"gen": 5,
 		"type": ["Dark", "Dragon"],
 		"base_species": "Deino",
 		"egg_steps": 10240,
@@ -15438,6 +15448,7 @@ const pokemonDatabase = [
 	{
 		"id": 636,
 		"name": "Larvesta",
+		"gen": 5,
 		"type": ["Bug", "Fire"],
 		"base_species": "Larvesta",
 		"egg_steps": 10240,
@@ -15460,6 +15471,7 @@ const pokemonDatabase = [
 	{
 		"id": 637,
 		"name": "Volcarona",
+		"gen": 5,
 		"type": ["Bug", "Fire"],
 		"base_species": "Larvesta",
 		"egg_steps": 10240,
