@@ -188,10 +188,11 @@ function createFilterButton(type, tableElement) {
   button.className = 'pokedex-filter-button';
   button.textContent = type === 'normal' ? 'Normal' : 'Shiny';
   
-  let showObtained = true;
+  // 0 = tout afficher, 1 = obtenus, 2 = manquants
+  let filterState = 0;
   
   button.addEventListener('click', function() {
-    showObtained = !showObtained;
+    filterState = (filterState + 1) % 3;
     
     const cards = tableElement.querySelectorAll('.pokedex-pokemon-card');
     cards.forEach(card => {
@@ -199,21 +200,36 @@ function createFilterButton(type, tableElement) {
       if (pokemonId) {
         const entry = getPokedexEntry(parseFloat(pokemonId));
         
-        let shouldShow = false;
-        if (type === 'normal') {
-          shouldShow = showObtained ? entry.n > 0 : entry.n === 0;
-        } else {
-          shouldShow = showObtained ? entry.s >= 1 : entry.s === 0;
+        let shouldShow = true;
+        if (filterState === 1) {
+          // Afficher seulement les obtenus
+          if (type === 'normal') {
+            shouldShow = entry.n > 0;
+          } else {
+            shouldShow = entry.s >= 1;
+          }
+        } else if (filterState === 2) {
+          // Afficher seulement les manquants
+          if (type === 'normal') {
+            shouldShow = entry.n === 0;
+          } else {
+            shouldShow = entry.s === 0;
+          }
         }
+        // filterState === 0 : tout afficher (shouldShow reste true)
         
         card.style.display = shouldShow ? 'flex' : 'none';
       }
     });
     
     // Mettre à jour le texte du bouton
-    button.textContent = showObtained 
-      ? (type === 'normal' ? 'Normal' : 'Shiny')
-      : (type === 'normal' ? 'Normal (Missing)' : 'Shiny (Missing)');
+    if (filterState === 0) {
+      button.textContent = type === 'normal' ? 'Normal' : 'Shiny';
+    } else if (filterState === 1) {
+      button.textContent = type === 'normal' ? 'Normal (Obtained)' : 'Shiny (Obtained)';
+    } else {
+      button.textContent = type === 'normal' ? 'Normal (Missing)' : 'Shiny (Missing)';
+    }
   });
   
   return button;
@@ -305,11 +321,13 @@ function displayPokedex() {
   globalShinyButton.className = 'pokedex-filter-button';
   globalShinyButton.textContent = 'Shiny';
   
-  let globalNormalShowObtained = true;
-  let globalShinyShowObtained = true;
+  // 0 = tout afficher, 1 = obtenus, 2 = manquants
+  let globalNormalFilterState = 0;
+  let globalShinyFilterState = 0;
   
   globalNormalButton.addEventListener('click', function() {
-    globalNormalShowObtained = !globalNormalShowObtained;
+    globalNormalFilterState = (globalNormalFilterState + 1) % 3;
+    
     generationSections.forEach(section => {
       const table = section.querySelector('.pokedex-table');
       const cards = table.querySelectorAll('.pokedex-pokemon-card');
@@ -317,16 +335,32 @@ function displayPokedex() {
         const pokemonId = card.getAttribute('data-pokemon-id');
         if (pokemonId) {
           const entry = getPokedexEntry(parseFloat(pokemonId));
-          const shouldShow = globalNormalShowObtained ? entry.n > 0 : entry.n === 0;
+          
+          let shouldShow = true;
+          if (globalNormalFilterState === 1) {
+            shouldShow = entry.n > 0;
+          } else if (globalNormalFilterState === 2) {
+            shouldShow = entry.n === 0;
+          }
+          // globalNormalFilterState === 0 : tout afficher (shouldShow reste true)
+          
           card.style.display = shouldShow ? 'flex' : 'none';
         }
       });
     });
-    globalNormalButton.textContent = globalNormalShowObtained ? 'Normal' : 'Normal (Missing)';
+    
+    if (globalNormalFilterState === 0) {
+      globalNormalButton.textContent = 'Normal';
+    } else if (globalNormalFilterState === 1) {
+      globalNormalButton.textContent = 'Normal (Obtained)';
+    } else {
+      globalNormalButton.textContent = 'Normal (Missing)';
+    }
   });
   
   globalShinyButton.addEventListener('click', function() {
-    globalShinyShowObtained = !globalShinyShowObtained;
+    globalShinyFilterState = (globalShinyFilterState + 1) % 3;
+    
     generationSections.forEach(section => {
       const table = section.querySelector('.pokedex-table');
       const cards = table.querySelectorAll('.pokedex-pokemon-card');
@@ -334,12 +368,27 @@ function displayPokedex() {
         const pokemonId = card.getAttribute('data-pokemon-id');
         if (pokemonId) {
           const entry = getPokedexEntry(parseFloat(pokemonId));
-          const shouldShow = globalShinyShowObtained ? entry.s >= 1 : entry.s === 0;
+          
+          let shouldShow = true;
+          if (globalShinyFilterState === 1) {
+            shouldShow = entry.s >= 1;
+          } else if (globalShinyFilterState === 2) {
+            shouldShow = entry.s === 0;
+          }
+          // globalShinyFilterState === 0 : tout afficher (shouldShow reste true)
+          
           card.style.display = shouldShow ? 'flex' : 'none';
         }
       });
     });
-    globalShinyButton.textContent = globalShinyShowObtained ? 'Shiny' : 'Shiny (Missing)';
+    
+    if (globalShinyFilterState === 0) {
+      globalShinyButton.textContent = 'Shiny';
+    } else if (globalShinyFilterState === 1) {
+      globalShinyButton.textContent = 'Shiny (Obtained)';
+    } else {
+      globalShinyButton.textContent = 'Shiny (Missing)';
+    }
   });
   
   globalFilterContainer.appendChild(globalNormalButton);
