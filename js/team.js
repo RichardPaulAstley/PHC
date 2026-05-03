@@ -94,14 +94,16 @@ teamBoxes.forEach((teamBox, index) => {
 
   // Update the pokemon-name element
   const name = teamBox.querySelector('.pokemon-name');
-  if (currentTeamMember.isEgg) {
+if (currentTeamMember.isEgg) {
     name.innerText = "Egg";
-  } else {
+} else {
     const displayName = getDisplayName(currentTeamMember.species);
-    name.innerHTML = currentTeamMember.isShiny
-      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)")
-      : displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
-  }
+    const shinyIcon = currentTeamMember.isShiny
+        ? (currentTeamMember.isSC ? '<img src="../sprites/shiny_sc.png" alt="Shiny via Shiny Charm"> ' : '<img src="../sprites/shiny.png" alt="Shiny"> ')
+        : '';
+
+    name.innerHTML = shinyIcon + displayName + " " + (currentTeamMember.gender === "Male" ? "♂" : currentTeamMember.gender === "Female" ? "♀" : "(-)");
+}
 
   // Add shiny class if the Pokémon is shiny
   if (currentTeamMember.isShiny && currentTeamMember.isEgg === false) {
@@ -164,11 +166,11 @@ for (let i = 0; i < team.length; i++) {
     }
 
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-name`).innerHTML = currentPokemon.isShiny
-      ? '<img src="../sprites/shiny.png" alt="Shiny"> ' + displayName
-      : displayName;
+    ? (currentPokemon.isSC ? '<img src="../sprites/shiny_sc.png" alt="Shiny via Shiny Charm"> ' : '<img src="../sprites/shiny.png" alt="Shiny"> ') + displayName
+    : displayName;
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-gender`).innerHTML = currentPokemon.gender === "Male"
       ? "♂"
-      : currentPokemon.gender === "Female"
+        : currentPokemon.gender === "Female"
         ? "♀"
         : "-";
     document.querySelector(`.team-box:nth-child(${idx + 1}) .pokemon-level`).innerHTML = 'Lvl.' + currentPokemon.level;
@@ -215,19 +217,55 @@ spriteElements.forEach((sprite, index) => {
 
   // Function to get the "prngValue" from local storage
 
+function incrementPokedex(pokemonId, isShiny) {
+  let pokedex = JSON.parse(localStorage.getItem("pokedex")) || {};
+  const idString = String(pokemonId);
+  
+  if (!pokedex[idString]) {
+    pokedex[idString] = { "n": 0, "s": 0 };
+  }
+  
+  pokedex[idString].n = (pokedex[idString].n || 0) + 1;
+  if (isShiny) {
+    pokedex[idString].s = (pokedex[idString].s || 0) + 1;
+  }
+  
+  localStorage.setItem("pokedex", JSON.stringify(pokedex));
+
+  return pokedex[idString];
+}
+
+// Make sure the function is accessible globally
+window.incrementPokedex = incrementPokedex;
+
 function hatchEgg(team, index) {
     const prngValue = getPrngValue();
+
+	let shinyCharm = inventory.find(item => item.name === "Shiny Charm");
+	let shinyCharmCount = shinyCharm ? shinyCharm.amount : 0;
 
     if (!team[index]) return;
     let egg = team[index];
     egg.isEgg = false;
     egg.eggSteps = 0;
     egg.level = 1;
-    if (egg.isShiny === 0) {
+    // Check if the egg's shiny value or shiny charm amount determines its shiny status
+	if (egg.isShiny === 0) {
+		egg.isShiny = true;
+		} else {
+	let possibleValues = [0];
+    for (let i = 1; i <= shinyCharmCount; i++) {
+        possibleValues.push(i);
+    }
+
+    if (possibleValues.includes(egg.isShiny)) {
       egg.isShiny = true;
-    } else {
+      egg.isSC = true;
+    }  else {
       egg.isShiny = false;
     }
+}
+
     let pokemon = pokemonDatabase.find(p => p.name === egg.species);
     if (pokemon.gender_rate !== "-") {
       egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
@@ -262,14 +300,23 @@ function hatchEgg(team, index) {
     }
 
   let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
+    const currentDate = new Date().toDateString();
+    if (eggData.lastUpdate !== currentDate) {
+        eggData.dailyHatch = 0; // Réinitialiser le compteur quotidien
+        eggData.lastUpdate = currentDate; // Mettre à jour la date
+    }
     eggData.hatches = (eggData.hatches || 0) + 1;
+    eggData.dailyHatch = (eggData.dailyHatch || 0) + 1;;
     if (egg.isShiny) {
       eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
       setTimeout(() => {
         window.alert("Congrats! You hatched a Sh. " + pokemon.name + "!");
       }, 500);
     }
+    // Increment Pokédex entry for hatched Pokémon
+    const pokedexEntry = incrementPokedex(pokemon.id, egg.isShiny);
     egg.totalHatched = eggData.hatches;
+    egg.speciesHatched = pokedexEntry.n;
     egg.timeHatched = new Date();
     reRollPrngValue();
     let eggStepsRoll = pokemon.eggSteps;
@@ -310,55 +357,6 @@ function hatchEgg(team, index) {
     }
   }
 };
-
-/* To think - Guaranteed Shiny
-
-function hatchEgg(team, index) {
-  if (!team[index]) return;
-  let egg = team[index];
-  egg.isEgg = false;
-  egg.eggSteps = 0;
-  egg.level = 1;
-
-  let eggData = JSON.parse(localStorage.getItem("eggData")) || {};
-  eggData.hatches = (eggData.hatches || 0) + 1;
-
-  // Check if eggData.hatches is a multiple of 100000
-  if (eggData.hatches % 100000 === 0) {
-    egg.isShiny = true;
-  } else {
-    egg.isShiny = Math.random() < 1/256;
-  }
-
-  let pokemon = pokemonDatabase.find(p => p.name === egg.species);
-  if (pokemon.gender_rate !== "-") {
-    egg.gender = Math.random() * 100 < pokemon.gender_rate ? "Male" : "Female";
-  } else {
-    egg.gender = "-";
-  }
-  if (egg.species === "Unown") {
-    let form = Math.floor(Math.random() * 28) + 1;
-    let spritePath = egg.isShiny ? "sprites/pokemon/shiny/" : "sprites/pokemon/";
-    egg.sprite = spritePath + `201.${form}.png`;
-  } else {
-    egg.sprite = egg.isShiny ? pokemon.shiny_sprite : pokemon.sprite;
-  }
-
-  localStorage.setItem("eggData", JSON.stringify(eggData));
-
-  if (egg.isShiny) {
-    eggData.shinyHatches = (eggData.shinyHatches || 0) + 1;
-    setTimeout(() => {
-      window.alert("Congrats ! You hatched a Sh. " + pokemon.name + "!");
-    }, 500);
-  }
-
-  updateUI(index);
-  saveTeam();
-}
-
-*/
-
 
 // Evolution 
 
@@ -524,6 +522,10 @@ evolvingButton.forEach(button => {
             item.amount--;
             localStorage.setItem("inventory", JSON.stringify(inventory));
           }
+          // Increment Pokédex entry for evolved Pokémon
+          if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+            incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
+          }
         }
         // If there are multiple available evolutions, prompt the user to choose one
         else {
@@ -550,6 +552,10 @@ evolvingButton.forEach(button => {
               let item = inventory.find(i => i.name === chosenEvolutionData.value);
               item.amount--;
               localStorage.setItem("inventory", JSON.stringify(inventory));
+            }
+            // Increment Pokédex entry for evolved Pokémon
+            if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+              incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
             }
             const newPokemonName = team[index].species;
           }
@@ -659,6 +665,11 @@ evolvingButton.forEach(button => {
               sprite: pokemon.isShiny ? 'sprites/pokemon/shiny/292.png' : 'sprites/pokemon/292.png'
             };
             team.push(newPokemon);
+            // Increment Pokédex entry for Shedinja
+            const shedinjaPokemon = pokemonDatabase.find(p => p.name === 'Shedinja');
+            if (shedinjaPokemon && shedinjaPokemon.id !== undefined) {
+              incrementPokedex(shedinjaPokemon.id, pokemon.isShiny);
+            }
             alert("Seems another Pokemon shown up next to your Ninjask...");
             location.reload();
           }
@@ -669,6 +680,10 @@ evolvingButton.forEach(button => {
           let item = inventory.find(i => i.name === chosenEvolutionData.value);
           item.amount--;
           localStorage.setItem("inventory", JSON.stringify(inventory));
+        }
+        // Increment Pokédex entry for evolved Pokémon
+        if (evolvedPokemon && evolvedPokemon.id !== undefined) {
+          incrementPokedex(evolvedPokemon.id, pokemon.isShiny);
         }
       }
     }

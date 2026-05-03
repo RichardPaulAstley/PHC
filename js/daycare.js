@@ -266,7 +266,7 @@ parent0El.addEventListener('click', () => {
     // Check if eggsAvailable.amount is greater than 10
     if (daycare.eggsAvailable.amount > 0) {
       // Confirmation message
-      const confirmation = confirm(`Are you sure you want to take ${daycare.parent0.species} out of the daycare?`);
+      const confirmation = confirm(`Are you sure you want to take ${daycare.parent0.species} out of the daycare? All the egg(s) available will be discarded!`);
       if (!confirmation) {
         return; // If user cancels, exit the function
       }
@@ -293,7 +293,7 @@ parent1El.addEventListener('click', () => {
     // Check if eggsAvailable.amount is greater than 10
     if (daycare.eggsAvailable.amount > 0) {
       // Confirmation message
-      const confirmation = confirm(`Are you sure you want to take ${daycare.parent1.species} out of the daycare?`);
+      const confirmation = confirm(`Are you sure you want to take ${daycare.parent1.species} out of the daycare? All the egg(s) available will be discarded!`);
       if (!confirmation) {
         return; // If user cancels, exit the function
       }

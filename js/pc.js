@@ -222,7 +222,6 @@ for (let i = 0; i < totalSlots; i++) {
   const lastBox = storageContainer.lastChild;
   lastBox.appendChild(newSlot);
 
-  // Add the event listener for click event
   newSlot.addEventListener("click", handleSlotClick);
 }
 
@@ -453,7 +452,10 @@ imgs.forEach((img) => {
 
       titleString = `${displayName} \nLevel ${pokemonData.level} \n${pokemonData.gender}`;
 
-      // Add a line break if the totalHatched count is defined
+      if (pokemonData.speciesHatched !== undefined) {
+        titleString += '\nSpecies Hatched: ' + pokemonData.speciesHatched;
+      }
+      
       if (pokemonData.totalHatched !== undefined) {
         titleString += '\nTotal Hatched: ' + pokemonData.totalHatched;
       }
