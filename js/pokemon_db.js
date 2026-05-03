@@ -11604,7 +11604,7 @@ const pokemonDatabase = [
 	{
 		"id": 465,
 		"name": "Tangrowth",
-		"gen": 1,
+		"gen": 4,
 		"type": ["Grass"],
 		"base_species": "Tangela",
 		"egg_steps": 5120,
@@ -11743,7 +11743,7 @@ const pokemonDatabase = [
 	{
 		"id": 474,
 		"name": "Porygon-Z",
-		"gen": 1,
+		"gen": 4,
 		"type": ["Normal"],
 		"base_species": "Porygon",
 		"egg_steps": 5120,
@@ -24237,7 +24237,7 @@ const pokemonDatabase = [
 		"id": "F",
 		"name": "Ivysaur [Clone]",
 		"display_name": "Ivysaur",
-		"gen": 1,
+		"gen": "PHC",
 		"type": ["Grass", "Poison"],
 		"base_species": "Bulbasaur [Clone]",
 		"egg_steps": 5120,
