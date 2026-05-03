@@ -231,6 +231,8 @@ function incrementPokedex(pokemonId, isShiny) {
   }
   
   localStorage.setItem("pokedex", JSON.stringify(pokedex));
+
+  return pokedex[idString];
 }
 
 // Make sure the function is accessible globally
@@ -312,8 +314,9 @@ function hatchEgg(team, index) {
       }, 500);
     }
     // Increment Pokédex entry for hatched Pokémon
-    incrementPokedex(pokemon.id, egg.isShiny);
+    const pokedexEntry = incrementPokedex(pokemon.id, egg.isShiny);
     egg.totalHatched = eggData.hatches;
+    egg.speciesHatched = pokedexEntry.n;
     egg.timeHatched = new Date();
     reRollPrngValue();
     let eggStepsRoll = pokemon.eggSteps;
