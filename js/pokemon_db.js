@@ -608,7 +608,7 @@ const pokemonDatabase = [
 		"type": ["Normal"],
 		"base_species": "Rattata",
 		"egg_steps": 3840,
-		"egg_group": ["Ground"],
+		"egg_group": ["Field"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -634,7 +634,7 @@ const pokemonDatabase = [
 		"type": ["Dark", "Normal"],
 		"base_species": "Alolan Rattata",
 		"egg_steps": 3840,
-		"egg_group": ["Ground"],
+		"egg_group": ["Field"],
 		"evolutions": [
 			{
 				"method": ["level"],
@@ -657,7 +657,7 @@ const pokemonDatabase = [
 		"type": ["Normal"],
 		"base_species": "Rattata",
 		"egg_steps": 3840,
-		"egg_group": ["Ground"],
+		"egg_group": ["Field"],
 		"gender_rate": 50,
 		"experience_group": 10000,
 		"sprite": "sprites/pokemon/20.png",
@@ -675,7 +675,7 @@ const pokemonDatabase = [
 		"type": ["Dark", "Normal"],
 		"base_species": "Alolan Rattata",
 		"egg_steps": 3840,
-		"egg_group": ["Ground"],
+		"egg_group": ["Field"],
 		"gender_rate": 50,
 		"experience_group": 10000,
 		"sprite": "sprites/pokemon/20.1.png",

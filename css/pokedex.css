@@ -26,7 +26,7 @@
   background-color: transparent;
   border-radius: 0;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .pokedex-stat-normal {
@@ -71,7 +71,7 @@
   align-items: center;
   padding: 10px;
   border: 2px solid #ddd;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: #fff;
   width: 100%;
   max-width: 120px;
