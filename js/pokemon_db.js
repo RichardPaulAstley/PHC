@@ -4202,7 +4202,7 @@ const pokemonDatabase = [
 		"evolution_stage": "legendary",
 	},
 	{
-		"id": 146,
+		"id": 146.1,
 		"name": "Galarian Moltres",
 		"display_name": "Moltres",
 		"gen": 1,
@@ -5595,7 +5595,7 @@ const pokemonDatabase = [
 		"evolution_stage": "first_stage",
 	},
 	{
-		"id": 208,
+		"id": 208.1,
 		"name": "Mega Steelix",
 		"display_name": "Steelix",
 		"gen": 2,
@@ -5665,7 +5665,7 @@ const pokemonDatabase = [
 		"evolution_stage": "base",
 	},
 	{
-		"id": 211,
+		"id": 211.1,
 		"name": "Qwilfish [Hisuian]",
 		"display_name": "Qwilfish",
 		"gen": 2,
@@ -6850,7 +6850,7 @@ const pokemonDatabase = [
 		"evolution_stage": "second_stage"
 	},
 	{
-		"id": 257.1,
+		"id": 260.1,
 		"name": "Mega Swampert",
 		"display_name": "Swampert",
 		"gen": 3,
@@ -9500,7 +9500,7 @@ const pokemonDatabase = [
 		"evolution_stage": "second_stage"
 	},
 	{
-		"id": 376,
+		"id": 376.1,
 		"name": "Mega Metagross",
 		"display_name": "Metagross",
 		"gen": 3,
@@ -9657,7 +9657,7 @@ const pokemonDatabase = [
 		"evolution_stage": "legendary",
 	},
 	{
-		"id": 381.1,
+		"id": 382.1,
 		"name": "Primal Kyogre",
 		"display_name": "Kyogre",
 		"gen": 3,
@@ -13444,7 +13444,7 @@ const pokemonDatabase = [
 		"evolution_stage": "base",
 	},
 	{
-		"id": 550,
+		"id": 550.2,
 		"name": "Basculin [White]",
 		"display_name": "Basculin",
 		"gen": 5,
@@ -13488,29 +13488,6 @@ const pokemonDatabase = [
 		"shiny_sprite": "sprites/pokemon/shiny/551.png",
 		"egg_sprite": "sprites/egg/sandile.png",
 		"rarity": "uncommon",
-		"evolution_stage": "base",
-	},
-	{
-		"id": 552,
-		"name": "Sandile",
-		"gen": 5,
-		"type": ["Ground", "Dark"],
-		"base_species": "Sandile",
-		"egg_steps": 5120,
-		"egg_group": ["Field"],
-		"evolutions": [
-			{
-				"method": ["level"],
-				"value": 29,
-				"evolves_to": "Krokorok"
-			},
-		],
-		"gender_rate": 50,
-		"experience_group": 10599,
-		"sprite": "sprites/pokemon/551.png",
-		"shiny_sprite": "sprites/pokemon/shiny/551.png",
-		"egg_sprite": "sprites/egg/sandile.png",
-		"rarity": "common",
 		"evolution_stage": "base",
 	},
 	{
@@ -16200,28 +16177,6 @@ const pokemonDatabase = [
 	},
 	{
 		"id": 665,
-		"name": "Spewpa",
-		"gen": 6,
-		"type": ["Bug"],
-		"base_species": "Scatterbug",
-		"egg_steps": 3840,
-		"egg_group": ["Bug"],
-		"evolutions": [
-			{
-				"method": ["level"],
-				"value": 12,
-				"evolves_to": "Vivillon"
-			},
-		],
-		"gender_rate": 50,
-		"experience_group": 10000,
-		"sprite": "sprites/pokemon/665.png",
-		"shiny_sprite": "sprites/pokemon/shiny/665.png",
-		"rarity": "uncommon",
-		"evolution_stage": "first_stage",
-	},
-	{
-		"id": 666,
 		"name": "Spewpa",
 		"gen": 6,
 		"type": ["Bug"],
@@ -20232,7 +20187,7 @@ const pokemonDatabase = [
 		"evolution_stage": "gigantamax",
 	},
 	{
-		"id": 837,
+		"id": 840,
 		"name": "Applin",
 		"gen": 8,
 		"type": ["Grass", "Dragon"],
@@ -21355,7 +21310,7 @@ const pokemonDatabase = [
 		"evolution_stage": "base",
 	},
 	{
-		"id": 884,
+		"id": 884.1,
 		"name": "Duraludon [Gigantamax]",
 		"display_name": "Duraludon",
 		"gen": 8,
